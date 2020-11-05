@@ -9519,11 +9519,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Mario\\source\\repos\\AIForRentersAPI\\AIForRentersAPI\\AIForRentersAPI.csproj",
+      "projectUniqueName": "C:\\Users\\Mario\\source\\repos\\mRent\\AIR2013\\AIForRentersAPI\\AIForRentersAPI\\AIForRentersAPI.csproj",
       "projectName": "AIForRentersAPI",
-      "projectPath": "C:\\Users\\Mario\\source\\repos\\AIForRentersAPI\\AIForRentersAPI\\AIForRentersAPI.csproj",
+      "projectPath": "C:\\Users\\Mario\\source\\repos\\mRent\\AIR2013\\AIForRentersAPI\\AIForRentersAPI\\AIForRentersAPI.csproj",
       "packagesPath": "C:\\Users\\Mario\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Mario\\source\\repos\\AIForRentersAPI\\AIForRentersAPI\\obj\\",
+      "outputPath": "C:\\Users\\Mario\\source\\repos\\mRent\\AIR2013\\AIForRentersAPI\\AIForRentersAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Mario\\AppData\\Roaming\\NuGet\\NuGet.Config",

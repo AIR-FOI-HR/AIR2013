@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "5g4WXcZ8kodAmRJ9+JjDc/XSo6xz+GT70wM2PPan20ebPIdupvzFksVZbA5VVCGvfRXn/yGdiXrJVZpwiuUoDA==",
+  "dgSpecHash": "o9+yBkCCSwArlrYE7YzL7v8dq2+O8a58GtGoL2FCQAmZ0RHEHCM3OxnG4I7q54gCXZQL0wqH63wzLX8TAsT5qQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Mario\\source\\repos\\AIForRentersAPI\\AIForRentersAPI\\AIForRentersAPI.csproj",
+  "projectFilePath": "C:\\Users\\Mario\\source\\repos\\mRent\\AIR2013\\AIForRentersAPI\\AIForRentersAPI\\AIForRentersAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Mario\\.nuget\\packages\\htmlagilitypack\\1.11.26\\htmlagilitypack.1.11.26.nupkg.sha512",
     "C:\\Users\\Mario\\.nuget\\packages\\mailkit\\2.9.0\\mailkit.2.9.0.nupkg.sha512",

@@ -8,6 +8,6 @@ namespace AIForRentersAPI.Functionalities
     public static class Sender
     {
         public static string Email = "aiforrentersapp@gmail.com";
-        public static string Password = "AiForRenters123";
+        public static string Password = "************";
     }
 }
