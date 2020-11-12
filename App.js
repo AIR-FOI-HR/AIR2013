@@ -52,7 +52,7 @@ const App: () => React$Node = () => {
               />
               <Text style={styles.sectionTitle}>Korak 2</Text>
               <Text style={styles.sectionDescription}>
-                Edit <Text style={styles.highlight}>App.js</Text> to change this
+                Edit <Text style={styles.highlight}>App.js</Text> Promojeni ekran
                 screen and then come back to see your edits.
               </Text>
             </View>
