@@ -15,7 +15,8 @@ import {
   Text,
   StatusBar,
   Button,
-  Alert
+  Alert,
+  Image
 } from 'react-native';
 
 import {
@@ -28,7 +29,7 @@ import {
 
 const App: () => React$Node = () => {
   //Samo proba
-  return (
+  return ( //
     <>
       <StatusBar barStyle="dark-content" />
       <SafeAreaView>
@@ -43,7 +44,13 @@ const App: () => React$Node = () => {
           )}
           <View style={styles.body}>
             <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Step One</Text>
+              <Image
+              style={styles.testImage}
+              source={{
+                uri: 'https://fiskalna-blagajna.eu/wp-content/uploads/2018/09/success-png-icon-7.png',
+                }}
+              />
+              <Text style={styles.sectionTitle}>Korak 2</Text>
               <Text style={styles.sectionDescription}>
                 Edit <Text style={styles.highlight}>App.js</Text> to change this
                 screen and then come back to see your edits.
@@ -112,6 +119,10 @@ const styles = StyleSheet.create({
     paddingRight: 12,
     textAlign: 'right',
   },
+  testImage: {
+    height: 100,
+    width: 100
+  }
 });
 
 export default App;
