@@ -8,6 +8,7 @@ MERGED from C:\Users\Mrky-PC\Desktop\Sve\Faks\7_semestar\AiR\Projekt\AIR2013\and
 MERGED from [com.facebook.flipper:flipper:0.54.0] C:\Users\Mrky-PC\.gradle\caches\transforms-2\files-2.1\1c7787ec82631e0394972c76bdabe608\flipper-0.54.0\AndroidManifest.xml:8:1-18:12
 MERGED from [com.facebook.flipper:flipper-network-plugin:0.54.0] C:\Users\Mrky-PC\.gradle\caches\transforms-2\files-2.1\bd2cab46fd45b530a274001375333ead\flipper-network-plugin-0.54.0\AndroidManifest.xml:8:1-15:12
 MERGED from [com.facebook.flipper:flipper-fresco-plugin:0.54.0] C:\Users\Mrky-PC\.gradle\caches\transforms-2\files-2.1\dd7dfafbb0af41b4347f18654ea5c436\flipper-fresco-plugin-0.54.0\AndroidManifest.xml:8:1-15:12
+MERGED from [:react-native-community_google-signin] C:\Users\Mrky-PC\Desktop\Sve\Faks\7_semestar\AiR\Projekt\AIR2013\node_modules\@react-native-community\google-signin\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
 MERGED from [:react-native-community_masked-view] C:\Users\Mrky-PC\Desktop\Sve\Faks\7_semestar\AiR\Projekt\AIR2013\node_modules\@react-native-community\masked-view\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-9:12
 MERGED from [:react-native-gesture-handler] C:\Users\Mrky-PC\Desktop\Sve\Faks\7_semestar\AiR\Projekt\AIR2013\node_modules\react-native-gesture-handler\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
 MERGED from [:react-native-reanimated] C:\Users\Mrky-PC\Desktop\Sve\Faks\7_semestar\AiR\Projekt\AIR2013\node_modules\react-native-reanimated\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
@@ -36,12 +37,18 @@ MERGED from [androidx.appcompat:appcompat:1.1.0] C:\Users\Mrky-PC\.gradle\caches
 MERGED from [androidx.appcompat:appcompat-resources:1.1.0] C:\Users\Mrky-PC\.gradle\caches\transforms-2\files-2.1\b1b165607eae60d70e4267b97e24514b\appcompat-resources-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\Mrky-PC\.gradle\caches\transforms-2\files-2.1\28888a6f6660db47b3788df392c672a7\vectordrawable-animated-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\Mrky-PC\.gradle\caches\transforms-2\files-2.1\efb592adf2592d134c27edc4a56e19d2\interpolator-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.android.gms:play-services-auth:17.0.0] C:\Users\Mrky-PC\.gradle\caches\transforms-2\files-2.1\7e873024a2fa5e8dabdf91fac34a60c5\play-services-auth-17.0.0\AndroidManifest.xml:17:1-39:12
+MERGED from [com.google.android.gms:play-services-auth-api-phone:17.0.0] C:\Users\Mrky-PC\.gradle\caches\transforms-2\files-2.1\1a6288e355b9d29da99eeeeaa362fac1\play-services-auth-api-phone-17.0.0\AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.android.gms:play-services-auth-base:17.0.0] C:\Users\Mrky-PC\.gradle\caches\transforms-2\files-2.1\937c92424a6f323df9bafb2747bbb019\play-services-auth-base-17.0.0\AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.android.gms:play-services-base:17.0.0] C:\Users\Mrky-PC\.gradle\caches\transforms-2\files-2.1\fc8046cb9a5df9499609a5f7f8270b1b\play-services-base-17.0.0\AndroidManifest.xml:17:1-29:12
+MERGED from [com.google.android.gms:play-services-tasks:17.0.0] C:\Users\Mrky-PC\.gradle\caches\transforms-2\files-2.1\a5841d1417e823e700e7ed3e71829aa8\play-services-tasks-17.0.0\AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\Mrky-PC\.gradle\caches\transforms-2\files-2.1\80e983c7c8bdfadba4ef010a298af1a4\jetified-play-services-basement-17.0.0\AndroidManifest.xml:17:1-28:12
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\Mrky-PC\.gradle\caches\transforms-2\files-2.1\8cd6316737e8f518184be95be51b9ee8\viewpager2-1.0.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.fragment:fragment:1.2.1] C:\Users\Mrky-PC\.gradle\caches\transforms-2\files-2.1\37aaca75d3d19faa6fb296103cea95d8\fragment-1.2.1\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] C:\Users\Mrky-PC\.gradle\caches\transforms-2\files-2.1\c062602fe4e1f75f724363688044d993\coordinatorlayout-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\Mrky-PC\.gradle\caches\transforms-2\files-2.1\c99af001058cd5265376dded8456f828\drawerlayout-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\Mrky-PC\.gradle\caches\transforms-2\files-2.1\40f1c5d439eea30faeaafe93e7bdf45f\viewpager-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.loader:loader:1.0.0] C:\Users\Mrky-PC\.gradle\caches\transforms-2\files-2.1\faa15558a5d57e35e462c9e1f0248694\loader-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\Mrky-PC\.gradle\caches\transforms-2\files-2.1\40f1c5d439eea30faeaafe93e7bdf45f\viewpager-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.activity:activity:1.1.0] C:\Users\Mrky-PC\.gradle\caches\transforms-2\files-2.1\89bcabef273c834c0566b445ed28172c\activity-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\Mrky-PC\.gradle\caches\transforms-2\files-2.1\4300f0cd89d6453d731712a999b6e53f\recyclerview-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.customview:customview:1.0.0] C:\Users\Mrky-PC\.gradle\caches\transforms-2\files-2.1\e0a79d4379c4eef3803202a497c19313\customview-1.0.0\AndroidManifest.xml:17:1-22:12
@@ -96,6 +103,14 @@ MERGED from [com.facebook.soloader:soloader:0.9.0] C:\Users\Mrky-PC\.gradle\cach
 MERGED from [com.facebook.soloader:soloader:0.9.0] C:\Users\Mrky-PC\.gradle\caches\transforms-2\files-2.1\c34148f30cbc3e974eff21cbfb6a112a\soloader-0.9.0\AndroidManifest.xml:11:5-20
 MERGED from [com.google.android.material:material:1.1.0] C:\Users\Mrky-PC\.gradle\caches\transforms-2\files-2.1\863e0c3c6716935cd3657ad638fd992d\material-1.1.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.1.0] C:\Users\Mrky-PC\.gradle\caches\transforms-2\files-2.1\863e0c3c6716935cd3657ad638fd992d\material-1.1.0\AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-auth:17.0.0] C:\Users\Mrky-PC\.gradle\caches\transforms-2\files-2.1\7e873024a2fa5e8dabdf91fac34a60c5\play-services-auth-17.0.0\AndroidManifest.xml:22:5-37:19
+MERGED from [com.google.android.gms:play-services-auth:17.0.0] C:\Users\Mrky-PC\.gradle\caches\transforms-2\files-2.1\7e873024a2fa5e8dabdf91fac34a60c5\play-services-auth-17.0.0\AndroidManifest.xml:22:5-37:19
+MERGED from [com.google.android.gms:play-services-base:17.0.0] C:\Users\Mrky-PC\.gradle\caches\transforms-2\files-2.1\fc8046cb9a5df9499609a5f7f8270b1b\play-services-base-17.0.0\AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-base:17.0.0] C:\Users\Mrky-PC\.gradle\caches\transforms-2\files-2.1\fc8046cb9a5df9499609a5f7f8270b1b\play-services-base-17.0.0\AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-tasks:17.0.0] C:\Users\Mrky-PC\.gradle\caches\transforms-2\files-2.1\a5841d1417e823e700e7ed3e71829aa8\play-services-tasks-17.0.0\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-tasks:17.0.0] C:\Users\Mrky-PC\.gradle\caches\transforms-2\files-2.1\a5841d1417e823e700e7ed3e71829aa8\play-services-tasks-17.0.0\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\Mrky-PC\.gradle\caches\transforms-2\files-2.1\80e983c7c8bdfadba4ef010a298af1a4\jetified-play-services-basement-17.0.0\AndroidManifest.xml:22:5-26:19
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\Mrky-PC\.gradle\caches\transforms-2\files-2.1\80e983c7c8bdfadba4ef010a298af1a4\jetified-play-services-basement-17.0.0\AndroidManifest.xml:22:5-26:19
 MERGED from [androidx.core:core:1.1.0] C:\Users\Mrky-PC\.gradle\caches\transforms-2\files-2.1\639e914bfc1efa21e36199d3ff2c5eef\core-1.1.0\AndroidManifest.xml:24:5-89
 MERGED from [androidx.core:core:1.1.0] C:\Users\Mrky-PC\.gradle\caches\transforms-2\files-2.1\639e914bfc1efa21e36199d3ff2c5eef\core-1.1.0\AndroidManifest.xml:24:5-89
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\Mrky-PC\.gradle\caches\transforms-2\files-2.1\2786c84c1e653e40bd67508414ca298f\versionedparcelable-1.1.0\AndroidManifest.xml:24:5-25:19
@@ -162,6 +177,8 @@ MERGED from [com.facebook.flipper:flipper-network-plugin:0.54.0] C:\Users\Mrky-P
 MERGED from [com.facebook.flipper:flipper-network-plugin:0.54.0] C:\Users\Mrky-PC\.gradle\caches\transforms-2\files-2.1\bd2cab46fd45b530a274001375333ead\flipper-network-plugin-0.54.0\AndroidManifest.xml:11:5-13:41
 MERGED from [com.facebook.flipper:flipper-fresco-plugin:0.54.0] C:\Users\Mrky-PC\.gradle\caches\transforms-2\files-2.1\dd7dfafbb0af41b4347f18654ea5c436\flipper-fresco-plugin-0.54.0\AndroidManifest.xml:11:5-13:41
 MERGED from [com.facebook.flipper:flipper-fresco-plugin:0.54.0] C:\Users\Mrky-PC\.gradle\caches\transforms-2\files-2.1\dd7dfafbb0af41b4347f18654ea5c436\flipper-fresco-plugin-0.54.0\AndroidManifest.xml:11:5-13:41
+MERGED from [:react-native-community_google-signin] C:\Users\Mrky-PC\Desktop\Sve\Faks\7_semestar\AiR\Projekt\AIR2013\node_modules\@react-native-community\google-signin\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-community_google-signin] C:\Users\Mrky-PC\Desktop\Sve\Faks\7_semestar\AiR\Projekt\AIR2013\node_modules\@react-native-community\google-signin\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
 MERGED from [:react-native-community_masked-view] C:\Users\Mrky-PC\Desktop\Sve\Faks\7_semestar\AiR\Projekt\AIR2013\node_modules\@react-native-community\masked-view\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-community_masked-view] C:\Users\Mrky-PC\Desktop\Sve\Faks\7_semestar\AiR\Projekt\AIR2013\node_modules\@react-native-community\masked-view\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-gesture-handler] C:\Users\Mrky-PC\Desktop\Sve\Faks\7_semestar\AiR\Projekt\AIR2013\node_modules\react-native-gesture-handler\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
@@ -218,6 +235,18 @@ MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\Mrk
 MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\Mrky-PC\.gradle\caches\transforms-2\files-2.1\28888a6f6660db47b3788df392c672a7\vectordrawable-animated-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\Mrky-PC\.gradle\caches\transforms-2\files-2.1\efb592adf2592d134c27edc4a56e19d2\interpolator-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\Mrky-PC\.gradle\caches\transforms-2\files-2.1\efb592adf2592d134c27edc4a56e19d2\interpolator-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-auth:17.0.0] C:\Users\Mrky-PC\.gradle\caches\transforms-2\files-2.1\7e873024a2fa5e8dabdf91fac34a60c5\play-services-auth-17.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-auth:17.0.0] C:\Users\Mrky-PC\.gradle\caches\transforms-2\files-2.1\7e873024a2fa5e8dabdf91fac34a60c5\play-services-auth-17.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-auth-api-phone:17.0.0] C:\Users\Mrky-PC\.gradle\caches\transforms-2\files-2.1\1a6288e355b9d29da99eeeeaa362fac1\play-services-auth-api-phone-17.0.0\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-auth-api-phone:17.0.0] C:\Users\Mrky-PC\.gradle\caches\transforms-2\files-2.1\1a6288e355b9d29da99eeeeaa362fac1\play-services-auth-api-phone-17.0.0\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-auth-base:17.0.0] C:\Users\Mrky-PC\.gradle\caches\transforms-2\files-2.1\937c92424a6f323df9bafb2747bbb019\play-services-auth-base-17.0.0\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-auth-base:17.0.0] C:\Users\Mrky-PC\.gradle\caches\transforms-2\files-2.1\937c92424a6f323df9bafb2747bbb019\play-services-auth-base-17.0.0\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-base:17.0.0] C:\Users\Mrky-PC\.gradle\caches\transforms-2\files-2.1\fc8046cb9a5df9499609a5f7f8270b1b\play-services-base-17.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-base:17.0.0] C:\Users\Mrky-PC\.gradle\caches\transforms-2\files-2.1\fc8046cb9a5df9499609a5f7f8270b1b\play-services-base-17.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-tasks:17.0.0] C:\Users\Mrky-PC\.gradle\caches\transforms-2\files-2.1\a5841d1417e823e700e7ed3e71829aa8\play-services-tasks-17.0.0\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-tasks:17.0.0] C:\Users\Mrky-PC\.gradle\caches\transforms-2\files-2.1\a5841d1417e823e700e7ed3e71829aa8\play-services-tasks-17.0.0\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\Mrky-PC\.gradle\caches\transforms-2\files-2.1\80e983c7c8bdfadba4ef010a298af1a4\jetified-play-services-basement-17.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\Mrky-PC\.gradle\caches\transforms-2\files-2.1\80e983c7c8bdfadba4ef010a298af1a4\jetified-play-services-basement-17.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\Mrky-PC\.gradle\caches\transforms-2\files-2.1\8cd6316737e8f518184be95be51b9ee8\viewpager2-1.0.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\Mrky-PC\.gradle\caches\transforms-2\files-2.1\8cd6316737e8f518184be95be51b9ee8\viewpager2-1.0.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.fragment:fragment:1.2.1] C:\Users\Mrky-PC\.gradle\caches\transforms-2\files-2.1\37aaca75d3d19faa6fb296103cea95d8\fragment-1.2.1\AndroidManifest.xml:20:5-22:41
@@ -226,10 +255,10 @@ MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] C:\Users\Mrky-P
 MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] C:\Users\Mrky-PC\.gradle\caches\transforms-2\files-2.1\c062602fe4e1f75f724363688044d993\coordinatorlayout-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\Mrky-PC\.gradle\caches\transforms-2\files-2.1\c99af001058cd5265376dded8456f828\drawerlayout-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\Mrky-PC\.gradle\caches\transforms-2\files-2.1\c99af001058cd5265376dded8456f828\drawerlayout-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\Mrky-PC\.gradle\caches\transforms-2\files-2.1\40f1c5d439eea30faeaafe93e7bdf45f\viewpager-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\Mrky-PC\.gradle\caches\transforms-2\files-2.1\40f1c5d439eea30faeaafe93e7bdf45f\viewpager-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.loader:loader:1.0.0] C:\Users\Mrky-PC\.gradle\caches\transforms-2\files-2.1\faa15558a5d57e35e462c9e1f0248694\loader-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.loader:loader:1.0.0] C:\Users\Mrky-PC\.gradle\caches\transforms-2\files-2.1\faa15558a5d57e35e462c9e1f0248694\loader-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\Mrky-PC\.gradle\caches\transforms-2\files-2.1\40f1c5d439eea30faeaafe93e7bdf45f\viewpager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\Mrky-PC\.gradle\caches\transforms-2\files-2.1\40f1c5d439eea30faeaafe93e7bdf45f\viewpager-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.activity:activity:1.1.0] C:\Users\Mrky-PC\.gradle\caches\transforms-2\files-2.1\89bcabef273c834c0566b445ed28172c\activity-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.activity:activity:1.1.0] C:\Users\Mrky-PC\.gradle\caches\transforms-2\files-2.1\89bcabef273c834c0566b445ed28172c\activity-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\Mrky-PC\.gradle\caches\transforms-2\files-2.1\4300f0cd89d6453d731712a999b6e53f\recyclerview-1.1.0\AndroidManifest.xml:20:5-22:41
@@ -282,3 +311,35 @@ uses-permission#android.permission.ACCESS_WIFI_STATE
 ADDED from [com.facebook.flipper:flipper:0.54.0] C:\Users\Mrky-PC\.gradle\caches\transforms-2\files-2.1\1c7787ec82631e0394972c76bdabe608\flipper-0.54.0\AndroidManifest.xml:16:5-76
 	android:name
 		ADDED from [com.facebook.flipper:flipper:0.54.0] C:\Users\Mrky-PC\.gradle\caches\transforms-2\files-2.1\1c7787ec82631e0394972c76bdabe608\flipper-0.54.0\AndroidManifest.xml:16:22-73
+activity#com.google.android.gms.auth.api.signin.internal.SignInHubActivity
+ADDED from [com.google.android.gms:play-services-auth:17.0.0] C:\Users\Mrky-PC\.gradle\caches\transforms-2\files-2.1\7e873024a2fa5e8dabdf91fac34a60c5\play-services-auth-17.0.0\AndroidManifest.xml:23:9-27:75
+	android:excludeFromRecents
+		ADDED from [com.google.android.gms:play-services-auth:17.0.0] C:\Users\Mrky-PC\.gradle\caches\transforms-2\files-2.1\7e873024a2fa5e8dabdf91fac34a60c5\play-services-auth-17.0.0\AndroidManifest.xml:25:13-46
+	android:exported
+		ADDED from [com.google.android.gms:play-services-auth:17.0.0] C:\Users\Mrky-PC\.gradle\caches\transforms-2\files-2.1\7e873024a2fa5e8dabdf91fac34a60c5\play-services-auth-17.0.0\AndroidManifest.xml:26:13-37
+	android:theme
+		ADDED from [com.google.android.gms:play-services-auth:17.0.0] C:\Users\Mrky-PC\.gradle\caches\transforms-2\files-2.1\7e873024a2fa5e8dabdf91fac34a60c5\play-services-auth-17.0.0\AndroidManifest.xml:27:13-72
+	android:name
+		ADDED from [com.google.android.gms:play-services-auth:17.0.0] C:\Users\Mrky-PC\.gradle\caches\transforms-2\files-2.1\7e873024a2fa5e8dabdf91fac34a60c5\play-services-auth-17.0.0\AndroidManifest.xml:24:13-93
+service#com.google.android.gms.auth.api.signin.RevocationBoundService
+ADDED from [com.google.android.gms:play-services-auth:17.0.0] C:\Users\Mrky-PC\.gradle\caches\transforms-2\files-2.1\7e873024a2fa5e8dabdf91fac34a60c5\play-services-auth-17.0.0\AndroidManifest.xml:33:9-36:110
+	android:exported
+		ADDED from [com.google.android.gms:play-services-auth:17.0.0] C:\Users\Mrky-PC\.gradle\caches\transforms-2\files-2.1\7e873024a2fa5e8dabdf91fac34a60c5\play-services-auth-17.0.0\AndroidManifest.xml:35:13-36
+	android:permission
+		ADDED from [com.google.android.gms:play-services-auth:17.0.0] C:\Users\Mrky-PC\.gradle\caches\transforms-2\files-2.1\7e873024a2fa5e8dabdf91fac34a60c5\play-services-auth-17.0.0\AndroidManifest.xml:36:13-107
+	android:name
+		ADDED from [com.google.android.gms:play-services-auth:17.0.0] C:\Users\Mrky-PC\.gradle\caches\transforms-2\files-2.1\7e873024a2fa5e8dabdf91fac34a60c5\play-services-auth-17.0.0\AndroidManifest.xml:34:13-89
+activity#com.google.android.gms.common.api.GoogleApiActivity
+ADDED from [com.google.android.gms:play-services-base:17.0.0] C:\Users\Mrky-PC\.gradle\caches\transforms-2\files-2.1\fc8046cb9a5df9499609a5f7f8270b1b\play-services-base-17.0.0\AndroidManifest.xml:23:9-26:75
+	android:exported
+		ADDED from [com.google.android.gms:play-services-base:17.0.0] C:\Users\Mrky-PC\.gradle\caches\transforms-2\files-2.1\fc8046cb9a5df9499609a5f7f8270b1b\play-services-base-17.0.0\AndroidManifest.xml:25:13-37
+	android:theme
+		ADDED from [com.google.android.gms:play-services-base:17.0.0] C:\Users\Mrky-PC\.gradle\caches\transforms-2\files-2.1\fc8046cb9a5df9499609a5f7f8270b1b\play-services-base-17.0.0\AndroidManifest.xml:26:13-72
+	android:name
+		ADDED from [com.google.android.gms:play-services-base:17.0.0] C:\Users\Mrky-PC\.gradle\caches\transforms-2\files-2.1\fc8046cb9a5df9499609a5f7f8270b1b\play-services-base-17.0.0\AndroidManifest.xml:24:13-79
+meta-data#com.google.android.gms.version
+ADDED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\Mrky-PC\.gradle\caches\transforms-2\files-2.1\80e983c7c8bdfadba4ef010a298af1a4\jetified-play-services-basement-17.0.0\AndroidManifest.xml:23:9-25:69
+	android:value
+		ADDED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\Mrky-PC\.gradle\caches\transforms-2\files-2.1\80e983c7c8bdfadba4ef010a298af1a4\jetified-play-services-basement-17.0.0\AndroidManifest.xml:25:13-66
+	android:name
+		ADDED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\Mrky-PC\.gradle\caches\transforms-2\files-2.1\80e983c7c8bdfadba4ef010a298af1a4\jetified-play-services-basement-17.0.0\AndroidManifest.xml:24:13-58
