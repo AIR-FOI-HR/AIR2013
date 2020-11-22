@@ -13,25 +13,7 @@ import { NavigationContainer } from '@react-navigation/native';
 
 const App = ()  => {
   return (
-    
-    <View style={
-      {
-        backgroundColor: "#000000",
-        height: 500
-      }
-    }>
-      <AppNavigator/>
-    
-      <Text style={
-        {
-          color: "#ffffff",
-          fontSize: 50,
-          marginTop: 20,
-          marginLeft: 20
-        }
-      }>App.js screen</Text>
-
-    </View>
+    <AppNavigator />
   );
 };
 
