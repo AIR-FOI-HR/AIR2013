@@ -22,15 +22,6 @@ const App = ()  => {
     }>
       <AppNavigator/>
     
-      <Text style={
-        {
-          color: "#ffffff",
-          fontSize: 50,
-          marginTop: 20,
-          marginLeft: 20
-        }
-      }>App.js screen</Text>
-
     </View>
   );
 };
