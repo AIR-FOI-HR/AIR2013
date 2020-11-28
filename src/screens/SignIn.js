@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
-import {View, Text, Button, StyleSheet} from 'react-native';
+import {View, Text, Button, StyleSheet, Image} from 'react-native';
 import {GoogleSignin, GoogleSigninButton, statusCodes} from '@react-native-community/google-signin';
 
 GoogleSignin.configure({
-	webClientId: '1029055019174-akltv1ts60j361lll3v8iu7vp31ek4dm.apps.googleusercontent.com',
+	webClientId: '282691096774-dq1p0dd5f7ni83fne0ugegffnpcpjt5k.apps.googleusercontent.com',
 	offlineAccess: true,
 });
 
@@ -44,7 +44,7 @@ class SignIn extends Component {
 						<Text>{this.state.userGoogleInfo.user.name}</Text>
 						<Text>{this.state.userGoogleInfo.user.email}</Text>
 						<Image
-							style={{width: '100', height: '100'}}
+							style={{width: 100, height: 100}}
 							source={{url: this.state.userGoogleInfo.user.photo}}
 						/>
 					</View>
