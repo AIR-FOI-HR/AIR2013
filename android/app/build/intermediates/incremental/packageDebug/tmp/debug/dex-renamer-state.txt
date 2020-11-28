@@ -1,4 +1,4 @@
-#Tue Nov 24 17:43:46 CET 2020
+#Sat Nov 28 18:16:56 CET 2020
 base.0=C\:\\Users\\Mrky-PC\\Desktop\\Sve\\Faks\\7_semestar\\AiR\\Projekt\\AIR2013\\android\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
 path.0=classes.dex
 renamed.0=classes.dex
