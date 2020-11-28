@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "282691096774-tgbui7iq1jnlt3pbivcmfd6cjh1lbar7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mrent",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
           "client_id": "282691096774-dq1p0dd5f7ni83fne0ugegffnpcpjt5k.apps.googleusercontent.com",
           "client_type": 3
         }
