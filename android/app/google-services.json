@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "282691096774",
+    "firebase_url": "https://mrent-4fa94.firebaseio.com",
+    "project_id": "mrent-4fa94",
+    "storage_bucket": "mrent-4fa94.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:282691096774:android:51cb582ed93a94cd7387c7",
+        "android_client_info": {
+          "package_name": "com.mrent"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "282691096774-dq1p0dd5f7ni83fne0ugegffnpcpjt5k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCkpOlBEHCLqcHZiAkl3UWXiwWd3jZXoOM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "282691096774-dq1p0dd5f7ni83fne0ugegffnpcpjt5k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
