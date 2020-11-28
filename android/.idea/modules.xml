@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/mRent.iml" filepath="$PROJECT_DIR$/.idea/modules/mRent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/mRent.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/mRent.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/2121391403/mRent.react-native-community_google-signin.iml" filepath="$PROJECT_DIR$/.idea/modules/2121391403/mRent.react-native-community_google-signin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-239200676/mRent.react-native-community_masked-view.iml" filepath="$PROJECT_DIR$/.idea/modules/-239200676/mRent.react-native-community_masked-view.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-357704197/mRent.react-native-gesture-handler.iml" filepath="$PROJECT_DIR$/.idea/modules/-357704197/mRent.react-native-gesture-handler.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/react-native-google-signin/mRent.react-native-google-signin.iml" filepath="$PROJECT_DIR$/.idea/modules/react-native-google-signin/mRent.react-native-google-signin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/526167873/mRent.react-native-reanimated.iml" filepath="$PROJECT_DIR$/.idea/modules/526167873/mRent.react-native-reanimated.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/495018916/mRent.react-native-safe-area-context.iml" filepath="$PROJECT_DIR$/.idea/modules/495018916/mRent.react-native-safe-area-context.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/525484220/mRent.react-native-screens.iml" filepath="$PROJECT_DIR$/.idea/modules/525484220/mRent.react-native-screens.iml" />
+    </modules>
+  </component>
+</project>
