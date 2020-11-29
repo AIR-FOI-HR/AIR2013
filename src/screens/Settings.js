@@ -4,7 +4,8 @@ import {
     Text,
     Image,
     StyleSheet,
-    TextInput
+    TextInput,
+    TouchableOpacity
 } from 'react-native'
 import { ScrollView } from 'react-native-gesture-handler'
 
@@ -26,6 +27,31 @@ export default class App extends React.Component {
                             style={styles.profileIconImage}
                         />
                     </View>
+                    
+                </View>
+
+                <View>
+                    <Image 
+                            source={require('../assets/icons/profile.png')}
+                        />
+                </View>
+                <View>
+                    <Text> John Joe </Text>
+                </View>
+                <View>
+                    <Text> Tamna tema </Text>
+                </View>
+                <View>
+                    <Text> Obavijesti </Text>
+                </View>
+                <View>
+                    <Text> E-mail </Text>
+                </View>
+                <View>
+                   <TouchableOpacity><Text> Dodaj ili ukloni stavke </Text></TouchableOpacity> 
+                </View>
+                <View>
+                    <TouchableOpacity><Text> Odjavi se </Text></TouchableOpacity>
                 </View>
             </ScrollView>
         );
@@ -62,21 +88,6 @@ const styles = StyleSheet.create({
     profileIconImage: {
         width:50,
         height:50
-    },
-    searchBoxView: {
-        flexDirection:"row",
-        alignItems:"center",
-        elevation:3,
-        width:"85%",
-        backgroundColor:"#FFF",
-        paddingHorizontal:20,
-        height:35,
-        borderRadius:10,
-        marginLeft:1
-    },
-    searchBoxInputField: {
-        paddingHorizontal:10,
-        fontSize:12
     },
     sortView: {
         alignItems:"center",
