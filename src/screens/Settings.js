@@ -29,30 +29,39 @@ export default class App extends React.Component {
                     </View>
                     
                 </View>
-
-                <View>
-                    <Image 
-                            source={require('../assets/icons/profile.png')}
-                        />
+                
+                <View styles={styles.glavniObrub}>
+                     <View style={styles.marginaSlike}>
+                        <View style={styles.centriranje}>
+                            <Image 
+                                    source={require('../assets/icons/profile.png')}
+                                    style={styles.imageCenter}
+                                />
+                            <Text style={styles.tekstImena}> John Joe </Text>
+                        </View>
+                    </View>
+                   
+                    <View style={styles.margineTeksta}>
+                        <Text style={styles.tekstIzbornika}> Tamna tema </Text>
+                    </View>
+                    <View>
+                        <Text style={styles.tekstIzbornika}> Obavijesti </Text>
+                    </View>
+                    <View style={styles.margineTeksta}>
+                        <Text style={styles.tekstIzbornika}> E-mail </Text>
+                    </View>
+                    <View >
+                        <TouchableOpacity>
+                                <Text style={styles.tekstIzbornika} > Dodaj ili ukloni stavke </Text>
+                        </TouchableOpacity> 
+                    </View>
+                    <View style={styles.margineTeksta}>
+                        <TouchableOpacity>
+                            <Text style={styles.tekstIzbornika}> Odjavi se </Text>
+                        </TouchableOpacity>
+                    </View>    
                 </View>
-                <View>
-                    <Text> John Joe </Text>
-                </View>
-                <View>
-                    <Text> Tamna tema </Text>
-                </View>
-                <View>
-                    <Text> Obavijesti </Text>
-                </View>
-                <View>
-                    <Text> E-mail </Text>
-                </View>
-                <View>
-                   <TouchableOpacity><Text> Dodaj ili ukloni stavke </Text></TouchableOpacity> 
-                </View>
-                <View>
-                    <TouchableOpacity><Text> Odjavi se </Text></TouchableOpacity>
-                </View>
+                
             </ScrollView>
         );
     }
@@ -105,5 +114,46 @@ const styles = StyleSheet.create({
         width: "100%",
         marginTop: 40,
         justifyContent: 'space-between'
+    },
+    imageCenter: {
+        alignItems:"center",
+        justifyContent:"center",
+        width:55,
+        height:55,
+        
+
+    },
+    centriranje:{
+        alignItems:"center",
+        justifyContent:"center", 
+         
+    },
+    margineTeksta:{
+        marginBottom:20,
+        marginTop:20,
+    },
+    marginaSlike:{
+        marginBottom:40,
+        marginTop:80,
+    },
+    glavniObrub:{
+        borderTopWidth:2,
+        borderBottomWidth:2,
+        borderRightWidth:2,
+        borderLeftWidth:2,
+        borderColor:"black",
+        flex:1,
+        backgroundColor:"black",
+        borderRadius: 6,
+    },
+    tekstImena:{
+        marginBottom:20,
+        marginTop:20,
+        fontSize:25,
+        fontWeight: "700",
+    },
+    tekstIzbornika:{
+        fontWeight: "bold"
     }
+    
 })
