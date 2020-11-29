@@ -26,10 +26,8 @@ export default class App extends React.Component {
                             style={styles.profileIconImage}
                         />
                     </View>
-                    </View
                 </View>
-
-                </ScrollView>
+            </ScrollView>
         );
     }
 }
