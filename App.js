@@ -11,6 +11,7 @@ import {
 import AppNavigator from './src/navigation/Navigator'
 import { NavigationContainer } from '@react-navigation/native';
 
+<<<<<<< HEAD
 const App = ()  => {
   return (
     
@@ -24,10 +25,17 @@ const App = ()  => {
     
     </View>
   );
+=======
+export default class App extends React.Component {
+  render(){
+      return (
+        <AppNavigator />
+      );
+  }
+>>>>>>> Home
 };
 
 const styles = StyleSheet.create({
 
 });
 
-export default App;

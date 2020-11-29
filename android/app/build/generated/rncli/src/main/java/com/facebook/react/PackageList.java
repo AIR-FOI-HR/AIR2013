@@ -11,6 +11,7 @@ import com.facebook.react.shell.MainReactPackage;
 import java.util.Arrays;
 import java.util.ArrayList;
 
+<<<<<<< HEAD
 // @react-native-community/google-signin
 import co.apptailor.googlesignin.RNGoogleSigninPackage;
 // @react-native-community/masked-view
@@ -19,6 +20,10 @@ import org.reactnative.maskedview.RNCMaskedViewPackage;
 import io.invertase.firebase.app.ReactNativeFirebaseAppPackage;
 // @react-native-firebase/auth
 import io.invertase.firebase.auth.ReactNativeFirebaseAuthPackage;
+=======
+// @react-native-community/masked-view
+import org.reactnative.maskedview.RNCMaskedViewPackage;
+>>>>>>> Home
 // react-native-gesture-handler
 import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
 // react-native-reanimated
@@ -27,6 +32,11 @@ import com.swmansion.reanimated.ReanimatedPackage;
 import com.th3rdwave.safeareacontext.SafeAreaContextPackage;
 // react-native-screens
 import com.swmansion.rnscreens.RNScreensPackage;
+<<<<<<< HEAD
+=======
+// react-native-vector-icons
+import com.oblador.vectoricons.VectorIconsPackage;
+>>>>>>> Home
 
 public class PackageList {
   private Application application;
@@ -72,6 +82,7 @@ public class PackageList {
   public ArrayList<ReactPackage> getPackages() {
     return new ArrayList<>(Arrays.<ReactPackage>asList(
       new MainReactPackage(mConfig),
+<<<<<<< HEAD
       new RNGoogleSigninPackage(),
       new RNCMaskedViewPackage(),
       new ReactNativeFirebaseAppPackage(),
@@ -80,6 +91,14 @@ public class PackageList {
       new ReanimatedPackage(),
       new SafeAreaContextPackage(),
       new RNScreensPackage()
+=======
+      new RNCMaskedViewPackage(),
+      new RNGestureHandlerPackage(),
+      new ReanimatedPackage(),
+      new SafeAreaContextPackage(),
+      new RNScreensPackage(),
+      new VectorIconsPackage()
+>>>>>>> Home
     ));
   }
 }

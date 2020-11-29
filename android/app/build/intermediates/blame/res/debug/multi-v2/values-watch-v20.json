@@ -1,6 +1,7 @@
 {
     "logs": [
         {
+<<<<<<< HEAD
             "outputFile": "C:\\Users\\Mrky-PC\\Desktop\\Sve\\Faks\\7_semestar\\AiR\\Projekt\\AIR2013\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-watch-v20\\values-watch-v20.xml",
             "map": [
                 {
@@ -22,6 +23,12 @@
                 },
                 {
                     "source": "C:\\Users\\Mrky-PC\\.gradle\\caches\\transforms-2\\files-2.1\\daa3c2686a1605e889aa91397aeb3607\\appcompat-1.1.0\\res\\values-watch-v20\\values-watch-v20.xml",
+=======
+            "outputFile": "/home/josip/ReactNativeProjects/AIR2013/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-watch-v20/values-watch-v20.xml",
+            "map": [
+                {
+                    "source": "/home/josip/.gradle/caches/transforms-2/files-2.1/1cb9b9ea592aa2ea85233be252327dcf/appcompat-1.1.0/res/values-watch-v20/values-watch-v20.xml",
+>>>>>>> Home
                     "from": {
                         "startLines": "2,5,8",
                         "startColumns": "4,4,4",
@@ -29,6 +36,7 @@
                         "endLines": "4,7,10",
                         "endColumns": "12,12,12",
                         "endOffsets": "209,380,553"
+<<<<<<< HEAD
                     },
                     "to": {
                         "startLines": "10,13,16",
@@ -37,6 +45,8 @@
                         "endLines": "12,15,18",
                         "endColumns": "12,12,12",
                         "endOffsets": "869,1040,1213"
+=======
+>>>>>>> Home
                     }
                 }
             ]
