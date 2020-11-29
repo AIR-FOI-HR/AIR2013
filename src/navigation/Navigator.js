@@ -3,6 +3,7 @@ import { createAppContainer } from 'react-navigation'
 
 import Home from '../screens/Home'
 import SignIn from '../screens/SignIn'
+import SettingsConfigurationLogOut from '../screens/SettingsConfiguration.LogOut'
 import DetailedRequest from '../screens/DetailedRequest'
 
 const stackNavigatorOptions = {
@@ -10,12 +11,16 @@ const stackNavigatorOptions = {
 }
 
 const AppNavigator = createStackNavigator({
+    SettingsConfigurationLogOut:{
+        screen: SettingsConfigurationLogOut
+    },
+    Home:{
+        screen: Home
+    },
     SignIn:{
         screen: SignIn
     },  
-    Home:{
-        screen: Home
-    }, 
+    
     DetailedRequest:{
         screen: DetailedRequest
     }
