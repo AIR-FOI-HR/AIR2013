@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a03aa1a7-40ab-4512-af27-60d204538e07" name="Default Changelist" comment="" />
+    <list default="true" id="a03aa1a7-40ab-4512-af27-60d204538e07" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -24,7 +26,11 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/Android/Sdk" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
+    <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -44,9 +50,18 @@
       <screen x="46" y="27" width="1874" height="1053" />
     </state>
     <state x="852" y="422" width="261" height="270" key="#Notifications/46.27.1874.1053/1920.0.1920.1080@46.27.1874.1053" timestamp="1605205289165" />
-    <state x="766" y="297" width="424" height="520" key="FileChooserDialogImpl" timestamp="1605205329041">
+    <state x="466" y="131" width="1024" height="852" key="#Project_Structure" timestamp="1606672542268">
+      <screen x="46" y="27" width="1874" height="1053" />
+    </state>
+    <state x="466" y="131" width="1024" height="852" key="#Project_Structure/46.27.1874.1053@46.27.1874.1053" timestamp="1606672542268" />
+    <state x="666" y="290" width="624" height="533" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1606672548423">
+      <screen x="46" y="27" width="1874" height="1053" />
+    </state>
+    <state x="666" y="290" width="624" height="533" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/46.27.1874.1053@46.27.1874.1053" timestamp="1606672548423" />
+    <state x="766" y="297" width="424" height="520" key="FileChooserDialogImpl" timestamp="1606672807235">
       <screen x="46" y="27" width="1874" height="1053" />
     </state>
     <state x="766" y="297" width="424" height="520" key="FileChooserDialogImpl/46.27.1874.1053/1920.0.1920.1080@46.27.1874.1053" timestamp="1605205329041" />
+    <state x="766" y="297" key="FileChooserDialogImpl/46.27.1874.1053@46.27.1874.1053" timestamp="1606672807235" />
   </component>
 </project>
