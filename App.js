@@ -11,14 +11,15 @@ import {
 import AppNavigator from './src/navigation/Navigator'
 import { NavigationContainer } from '@react-navigation/native';
 
-const App = ()  => {
-  return (
-    <AppNavigator />
-  );
+export default class App extends React.Component {
+  render(){
+      return (
+        <AppNavigator />
+      );
+  }
 };
 
 const styles = StyleSheet.create({
 
 });
 
-export default App;

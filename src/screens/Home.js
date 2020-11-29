@@ -12,68 +12,67 @@ import Request from '../components/Request'
 
 import Icon from 'react-native-vector-icons/Ionicons'
 
-function Home(props) {
-    return (
-        <ScrollView showsVerticalScrollIndicator={false} style={styles.scrollView}>
-            {/*Zaglavlje s pozdravnom porukom i ikonom korisničkog profila*/}
-            <View style={styles.mainView}>
-                <View style={styles.welcomeHeaderView}>
-                    <Text style={styles.welcomeText}>Dobrodošao,</Text>
-                    <Text style={styles.welcomeTextName}>Ante</Text>
+export default class App extends React.Component {
+    render(){
+        return (
+            <ScrollView showsVerticalScrollIndicator={false} style={styles.scrollView}>
+                {/*Zaglavlje s pozdravnom porukom i ikonom korisničkog profila*/}
+                <View style={styles.mainView}>
+                    <View style={styles.welcomeHeaderView}>
+                        <Text style={styles.welcomeText}>Dobrodošao,</Text>
+                        <Text style={styles.welcomeTextName}>Ante</Text>
+                    </View>
+                    <View style={styles.profileIconView}>
+                        <Image 
+                            source={require('../assets/icons/profile.png')}
+                            style={styles.profileIconImage}
+                        />
+                    </View>
                 </View>
-                <View style={styles.profileIconView}>
-                    <Image 
-                        source={require('../assets/icons/profile.png')}
-                        style={styles.profileIconImage}
-                    />
-                </View>
-            </View>
 
-            {/*Polje za pretraživanje i gumb za sortiranje*/}
-            <View style={styles.mainView}>
-                <View style={styles.searchBoxView}>
-                    <Icon name="search" size={15} color="#789789" />
-                    <TextInput placeholder="Pretraži..." style={styles.searchBoxInputField}/>
+                {/*Polje za pretraživanje i gumb za sortiranje*/}
+                <View style={styles.mainView}>
+                    <View style={styles.searchBoxView}>
+                        <Icon name="search" size={15} color="#789789" />
+                        <TextInput placeholder="Pretraži..." style={styles.searchBoxInputField}/>
+                    </View>
+                    <View style={styles.sortView}>
+                        <Icon name="funnel-outline" size={15} color="#789789"/>
+                    </View>
                 </View>
-                <View style={styles.sortView}>
-                    <Icon name="funnel-outline" size={15} color="#789789"/>
-                </View>
-            </View>
 
-            {/*Color boxes*/}
-            <View style={styles.mainView}>
-                <View style={styles.colorBoxOrange}>
-                    <Text style={styles.colorBoxesTextLabel}>novi</Text>
-                    <Text style={styles.colorBoxesTextNumber}>50</Text>
+                {/*Color boxes*/}
+                <View style={styles.mainView}>
+                    <View style={styles.colorBoxOrange}>
+                        <Text style={styles.colorBoxesTextLabel}>novi</Text>
+                        <Text style={styles.colorBoxesTextNumber}>50</Text>
+                    </View>
+                    <View style={styles.colorBoxGreen}> 
+                        <Text style={styles.colorBoxesTextLabel}>odobreni</Text>
+                        <Text style={styles.colorBoxesTextNumber}>20</Text>
+                    </View>
+                    <View style={styles.colorBoxRed}>
+                        <Text style={styles.colorBoxesTextLabel}>odbijeni</Text>
+                        <Text style={styles.colorBoxesTextNumber}>10</Text>
+                    </View>
                 </View>
-                <View style={styles.colorBoxGreen}> 
-                    <Text style={styles.colorBoxesTextLabel}>odobreni</Text>
-                    <Text style={styles.colorBoxesTextNumber}>20</Text>
-                </View>
-                <View style={styles.colorBoxRed}>
-                    <Text style={styles.colorBoxesTextLabel}>odbijeni</Text>
-                    <Text style={styles.colorBoxesTextNumber}>10</Text>
-                </View>
-            </View>
-
-
-            {/*Requests*/}
-            <View style={styles.requestView}>
-
-                <Request GuestName="John Doe" PropertyName="Villa Weiss"/>
-                <Request GuestName="John Doe" PropertyName="Villa Weiss"/>
-                <Request GuestName="John Doe" PropertyName="Villa Weiss"/>
-                <Request GuestName="John Doe" PropertyName="Villa Weiss"/>
-                <Request GuestName="John Doe" PropertyName="Villa Weiss"/>
-                {/* TODO - Link https://medium.com/@alialhaddad/fetching-data-in-react-native-d92fb6876973 */}
-    
-            </View>
-           
 
 
-        </ScrollView>
+                {/*Requests*/}
+                <View style={styles.requestView}>
+
+                    <Request GuestName={"John Doe"} PropertyName={"Villa Weiss"} onPress={() => this.props.navigation.navigate('DetailedRequest')}/>
+                    <Request GuestName={"Matko Doe"} PropertyName={"Villa Weiss"}/>
+                    {/* TODO - Link https://medium.com/@alialhaddad/fetching-data-in-react-native-d92fb6876973 */}
         
-    );
+                </View>
+            
+
+
+            </ScrollView>
+            
+        );
+    }
 }
 
 const styles = StyleSheet.create({
@@ -178,5 +177,3 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between'
     }
 })
-
-export default Home;

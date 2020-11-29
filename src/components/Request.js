@@ -7,26 +7,30 @@ import {
     TextInput
 } from 'react-native'
 import Icon from 'react-native-vector-icons/Ionicons'
+import {TouchableOpacity} from 'react-native-gesture-handler';
 
-function Request(props) {
-    return (
-        <View style={styles.mainView}>
-            <View>
-                <Image 
-                source={require('../assets/icons/profile.png')}
-                style={styles.profileIconImage}
-                />
-            </View>
-            <View style={{width:"73%"}}>
-                <Text style={styles.txtNameSurname}>{props.GuestName}</Text>
-                <Text style={styles.txtPropertyName}>{props.PropertyName}</Text>
-                <Text style={styles.txtPeopleNumber}>for {props.NumberOfGuests}</Text>
-            </View>
-            <View>
-                <Icon name="mail-unread-outline" size={35} color="#feca57" style={{elevation:5}}/>
-            </View>
-        </View>
-    );
+
+export default class App extends React.Component {
+    render(){
+        return (
+            <TouchableOpacity onPress={this.props.onPress} style={styles.mainView}>
+                <View>
+                    <Image 
+                    source={require('../assets/icons/profile.png')}
+                    style={styles.profileIconImage}
+                    />
+                </View>
+                <View style={{width:"73%"}}>
+                    <Text style={styles.txtNameSurname}>{this.props.GuestName}</Text>
+                    <Text style={styles.txtPropertyName}>{this.props.PropertyName}</Text>
+                    <Text style={styles.txtPeopleNumber}>for {this.props.NumberOfGuests}</Text>
+                </View>
+                <View>
+                    <Icon name="mail-unread-outline" size={35} color="#feca57" style={{elevation:5}}/>
+                </View>
+            </TouchableOpacity>
+        );
+    }
 }
 
 const styles = StyleSheet.create({
@@ -66,5 +70,3 @@ const styles = StyleSheet.create({
         color: "#353b48"
     }
 })
-
-export default Request;
