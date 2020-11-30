@@ -12,6 +12,8 @@ import Request from '../components/Request'
 
 import Icon from 'react-native-vector-icons/Ionicons'
 
+import { colors } from '../constants/DesignConstants'
+
 export default class App extends React.Component {
     render(){
         return (
@@ -19,8 +21,8 @@ export default class App extends React.Component {
                 {/*Zaglavlje s pozdravnom porukom i ikonom korisničkog profila*/}
                 <View style={styles.mainView}>
                     <View style={styles.welcomeHeaderView}>
-                        <Text style={styles.welcomeText}>Dobrodošao,</Text>
-                        <Text style={styles.welcomeTextName}>Ante</Text>
+                        <Text style={styles.txtWelcome}>Dobrodošao,</Text>
+                        <Text style={styles.txtWelcomeName}>Ante</Text>
                     </View>
                     <View style={styles.profileIconView}>
                         <Image 
@@ -61,8 +63,30 @@ export default class App extends React.Component {
                 {/*Requests*/}
                 <View style={styles.requestView}>
 
-                    <Request GuestName={"John Doe"} PropertyName={"Villa Weiss"} onPress={() => this.props.navigation.navigate('DetailedRequest')}/>
-                    <Request GuestName={"Matko Doe"} PropertyName={"Villa Weiss"}/>
+                    <Request     
+                        GuestName={"John Doe"} 
+                        PropertyName={"Villa Weiss"} 
+                        Status={'rejected'}
+                        Channel={'email'}
+                        onPress={() => this.props.navigation.navigate('DetailedRequest')}
+                    />
+
+                    <Request     
+                        GuestName={"John Doe"} 
+                        PropertyName={"Villa Weiss"} 
+                        Status={'approved'}
+                        Channel={'webform'}
+                        onPress={() => this.props.navigation.navigate('DetailedRequest')}
+                    />
+
+                    <Request     
+                        GuestName={"John Doe"} 
+                        PropertyName={"Villa Weiss"} 
+                        Status={'new'}
+                        Channel={'email'}
+                        onPress={() => this.props.navigation.navigate('DetailedRequest')}
+                    />
+
                     {/* TODO - Link https://medium.com/@alialhaddad/fetching-data-in-react-native-d92fb6876973 */}
         
                 </View>
@@ -77,8 +101,9 @@ export default class App extends React.Component {
 
 const styles = StyleSheet.create({
     scrollView: {
-        backgroundColor: "#fff",
-        paddingHorizontal:20
+        backgroundColor: colors.white,
+        paddingHorizontal:20,
+        height: '100%'
     },
     mainView: {
         flexDirection: "row",
@@ -90,11 +115,11 @@ const styles = StyleSheet.create({
     welcomeHeaderView: {
         width: "80%"
     },
-    welcomeText: {
+    txtWelcome: {
         fontSize:30,
         fontWeight: "700"
     },
-    welcomeTextName: {
+    txtWelcomeName: {
         fontSize:30,
         fontWeight: "100"
     },
@@ -111,7 +136,7 @@ const styles = StyleSheet.create({
         alignItems:"center",
         elevation:3,
         width:"85%",
-        backgroundColor:"#FFF",
+        backgroundColor:colors.white,
         paddingHorizontal:20,
         height:35,
         borderRadius:10,
@@ -125,7 +150,7 @@ const styles = StyleSheet.create({
         alignItems:"center",
         elevation:2,
         width:"15%",
-        backgroundColor:"#FFF",
+        backgroundColor: colors.white,
         marginLeft:5,
         height:35,
         borderRadius:10,
@@ -133,7 +158,7 @@ const styles = StyleSheet.create({
         justifyContent:"center"
     },
     colorBoxOrange: {
-        backgroundColor:"#feca57",
+        backgroundColor: colors.yellow,
         height:100,
         width:100,
         borderRadius:10,
@@ -143,7 +168,7 @@ const styles = StyleSheet.create({
         elevation: 5
     },
     colorBoxGreen: {
-        backgroundColor:"#10ac84",
+        backgroundColor:colors.green,
         height:100,
         width:100,
         borderRadius:10,
@@ -153,7 +178,7 @@ const styles = StyleSheet.create({
         elevation: 5
     },
     colorBoxRed: {
-        backgroundColor:"#e74c3c",
+        backgroundColor: colors.red,
         height:100,
         width:100,
         borderRadius:10,
@@ -163,11 +188,11 @@ const styles = StyleSheet.create({
         elevation: 5
     },
     colorBoxesTextLabel: {
-        color: "#fff",
+        color: colors.white,
         fontSize: 17,
     },
     colorBoxesTextNumber: {
-        color: "#fff",
+        color: colors.white,
         fontSize: 45
     },
     requestView: {

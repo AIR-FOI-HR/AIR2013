@@ -8,10 +8,60 @@ import {
 } from 'react-native'
 import Icon from 'react-native-vector-icons/Ionicons'
 import {TouchableOpacity} from 'react-native-gesture-handler';
+import { colors } from '../constants/DesignConstants'
 
+
+
+        
+function setProperColor(requestStatus, sentThrough) {
+    
+    if (requestStatus === 'new') {
+
+        if (sentThrough === 'email') {
+
+            return <Icon name="mail-unread-outline" size={35} color= {colors.yellow} style={{elevation:5}}/>
+        
+        } else {
+
+           return   <Icon name="earth-outline" size={35} color= {colors.yellow} style={{elevation:5}}/>
+
+        }
+             
+
+    } else if (requestStatus === 'approved'){
+
+        if (sentThrough === 'email') {
+
+            return <Icon name="mail-unread-outline" size={35} color= {colors.green} style={{elevation:5}}/>
+        
+        } else {
+
+           return   <Icon name="earth-outline" size={35} color= {colors.green} style={{elevation:5}}/>
+           
+        }
+
+    } else if (requestStatus === 'rejected') {
+
+        if (sentThrough === 'email') {
+
+            return <Icon name="mail-unread-outline" size={35} color= {colors.red} style={{elevation:5}}/>
+        
+        } else {
+
+           return   <Icon name="earth-outline" size={35} color= {colors.red} style={{elevation:5}}/>
+           
+        }
+
+    }   
+}
 
 export default class App extends React.Component {
+    
+
     render(){
+        
+        
+        
         return (
             <TouchableOpacity onPress={this.props.onPress} style={styles.mainView}>
                 <View>
@@ -26,7 +76,18 @@ export default class App extends React.Component {
                     <Text style={styles.txtPeopleNumber}>for {this.props.NumberOfGuests}</Text>
                 </View>
                 <View>
-                    <Icon name="mail-unread-outline" size={35} color="#feca57" style={{elevation:5}}/>
+                    {/*
+                    {
+                        {
+                        'new': <Icon name="mail-unread-outline" size={35} color={colors.yellow} style={{elevation:5}}/>,
+                        'approved': <Icon name="mail-unread-outline" size={35} color= {colors.green} style={{elevation:5}}/>,
+                        'rejected': <Icon name="mail-unread-outline" size={35} color= {colors.red} style={{elevation:5}}/>
+                        }[this.props.Status]
+                    }
+                    */}
+                    {setProperColor(this.props.Status,this.props.Channel)}
+                                   
+                    
                 </View>
             </TouchableOpacity>
         );
@@ -45,14 +106,17 @@ const styles = StyleSheet.create({
         borderRadius:10,
         marginLeft:1,
         marginTop: 10,
+        marginBottom: 10,
         borderWidth: 1,
-        borderColor: "#feca57",
+        borderColor: colors.yellow,
         justifyContent:"space-between"
     },
     profileIconImage: {
         width:40,
         height:40,
-        marginRight: 10
+        marginRight: 10,
+        backgroundColor: 'red',
+        borderRadius: 17
     },
     txtNameSurname: {
         fontSize: 20,
