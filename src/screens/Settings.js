@@ -107,7 +107,14 @@ export default class App extends React.Component {
                                 <TouchableOpacity>
                                     <Text style={styles.tekstIzbornika}> Odjavi se </Text>
                                 </TouchableOpacity>
-                            </View>    
+                            </View> 
+                            <View style={styles.foi}>
+                                <Text style={styles.foiText}>
+                                Made @
+                                </Text>
+                                <Image source={require('../assets/images/foiLogo.png')}></Image>
+
+                            </View>
                         </View>
                    
                 
@@ -202,6 +209,12 @@ const styles = StyleSheet.create({
     tekstIzbornika:{
         fontWeight: "bold"
         
+    },
+    foi:{
+        alignItems:"center",
+        flexDirection: 'row',
+        justifyContent: 'center',
+        bottom:-60, 
     },
     
   
