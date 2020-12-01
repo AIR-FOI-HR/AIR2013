@@ -74,7 +74,7 @@ export default class App extends React.Component {
                                         </EntypoIcon>  
                                                     
                             </View>
-                            <View>
+                            <View style={styles.margineTeksta}>
                                 <IonIcon name="notifications"> 
                                     <Text style={styles.tekstIzbornika}> Obavijesti </Text>
                                     <Switch
@@ -94,7 +94,7 @@ export default class App extends React.Component {
                                 </EntypoIcon>
                                 
                             </View>
-                            <View >
+                            <View style={styles.margineTeksta} >
                                 <TouchableOpacity>
                                     <FontAwesomeIcons name="home"> 
                                         <Text style={styles.tekstIzbornika} > Dodaj ili ukloni stavke 
@@ -135,6 +135,7 @@ const styles = StyleSheet.create({
         marginTop: 40,
         alignItems: "center",
         justifyContent: 'space-between'
+        
     },
     postavkeIKonf: {
         width: "80%"
@@ -187,8 +188,9 @@ const styles = StyleSheet.create({
          
     },
     margineTeksta:{
-        marginBottom:20,
+        marginBottom:0,
         marginTop:20,
+        marginLeft:20,
     },
     marginaSlikeIokvir:{
         marginBottom:40,

@@ -1,4 +1,4 @@
-#Sun Nov 29 20:38:39 CET 2020
+#Tue Dec 01 13:03:51 CET 2020
 base.0=C\:\\Users\\Sven\\Desktop\\FAKS\\7.semestar\\mRent-Air\\AIR2013\\android\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
 path.0=classes.dex
 renamed.0=classes.dex
