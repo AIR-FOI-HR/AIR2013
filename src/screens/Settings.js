@@ -8,9 +8,10 @@ import {
     TouchableOpacity
 } from 'react-native'
 import { ScrollView } from 'react-native-gesture-handler'
-
-
-
+import EntypoIcon from 'react-native-vector-icons/Entypo';
+import IonIcon from 'react-native-vector-icons/Ionicons';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import FontAwesomeIcons from 'react-native-vector-icons/FontAwesome';
 export default class App extends React.Component {
     render(){
         return (
@@ -40,28 +41,44 @@ export default class App extends React.Component {
                             <Text style={styles.tekstImena}> John Joe </Text>
                         </View>
                     </View>
-                   
-                    <View style={styles.margineTeksta}>
-                        <Text style={styles.tekstIzbornika}> Tamna tema </Text>
+                    
+                    <View style={styles.velicinaFonta}>
+
+
                     </View>
-                    <View>
-                        <Text style={styles.tekstIzbornika}> Obavijesti </Text>
+                        <View style={styles.margineTeksta}>
+                                    <EntypoIcon name="light-up">
+                                        <Text style={styles.tekstIzbornika}> Tamna tema </Text>
+                                    </EntypoIcon>                        
+                        </View>
+                        <View>
+                            <IonIcon name="notifications"> 
+                                <Text style={styles.tekstIzbornika}> Obavijesti </Text>
+                            </IonIcon>
+                            
+                        </View>
+                        <View style={styles.margineTeksta}>
+                            <EntypoIcon name="email">
+                                <Text style={styles.tekstIzbornika}> E-mail </Text>
+                            </EntypoIcon>
+                            
+                        </View>
+                        <View >
+                            <TouchableOpacity>
+                                <FontAwesomeIcons name="home"> 
+                                    <Text style={styles.tekstIzbornika} > Dodaj ili ukloni stavke 
+                                        <MaterialIcons name="arrow-forward-ios"></MaterialIcons> 
+                                    </Text> 
+                                </FontAwesomeIcons>        
+                            </TouchableOpacity> 
+                        </View>
+                        <View style={styles.margineTeksta}>
+                            <TouchableOpacity>
+                                <Text style={styles.tekstIzbornika}> Odjavi se </Text>
+                            </TouchableOpacity>
+                        </View>    
                     </View>
-                    <View style={styles.margineTeksta}>
-                        <Text style={styles.tekstIzbornika}> E-mail </Text>
-                    </View>
-                    <View >
-                        <TouchableOpacity>
-                                <Text style={styles.tekstIzbornika} > Dodaj ili ukloni stavke </Text>
-                        </TouchableOpacity> 
-                    </View>
-                    <View style={styles.margineTeksta}>
-                        <TouchableOpacity>
-                            <Text style={styles.tekstIzbornika}> Odjavi se </Text>
-                        </TouchableOpacity>
-                    </View>    
-                </View>
-                
+            
             </ScrollView>
         );
     }
@@ -154,6 +171,6 @@ const styles = StyleSheet.create({
     },
     tekstIzbornika:{
         fontWeight: "bold"
-    }
+    },
     
 })
