@@ -12,7 +12,9 @@ import { colors } from '../constants/DesignConstants'
 
 
 
-        
+{/* Funkcija koja ovisno o primljenim parametrima postavlja odgovarajuću ikonu
+    kartice zahtjeva te postavlja odgovarajuću signalnu boju ikone.
+*/}
 function setProperColor(requestStatus, sentThrough) {
     
     if (requestStatus === 'new') {
@@ -55,15 +57,75 @@ function setProperColor(requestStatus, sentThrough) {
     }   
 }
 
+{/* Funkcija koja ovisno o primljenim parametrima postavlja odgovarajuću signalnu boju okvira.
+*/}
+function dynamicFrameColor(requestStatus) {
+    
+    if (requestStatus === 'new') {
+        
+        return {
+            flexDirection:"row",
+            alignItems:"center",
+            elevation:3,
+            width:"99.5%",
+            backgroundColor:"#FFF",
+            paddingHorizontal:20,
+            height:80,
+            borderRadius:10,
+            marginLeft:1,
+            marginTop: 10,
+            marginBottom: 10,
+            borderWidth: 1,
+            borderColor: colors.yellow,
+            justifyContent:"space-between"
+        }
+
+    } else if(requestStatus === 'approved') {
+
+        return {
+            flexDirection:"row",
+            alignItems:"center",
+            elevation:3,
+            width:"99.5%",
+            backgroundColor:"#FFF",
+            paddingHorizontal:20,
+            height:80,
+            borderRadius:10,
+            marginLeft:1,
+            marginTop: 10,
+            marginBottom: 10,
+            borderWidth: 1,
+            borderColor: colors.green,
+            justifyContent:"space-between"
+        }
+
+    } else {
+
+        return {
+            flexDirection:"row",
+            alignItems:"center",
+            elevation:3,
+            width:"99.5%",
+            backgroundColor:"#FFF",
+            paddingHorizontal:20,
+            height:80,
+            borderRadius:10,
+            marginLeft:1,
+            marginTop: 10,
+            marginBottom: 10,
+            borderWidth: 1,
+            borderColor: colors.red,
+            justifyContent:"space-between"
+        }
+    }
+}
+
 export default class App extends React.Component {
     
-
     render(){
         
-        
-        
         return (
-            <TouchableOpacity onPress={this.props.onPress} style={styles.mainView}>
+            <TouchableOpacity onPress={this.props.onPress} style={dynamicFrameColor(this.props.Status)} >
                 <View>
                     <Image 
                     source={require('../assets/icons/profile.png')}
@@ -76,17 +138,8 @@ export default class App extends React.Component {
                     <Text style={styles.txtPeopleNumber}>for {this.props.NumberOfGuests}</Text>
                 </View>
                 <View>
-                    {/*
-                    {
-                        {
-                        'new': <Icon name="mail-unread-outline" size={35} color={colors.yellow} style={{elevation:5}}/>,
-                        'approved': <Icon name="mail-unread-outline" size={35} color= {colors.green} style={{elevation:5}}/>,
-                        'rejected': <Icon name="mail-unread-outline" size={35} color= {colors.red} style={{elevation:5}}/>
-                        }[this.props.Status]
-                    }
-                    */}
-                    {setProperColor(this.props.Status,this.props.Channel)}
-                                   
+
+                    {setProperColor(this.props.Status,this.props.Channel)}                                  
                     
                 </View>
             </TouchableOpacity>
@@ -95,27 +148,10 @@ export default class App extends React.Component {
 }
 
 const styles = StyleSheet.create({
-    mainView: {
-        flexDirection:"row",
-        alignItems:"center",
-        elevation:3,
-        width:"99.5%",
-        backgroundColor:"#FFF",
-        paddingHorizontal:20,
-        height:80,
-        borderRadius:10,
-        marginLeft:1,
-        marginTop: 10,
-        marginBottom: 10,
-        borderWidth: 1,
-        borderColor: colors.yellow,
-        justifyContent:"space-between"
-    },
     profileIconImage: {
         width:40,
         height:40,
         marginRight: 10,
-        backgroundColor: 'red',
         borderRadius: 17
     },
     txtNameSurname: {

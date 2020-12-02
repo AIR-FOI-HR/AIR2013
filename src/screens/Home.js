@@ -62,10 +62,36 @@ export default class App extends React.Component {
 
                 {/*Requests*/}
                 <View style={styles.requestView}>
+                    <Text style={styles.txtWelcome}>Request overview</Text>
+                    <Request     
+                        GuestName={"John Doe"} 
+                        PropertyName={"Villa Weiss"} 
+                        NumberOfGuests={2}
+                        Status={'rejected'}
+                        Channel={'email'}
+                        onPress={() => this.props.navigation.navigate('DetailedRequest')}
+                    />
 
                     <Request     
                         GuestName={"John Doe"} 
                         PropertyName={"Villa Weiss"} 
+                        Status={'approved'}
+                        Channel={'webform'}
+                        onPress={() => this.props.navigation.navigate('DetailedRequest')}
+                    />
+
+                    <Request     
+                        GuestName={"John Doe"} 
+                        PropertyName={"Villa Weiss"} 
+                        Status={'new'}
+                        Channel={'email'}
+                        onPress={() => this.props.navigation.navigate('DetailedRequest')}
+                    />
+
+<Request     
+                        GuestName={"John Doe"} 
+                        PropertyName={"Villa Weiss"} 
+                        NumberOfGuests={2}
                         Status={'rejected'}
                         Channel={'email'}
                         onPress={() => this.props.navigation.navigate('DetailedRequest')}
