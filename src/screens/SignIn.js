@@ -43,16 +43,7 @@ class SignIn extends Component {
 					color={GoogleSigninButton.Color.Dark}
 				/>
 				{this.state.loaded ? (
-
-					<View>
-						<Text>{this.state.userGoogleInfo.user.name}</Text>
-						<Text>{this.state.userGoogleInfo.user.email}</Text>
-						<Image
-							style={{width: 100, height: 100}}
-							source={{url: this.state.userGoogleInfo.user.photo}}
-						/>
-					</View>
-					
+					this.props.navigation.navigate('Home')
 				) : (
 					<Text>Not signed in</Text>
 				)}
@@ -70,4 +61,16 @@ const styles = StyleSheet.create({
 });
 
 export default SignIn;
+
+
+/*
+<View>
+						<Text>{this.state.userGoogleInfo.user.name}</Text>
+						<Text>{this.state.userGoogleInfo.user.email}</Text>
+						<Image
+							style={{width: 100, height: 100}}
+							source={{url: this.state.userGoogleInfo.user.photo}}
+						/>
+					</View>
+ */
 
