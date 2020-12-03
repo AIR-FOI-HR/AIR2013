@@ -19,7 +19,7 @@ const AppNavigator = createStackNavigator({
     }, 
     DetailedRequest:{
         screen: DetailedRequest
-    }
+    },
 },
     {
         defaultNavigationOptions:stackNavigatorOptions

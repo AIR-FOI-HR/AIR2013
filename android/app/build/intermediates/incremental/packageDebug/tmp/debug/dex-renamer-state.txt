@@ -1,4 +1,4 @@
-#Sun Nov 29 19:13:51 CET 2020
-base.0=/home/josip/ReactNativeProjects/AIR2013/android/app/build/intermediates/dex/debug/mergeDexDebug/out/classes.dex
-renamed.0=classes.dex
+#Thu Dec 03 19:13:03 CET 2020
+base.0=C\:\\Users\\Mrky-PC\\Desktop\\Sve\\Faks\\7_semestar\\AiR\\najnoijiProjekt\\AIR2013\\android\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
 path.0=classes.dex
+renamed.0=classes.dex
