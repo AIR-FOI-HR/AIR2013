@@ -11,6 +11,9 @@ const stackNavigatorOptions = {
 }
 
 const AppNavigator = createStackNavigator({
+    DetailedRequest:{
+        screen: DetailedRequest
+    },
     Settings:{
         screen: Settings
     },
@@ -21,9 +24,7 @@ const AppNavigator = createStackNavigator({
         screen: SignIn
     },  
     
-    DetailedRequest:{
-        screen: DetailedRequest
-    }
+    
 },
     {
         defaultNavigationOptions:stackNavigatorOptions
