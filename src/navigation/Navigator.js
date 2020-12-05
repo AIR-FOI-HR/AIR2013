@@ -11,11 +11,11 @@ const stackNavigatorOptions = {
 }
 
 const AppNavigator = createStackNavigator({
-    Settings:{
-        screen: Settings
-    },
     Home:{
         screen: Home
+    },
+    Settings:{
+        screen: Settings
     },
     SignIn:{
         screen: SignIn

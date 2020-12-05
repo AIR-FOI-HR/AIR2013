@@ -4,7 +4,8 @@ import {
     Text,
     Image,
     StyleSheet,
-    TextInput
+    TextInput,
+    TouchableHighlight,
 } from 'react-native'
 import { ScrollView } from 'react-native-gesture-handler'
 
@@ -22,11 +23,16 @@ export default class App extends React.Component {
                         <Text style={styles.welcomeText}>Dobrodošao,</Text>
                         <Text style={styles.welcomeTextName}>Ante</Text>
                     </View>
+                
                     <View style={styles.profileIconView}>
-                        <Image 
+                    <TouchableHighlight
+                    onPress={() => this.props.navigation.navigate('Settings')}>
+                       <Image 
                             source={require('../assets/icons/profile.png')}
                             style={styles.profileIconImage}
-                        />
+                        /> 
+                    </TouchableHighlight>
+                        
                     </View>
                 </View>
 
