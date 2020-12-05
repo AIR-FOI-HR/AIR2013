@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, Text, Button, StyleSheet, Image} from 'react-native';
+import {View, Text, Button, StyleSheet, Image, Dimensions} from 'react-native';
 import {GoogleSignin, GoogleSigninButton, statusCodes} from '@react-native-community/google-signin';
 import Home from  "./Home";
 import createAppContainer from "../navigation/Navigator";
@@ -8,7 +8,8 @@ GoogleSignin.configure({
 	webClientId: '282691096774-dq1p0dd5f7ni83fne0ugegffnpcpjt5k.apps.googleusercontent.com',
 	offlineAccess: true,
 });
-
+const windowWidth = Dimensions.get('window').width;
+const windowHeight = Dimensions.get('window').height;
 
 class SignIn extends Component {
 	
@@ -36,28 +37,50 @@ class SignIn extends Component {
 
 	render() {
 		return (
-			<View style={styles.container}>
-				<GoogleSigninButton
-					onPress={this.signIn}
-					size={GoogleSigninButton.Size.Wide}
-					color={GoogleSigninButton.Color.Dark}
-				/>
-				{this.state.loaded ? (
-					this.props.navigation.navigate('Home')
-				) : (
-					<Text>Not signed in</Text>
-				)}
+			<View style={styles.mainContainer}>
+				<View style={styles.container}>
+					<Image source={require("../assets/icons/mRent_icon.png")} style={styles.imageIcon}/>
+				</View>
+				<View style={styles.container}>
+					<GoogleSigninButton
+						style={styles.googleIcon}
+						onPress={this.signIn}
+						size={GoogleSigninButton.Size.Standard}
+						color={GoogleSigninButton.Color.Light}
+					/>
+					{this.state.loaded ? (
+						this.props.navigation.navigate('Home')
+					) : (
+						<Text>Not signed in</Text>
+					)}
+				</View>
 			</View>
 		);
 	}
 }
 
 const styles = StyleSheet.create({
-  container: {
+  mainContainer: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center'
-  }
+	alignItems: 'center',
+	backgroundColor:'#fff', 
+  },
+  imageIcon:
+  {
+	width:150,
+	height:150,
+	resizeMode: 'stretch',
+	marginBottom:75,
+  },
+  container:{
+    justifyContent: 'center',
+	alignItems: 'center',
+  },
+  googleIcon:{
+	width: 150, 
+	height: 50,
+  },
 });
 
 export default SignIn;
