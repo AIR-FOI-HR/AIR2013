@@ -1,17 +1,10 @@
 {
     "logs": [
         {
-<<<<<<< HEAD
             "outputFile": "C:\\Users\\Mrky-PC\\Desktop\\Sve\\Faks\\7_semestar\\AiR\\najnoijiProjekt\\AIR2013\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v17\\values-v17.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Mrky-PC\\.gradle\\caches\\transforms-2\\files-2.1\\daa3c2686a1605e889aa91397aeb3607\\appcompat-1.1.0\\res\\values-v17\\values-v17.xml",
-=======
-            "outputFile": "C:\\Users\\Sven\\Desktop\\FAKS\\7.semestar\\mRent-Air\\AIR2013\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v17\\values-v17.xml",
-            "map": [
-                {
-                    "source": "C:\\Users\\Sven\\.gradle\\caches\\transforms-2\\files-2.1\\daa3c2686a1605e889aa91397aeb3607\\appcompat-1.1.0\\res\\values-v17\\values-v17.xml",
->>>>>>> origin/Settings
                     "from": {
                         "startLines": "2,5,9,12,15,18,22,25,29,33,37,40,43,46,50,53,57",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
