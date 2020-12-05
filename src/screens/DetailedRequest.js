@@ -72,22 +72,15 @@ function DetailedRequest(props) {
                         <Text style={styles.txtNumberOfPeople}>2</Text>
                     </View>
 
-                <View>
-
-                    
-                </View>
-
+                {/*Buttoni u podnožju*/}
                 <View style={styles.txtButtonIcon}>
                     <View style={styles.btn1}>
-                    <TouchableHighlight style={styles.btnBorder1}>
-
-                        <MaterialCommunityIcons name="pencil" size={18}></MaterialCommunityIcons> 
-                        
-                    </TouchableHighlight>
-                    <TouchableHighlight>
-                        <Text style={styles.btnText1}>UREDI</Text>
-                    </TouchableHighlight>
-                    
+                        <TouchableHighlight style={styles.btnBorder1}>
+                            <MaterialCommunityIcons name="pencil" size={18}></MaterialCommunityIcons>   
+                        </TouchableHighlight>
+                        <TouchableHighlight>
+                            <Text style={styles.btnText1}>UREDI</Text>
+                        </TouchableHighlight>
                     </View>
 
                     
@@ -101,6 +94,7 @@ function DetailedRequest(props) {
                     </View>
                 </View>  
 
+                {/*Obavijesti korisniku*/}
                 <View style={styles.Obavijest}>
 
                     <Text style={styles.txtObavijesti}>Dear John,</Text>
@@ -110,18 +104,8 @@ function DetailedRequest(props) {
                     <Text style={styles.txtObavijesti}>AIforRenters team</Text>
 
                 </View>     
-             </View>
-
-            
-            
-             
-            </View>
-            
-
-            
-        
-                
-            
+             </View>           
+            </View>           
         </View>
     );
 }

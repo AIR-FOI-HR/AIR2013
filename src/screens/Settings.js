@@ -40,10 +40,8 @@ export default class App extends React.Component {
                             style={styles.profileIconImage}
                         />
                     </View>
-                    
+                {/*Profilna fotografija, ime i prezime korisnika*/}
                 </View>
-                
-               
                         <View style={styles.marginaSlikeIokvir}>
                             <View style={styles.imeISlika}>
                                 <Image 
@@ -52,69 +50,57 @@ export default class App extends React.Component {
                                     />
                                 <Text style={styles.tekstImena}> John Joe </Text>
                             </View>
-                        
-                        
                         <View style={styles.velicinaFonta}>
 
-
+                {/*Izbornik sa switchem i ikonicama*/}
                         </View>
                             <View style={styles.margineTeksta}>
-                             <EntypoIcon name="light-up" size={22} style={styles.lightUp}>
-                             </EntypoIcon> 
-                                        <View>
-                                             <View style={styles.darkMode}>
-                                                <Text style={styles.tekstIzbornika}> Tamna tema </Text>
-                                             </View>
-                                            <View style={styles.switchPlace1}>
-                                                <Switch
-                                                    trackColor={{false: 'gray', true: 'teal'}}
-                                                    thumbColor="white"
-                                                    ios_backgroundColor="gray"
-                                                    onValueChange={(value) => this.setState({toggle: value})}
-                                                    value={this.state.toggle}
-                                                />
-                                            </View> 
-
-                                        </View>
-                                           
-
-                                         
-                                                    
+                            <EntypoIcon name="light-up" size={22} style={styles.lightUp}></EntypoIcon> 
+                                <View>
+                                <View style={styles.darkMode}>
+                                    <Text style={styles.tekstIzbornika}> Tamna tema </Text>
+                                </View>
+                                    <View style={styles.switchPlace1}>
+                                        <Switch
+                                            trackColor={{false: 'gray', true: 'teal'}}
+                                            thumbColor="white"
+                                            ios_backgroundColor="gray"
+                                            onValueChange={(value) => this.setState({toggle: value})}
+                                            value={this.state.toggle}
+                                        />
+                                    </View> 
+                                </View>                                                           
                             </View>
-                            <View style={styles.margineTeksta}>
-                                <View style={styles.notificationIcon}>
+                        <View style={styles.margineTeksta}>
+                            <View style={styles.notificationIcon}>
                                     <IonIcon name="notifications" size={22}></IonIcon>
-                                </View>
-                                <View style={styles.notificationTxt}>
-                                    <Text style={styles.tekstIzbornika}> Obavijesti </Text>
-                                </View>
-                                <View style={styles.switchPlace2}>
-                                    <Switch
-                                        trackColor={{false: 'gray', true: 'teal'}}
-                                        thumbColor="white"
-                                        ios_backgroundColor="gray"
-                                        onValueChange={(value) => this.setState({toggle2: value})}
-                                        value={this.state.toggle2}
-                                    /> 
-                                </View>
-                                    
                             </View>
+                            <View style={styles.notificationTxt}>
+                                <Text style={styles.tekstIzbornika}> Obavijesti </Text>
+                            </View>
+                            <View style={styles.switchPlace2}>
+                                <Switch
+                                    trackColor={{false: 'gray', true: 'teal'}}
+                                    thumbColor="white"
+                                    ios_backgroundColor="gray"
+                                    onValueChange={(value) => this.setState({toggle2: value})}
+                                    value={this.state.toggle2}
+                                /> 
+                            </View>                                   
+                        </View>
 
 
                         <View style={styles.emailStavke}>
                             <View style={styles.margineTeksta}>
                                 <EntypoIcon name="email" size={20}>
                                     <Text style={styles.tekstIzbornika}> E-mail </Text>
-                                </EntypoIcon>
-                                
+                                </EntypoIcon>          
                             </View>
                             <View style={styles.margineTeksta} >
                                 <TouchableOpacity style={styles.dodajUkloniStavke}>
                                     <FontAwesomeIcons name="home" size={24}> 
-                                        <Text style={styles.tekstIzbornika} > Dodaj ili ukloni stavke                                             
-                                        </Text> 
+                                        <Text style={styles.tekstIzbornika} > Dodaj ili ukloni stavke      </Text> 
                                     </FontAwesomeIcons>
-
                                 <View style={styles.arrow}>
                                     <MaterialIcons name="arrow-forward-ios" size={25}></MaterialIcons> 
                                 </View>           
@@ -122,24 +108,19 @@ export default class App extends React.Component {
                             </View>
                             <View style={styles.margineTeksta}>
                                 <TouchableOpacity>
-                                 <View style={styles.logoutIcon}>
-                                     <MaterialIcons name="logout" size={24}></MaterialIcons>
-                                 </View>
-                                     <Text style={styles.tekstIzbornika}> Odjavi se </Text>
-                                                           
+                                    <View style={styles.logoutIcon}>
+                                        <MaterialIcons name="logout" size={24}></MaterialIcons>
+                                    </View>
+                                        <Text style={styles.tekstIzbornika}> Odjavi se </Text>                         
                                 </TouchableOpacity>
                             </View>
                         </View>    
                             <View style={styles.foi}>
-                                <Text style={styles.foiText}>
-                                Made @
-                                </Text>
+                                <Text style={styles.foiText}>Made @</Text>
                                 <Image source={require('../assets/images/foiLogo.png')}></Image>
-
                             </View>
                         </View>
-                   
-                
+                    
             </ScrollView>
         );
     }
