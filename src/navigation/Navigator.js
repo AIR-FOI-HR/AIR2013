@@ -11,12 +11,13 @@ const stackNavigatorOptions = {
 }
 
 const AppNavigator = createStackNavigator({
-    DetailedRequest:{
-        screen: DetailedRequest
-    },
     Settings:{
         screen: Settings
     },
+    DetailedRequest:{
+        screen: DetailedRequest
+    },
+    
     Home:{
         screen: Home
     },
