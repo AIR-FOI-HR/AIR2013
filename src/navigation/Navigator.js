@@ -20,7 +20,9 @@ const AppNavigator = createStackNavigator({
     SignIn:{
         screen: SignIn
     },  
-    
+    DetailedRequest:{
+        screen: DetailedRequest
+    },
     
 },
     {
