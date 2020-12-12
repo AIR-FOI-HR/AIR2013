@@ -84,7 +84,7 @@ export default class DetailedRequest extends React.Component {
                             </EntypoIcon>
                         </View>
                         <View style={styles.timespanView}>
-                            <Text style={styles.txtTimespan}>{this.state.dateFrom + '-' + this.state.dateTo}</Text>
+                            <Text style={styles.txtTimespan}>{this.state.dateFrom.substring(5, 10) + ' - ' + this.state.dateTo.substring(5, 10)}</Text>
                         </View>
                         <View style={styles.propertyView}>
                             <MaterialIcons name="people-alt" size={30}>
