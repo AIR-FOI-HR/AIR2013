@@ -89,6 +89,7 @@ export default class App extends React.Component {
                     status = 'rejected';
                     statusRejected++;
                 }
+
                 var clientId = requestVal.clientId;
                 var requestId = requestVal.requestId;
                 var property = requestVal.property;

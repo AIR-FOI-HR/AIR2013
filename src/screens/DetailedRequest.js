@@ -29,7 +29,7 @@ export default class DetailedRequest extends React.Component {
         const { numberOfPeople } = props.navigation.getParam('numberOfPeople');
         const { responseBody } = props.navigation.getParam('responseBody');
         const { clients } = props.navigation.getParam('clients');
-        console.log(requestId);
+        
         super(props);
         this.state = {
             requestId: requestId,
