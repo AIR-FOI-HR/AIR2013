@@ -34,7 +34,7 @@ class SignIn extends Component {
 		console.log(error.message);
 		}
 	}
-
+//proba
 	render() {
 		return (
 			<View style={styles.mainContainer}>
