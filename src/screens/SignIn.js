@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import {View, Text, Button, StyleSheet, Image, Dimensions} from 'react-native';
 import {GoogleSignin, GoogleSigninButton, statusCodes} from '@react-native-community/google-signin';
 import Home from  "./Home";
-import createAppContainer from "../navigation/Navigator";
 
 GoogleSignin.configure({
 	webClientId: '282691096774-dq1p0dd5f7ni83fne0ugegffnpcpjt5k.apps.googleusercontent.com',
@@ -29,6 +28,9 @@ class SignIn extends Component {
 				userGoogleInfo: userInfo,
 				loaded: true,
 			});
+			var userGoogleInfo=this.props.userGoogleInfo;
+			this.props.navigation.navigate('Home',userGoogleInfo);
+
 		}
 		catch(error){
 		console.log(error.message);
@@ -49,7 +51,7 @@ class SignIn extends Component {
 						color={GoogleSigninButton.Color.Light}
 					/>
 					{this.state.loaded ? (
-						this.props.navigation.navigate('Home')
+						<View></View>//this.props.navigation.navigate('Home')
 					) : (
 						<Text>Not signed in</Text>
 					)}

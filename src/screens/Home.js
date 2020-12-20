@@ -23,6 +23,8 @@ import { colors } from '../constants/DesignConstants'
 export default class App extends React.Component {
 
     constructor(props) {
+        const  userGoogleInfo = props.navigation.getParam('userGoogleInfo');
+
         super(props);
         this.state = {
             isLoading: true,
