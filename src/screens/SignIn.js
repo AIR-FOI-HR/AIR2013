@@ -28,9 +28,9 @@ class SignIn extends Component {
 				userGoogleInfo: userInfo,
 				loaded: true,
 			});
-			var userGoogleInfo=this.props.userGoogleInfo;
-			this.props.navigation.navigate('Home',userGoogleInfo);
-
+			var prijavljeniKorisnik=this.state.userGoogleInfo;
+			//this.props.navigation.navigate('Home',this.state.userGoogleInfo);
+			this.props.navigation.navigate('Home', {prijavljeniKorisnik:{prijavljeniKorisnik}});
 		}
 		catch(error){
 		console.log(error.message);

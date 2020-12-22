@@ -23,14 +23,25 @@ import { colors } from '../constants/DesignConstants'
 export default class App extends React.Component {
 
     constructor(props) {
-        const  userGoogleInfo = props.navigation.getParam('userGoogleInfo');
+        /*
+            prijavljeniKorisnik je googleov zapis korisnika. 
+            Za pristup emailu koristiti prijavljeniKorisnik.user.email
+            Za pristup korisničkom imenu koristiti prijavljeniKOrisnik.user.name
+            Za pristup izvoru slike koristiti prijavljeniKorisnik.user.photo
+            Za više informacija unijeti console.log(prijavljeni korisnik) ili posjetiti
+            https://github.com/react-native-google-signin/google-signin i pogledati 3. naslov
+        */
+        const  {prijavljeniKorisnik} = props.navigation.getParam('prijavljeniKorisnik');
 
         super(props);
         this.state = {
             isLoading: true,
             dataSourceRequests: null,
             dataSourceClients: null,
+            prijavljeniKorisnik: prijavljeniKorisnik,
         }
+
+        console.log(prijavljeniKorisnik);
     }
 
     async componentDidMount() {
@@ -127,7 +138,7 @@ export default class App extends React.Component {
                     <View style={styles.mainView}>
                         <View style={styles.welcomeHeaderView}>
                             <Text style={styles.txtWelcome}>Dobrodošao,</Text>
-                            <Text style={styles.txtWelcomeName}>Ante</Text>
+                            <Text style={styles.txtWelcomeName}>{this.state.prijavljeniKorisnik.user.name}</Text>
                         </View>
 
                         <View style={styles.profileIconView}>
