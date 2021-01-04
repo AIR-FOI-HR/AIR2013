@@ -12,10 +12,6 @@ import { ScrollView } from 'react-native-gesture-handler'
 
 import Request from '../components/Request'
 
-import RequestObject from '../models/Request'
-
-import ClientObject from '../models/Property'
-
 import Icon from 'react-native-vector-icons/Ionicons'
 
 import { colors } from '../constants/DesignConstants'
@@ -45,7 +41,7 @@ export default class App extends React.Component {
     }
 
     async componentDidMount() {
-        await fetch('https://jsonkeeper.com/b/R2BS')
+        await fetch('https://air2020api.azure-api.net/api/Requests')
             .then((responseRequests) => responseRequests.json())
             .then((responseRequestsJson) => {
                 this.setState({
@@ -56,7 +52,7 @@ export default class App extends React.Component {
                 console.log(error);
             });
 
-        await fetch('https://jsonkeeper.com/b/6LCM')
+        await fetch('https://air2020api.azure-api.net/api/Clients')
             .then((responseClients) => responseClients.json())
             .then((responseClientsJson) => {
                 this.setState({
