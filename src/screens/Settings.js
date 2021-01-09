@@ -13,6 +13,7 @@ import EntypoIcon from 'react-native-vector-icons/Entypo';
 import IonIcon from 'react-native-vector-icons/Ionicons';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import FontAwesomeIcons from 'react-native-vector-icons/FontAwesome'; 
+import { firebase } from '@react-native-firebase/auth';
 
 
 export default class App extends React.Component {
@@ -23,6 +24,20 @@ export default class App extends React.Component {
             toggle: false,
             toggle2: false,
         };
+    }
+
+
+    signOutUser = async () => {
+        try{
+            await firebase.auth().signOut()
+            navigation.reset({
+                index: 0,
+                routes: [{name: 'SignIn'}]
+            })
+        }catch(e){
+            console.log(e)
+        }
+        console.log("Došlo do 40. reda");
     }
 
     render(){
@@ -107,7 +122,9 @@ export default class App extends React.Component {
                                 </TouchableOpacity> 
                             </View>
                             <View style={styles.margineTeksta}>
-                                <TouchableOpacity>
+                                <TouchableOpacity onPress={() => {
+                                    this.signOutUser()
+                                }}>
                                     <View style={styles.logoutIcon}>
                                         <MaterialIcons name="logout" size={24}></MaterialIcons>
                                     </View>
