@@ -10,6 +10,8 @@ import {
 } from 'react-native'
 import { ScrollView } from 'react-native-gesture-handler'
 
+import {GoogleSignin, GoogleSigninButton, statusCodes} from '@react-native-community/google-signin';
+
 import Request from '../components/Request'
 
 import RequestObject from '../models/Request'
@@ -42,7 +44,17 @@ export default class App extends React.Component {
         }
 
         console.log(prijavljeniKorisnik);
+        this.getCurrentUser();
+
     }
+
+    getCurrentUser = async () => 
+    {
+        const currentUser = await GoogleSignin.getCurrentUser();
+        this.setState({ currentUser });
+        console.log("Ušao u google");
+
+    };
 
     async componentDidMount() {
         await fetch('https://jsonkeeper.com/b/R2BS')
@@ -69,8 +81,11 @@ export default class App extends React.Component {
             });
     }
 
-    render() {
-
+    render()
+    {
+        var korisnik=this.state.currentUser;
+        console.log("Glavni dio");
+        console.log(korisnik); 
         if (this.state.isLoading) {
             return (
                 <View style={styles.mainView}>
