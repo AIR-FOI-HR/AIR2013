@@ -9,11 +9,11 @@ import {
     Switch,
 } from 'react-native'
 import { ScrollView } from 'react-native-gesture-handler'
+import {GoogleSignin, GoogleSigninButton, statusCodes} from '@react-native-community/google-signin';
 import EntypoIcon from 'react-native-vector-icons/Entypo';
 import IonIcon from 'react-native-vector-icons/Ionicons';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import FontAwesomeIcons from 'react-native-vector-icons/FontAwesome'; 
-import { firebase } from '@react-native-firebase/auth';
 
 
 export default class App extends React.Component {
@@ -24,7 +24,17 @@ export default class App extends React.Component {
             toggle: false,
             toggle2: false,
         };
+        this.getCurrentUser();
+
     }
+
+    getCurrentUser = async () => 
+    {
+        const currentUser = await GoogleSignin.getCurrentUser();
+        this.setState({ currentUser });
+        console.log("Ušao u google");
+
+    };
 
 
     signOutUser = async () => {
@@ -41,6 +51,9 @@ export default class App extends React.Component {
     }
 
     render(){
+        var korisnik=this.state.currentUser;
+        console.log("Settings");
+        console.log(korisnik); 
         return (
             <ScrollView showsVerticalScrollIndicator={false} style={styles.scrollView}>
                 {/*Zaglavlje s pozdravom i implementacija slike*/}

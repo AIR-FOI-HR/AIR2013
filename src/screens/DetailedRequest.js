@@ -9,7 +9,9 @@ import {
     TouchableHighlight,
     ActivityIndicator,
 } from 'react-native'
-import { ScrollView } from 'react-native-gesture-handler'
+import { ScrollView } from 'react-native-gesture-handler';
+import {GoogleSignin, GoogleSigninButton, statusCodes} from '@react-native-community/google-signin';
+
 import Icon from 'react-native-vector-icons/Ionicons'
 import EntypoIcon from 'react-native-vector-icons/Entypo';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
@@ -40,9 +42,22 @@ export default class DetailedRequest extends React.Component {
             responseBody: responseBody,
             clients: clients,
         }
+
+        this.getCurrentUser();
+
     }
+    getCurrentUser = async () => 
+    {
+        const currentUser = await GoogleSignin.getCurrentUser();
+        this.setState({ currentUser });
+        console.log("Ušao u google");
+
+    };
 
     render() {
+        var korisnik=this.state.currentUser;
+        console.log("Detailed request");
+        console.log(korisnik); 
         return (
             <View style={styles.mainViewContainer}>
                 {/*Zaglavlje s prikazom trenutne stranice i ikonom korisničkog profila*/}
