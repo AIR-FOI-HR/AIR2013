@@ -42,7 +42,6 @@ export default class App extends React.Component {
             dataSourceClients: null,
             //prijavljeniKorisnik: prijavljeniKorisnik,
         }
-
         //console.log(prijavljeniKorisnik);
         this.getCurrentUser();
 
@@ -83,9 +82,8 @@ export default class App extends React.Component {
 
     render()
     {
-        var korisnik=this.state.currentUser;
         console.log("Glavni dio");
-        console.log(korisnik); 
+        console.log(this.state.currentUser); 
         if (this.state.isLoading) {
             return (
                 <View style={styles.mainView}>
@@ -153,7 +151,7 @@ export default class App extends React.Component {
                     <View style={styles.mainView}>
                         <View style={styles.welcomeHeaderView}>
                             <Text style={styles.txtWelcome}>Dobrodošao,</Text>
-                            <Text style={styles.txtWelcomeName}>{korisnik.user.name}</Text>
+                            <Text style={styles.txtWelcomeName}>{this.state.currentUser.user.name}</Text>
                         </View>
 
                         <View style={styles.profileIconView}>

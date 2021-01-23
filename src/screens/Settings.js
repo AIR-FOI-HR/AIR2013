@@ -25,7 +25,6 @@ export default class App extends React.Component {
             toggle2: false,
         };
         this.getCurrentUser();
-
     }
 
     getCurrentUser = async () => 
@@ -37,23 +36,20 @@ export default class App extends React.Component {
     };
 
 
-    signOutUser = async () => {
-        try{
-            await firebase.auth().signOut()
-            navigation.reset({
-                index: 0,
-                routes: [{name: 'SignIn'}]
-            })
-        }catch(e){
-            console.log(e)
-        }
-        console.log("Došlo do 40. reda");
+    signOut = async () => {
+    try 
+    {
+        await GoogleSignin.revokeAccess();
+        await GoogleSignin.signOut();
+        this.setState({ currentUser: null }); // Remember to remove the user from your app's state as well
+    } catch (error) {
+        console.error(error);
     }
+};
 
     render(){
-        var korisnik=this.state.currentUser;
         console.log("Settings");
-        console.log(korisnik); 
+        console.log(this.state.currentUser); 
         return (
             <ScrollView showsVerticalScrollIndicator={false} style={styles.scrollView}>
                 {/*Zaglavlje s pozdravom i implementacija slike*/}

@@ -42,7 +42,6 @@ export default class DetailedRequest extends React.Component {
             responseBody: responseBody,
             clients: clients,
         }
-
         this.getCurrentUser();
 
     }
@@ -55,9 +54,8 @@ export default class DetailedRequest extends React.Component {
     };
 
     render() {
-        var korisnik=this.state.currentUser;
         console.log("Detailed request");
-        console.log(korisnik); 
+        console.log(this.state.currentUser); 
         return (
             <View style={styles.mainViewContainer}>
                 {/*Zaglavlje s prikazom trenutne stranice i ikonom korisničkog profila*/}
