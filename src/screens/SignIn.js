@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {View, Text, Button, StyleSheet, Image, Dimensions} from 'react-native';
 import {GoogleSignin, GoogleSigninButton, statusCodes} from '@react-native-community/google-signin';
-import Home from  "./Home";
 
 GoogleSignin.configure({
 	webClientId: '282691096774-dq1p0dd5f7ni83fne0ugegffnpcpjt5k.apps.googleusercontent.com',
@@ -28,9 +27,10 @@ class SignIn extends Component {
 				userGoogleInfo: userInfo,
 				loaded: true,
 			});
-			var prijavljeniKorisnik=this.state.userGoogleInfo;
-			//this.props.navigation.navigate('Home',this.state.userGoogleInfo);
-			this.props.navigation.navigate('Home', {prijavljeniKorisnik:{prijavljeniKorisnik}});
+			//var prijavljeniKorisnik=this.state.userGoogleInfo;
+			//this.props.navigation.navigate('Home', {prijavljeniKorisnik:{prijavljeniKorisnik}});
+			this.props.navigation.navigate('Home');
+
 		}
 		catch(error){
 		console.log(error.message);
