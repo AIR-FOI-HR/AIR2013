@@ -42,6 +42,8 @@ export default class App extends React.Component {
         await GoogleSignin.revokeAccess();
         await GoogleSignin.signOut();
         this.setState({ currentUser: null }); // Remember to remove the user from your app's state as well
+		this.props.navigation.navigate('SignIn');
+
     } catch (error) {
         console.error(error);
     }
@@ -132,7 +134,7 @@ export default class App extends React.Component {
                             </View>
                             <View style={styles.margineTeksta}>
                                 <TouchableOpacity onPress={() => {
-                                    this.signOutUser()
+                                    this.signOut()
                                 }}>
                                     <View style={styles.logoutIcon}>
                                         <MaterialIcons name="logout" size={24}></MaterialIcons>
