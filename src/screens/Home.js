@@ -33,17 +33,17 @@ export default class App extends React.Component {
             Za više informacija unijeti console.log(prijavljeni korisnik) ili posjetiti
             https://github.com/react-native-google-signin/google-signin i pogledati 3. naslov
         */
-        const  {prijavljeniKorisnik} = props.navigation.getParam('prijavljeniKorisnik');
+        //const  {prijavljeniKorisnik} = props.navigation.getParam('prijavljeniKorisnik');
 
         super(props);
         this.state = {
             isLoading: true,
             dataSourceRequests: null,
             dataSourceClients: null,
-            prijavljeniKorisnik: prijavljeniKorisnik,
+            //prijavljeniKorisnik: prijavljeniKorisnik,
         }
 
-        console.log(prijavljeniKorisnik);
+        //console.log(prijavljeniKorisnik);
         this.getCurrentUser();
 
     }
@@ -153,7 +153,7 @@ export default class App extends React.Component {
                     <View style={styles.mainView}>
                         <View style={styles.welcomeHeaderView}>
                             <Text style={styles.txtWelcome}>Dobrodošao,</Text>
-                            <Text style={styles.txtWelcomeName}>{this.state.prijavljeniKorisnik.user.name}</Text>
+                            <Text style={styles.txtWelcomeName}>{korisnik.user.name}</Text>
                         </View>
 
                         <View style={styles.profileIconView}>
