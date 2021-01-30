@@ -39,7 +39,7 @@ export default class App extends React.Component {
     signOut = async () => {
     try 
     {
-        //proba
+        //proba prijave na račun lukamrko
         await GoogleSignin.revokeAccess();
         await GoogleSignin.signOut();
         this.setState({ currentUser: null }); // Remember to remove the user from your app's state as well
@@ -49,7 +49,6 @@ export default class App extends React.Component {
         console.error(error);
     }
 };
-
     render(){
         console.log("Settings");
         console.log(this.state.currentUser); 
