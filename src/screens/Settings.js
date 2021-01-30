@@ -39,6 +39,7 @@ export default class App extends React.Component {
     signOut = async () => {
     try 
     {
+        //proba
         await GoogleSignin.revokeAccess();
         await GoogleSignin.signOut();
         this.setState({ currentUser: null }); // Remember to remove the user from your app's state as well
