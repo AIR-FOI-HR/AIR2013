@@ -1,4 +1,4 @@
-#Sun Dec 20 17:35:27 CET 2020
+#Sat Jan 30 15:02:27 CET 2021
 base.0=C\:\\Users\\Mario\\source\\repos\\mRent\\AIR2013\\android\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
 path.1=classes.dex
 renamed.1=classes2.dex
