@@ -123,7 +123,8 @@ export default class App extends React.Component {
                                 </EntypoIcon>          
                             </View>
                             <View style={styles.margineTeksta} >
-                                <TouchableOpacity style={styles.dodajUkloniStavke}>
+                                <TouchableOpacity style={styles.dodajUkloniStavke} 
+                                onPress={() => this.props.navigation.navigate('AddAparOrTemp')}>                                    
                                     <FontAwesomeIcons name="home" size={24}> 
                                         <Text style={styles.tekstIzbornika} > Dodaj ili ukloni stavke      </Text> 
                                     </FontAwesomeIcons>

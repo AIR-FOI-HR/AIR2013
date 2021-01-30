@@ -1,10 +1,13 @@
-#Sat Jan 30 15:41:48 CET 2021
-base.2=/home/josip/ReactNativeProjects/AIR2013/android/app/build/intermediates/dex/debug/mergeDexDebug/out/classes.dex
+#Sat Jan 30 18:18:49 CET 2021
+path.3=classes.dex
 path.2=classes.dex
-base.1=/home/josip/.gradle/daemon/6.2/C\:\\Users\\Mrky-PC\\Desktop\\Sve\\Faks\\7_semestar\\AiR\\najnoijiProjekt\\AIR2013\\android\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
 path.1=classes.dex
-base.0=/home/josip/.gradle/daemon/6.2/C\:\\Users\\Mario\\source\\repos\\mRent\\AIR2013\\android\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
+path.0=classes.dex
+renamed.3=classes4.dex
 renamed.2=classes3.dex
 renamed.1=classes2.dex
 renamed.0=classes.dex
-path.0=classes.dex
+base.3=C\:\\Users\\Mrky-PC\\Desktop\\Sve\\Faks\\7_semestar\\AiR\\najnoijiProjekt\\AIR2013\\android\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
+base.2=C\:\\home\\josip\\ReactNativeProjects\\AIR2013\\android\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
+base.1=C\:\\home\\josip\\.gradle\\daemon\\6.2\\C\:\\Users\\Mrky-PC\\Desktop\\Sve\\Faks\\7_semestar\\AiR\\najnoijiProjekt\\AIR2013\\android\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
+base.0=C\:\\home\\josip\\.gradle\\daemon\\6.2\\C\:\\Users\\Mario\\source\\repos\\mRent\\AIR2013\\android\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
