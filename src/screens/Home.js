@@ -25,24 +25,24 @@ import { colors } from '../constants/DesignConstants'
 export default class App extends React.Component {
 
     constructor(props) {
-        /*
-            prijavljeniKorisnik je googleov zapis korisnika. 
-            Za pristup emailu koristiti prijavljeniKorisnik.user.email
-            Za pristup korisničkom imenu koristiti prijavljeniKOrisnik.user.name
-            Za pristup izvoru slike koristiti prijavljeniKorisnik.user.photo
-            Za više informacija unijeti console.log(prijavljeni korisnik) ili posjetiti
-            https://github.com/react-native-google-signin/google-signin i pogledati 3. naslov
-        */
-        //const  {prijavljeniKorisnik} = props.navigation.getParam('prijavljeniKorisnik');
+        
 
         super(props);
         this.state = {
             isLoading: true,
             dataSourceRequests: null,
             dataSourceClients: null,
-            //prijavljeniKorisnik: prijavljeniKorisnik,
         }
-        //console.log(prijavljeniKorisnik);
+
+        /*
+            this.state.currentUser je googleov zapis korisnika. 
+            Za pristup emailu koristiti this.state.currentUser.user.email
+            Za pristup korisničkom imenu koristiti this.state.currentUser.user.name
+            Za pristup izvoru slike koristiti this.state.currentUser.user.photo
+            Za više informacija unijeti console.log(this.state.currentUser) ili posjetiti
+            https://github.com/react-native-google-signin/google-signin i pogledati 3. naslov
+        */
+
         this.getCurrentUser();
 
     }
