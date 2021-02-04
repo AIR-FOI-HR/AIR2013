@@ -844,10 +844,6 @@
         "source": "C:\\Users\\Mrky-PC\\.gradle\\caches\\transforms-2\\files-2.1\\6466522822c9f31c5107b8fc2277998a\\core-1.1.0\\res\\layout\\notification_action.xml"
     },
     {
-        "merged": "C:\\Users\\Mrky-PC\\Desktop\\Sve\\Faks\\7_semestar\\AiR\\najnoijiProjekt\\AIR2013\\android\\app\\build\\intermediates\\res\\merged\\debug\\anim_rns_slide_out_to_left.xml.flat",
-        "source": "C:\\Users\\Mrky-PC\\Desktop\\Sve\\Faks\\7_semestar\\AiR\\najnoijiProjekt\\AIR2013\\node_modules\\react-native-screens\\android\\build\\intermediates\\packaged_res\\debug\\anim\\rns_slide_out_to_left.xml"
-    },
-    {
         "merged": "C:\\Users\\Mrky-PC\\Desktop\\Sve\\Faks\\7_semestar\\AiR\\najnoijiProjekt\\AIR2013\\android\\app\\build\\intermediates\\res\\merged\\debug\\color_switch_thumb_material_dark.xml.flat",
         "source": "C:\\Users\\Mrky-PC\\.gradle\\caches\\transforms-2\\files-2.1\\daa3c2686a1605e889aa91397aeb3607\\appcompat-1.1.0\\res\\color\\switch_thumb_material_dark.xml"
     },
@@ -1406,10 +1402,6 @@
     {
         "merged": "C:\\Users\\Mrky-PC\\Desktop\\Sve\\Faks\\7_semestar\\AiR\\najnoijiProjekt\\AIR2013\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_tab_indicator_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\Mrky-PC\\.gradle\\caches\\transforms-2\\files-2.1\\daa3c2686a1605e889aa91397aeb3607\\appcompat-1.1.0\\res\\drawable-mdpi-v4\\abc_tab_indicator_mtrl_alpha.9.png"
-    },
-    {
-        "merged": "C:\\Users\\Mrky-PC\\Desktop\\Sve\\Faks\\7_semestar\\AiR\\najnoijiProjekt\\AIR2013\\android\\app\\build\\intermediates\\res\\merged\\debug\\anim_rns_slide_in_from_left.xml.flat",
-        "source": "C:\\Users\\Mrky-PC\\Desktop\\Sve\\Faks\\7_semestar\\AiR\\najnoijiProjekt\\AIR2013\\node_modules\\react-native-screens\\android\\build\\intermediates\\packaged_res\\debug\\anim\\rns_slide_in_from_left.xml"
     },
     {
         "merged": "C:\\Users\\Mrky-PC\\Desktop\\Sve\\Faks\\7_semestar\\AiR\\najnoijiProjekt\\AIR2013\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_ic_star_black_48dp.png.flat",
@@ -2452,10 +2444,6 @@
         "source": "C:\\Users\\Mrky-PC\\.gradle\\caches\\transforms-2\\files-2.1\\dd5b18c4f8a1c4aba0a4f23dae64f838\\material-1.1.0\\res\\layout\\design_bottom_sheet_dialog.xml"
     },
     {
-        "merged": "C:\\Users\\Mrky-PC\\Desktop\\Sve\\Faks\\7_semestar\\AiR\\najnoijiProjekt\\AIR2013\\android\\app\\build\\intermediates\\res\\merged\\debug\\anim_rns_slide_in_from_right.xml.flat",
-        "source": "C:\\Users\\Mrky-PC\\Desktop\\Sve\\Faks\\7_semestar\\AiR\\najnoijiProjekt\\AIR2013\\node_modules\\react-native-screens\\android\\build\\intermediates\\packaged_res\\debug\\anim\\rns_slide_in_from_right.xml"
-    },
-    {
         "merged": "C:\\Users\\Mrky-PC\\Desktop\\Sve\\Faks\\7_semestar\\AiR\\najnoijiProjekt\\AIR2013\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_switch_track_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\Mrky-PC\\.gradle\\caches\\transforms-2\\files-2.1\\daa3c2686a1605e889aa91397aeb3607\\appcompat-1.1.0\\res\\drawable-xhdpi-v4\\abc_switch_track_mtrl_alpha.9.png"
     },
@@ -2738,10 +2726,6 @@
     {
         "merged": "C:\\Users\\Mrky-PC\\Desktop\\Sve\\Faks\\7_semestar\\AiR\\najnoijiProjekt\\AIR2013\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21_abc_edit_text_material.xml.flat",
         "source": "C:\\Users\\Mrky-PC\\.gradle\\caches\\transforms-2\\files-2.1\\daa3c2686a1605e889aa91397aeb3607\\appcompat-1.1.0\\res\\drawable-v21\\abc_edit_text_material.xml"
-    },
-    {
-        "merged": "C:\\Users\\Mrky-PC\\Desktop\\Sve\\Faks\\7_semestar\\AiR\\najnoijiProjekt\\AIR2013\\android\\app\\build\\intermediates\\res\\merged\\debug\\anim_rns_slide_out_to_right.xml.flat",
-        "source": "C:\\Users\\Mrky-PC\\Desktop\\Sve\\Faks\\7_semestar\\AiR\\najnoijiProjekt\\AIR2013\\node_modules\\react-native-screens\\android\\build\\intermediates\\packaged_res\\debug\\anim\\rns_slide_out_to_right.xml"
     },
     {
         "merged": "C:\\Users\\Mrky-PC\\Desktop\\Sve\\Faks\\7_semestar\\AiR\\najnoijiProjekt\\AIR2013\\android\\app\\build\\intermediates\\res\\merged\\debug\\anim_btn_radio_to_on_mtrl_ring_outer_animation.xml.flat",

@@ -9,7 +9,7 @@ import {
     Switch,
 } from 'react-native'
 import { ScrollView } from 'react-native-gesture-handler'
-import {GoogleSignin, GoogleSigninButton, statusCodes} from '@react-native-community/google-signin';
+import {GoogleSignin, Button, statusCodes} from '@react-native-community/google-signin';
 import EntypoIcon from 'react-native-vector-icons/Entypo';
 import IonIcon from 'react-native-vector-icons/Ionicons';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
@@ -122,6 +122,7 @@ export default class App extends React.Component {
                                     <Text style={styles.tekstIzbornika}> E-mail </Text>
                                 </EntypoIcon>          
                             </View>
+
                             <View style={styles.margineTeksta} >
                                 <TouchableOpacity style={styles.dodajUkloniStavke} 
                                 onPress={() => this.props.navigation.navigate('AddAparOrTemp')}>                                    
@@ -133,6 +134,7 @@ export default class App extends React.Component {
                                 </View>           
                                 </TouchableOpacity> 
                             </View>
+
                             <View style={styles.margineTeksta}>
                                 <TouchableOpacity onPress={() => {
                                     this.signOut()
