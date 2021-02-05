@@ -33,6 +33,8 @@ export default class App extends React.Component {
 
 	};
 
+	//proba
+
     render(){
         return (
 			<ScrollView showsVerticalScrollIndicator={false} style={styles.scrollView}>
