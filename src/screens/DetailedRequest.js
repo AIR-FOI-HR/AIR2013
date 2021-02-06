@@ -7,6 +7,7 @@ import {
     TextInput,
     Button,
     TouchableHighlight,
+    TouchableOpacity,
     ActivityIndicator,
 } from 'react-native'
 import { ScrollView } from 'react-native-gesture-handler';
@@ -117,27 +118,20 @@ export default class DetailedRequest extends React.Component {
                         </View>
 
 
+
                         {/*Buttoni u podnožju*/}
                         <View style={styles.buttonsView}>
-                            <View style={styles.btn1}>
-                                <TouchableHighlight style={styles.btnBorder1}>
-                                    <MaterialCommunityIcons name="pencil" size={18}></MaterialCommunityIcons>
-                                </TouchableHighlight>
-                                <TouchableHighlight>
-                                    <Text style={styles.btnText1}>UREDI</Text>
-                                </TouchableHighlight>
-                            </View>
+                            
+                                                 
 
-
-                            <View style={styles.btn2}>
-                                <TouchableHighlight style={styles.btnBorder2}>
+                            <TouchableOpacity  style={styles.btnSendEmail}>
+                                
                                     <FeatherIcon name="send" size={18} />
-                                </TouchableHighlight>
-                                <TouchableHighlight>
                                     <Text style={styles.btnText2} >POŠALJI</Text>
-                                </TouchableHighlight>
-                            </View>
+                                
+                            </TouchableOpacity>
                         </View>
+                        
                        
                     </View>
                 </View>
@@ -192,7 +186,7 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         backgroundColor: '#FFF',
         elevation: 3,
-        height: 700
+        height: 720
     },
     userData: {
         textAlign: 'center',
@@ -245,46 +239,29 @@ const styles = StyleSheet.create({
     btnText1: {
         fontWeight: "bold",
         fontSize: 14,
-        left: 47,
+        left: 47
     },
     btnText2: {
         fontWeight: "bold",
         fontSize: 14,
-        left: 3,
         color: colors.black,
     },
-    btnBorder1: {
-        borderColor: colors.black,
-        backgroundColor: colors.white,
-        borderRadius: 8,
-        borderWidth: 2,
-        padding: 8,
-        width: '300%',
-        height: '25%',
+    buttonsView: {
+        flexDirection: 'row',
+        width: '100%',
+        justifyContent: 'space-around',
+        padding: 1,
+        marginTop: 15
     },
-
-    btnBorder2: {
+    btnSendEmail: {
         borderColor: colors.tertiary,
         backgroundColor: colors.white,
         borderRadius: 8,
         borderWidth: 2,
         padding: 8,
-        width: '218%',
-        height: '25%',
-        right: 41
-    },
-    buttonsView: {
+        width: '40%',
         flexDirection: 'row',
-        justifyContent: 'space-around',
-        marginTop: 0
-
-    },
-    btn1: {
-        right: 54
-
-    },
-    btn2: {
-        left: 27
+        justifyContent: 'space-around'
     },
     messageBodyView: {
         margin: 0,
