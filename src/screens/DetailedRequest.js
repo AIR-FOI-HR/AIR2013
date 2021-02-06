@@ -57,7 +57,7 @@ export default class DetailedRequest extends React.Component {
         console.log("Detailed request");
         console.log(this.state.currentUser); 
         return (
-            <View style={styles.mainViewContainer}>
+            <ScrollView style={styles.mainViewContainer}>
                 {/*Zaglavlje s prikazom trenutne stranice i ikonom korisničkog profila*/}
                 <View style={styles.mainView}>
                     <View style={styles.welcomeHeaderView}>
@@ -76,39 +76,49 @@ export default class DetailedRequest extends React.Component {
 
                 <View style={styles.mainView}>
                     <View style={styles.mainCardView}>
-                        <View style={styles.userData}>
-                            <Image
-                                source={require('../assets/icons/profile.png')}
-                                style={styles.guestImage}
-                            />
-                        </View>
-                        <View style={styles.guestNameView}>
-                            <Text style={styles.txtGuestName}>{this.state.clients}</Text>
-                        </View>
-                        <View style={styles.propertyView}>
-                            <FontAwesomeIcons name="home" size={30}>
-                            </FontAwesomeIcons>
-                        </View>
-                        <View style={styles.txtVilla}>
-                            <Text style={styles.txtVilla}>{this.state.property}</Text>
-                        </View>
-                        <View style={styles.propertyView}>
-                            <EntypoIcon name="calendar" size={30}>
-                            </EntypoIcon>
-                        </View>
-                        <View style={styles.timespanView}>
-                            <Text style={styles.txtTimespan}>{this.state.dateFrom.substring(5, 10) + ' - ' + this.state.dateTo.substring(5, 10)}</Text>
-                        </View>
-                        <View style={styles.propertyView}>
-                            <MaterialIcons name="people-alt" size={30}>
-                            </MaterialIcons>
-                        </View>
-                        <View style={styles.numberOfPeopleView}>
-                            <Text style={styles.txtNumberOfPeople}>{this.state.numberOfPeople}</Text>
+                        <View style={styles.podaciSIkonamaView}>
+                            <View style={styles.userData}>
+                                <Image
+                                    source={require('../assets/icons/profile.png')}
+                                    style={styles.guestImage}
+                                />
+                            </View>
+                            <View style={styles.guestNameView}>
+                                <Text style={styles.txtGuestName}>{this.state.clients}</Text>
+                            </View>
+                            <View style={styles.propertyView}>
+                                <FontAwesomeIcons name="home" size={30}>
+                                </FontAwesomeIcons>
+                            </View>
+                            <View style={styles.txtVilla}>
+                                <Text style={styles.txtVilla}>{this.state.property}</Text>
+                            </View>
+                            <View style={styles.propertyView}>
+                                <EntypoIcon name="calendar" size={30}>
+                                </EntypoIcon>
+                            </View>
+                            <View style={styles.timespanView}>
+                                <Text style={styles.txtTimespan}>{this.state.dateFrom.substring(5, 10) + ' - ' + this.state.dateTo.substring(5, 10)}</Text>
+                            </View>
+                            <View style={styles.propertyView}>
+                                <MaterialIcons name="people-alt" size={30}>
+                                </MaterialIcons>
+                            </View>
+                            <View style={styles.numberOfPeopleView}>
+                                <Text style={styles.txtNumberOfPeople}>{this.state.numberOfPeople}</Text>
+                            </View>
                         </View>
 
+                         
+                         {/*Obavijesti korisniku*/}
+                         <View style={styles.messageBodyView}>
+                            {/*<Text style={styles.txtObavijesti}>{this.state.responseBody}</Text>*/}
+                            <TextInput multiline>{this.state.responseBody}</TextInput>
+                        </View>
+
+
                         {/*Buttoni u podnožju*/}
-                        <View style={styles.txtButtonIcon}>
+                        <View style={styles.buttonsView}>
                             <View style={styles.btn1}>
                                 <TouchableHighlight style={styles.btnBorder1}>
                                     <MaterialCommunityIcons name="pencil" size={18}></MaterialCommunityIcons>
@@ -128,17 +138,11 @@ export default class DetailedRequest extends React.Component {
                                 </TouchableHighlight>
                             </View>
                         </View>
-
-                        {/*Obavijesti korisniku*/}
-                        <View style={styles.Obavijest}>
-
-                            <Text style={styles.txtObavijesti}>{this.state.responseBody}</Text>
-
-                        </View>
+                       
                     </View>
                 </View>
 
-            </View>
+            </ScrollView>
         );
     }
 }
@@ -146,13 +150,13 @@ export default class DetailedRequest extends React.Component {
 const styles = StyleSheet.create({
     mainViewContainer: {
         backgroundColor: "#fff",
-        paddingHorizontal: 20,
-        height: '100%'
+        paddingHorizontal: 20
     },
     mainView: {
         flexDirection: "row",
         width: "100%",
         marginTop: 40,
+        marginBottom: 20,
         alignItems: "center",
         justifyContent: 'space-between'
     },
@@ -163,6 +167,9 @@ const styles = StyleSheet.create({
         fontSize: 30,
         fontWeight: "700",
         fontWeight: "normal",
+
+    },
+    podaciSIkonamaView: {
 
     },
     welcomeTextName: {
@@ -182,12 +189,10 @@ const styles = StyleSheet.create({
         borderColor: '#feca57',
         borderWidth: 1,
         width: '100%',
-        height: 600,
         borderRadius: 10,
         backgroundColor: '#FFF',
         elevation: 3,
-
-
+        height: 700
     },
     userData: {
         textAlign: 'center',
@@ -241,17 +246,14 @@ const styles = StyleSheet.create({
         fontWeight: "bold",
         fontSize: 14,
         left: 47,
-        top: 113,
     },
     btnText2: {
         fontWeight: "bold",
         fontSize: 14,
         left: 3,
-        top: 113,
         color: colors.black,
     },
     btnBorder1: {
-        top: 145,
         borderColor: colors.black,
         backgroundColor: colors.white,
         borderRadius: 8,
@@ -262,7 +264,6 @@ const styles = StyleSheet.create({
     },
 
     btnBorder2: {
-        top: 145,
         borderColor: colors.tertiary,
         backgroundColor: colors.white,
         borderRadius: 8,
@@ -272,28 +273,29 @@ const styles = StyleSheet.create({
         height: '25%',
         right: 41
     },
-    txtButtonIcon: {
+    buttonsView: {
         flexDirection: 'row',
         justifyContent: 'space-around',
+        marginTop: 0
 
     },
     btn1: {
-        right: 54,
-        top: 25,
+        right: 54
 
     },
     btn2: {
-        left: 27,
-        top: 25,
+        left: 27
+    },
+    messageBodyView: {
+        margin: 0,
+        position:'relative'
     },
     txtObavijesti: {
         fontSize: 10,
         alignItems: 'center',
         bottom: 140,
         left: 10,
-        padding: 5,
-
-
+        padding: 5
     }
 
 })
