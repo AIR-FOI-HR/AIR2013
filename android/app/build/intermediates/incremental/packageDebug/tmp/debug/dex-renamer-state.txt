@@ -1,7 +1,12 @@
+<<<<<<< HEAD
 #Sat Feb 06 11:20:52 CET 2021
 path.4=classes.dex
 path.3=classes.dex
 path.2=classes.dex
+=======
+#Sun Dec 20 17:35:27 CET 2020
+base.0=C\:\\Users\\Mario\\source\\repos\\mRent\\AIR2013\\android\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
+>>>>>>> f38633138ed2f030ef8e6417db849ae6dbb34929
 path.1=classes.dex
 path.0=classes.dex
 base.4=/home/josip/ReactNativeProjects/AIR2013/android/app/build/intermediates/dex/debug/mergeDexDebug/out/classes.dex

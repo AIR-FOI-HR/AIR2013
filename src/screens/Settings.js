@@ -9,7 +9,10 @@ import {
     Switch,
 } from 'react-native'
 import { ScrollView } from 'react-native-gesture-handler'
+<<<<<<< HEAD
 import {GoogleSignin, Button, statusCodes} from '@react-native-community/google-signin';
+=======
+>>>>>>> f38633138ed2f030ef8e6417db849ae6dbb34929
 import EntypoIcon from 'react-native-vector-icons/Entypo';
 import IonIcon from 'react-native-vector-icons/Ionicons';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
@@ -24,9 +27,9 @@ export default class App extends React.Component {
             toggle: false,
             toggle2: false,
         };
-        this.getCurrentUser();
     }
 
+<<<<<<< HEAD
     getCurrentUser = async () => 
     {
         const currentUser = await GoogleSignin.getCurrentUser();
@@ -49,9 +52,9 @@ export default class App extends React.Component {
         console.error(error);
     }
 };
+=======
+>>>>>>> f38633138ed2f030ef8e6417db849ae6dbb34929
     render(){
-        console.log("Settings");
-        console.log(this.state.currentUser); 
         return (
             <ScrollView showsVerticalScrollIndicator={false} style={styles.scrollView}>
                 {/*Zaglavlje s pozdravom i implementacija slike*/}
@@ -136,9 +139,7 @@ export default class App extends React.Component {
                             </View>
 
                             <View style={styles.margineTeksta}>
-                                <TouchableOpacity onPress={() => {
-                                    this.signOut()
-                                }}>
+                                <TouchableOpacity>
                                     <View style={styles.logoutIcon}>
                                         <MaterialIcons name="logout" size={24}></MaterialIcons>
                                     </View>
