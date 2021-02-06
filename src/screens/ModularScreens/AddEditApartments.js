@@ -106,7 +106,7 @@ const styles = StyleSheet.create({
 	scrollView: {
 		backgroundColor: '#fff',
 		paddingHorizontal: 20,
-		paddingBottom: 310,
+		paddingBottom: 290,
 	},
 	Naslov: {
 		width: '80%',
@@ -125,6 +125,7 @@ const styles = StyleSheet.create({
 	settingsTextName: {
 		fontSize: 30,
 		fontWeight: '700',
+		 bottom:7,
 	},
 	tekstIzbornika: {
 		fontWeight: 'bold',
@@ -174,11 +175,11 @@ const styles = StyleSheet.create({
 	},
 	btn1: {
 		right: 60,
-		bottom: 50,
+		bottom: 25,
 	},
 	btn2: {
 		right: 20,
-		bottom: 50,
+		bottom: 25,
 	},
 	btnBorder1: {
 		top: 35,

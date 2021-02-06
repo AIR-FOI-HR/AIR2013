@@ -78,68 +78,69 @@ export default class App extends React.Component {
 }
 
 const styles = StyleSheet.create({
-	scrollView: {
-		backgroundColor: '#fff',
-		paddingHorizontal: 20,
-	},
-	Naslov: {
-		width: '80%',
-	},
-	mainView: {
-		flexDirection: 'row',
-		width: '100%',
-		marginTop: 40,
-		alignItems: 'center',
-		justifyContent: 'space-between',
-	},
-	settingsText: {
-		fontSize: 30,
-		fontWeight: 'normal',
-	},
-	settingsTextName: {
-		fontSize: 30,
-		fontWeight: '700',
-	},
-	tekstIzbornika: {
-		fontWeight: 'bold',
-		fontSize: 18,
-		left: 28,
-		top: -5,
-	},
-	margineTeksta1: {
-		marginBottom: 187,
-		marginTop: 0,
-		marginLeft: 12,
-		bottom: -90,
-	},
-	margineTeksta2: {
-		marginBottom: 40,
-		marginTop: 0,
-		marginLeft: 12,
-		bottom: -20,
-	},
-	arrow: {
-		left: 300,
-		bottom: 22,
-	},
-	marginaSlikeIokvir1: {
-		//marginBottom: 40,
-		marginTop: 125,
-		borderRadius: 22,
-		borderWidth: 2,
-		borderColor: 'grey',
-		height: 40,
-		justifyContent: 'center',
-		bottom: 50,
-	},
-	marginaSlikeIokvir2: {
-		//marginBottom: 40,
-		marginTop: 100,
-		borderRadius: 22,
-		borderWidth: 2,
-		borderColor: 'grey',
-		height: 40,
-		justifyContent: 'center',
-		bottom: 120,
-	},
+  scrollView: {
+    backgroundColor: "#fff",
+    paddingHorizontal: 20,
+  },
+  Naslov: {
+    width: "80%",
+  },
+  mainView: {
+    flexDirection: "row",
+    width: "100%",
+    marginTop: 40,
+    alignItems: "center",
+    justifyContent: "space-between",
+  },
+  settingsText: {
+    fontSize: 30,
+    fontWeight: "normal",
+  },
+  settingsTextName: {
+    fontSize: 30,
+    fontWeight: "700",
+    bottom: 7,
+  },
+  tekstIzbornika: {
+    fontWeight: "bold",
+    fontSize: 18,
+    left: 28,
+    top: -5,
+  },
+  margineTeksta1: {
+    marginBottom: 187,
+    marginTop: 0,
+    marginLeft: 12,
+    bottom: -90,
+  },
+  margineTeksta2: {
+    marginBottom: 40,
+    marginTop: 0,
+    marginLeft: 12,
+    bottom: -20,
+  },
+  arrow: {
+    left: 300,
+    bottom: 22,
+  },
+  marginaSlikeIokvir1: {
+    //marginBottom: 40,
+    marginTop: 125,
+    borderRadius: 22,
+    borderWidth: 2,
+    borderColor: "grey",
+    height: 40,
+    justifyContent: "center",
+    bottom: 50,
+  },
+  marginaSlikeIokvir2: {
+    //marginBottom: 40,
+    marginTop: 100,
+    borderRadius: 22,
+    borderWidth: 2,
+    borderColor: "grey",
+    height: 40,
+    justifyContent: "center",
+    bottom: 120,
+  },
 });
