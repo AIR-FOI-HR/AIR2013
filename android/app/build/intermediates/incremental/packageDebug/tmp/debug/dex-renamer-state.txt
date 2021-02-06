@@ -1,4 +1,4 @@
-#Sat Feb 06 20:33:20 CET 2021
-base.0=C\:\\Users\\Sven\\Desktop\\FAKS\\7.semestar\\air\\AIR2013\\android\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
+#Sun Feb 07 00:33:44 CET 2021
+base.0=C\:\\Users\\Mrky-PC\\Desktop\\Sve\\Faks\\7_semestar\\AiR\\najnoijiProjekt\\AIR2013\\android\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
 path.0=classes.dex
 renamed.0=classes.dex
