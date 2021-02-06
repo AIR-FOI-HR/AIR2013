@@ -22,21 +22,30 @@ export default class App extends React.Component {
         <View style={styles.marginaSlikeIokvir1}>
           <View style={styles.margineTeksta1}>
             <Text style={styles.tekstIzbornika}>Naziv apartmana </Text>
-            <TextInput style={styles.TextInput}></TextInput>
+            <TextInput
+              style={styles.TextInput}
+              placeholder="Unesite naziv apartmana"
+            ></TextInput>
           </View>
         </View>
 
         <View style={styles.marginaSlikeIokvir2}>
           <View style={styles.margineTeksta2}>
-            <Text style={styles.tekstIzbornika}>Broj soba </Text>
-            <TextInput style={styles.TextInput}></TextInput>
+            <Text style={styles.tekstIzbornika}>Broj sobe </Text>
+            <TextInput
+              style={styles.TextInput}
+              placeholder="Unesite broj sobe"
+            ></TextInput>
           </View>
         </View>
 
         <View style={styles.marginaSlikeIokvir3}>
           <View style={styles.margineTeksta3}>
             <Text style={styles.tekstIzbornika}> Lokacija </Text>
-            <TextInput style={styles.TextInput}></TextInput>
+            <TextInput
+              style={styles.TextInput}
+              placeholder="Unesite lokaciju"
+            ></TextInput>
           </View>
         </View>
 

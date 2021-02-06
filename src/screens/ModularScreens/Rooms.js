@@ -34,22 +34,30 @@ export default class App extends React.Component {
         <View style={styles.marginaSlikeIokvir1}>
           <View style={styles.margineTeksta1}>
             <Text style={styles.tekstIzbornika}>Naziv sobe </Text>
-            <TextInput underlineColorAndroid="transparent" style={styles.TextInput}
-            >Naziv sobe</TextInput>
+            <TextInput
+              style={styles.TextInput}
+              placeholder="Unesite naziv sobe"
+            ></TextInput>
           </View>
         </View>
 
         <View style={styles.marginaSlikeIokvir2}>
           <View style={styles.margineTeksta2}>
             <Text style={styles.tekstIzbornika}>Kapacitet </Text>
-            <TextInput style={styles.TextInput}></TextInput>
+            <TextInput
+              style={styles.TextInput}
+              placeholder="Unesite kapacitet"
+            ></TextInput>
           </View>
         </View>
 
         <View style={styles.marginaSlikeIokvir3}>
           <View style={styles.margineTeksta3}>
             <Text style={styles.tekstIzbornika}> Cijena </Text>
-            <TextInput style={styles.TextInput}></TextInput>
+            <TextInput
+              style={styles.TextInput}
+              placeholder="Unesite cijenu"
+            ></TextInput>
           </View>
         </View>
 
