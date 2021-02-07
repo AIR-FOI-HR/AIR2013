@@ -38,42 +38,68 @@ export default class App extends React.Component {
 
     render(){
         return (
-			<ScrollView showsVerticalScrollIndicator={false} style={styles.scrollView}>
-				<View style={styles.Naslov}>
-					<Text style={styles.settingsText}>Dodaj/ukloni</Text>
-					<Text style={styles.settingsTextName}>stavke</Text>
-				</View>
+          <ScrollView
+            showsVerticalScrollIndicator={false}
+            style={styles.scrollView}
+          >
+            <View style={styles.Naslov}>
+              <Text style={styles.settingsText}>Dodaj/ukloni</Text>
+              <Text style={styles.settingsTextName}>stavke</Text>
+            </View>
 
-				<View style={styles.marginaSlikeIokvir1}>
-					<TouchableOpacity
-						style={styles.dodajUkloniStavke}
-						onPress={() => this.props.navigation.navigate('AddEditApartments')}
-					>
-						<View style={styles.margineTeksta1}>
-							<FontAwesomeIcons name="home" size={24}>
-								<Text style={styles.tekstIzbornika}> Dodaj ili ukloni apartmane i sobe </Text>
-							</FontAwesomeIcons>
-							<View style={styles.arrow}>
-								<MaterialIcons name="arrow-forward-ios" size={25}></MaterialIcons>
-							</View>
-						</View>
-					</TouchableOpacity>
-				</View>
-				<View style={styles.marginaSlikeIokvir2}>
-					<TouchableOpacity						
-						onPress={() => this.props.navigation.navigate('AddEditTemplate')}>
-						<View style={styles.margineTeksta2}>
-							<FontAwesomeIcons name="envelope" size={19}>
-								<Text style={styles.tekstIzbornika}> Dodaj ili ukloni predložak </Text>
-							</FontAwesomeIcons>
-							<View style={styles.arrow}>
-								<MaterialIcons name="arrow-forward-ios" size={25}></MaterialIcons>
-							</View>
-						</View>
-					</TouchableOpacity>
-				</View>
-			</ScrollView>
-		);
+            <View style={styles.marginaSlikeIokvir1}>
+              <TouchableOpacity
+                style={styles.dodajUkloniStavke}
+                onPress={() =>
+                  this.props.navigation.navigate("AddEditApartments")
+                }
+              >
+                <View style={styles.margineTeksta1}>
+                  <FontAwesomeIcons name="home" size={24}>
+                    <Text style={styles.tekstIzbornika}>
+                      {" "}
+                      Dodaj ili ukloni apartmane i sobe{" "}
+                    </Text>
+                  </FontAwesomeIcons>
+                  <View style={styles.arrow}>
+                    <MaterialIcons
+                      name="arrow-forward-ios"
+                      size={25}
+                    ></MaterialIcons>
+                  </View>
+                </View>
+              </TouchableOpacity>
+            </View>
+            <View style={styles.marginaSlikeIokvir2}>
+              <TouchableOpacity
+                onPress={() =>
+                  this.props.navigation.navigate("AddEditTemplate")
+                }
+              >
+                <View style={styles.margineTeksta2}>
+                  <FontAwesomeIcons name="envelope" size={19}>
+                    <Text style={styles.tekstIzbornika}>
+                      {" "}
+                      Dodaj ili ukloni predložak{" "}
+                    </Text>
+                  </FontAwesomeIcons>
+                  <View style={styles.arrow}>
+                    <MaterialIcons
+                      name="arrow-forward-ios"
+                      size={25}
+                    ></MaterialIcons>
+                  </View>
+                </View>
+              </TouchableOpacity>
+            </View>
+            <View style={styles.containerImage}>
+              <Image
+                source={require("../../assets/icons/mRent_icon.png")}
+                style={styles.imageIcon}
+              ></Image>
+            </View>
+          </ScrollView>
+        );
     }
 }
 
@@ -142,5 +168,15 @@ const styles = StyleSheet.create({
     height: 40,
     justifyContent: "center",
     bottom: 120,
+  },
+  containerImage: {
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  imageIcon: {
+    width: 200,
+    height: 200,
+    resizeMode: "stretch",
+    marginBottom: 75,
   },
 });

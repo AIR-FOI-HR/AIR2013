@@ -32,7 +32,7 @@ export default class App extends React.Component {
   render() {
     const { checked } = this.state;
     return (
-      <View>
+      <View backgroundColor="white">
         <ScrollView
           showsVerticalScrollIndicator={false}
           style={styles.scrollView}
@@ -222,13 +222,13 @@ const styles = StyleSheet.create({
   },
   btnText1: {
     fontWeight: "bold",
-    fontSize: 14,
+    fontSize: 15,
     left: 55,
     top: 0,
   },
   btnText2: {
     fontWeight: "bold",
-    fontSize: 14,
+    fontSize: 15,
     left: 55,
     top: 0,
   },

@@ -11,10 +11,7 @@ export default class App extends React.Component {
 
 	render() {
 		return (
-      <ScrollView
-        showsVerticalScrollIndicator={false}
-        style={styles.scrollView}
-      >
+      <View style={styles.View}>
         <View style={styles.Naslov}>
           <Text style={styles.settingsText}>Uredi</Text>
           <Text style={styles.settingsTextName}>apartman</Text>
@@ -35,6 +32,7 @@ export default class App extends React.Component {
             <TextInput
               style={styles.TextInput}
               placeholder="Unesite broj sobe"
+              keyboardType='numeric'
             ></TextInput>
           </View>
         </View>
@@ -73,21 +71,28 @@ export default class App extends React.Component {
 
         <View style={styles.txtButtonIcon}>
           <View style={styles.btn1}>
-            <TouchableHighlight style={styles.btnBorder1}>
-              <EntypoIcon name="save" size={21}></EntypoIcon>
-            </TouchableHighlight>
-            <TouchableHighlight>
+            <TouchableOpacity
+              style={styles.btnBorder1}
+              onPress={() =>
+                this.props.navigation.navigate("AddEditApartments")
+              }
+            >
+              <EntypoIcon
+                name="save"
+                size={22}
+                style={styles.SaveIkona}
+              ></EntypoIcon>
               <Text style={styles.btnText1}>SPREMI</Text>
-            </TouchableHighlight>
+            </TouchableOpacity>
           </View>
         </View>
-      </ScrollView>
+      </View>
     );
 	}
 }
 
 const styles = StyleSheet.create({
-  scrollView: {
+  View: {
     backgroundColor: "#fff",
     paddingHorizontal: 20,
   },
@@ -119,7 +124,7 @@ const styles = StyleSheet.create({
   margineTeksta1: {
     marginBottom: 0,
     marginTop: 0,
-    marginLeft: -15,
+    marginLeft: -12,
     bottom: 10,
   },
   margineTeksta2: {
@@ -146,37 +151,42 @@ const styles = StyleSheet.create({
     bottom: 22,
   },
   marginaSlikeIokvir1: {
-    //marginBottom: 40,
     marginTop: 125,
-    borderRadius: 22,
-    borderWidth: 2,
     borderColor: "grey",
     height: 40,
     justifyContent: "center",
     bottom: 60,
+    width: "100%",
+    borderRadius: 20,
+    borderWidth: 2,
+    borderColor: "grey",
+    height: 40,
   },
   marginaSlikeIokvir2: {
-    //marginBottom: 40,
     marginTop: 100,
-    borderRadius: 22,
-    borderWidth: 2,
     borderColor: "grey",
     height: 40,
     justifyContent: "center",
     bottom: 110,
+    width: "100%",
+    borderRadius: 20,
+    borderWidth: 2,
+    borderColor: "grey",
+    height: 40,
   },
   marginaSlikeIokvir3: {
-    //marginBottom: 40,
     marginTop: 100,
-    borderRadius: 22,
-    borderWidth: 2,
     borderColor: "grey",
     height: 40,
     justifyContent: "center",
     bottom: 160,
+    width: "100%",
+    borderRadius: 20,
+    borderWidth: 2,
+    borderColor: "grey",
+    height: 40,
   },
   marginaSlikeIokvir4: {
-    //marginBottom: 40,
     marginTop: 100,
     borderRadius: 22,
     borderWidth: 2,
@@ -184,10 +194,11 @@ const styles = StyleSheet.create({
     height: 40,
     justifyContent: "center",
     bottom: 210,
+    width: "100%",
   },
   btn1: {
-    left: 245,
-    bottom: 40,
+    left: 200,
+    bottom: 45,
     height: 110,
   },
   btnBorder1: {
@@ -197,18 +208,25 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     borderWidth: 2,
     padding: 8,
-    width: "30%",
-    height: "35%",
+    width: "41%",
+    height: "43%",
+    bottom: 60,
   },
   btnText1: {
     fontWeight: "bold",
-    fontSize: 14,
+    fontSize: 15,
     left: 45,
-    top: 5,
+    bottom: 20,
   },
-  TextInput:{
-    left:20,
-    top:-10,
-    fontSize:18
-  }
+  TextInput: {
+    left: 15,
+    top: -8,
+    fontSize: 18,
+    justifyContent: "center",
+    bottom: 30,
+    width:347
+  },
+  SaveIkona: {
+    bottom: -2,
+  },
 });

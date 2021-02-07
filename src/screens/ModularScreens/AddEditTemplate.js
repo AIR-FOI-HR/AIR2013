@@ -27,7 +27,7 @@ export default class App extends React.Component {
 	render() {
 		   		const { checked } = this.state;
 		return (
-			<View>
+			<View backgroundColor="white">
 				<ScrollView showsVerticalScrollIndicator={false} style={styles.scrollView}>
 					<View style={styles.Naslov}>
 						<Text style={styles.settingsText}>Dodaj/ukloni/uredi</Text>
@@ -104,7 +104,7 @@ const styles = StyleSheet.create({
   scrollView: {
     backgroundColor: "#fff",
     paddingHorizontal: 20,
-    paddingBottom: 310,
+    paddingBottom: 290,
   },
   Naslov: {
     width: "80%",
@@ -169,32 +169,32 @@ const styles = StyleSheet.create({
   },
   btn1: {
     right: 60,
-    bottom: 50,
+    bottom: 25,
   },
   btn2: {
-    right: 20,
-    bottom: 50,
+    right: 24,
+    bottom: 25,
   },
   btnBorder1: {
-    top: 35,
-    borderColor: colors.black,
-    backgroundColor: colors.white,
-    borderRadius: 8,
-    borderWidth: 2,
-    padding: 8,
-    width: "285%",
-    height: "22%",
-  },
-  btnBorder2: {
-    top: 35,
-    borderColor: colors.black,
-    backgroundColor: colors.white,
-    borderRadius: 8,
-    borderWidth: 2,
-    padding: 8,
-    width: "285%",
-    height: "22%",
-  },
+		top: 35,
+		borderColor: colors.black,
+		backgroundColor: colors.white,
+		borderRadius: 8,
+		borderWidth: 2,
+		padding: 8,
+		width: '285%',
+		height: '22%',
+	},
+	btnBorder2: {
+		top: 35,
+		borderColor: colors.black,
+		backgroundColor: colors.white,
+		borderRadius: 8,
+		borderWidth: 2,
+		padding: 8,
+		width: '285%',
+		height: '22%',
+	},
   btnText1: {
     fontWeight: "bold",
     fontSize: 14,

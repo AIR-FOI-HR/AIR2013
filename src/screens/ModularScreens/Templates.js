@@ -10,39 +10,53 @@ import { colors } from '../../constants/DesignConstants';
 export default class App extends React.Component {
 	render() {
 		return (
-			<ScrollView showsVerticalScrollIndicator={false} style={styles.scrollView}>
-				<View style={styles.Naslov}>
-					<Text style={styles.settingsText}>Uredi</Text>
-					<Text style={styles.settingsTextName}>predložak</Text>
-				</View>
-				<View style={styles.marginaSlikeIokvir1}>
-					<View style={styles.margineTeksta1}>
-						<Text style={styles.tekstIzbornika}>Naziv predloška </Text>
-					</View>
-				</View>
+      <View style={styles.View}>
+        <View style={styles.Naslov}>
+          <Text style={styles.settingsText}>Uredi</Text>
+          <Text style={styles.settingsTextName}>predložak</Text>
+        </View>
+        <View style={styles.marginaSlikeIokvir1}>
+          <View style={styles.margineTeksta1}>
+            <Text style={styles.tekstIzbornika1}>Naziv predloška </Text>
+            <TextInput
+              style={styles.TextInput1}
+              placeholder="Unesite naziv predloška"
+            ></TextInput>
+          </View>
+        </View>
 
-				<View style={styles.marginaSlikeIokvir2}>
-					<View style={styles.margineTeksta2}>
-						<Text style={styles.tekstIzbornika}>Tekst predloška </Text>
-					</View>
-				</View>
-				<View style={styles.txtButtonIcon}>
-					<View style={styles.btn1}>
-						<TouchableHighlight style={styles.btnBorder1}>
-							<EntypoIcon name="save" size={21}></EntypoIcon>
-						</TouchableHighlight>
-						<TouchableHighlight>
-							<Text style={styles.btnText1}>SPREMI</Text>
-						</TouchableHighlight>
-					</View>
-				</View>
-			</ScrollView>
-		);
+        <View style={styles.marginaSlikeIokvir2}>
+          <View style={styles.margineTeksta2}>
+            <Text style={styles.tekstIzbornika2}>Tekst predloška </Text>
+            <TextInput
+              style={styles.TextInput2}
+              placeholder="Unesite tekst predloška"
+              multiline
+            ></TextInput>
+          </View>
+        </View>
+        <View style={styles.txtButtonIcon}>
+          <View style={styles.btn1}>
+            <TouchableOpacity
+              style={styles.btnBorder1}
+              onPress={() => this.props.navigation.navigate("AddEditRooms")}
+            >
+              <EntypoIcon
+                name="save"
+                size={22}
+                style={styles.SaveIkona}
+              ></EntypoIcon>
+              <Text style={styles.btnText1}>SPREMI</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+      </View>
+    );
 	}
 }
 
 const styles = StyleSheet.create({
-  scrollView: {
+  View: {
     backgroundColor: "#fff",
     paddingHorizontal: 20,
   },
@@ -65,11 +79,17 @@ const styles = StyleSheet.create({
     fontWeight: "700",
     bottom: 7,
   },
-  tekstIzbornika: {
+  tekstIzbornika1: {
     fontWeight: "bold",
     fontSize: 18,
     left: 28,
-    top: -5,
+    top: 12,
+  },
+  tekstIzbornika2: {
+    fontWeight: "bold",
+    fontSize: 18,
+    left: 28,
+    top: 20,
   },
   margineTeksta1: {
     marginBottom: 0,
@@ -95,7 +115,7 @@ const styles = StyleSheet.create({
     borderColor: "grey",
     height: 40,
     justifyContent: "center",
-    bottom: 60,
+    bottom: 80,
   },
   marginaSlikeIokvir2: {
     //marginBottom: 40,
@@ -105,10 +125,11 @@ const styles = StyleSheet.create({
     borderColor: "grey",
     height: 400,
     justifyContent: "center",
-    bottom: 110,
+    bottom: 140,
+    width: "100%",
   },
   btn1: {
-    left: 245,
+    left: 205,
     bottom: 120,
     height: 110,
   },
@@ -119,13 +140,29 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     borderWidth: 2,
     padding: 8,
-    width: "30%",
-    height: "35%",
+    width: "41%",
+    height: "43%",
   },
   btnText1: {
     fontWeight: "bold",
-    fontSize: 14,
+    fontSize: 15,
     left: 45,
-    top: 5,
+    bottom: 20,
+  },
+  SaveIkona: {
+    bottom: -2,
+  },
+  TextInput1: {
+    left: 20,
+    top: 10,
+    fontSize: 18,
+    width: 347,
+  },
+  TextInput2: {
+    left: 20,
+    top: 20,
+    fontSize: 18,
+    width:340,
+
   },
 });

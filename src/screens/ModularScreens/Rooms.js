@@ -23,13 +23,10 @@ import { colors } from "../../constants/DesignConstants";
 export default class App extends React.Component {
   render() {
     return (
-      <ScrollView
-        showsVerticalScrollIndicator={false}
-        style={styles.scrollView}
-      >
+      <View style={styles.View}>
         <View style={styles.Naslov}>
-          <Text style={styles.settingsText}>Uredi</Text>
-          <Text style={styles.settingsTextName}>sobe</Text>
+          <Text style={styles.settingsText}>Uredite</Text>
+          <Text style={styles.settingsTextName}>sobu apartmana</Text>
         </View>
         <View style={styles.marginaSlikeIokvir1}>
           <View style={styles.margineTeksta1}>
@@ -43,17 +40,18 @@ export default class App extends React.Component {
 
         <View style={styles.marginaSlikeIokvir2}>
           <View style={styles.margineTeksta2}>
-            <Text style={styles.tekstIzbornika}>Kapacitet </Text>
+            <Text style={styles.tekstIzbornika}>Kapacitet sobe </Text>
             <TextInput
               style={styles.TextInput}
               placeholder="Unesite kapacitet"
+              keyboardType='numeric'
             ></TextInput>
           </View>
         </View>
 
         <View style={styles.marginaSlikeIokvir3}>
           <View style={styles.margineTeksta3}>
-            <Text style={styles.tekstIzbornika}> Cijena </Text>
+            <Text style={styles.tekstIzbornika}> Cijena sobe </Text>
             <TextInput
               style={styles.TextInput}
               placeholder="Unesite cijenu"
@@ -61,47 +59,31 @@ export default class App extends React.Component {
           </View>
         </View>
 
-        <View style={styles.marginaSlikeIokvir4}>
-          <TouchableOpacity
-            style={styles.dodajUkloniStavke}
-            onPress={() => this.props.navigation.navigate("AddEditApartments")}
-          >
-            <View style={styles.margineTeksta4}>
-              <FontAwesomeIcons name="bed" size={19}>
-                <Text style={styles.tekstIzbornika}>
-                  {" "}
-                  Dodaj ili ukloni sobe
-                </Text>
-              </FontAwesomeIcons>
-              <View style={styles.arrow}>
-                <MaterialIcons
-                  name="arrow-forward-ios"
-                  size={25}
-                ></MaterialIcons>
-              </View>
-            </View>
-          </TouchableOpacity>
-        </View>
-
         <View style={styles.txtButtonIcon}>
           <View style={styles.btn1}>
-            <TouchableHighlight style={styles.btnBorder1}>
-              <EntypoIcon name="save" size={21}></EntypoIcon>
-            </TouchableHighlight>
-            <TouchableHighlight>
+            <TouchableOpacity
+              style={styles.btnBorder1}
+              onPress={() => this.props.navigation.navigate("AddEditRooms")}
+            >
+              <EntypoIcon
+                name="save"
+                size={22}
+                style={styles.SaveIkona}
+              ></EntypoIcon>
               <Text style={styles.btnText1}>SPREMI</Text>
-            </TouchableHighlight>
+            </TouchableOpacity>
           </View>
         </View>
-      </ScrollView>
+      </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  scrollView: {
+  View: {
     backgroundColor: "#fff",
     paddingHorizontal: 20,
+    paddingBottom: 150,
   },
   Naslov: {
     width: "80%",
@@ -158,37 +140,42 @@ const styles = StyleSheet.create({
     bottom: 22,
   },
   marginaSlikeIokvir1: {
-    //marginBottom: 40,
     marginTop: 125,
-    borderRadius: 22,
-    borderWidth: 2,
     borderColor: "grey",
     height: 40,
     justifyContent: "center",
     bottom: 60,
+    width: "100%",
+    borderRadius: 20,
+    borderWidth: 2,
+    borderColor: "grey",
+    height: 40,
   },
   marginaSlikeIokvir2: {
-    //marginBottom: 40,
     marginTop: 100,
-    borderRadius: 22,
-    borderWidth: 2,
     borderColor: "grey",
     height: 40,
     justifyContent: "center",
     bottom: 110,
+    width: "100%",
+    borderRadius: 20,
+    borderWidth: 2,
+    borderColor: "grey",
+    height: 40,
   },
   marginaSlikeIokvir3: {
-    //marginBottom: 40,
     marginTop: 100,
-    borderRadius: 22,
-    borderWidth: 2,
     borderColor: "grey",
     height: 40,
     justifyContent: "center",
     bottom: 160,
+    width: "100%",
+    borderRadius: 20,
+    borderWidth: 2,
+    borderColor: "grey",
+    height: 40,
   },
   marginaSlikeIokvir4: {
-    //marginBottom: 40,
     marginTop: 100,
     borderRadius: 22,
     borderWidth: 2,
@@ -196,10 +183,11 @@ const styles = StyleSheet.create({
     height: 40,
     justifyContent: "center",
     bottom: 210,
+    width: "100%",
   },
   btn1: {
-    left: 245,
-    bottom: 40,
+    left: 200,
+    top: 90,
     height: 110,
   },
   btnBorder1: {
@@ -209,18 +197,22 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     borderWidth: 2,
     padding: 8,
-    width: "30%",
-    height: "35%",
+    width: "41%",
+    height: "43%",
   },
   btnText1: {
     fontWeight: "bold",
-    fontSize: 14,
+    fontSize: 15,
     left: 45,
-    top: 5,
+    bottom: 20,
   },
   TextInput: {
     left: 20,
     top: -10,
     fontSize: 18,
+    width: 347,
+  },
+  SaveIkona: {
+    bottom: -2,
   },
 });
