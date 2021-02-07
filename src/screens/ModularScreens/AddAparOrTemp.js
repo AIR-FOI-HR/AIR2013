@@ -14,7 +14,7 @@ import EntypoIcon from 'react-native-vector-icons/Entypo';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import FontAwesomeIcons from 'react-native-vector-icons/FontAwesome'; 
 
-
+//test
 export default class App extends React.Component {
     constructor(props) { //Konstruktor za switch 1 i 2
         super(props);
