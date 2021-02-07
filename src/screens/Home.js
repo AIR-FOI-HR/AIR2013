@@ -22,6 +22,12 @@ import Icon from 'react-native-vector-icons/Ionicons'
 
 import { colors } from '../constants/DesignConstants'
 
+
+const Ispis =(nacinIspisa)=>{
+	console.log("Trenutna boja je:"+nacinIspisa);
+}
+
+
 export default class App extends React.Component {
 	constructor(props) {
 		super(props);
@@ -31,11 +37,13 @@ export default class App extends React.Component {
 			zelena: 'zelena',
 			crvena: 'crvena',
 		};
+		var zahtjevi;
 		this.state = {
 			isLoading: true,
 			dataSourceRequests: null,
 			dataSourceClients: null,
 			trenutnaBoja: BojeEnum.obicna,
+			zahtjevi:null,
 		};
 
 		/*
@@ -120,9 +128,11 @@ export default class App extends React.Component {
 		console.log(this.state.trenutnaBoja);
 	};
 
+
 	render() {
 		//console.log(this.state.currentUser);
 		console.log(this.state.trenutnaBoja);
+		Ispis(this.state.trenutnaBoja);
 		if (this.state.isLoading) {
 			return (
 				<View style={styles.mainView}>
@@ -194,7 +204,9 @@ export default class App extends React.Component {
 					</View>
 				);
 			});
-
+			requests.forEach(element => {
+				//console.log(element);
+			});
 			return (
 				<ScrollView showsVerticalScrollIndicator={false} style={styles.scrollView}>
 					{/*Zaglavlje s pozdravnom porukom i ikonom korisničkog profila*/}
