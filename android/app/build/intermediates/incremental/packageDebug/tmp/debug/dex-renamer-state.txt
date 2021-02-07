@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 #Sun Feb 07 20:56:15 EET 2021
+=======
+#Sat Feb 06 19:03:54 EET 2021
+>>>>>>> APIConnection
 base.0=C\:\\Users\\Mario\\source\\repos\\mRent\\AIR2013\\android\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
 renamed.0=classes.dex
 path.0=classes.dex

@@ -8,8 +8,9 @@ import {
 	TouchableOpacity,
 	Switch,
 	Button,
-    TouchableHighlight,
-    CheckBox
+	TouchableHighlight,
+	CheckBox,
+	ActivityIndicator
 } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 import { GoogleSignin, GoogleSigninButton, statusCodes } from '@react-native-community/google-signin';
@@ -20,85 +21,103 @@ import FontAwesomeIcons from 'react-native-vector-icons/FontAwesome';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import { colors } from '../../constants/DesignConstants';
 import { RadioButton } from 'react-native-paper';
+import { FetchDataFromAPI } from '../../backend/ApiConnection'
 
 export default class App extends React.Component {
-	
-	state = {
-		checked: 'first',
-	};
-	render() {
-			   const { checked } = this.state;
-		return (
-			<View backgroundColor="white">
-				<ScrollView showsVerticalScrollIndicator={false} style={styles.scrollView}>
-					<View style={styles.Naslov}>
-						<Text style={styles.settingsText}>Dodaj/ukloni/uredi</Text>
-						<Text style={styles.settingsTextName}>apartman</Text>
-					</View>
 
+	state = {
+		checked: null,
+		dataSourceProperties: null,
+		isLoading: true
+	};
+
+	urlProperties = 'https://air2020api.azure-api.net/api/Properties'
+
+	async componentDidMount() {
+		this.setState({
+			dataSourceProperties: await FetchDataFromAPI(this.urlProperties),
+			isLoading: false
+		})
+	}
+
+	render() {
+		const { checked } = this.state;
+
+		if (this.state.isLoading) {
+			return (
+				<View style={styles.mainView}>
+					<ActivityIndicator />
+				</View>
+			);
+		} else {
+
+			var dataProperties = this.state.dataSourceProperties;
+
+			let properties = dataProperties.map((requestVal, keyRequest) => {
+
+				var propertyId = requestVal.propertyId;
+				var name = requestVal.name;
+				var location = requestVal.location;
+				var unit = requestVal.unit;
+
+				return <View key={keyRequest}>
 					<View style={styles.marginaSlikeIokvir1}>
 						<View style={styles.margineTeksta1}>
 							<View style={styles.radioButton}>
 								<RadioButton
-									value="first"
-									status={checked === 'first' ? 'checked' : 'unchecked'}
+									value= {propertyId}
+									status={checked === propertyId ? 'checked' : 'unchecked'}
 									onPress={() => {
-										this.setState({ checked: 'first' });
+										this.setState({ checked: propertyId });
 									}}
 								/>
 							</View>
-							<Text style={styles.tekstIzbornika}> Villa Maria </Text>
+							<Text style={styles.tekstIzbornika}>{name}</Text>
 							<View>
 								<View style={styles.arrow}>
-									<TouchableOpacity onPress={() => this.props.navigation.navigate('Apartments')}>
+									<TouchableOpacity onPress={() => this.props.navigation.navigate('Apartments', {propertyId: {propertyId}, name: {name}, location: {location}})}>
 										<MaterialIcons name="arrow-forward-ios" size={25}></MaterialIcons>
 									</TouchableOpacity>
 								</View>
 							</View>
 						</View>
 					</View>
+				</View>
+			});
 
-					<View style={styles.marginaSlikeIokvir2}>
-						<View style={styles.radioButton2}>
-							<RadioButton
-								value="first"
-								status={checked === 'first' ? 'checked' : 'unchecked'}
-								onPress={() => {
-									this.setState({ checked: 'first' });
-								}}
-							/>
+			return (
+				<View>
+					<ScrollView showsVerticalScrollIndicator={false} style={styles.scrollView}>
+						<View style={styles.Naslov}>
+							<Text style={styles.settingsText}>Dodaj/ukloni/uredi</Text>
+							<Text style={styles.settingsTextName}>apartman</Text>
 						</View>
-						<View style={styles.margineTeksta2}>
-							<Text style={styles.tekstIzbornika}> Villa Magnolia</Text>
-							<View style={styles.arrow}>
-								<TouchableOpacity onPress={() => this.props.navigation.navigate('Apartments')}>
-									<MaterialIcons name="arrow-forward-ios" size={25}></MaterialIcons>
-								</TouchableOpacity>
-							</View>
-						</View>
-					</View>
-				</ScrollView>
-				<View style={styles.txtButtonIcon}>
-					<View style={styles.btn1}>
-						<TouchableHighlight style={styles.btnBorder1}>
-							<MaterialCommunityIcons name="plus" size={23}></MaterialCommunityIcons>
-						</TouchableHighlight>
-						<TouchableHighlight>
-							<Text style={styles.btnText1}>DODAJ</Text>
-						</TouchableHighlight>
-					</View>
 
-					<View style={styles.btn2}>
-						<TouchableHighlight style={styles.btnBorder2}>
-							<IonIcon name="trash" size={20} />
-						</TouchableHighlight>
-						<TouchableHighlight>
-							<Text style={styles.btnText2}>OBRIŠI</Text>
-						</TouchableHighlight>
+						{properties}
+
+					</ScrollView>
+					<View style={styles.txtButtonIcon}>
+						<View style={styles.btn1}>
+							<TouchableHighlight style={styles.btnBorder1}>
+								<MaterialCommunityIcons name="plus" size={23}></MaterialCommunityIcons>
+							</TouchableHighlight>
+							<TouchableHighlight>
+								<Text style={styles.btnText1}>DODAJ</Text>
+							</TouchableHighlight>
+						</View>
+
+						<View style={styles.btn2}>
+							<TouchableHighlight style={styles.btnBorder2}>
+								<IonIcon name="trash" size={20} />
+							</TouchableHighlight>
+							<TouchableHighlight>
+								<Text style={styles.btnText2}>OBRIŠI</Text>
+							</TouchableHighlight>
+						</View>
 					</View>
 				</View>
-			</View>
-		);
+			);
+		}
 	}
 }
 
@@ -217,13 +236,13 @@ const styles = StyleSheet.create({
 		left: 300,
 		bottom: 30,
 	},
-	radioButton:{
+	radioButton: {
 		top: 25,
-		left:-10,
+		left: -10,
 	},
-	radioButton2:{
+	radioButton2: {
 		top: 31,
-		left:2,
+		left: 2,
 	}
 });
 

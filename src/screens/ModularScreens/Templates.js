@@ -8,6 +8,20 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import FontAwesomeIcons from 'react-native-vector-icons/FontAwesome';
 import { colors } from '../../constants/DesignConstants';
 export default class App extends React.Component {
+
+	constructor(props) {
+        const { emailTemplateId } = props.navigation.getParam('emailTemplateId');
+		const { name } = props.navigation.getParam('name');
+		const { templateContent } = props.navigation.getParam('templateContent');
+        
+        super(props);
+        this.state = {
+            emailTemplateId: emailTemplateId,
+			name: name,
+			templateContent: templateContent,
+        }
+    }
+
 	render() {
 		return (
       <View style={styles.View}>

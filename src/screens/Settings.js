@@ -24,7 +24,6 @@ export default class App extends React.Component {
             toggle: false,
             toggle2: false,
         };
-        this.getCurrentUser();
     }
 
     getCurrentUser = async () => 
@@ -50,8 +49,6 @@ export default class App extends React.Component {
     }
 };
     render(){
-        console.log("Settings");
-        console.log(this.state.currentUser); 
         return (
             <ScrollView showsVerticalScrollIndicator={false} style={styles.scrollView}>
                 {/*Zaglavlje s pozdravom i implementacija slike*/}
@@ -136,9 +133,7 @@ export default class App extends React.Component {
                             </View>
 
                             <View style={styles.margineTeksta}>
-                                <TouchableOpacity onPress={() => {
-                                    this.signOut()
-                                }}>
+                                <TouchableOpacity>
                                     <View style={styles.logoutIcon}>
                                         <MaterialIcons name="logout" size={24}></MaterialIcons>
                                     </View>

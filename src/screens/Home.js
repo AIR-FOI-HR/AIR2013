@@ -10,80 +10,50 @@ import {
 } from 'react-native'
 import { ScrollView } from 'react-native-gesture-handler'
 
-import {GoogleSignin, GoogleSigninButton, statusCodes} from '@react-native-community/google-signin';
-
 import Request from '../components/Request'
-
-import RequestObject from '../models/Request'
-
-import ClientObject from '../models/Property'
 
 import Icon from 'react-native-vector-icons/Ionicons'
 
 import { colors } from '../constants/DesignConstants'
+import { FetchDataFromAPI } from '../backend/ApiConnection'
 
 export default class App extends React.Component {
 
     constructor(props) {
-        
+        /*
+            prijavljeniKorisnik je googleov zapis korisnika. 
+            Za pristup emailu koristiti prijavljeniKorisnik.user.email
+            Za pristup korisničkom imenu koristiti prijavljeniKOrisnik.user.name
+            Za pristup izvoru slike koristiti prijavljeniKorisnik.user.photo
+            Za više informacija unijeti console.log(prijavljeni korisnik) ili posjetiti
+            https://github.com/react-native-google-signin/google-signin i pogledati 3. naslov
+        */
+        const  {prijavljeniKorisnik} = props.navigation.getParam('prijavljeniKorisnik');
 
         super(props);
         this.state = {
             isLoading: true,
             dataSourceRequests: null,
             dataSourceClients: null,
+            prijavljeniKorisnik: prijavljeniKorisnik,
         }
 
-        /*
-            this.state.currentUser je googleov zapis korisnika. 
-            Za pristup emailu koristiti this.state.currentUser.user.email
-            Za pristup korisničkom imenu koristiti this.state.currentUser.user.name
-            Za pristup izvoru slike koristiti this.state.currentUser.user.photo
-            Za više informacija unijeti console.log(this.state.currentUser) ili posjetiti
-            https://github.com/react-native-google-signin/google-signin i pogledati 3. naslov
-        */
-
-        this.getCurrentUser();
-
+        console.log(prijavljeniKorisnik);
     }
 
-    getCurrentUser = async () => 
-    {
-        const currentUser = await GoogleSignin.getCurrentUser();
-        this.setState({ currentUser });
-        console.log("Ušao u google");
-
-    };
-
+    urlClients = 'https://air2020api.azure-api.net/api/Clients'
+    urlRequests = 'https://air2020api.azure-api.net/api/Requests'
+    
     async componentDidMount() {
-        await fetch('https://jsonkeeper.com/b/R2BS')
-            .then((responseRequests) => responseRequests.json())
-            .then((responseRequestsJson) => {
-                this.setState({
-                    dataSourceRequests: responseRequestsJson,
-                })
+            this.setState({
+                dataSourceRequests: await FetchDataFromAPI(this.urlRequests),
+                dataSourceClients: await FetchDataFromAPI(this.urlClients),
+                isLoading: false
             })
-            .catch((error) => {
-                console.log(error);
-            });
-
-        await fetch('https://jsonkeeper.com/b/6LCM')
-            .then((responseClients) => responseClients.json())
-            .then((responseClientsJson) => {
-                this.setState({
-                    isLoading: false,
-                    dataSourceClients: responseClientsJson,
-                })
-            })
-            .catch((error) => {
-                console.log(error);
-            });
     }
 
-    render()
-    {
-        console.log("Glavni dio");
-        console.log(this.state.currentUser); 
+    render() {
+
         if (this.state.isLoading) {
             return (
                 <View style={styles.mainView}>
@@ -102,6 +72,7 @@ export default class App extends React.Component {
             let requests = dataRequests.map((requestVal, keyRequest) => {
                 var sentThrough = '';
                 var status = null;
+
                 if (requestVal.sent === true) {
                     sentThrough = 'email';
                 }
@@ -151,7 +122,7 @@ export default class App extends React.Component {
                     <View style={styles.mainView}>
                         <View style={styles.welcomeHeaderView}>
                             <Text style={styles.txtWelcome}>Dobrodošao,</Text>
-                            <Text style={styles.txtWelcomeName}>{this.state.currentUser.user.name}</Text>
+                            <Text style={styles.txtWelcomeName}>{this.state.prijavljeniKorisnik.user.name}</Text>
                         </View>
 
                         <View style={styles.profileIconView}>

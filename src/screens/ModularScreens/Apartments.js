@@ -9,6 +9,19 @@ import FontAwesomeIcons from 'react-native-vector-icons/FontAwesome';
 import { colors } from '../../constants/DesignConstants';
 export default class App extends React.Component {
 
+	constructor(props) {
+        const { propertyId } = props.navigation.getParam('propertyId');
+		const { name } = props.navigation.getParam('name');
+		const { location } = props.navigation.getParam('location');
+        
+        super(props);
+        this.state = {
+            propertyId: propertyId,
+			name: name,
+			location: location,
+        }
+    }
+
 	render() {
 		return (
       <View style={styles.View}>
@@ -47,27 +60,21 @@ export default class App extends React.Component {
           </View>
         </View>
 
-        <View style={styles.marginaSlikeIokvir4}>
-          <TouchableOpacity
-            style={styles.dodajUkloniStavke}
-            onPress={() => this.props.navigation.navigate("AddEditRooms")}
-          >
-            <View style={styles.margineTeksta4}>
-              <FontAwesomeIcons name="bed" size={19}>
-                <Text style={styles.tekstIzbornika}>
-                  {" "}
-                  Dodaj ili ukloni sobe
-                </Text>
-              </FontAwesomeIcons>
-              <View style={styles.arrow}>
-                <MaterialIcons
-                  name="arrow-forward-ios"
-                  size={25}
-                ></MaterialIcons>
-              </View>
-            </View>
-          </TouchableOpacity>
-        </View>
+				<View style={styles.marginaSlikeIokvir4}>
+					<TouchableOpacity
+						style={styles.dodajUkloniStavke}
+						onPress={() => this.props.navigation.navigate('AddEditRooms', {propertyId: this.state.propertyId})}
+					>
+						<View style={styles.margineTeksta4}>
+							<FontAwesomeIcons name="bed" size={19}>
+								<Text style={styles.tekstIzbornika}> Dodaj ili ukloni sobe </Text>
+							</FontAwesomeIcons>
+							<View style={styles.arrow}>
+								<MaterialIcons name="arrow-forward-ios" size={25}></MaterialIcons>
+							</View>
+						</View>
+					</TouchableOpacity>
+				</View>
 
         <View style={styles.txtButtonIcon}>
           <View style={styles.btn1}>
