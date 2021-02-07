@@ -15,6 +15,9 @@ import Request from '../components/Request'
 import Icon from 'react-native-vector-icons/Ionicons'
 
 import { colors } from '../constants/DesignConstants'
+import { FetchDataFromAPI } from '../backend/ApiConnection'
+import requests from '../backend/ApiConnection'
+import clients from '../backend/ApiConnection'
 
 export default class App extends React.Component {
 
@@ -40,29 +43,15 @@ export default class App extends React.Component {
         console.log(prijavljeniKorisnik);
     }
 
+    urlClients = 'https://air2020api.azure-api.net/api/Clients'
+    urlRequests = 'https://air2020api.azure-api.net/api/Requests'
+    
     async componentDidMount() {
-        await fetch('https://air2020api.azure-api.net/api/Requests')
-            .then((responseRequests) => responseRequests.json())
-            .then((responseRequestsJson) => {
-                this.setState({
-                    dataSourceRequests: responseRequestsJson,
-                })
+            this.setState({
+                dataSourceRequests: await FetchDataFromAPI(this.urlRequests),
+                dataSourceClients: await FetchDataFromAPI(this.urlClients),
+                isLoading: false
             })
-            .catch((error) => {
-                console.log(error);
-            });
-
-        await fetch('https://air2020api.azure-api.net/api/Clients')
-            .then((responseClients) => responseClients.json())
-            .then((responseClientsJson) => {
-                this.setState({
-                    isLoading: false,
-                    dataSourceClients: responseClientsJson,
-                })
-            })
-            .catch((error) => {
-                console.log(error);
-            });
     }
 
     render() {
