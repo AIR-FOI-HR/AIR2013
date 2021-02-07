@@ -16,8 +16,6 @@ import Icon from 'react-native-vector-icons/Ionicons'
 
 import { colors } from '../constants/DesignConstants'
 import { FetchDataFromAPI } from '../backend/ApiConnection'
-import requests from '../backend/ApiConnection'
-import clients from '../backend/ApiConnection'
 
 export default class App extends React.Component {
 
@@ -74,6 +72,7 @@ export default class App extends React.Component {
             let requests = dataRequests.map((requestVal, keyRequest) => {
                 var sentThrough = '';
                 var status = null;
+
                 if (requestVal.sent === true) {
                     sentThrough = 'email';
                 }

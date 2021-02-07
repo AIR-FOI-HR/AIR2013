@@ -9,6 +9,19 @@ import FontAwesomeIcons from 'react-native-vector-icons/FontAwesome';
 import { colors } from '../../constants/DesignConstants';
 export default class App extends React.Component {
 
+	constructor(props) {
+        const { propertyId } = props.navigation.getParam('propertyId');
+		const { name } = props.navigation.getParam('name');
+		const { location } = props.navigation.getParam('location');
+        
+        super(props);
+        this.state = {
+            propertyId: propertyId,
+			name: name,
+			location: location,
+        }
+    }
+
 	render() {
 		return (
 			<ScrollView showsVerticalScrollIndicator={false} style={styles.scrollView}>
@@ -37,7 +50,7 @@ export default class App extends React.Component {
 				<View style={styles.marginaSlikeIokvir4}>
 					<TouchableOpacity
 						style={styles.dodajUkloniStavke}
-						onPress={() => this.props.navigation.navigate('AddEditApartments')}
+						onPress={() => this.props.navigation.navigate('AddEditApartments', {propertyId: this.state.propertyId})}
 					>
 						<View style={styles.margineTeksta4}>
 							<FontAwesomeIcons name="bed" size={19}>
