@@ -131,9 +131,11 @@ const styles = StyleSheet.create({
   View: {
     backgroundColor: "#fff",
     paddingHorizontal: 20,
+    height: 800,
   },
   Naslov: {
     width: "80%",
+    marginBottom:40
   },
   mainView: {
     flexDirection: "row",
@@ -160,7 +162,7 @@ const styles = StyleSheet.create({
   margineTeksta1: {
     marginBottom: 0,
     marginTop: 0,
-    marginLeft: -12,
+    marginLeft: -15,
     bottom: 10,
   },
   margineTeksta2: {
@@ -191,7 +193,7 @@ const styles = StyleSheet.create({
     borderColor: "grey",
     height: 40,
     justifyContent: "center",
-    bottom: 60,
+    bottom: 110,
     width: "100%",
     borderRadius: 20,
     borderWidth: 2,
@@ -234,7 +236,7 @@ const styles = StyleSheet.create({
   },
   btn1: {
     left: 200,
-    bottom: 45,
+    top: 60,
     height: 110,
   },
   btnBorder1: {
@@ -260,7 +262,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     justifyContent: "center",
     bottom: 30,
-    width: 347
+    width: 347,
   },
   SaveIkona: {
     bottom: -2,

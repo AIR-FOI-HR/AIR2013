@@ -146,7 +146,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     fontSize: 18,
     left: 28,
-    top: 20,
+    top: 188,
   },
   margineTeksta1: {
     marginBottom: 0,
@@ -217,7 +217,7 @@ const styles = StyleSheet.create({
   },
   TextInput2: {
     left: 20,
-    top: 20,
+    top: 185,
     fontSize: 18,
     width: 340,
 

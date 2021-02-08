@@ -106,7 +106,7 @@ export default class App extends React.Component {
       });
 
       return (
-        <View backgroundColor="white">
+        <View style={styles.background}>
           <ScrollView
             showsVerticalScrollIndicator={false}
             style={styles.scrollView}
@@ -198,13 +198,13 @@ const styles = StyleSheet.create({
   },
   marginaSlikeIokvir1: {
     marginBottom: 5,
-    marginTop: 125,
+    marginTop: 40,
     borderRadius: 22,
     borderWidth: 2,
     borderColor: "grey",
     height: 40,
     justifyContent: "center",
-    bottom: 50,
+    bottom: 20,
   },
   marginaSlikeIokvir2: {
     //marginBottom: 40,
@@ -222,11 +222,11 @@ const styles = StyleSheet.create({
   },
   btn1: {
     right: 60,
-    bottom: 25,
+    bottom: -15,
   },
   btn2: {
     right: 20,
-    bottom: 25,
+    bottom: -15,
   },
   btnBorder1: {
     top: 35,
@@ -235,8 +235,8 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     borderWidth: 2,
     padding: 8,
-    width: "285%",
-    height: "22%",
+    width: "200%",
+    height: "24%",
   },
   btnBorder2: {
     top: 35,
@@ -245,20 +245,21 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     borderWidth: 2,
     padding: 8,
-    width: "285%",
-    height: "22%",
+    width: "200%",
+    height: "24%",
+    left:11
   },
   btnText1: {
     fontWeight: "bold",
     fontSize: 15,
     left: 55,
-    top: 0,
+    bottom: 22,
   },
   btnText2: {
     fontWeight: "bold",
     fontSize: 15,
     left: 55,
-    top: 0,
+    bottom: 20,
   },
   arrow: {
     left: 300,
@@ -271,5 +272,9 @@ const styles = StyleSheet.create({
   radioButton2: {
     top: 31,
     left: 2,
+  },
+  background: {
+    backgroundColor: colors.white,
+    height: 800,
   },
 });
