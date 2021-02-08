@@ -102,7 +102,7 @@ export default class App extends React.Component {
             <TextInput
               style={styles.TextInput}
               placeholder="Unesite naziv sobe"
-              value={this.state.name}
+              defaultValue={this.state.name}
               onChangeText={this.handleChangedTextName}
             ></TextInput>
           </View>
@@ -114,7 +114,7 @@ export default class App extends React.Component {
             <TextInput
               style={styles.TextInput}
               placeholder="Unesite kapacitet"
-              value={capacity}
+              defaultValue={capacity}
               onChangeText={this.handleChangedTextCapacity}
             ></TextInput>
           </View>
@@ -126,7 +126,7 @@ export default class App extends React.Component {
             <TextInput
               style={styles.TextInput}
               placeholder="Unesite cijenu"
-              value={price}
+              defaultValue={price}
               onChangeText={this.handleChangedTextPrice}
             ></TextInput>
           </View>

@@ -66,7 +66,7 @@ export default class App extends React.Component {
             <TextInput
               style={styles.TextInput1}
               placeholder="Unesite naziv predloška"
-              value={this.state.name}
+              defaultValue={this.state.name}
               onChangeText={this.handleChangedTextName}
             ></TextInput>
           </View>
@@ -79,7 +79,7 @@ export default class App extends React.Component {
               style={styles.TextInput2}
               placeholder="Unesite tekst predloška"
               multiline
-              value={this.state.templateContent}
+              defaultValue={this.state.templateContent}
               onChangeText={this.handleChangedTextContent}
             ></TextInput>
           </View>

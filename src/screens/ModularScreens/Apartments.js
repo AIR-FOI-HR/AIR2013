@@ -65,7 +65,7 @@ export default class App extends React.Component {
             <TextInput
               style={styles.TextInput}
               placeholder="Unesite naziv apartmana"
-              value={this.state.name}
+              defaultValue={this.state.name}
               onChangeText={this.handleChangedTextName}
             ></TextInput>
           </View>
@@ -77,7 +77,7 @@ export default class App extends React.Component {
             <TextInput
               style={styles.TextInput}
               placeholder="Unesite lokaciju"
-              value={this.state.location}
+              defaultValue={this.state.location}
               onChangeText={this.handleChangedTextLocation}
             ></TextInput>
           </View>
