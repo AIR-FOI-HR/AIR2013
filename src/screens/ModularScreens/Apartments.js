@@ -7,23 +7,53 @@ import IonIcon from 'react-native-vector-icons/Ionicons';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import FontAwesomeIcons from 'react-native-vector-icons/FontAwesome';
 import { colors } from '../../constants/DesignConstants';
+import { AddDataOnAPI, EditDataOnAPI } from '../../backend/ApiConnection';
+
 export default class App extends React.Component {
 
-	constructor(props) {
-        const { propertyId } = props.navigation.getParam('propertyId');
-		const { name } = props.navigation.getParam('name');
-		const { location } = props.navigation.getParam('location');
-        
-        super(props);
-        this.state = {
-            propertyId: propertyId,
-			name: name,
-			location: location,
-        }
+  constructor(props) {
+    const { propertyId } = props.navigation.getParam('propertyId');
+    const { name } = props.navigation.getParam('name');
+    const { location } = props.navigation.getParam('location');
+
+    const { apartmentNameText } = '';
+    const { apartmentLocationText } = '';
+
+    super(props);
+    this.state = {
+      propertyId: propertyId,
+      name: name,
+      location: location,
+      apartmentNameText: apartmentNameText,
+      apartmentLocationText: apartmentLocationText,
     }
 
-	render() {
-		return (
+    this.handleChangedTextName = this.handleChangedTextName.bind(this)
+    this.handleChangedTextLocation = this.handleChangedTextLocation.bind(this)
+  }
+
+  urlProperties = 'https://air2020api.azure-api.net/api/Properties'
+
+  handleChangedTextName(newText) {
+    this.setState({
+      apartmentNameText: newText
+    })
+
+    console.log(this.state.apartmentNameText)
+  }
+
+  handleChangedTextLocation(newText) {
+    this.setState({
+      apartmentLocationText: newText
+    })
+
+    console.log(this.state.apartmentLocationText)
+  }
+
+  render() {
+    const { propertyId } = this.state;
+
+    return (
       <View style={styles.View}>
         <View style={styles.Naslov}>
           <Text style={styles.settingsText}>Uredi</Text>
@@ -35,17 +65,8 @@ export default class App extends React.Component {
             <TextInput
               style={styles.TextInput}
               placeholder="Unesite naziv apartmana"
-            ></TextInput>
-          </View>
-        </View>
-
-        <View style={styles.marginaSlikeIokvir2}>
-          <View style={styles.margineTeksta2}>
-            <Text style={styles.tekstIzbornika}>Broj sobe </Text>
-            <TextInput
-              style={styles.TextInput}
-              placeholder="Unesite broj sobe"
-              keyboardType='numeric'
+              value={this.state.name}
+              onChangeText={this.handleChangedTextName}
             ></TextInput>
           </View>
         </View>
@@ -56,33 +77,41 @@ export default class App extends React.Component {
             <TextInput
               style={styles.TextInput}
               placeholder="Unesite lokaciju"
+              value={this.state.location}
+              onChangeText={this.handleChangedTextLocation}
             ></TextInput>
           </View>
         </View>
 
-				<View style={styles.marginaSlikeIokvir4}>
-					<TouchableOpacity
-						style={styles.dodajUkloniStavke}
-						onPress={() => this.props.navigation.navigate('AddEditRooms', {propertyId: this.state.propertyId})}
-					>
-						<View style={styles.margineTeksta4}>
-							<FontAwesomeIcons name="bed" size={19}>
-								<Text style={styles.tekstIzbornika}> Dodaj ili ukloni sobe </Text>
-							</FontAwesomeIcons>
-							<View style={styles.arrow}>
-								<MaterialIcons name="arrow-forward-ios" size={25}></MaterialIcons>
-							</View>
-						</View>
-					</TouchableOpacity>
-				</View>
+        <View style={styles.marginaSlikeIokvir4}>
+          <TouchableOpacity
+            style={styles.dodajUkloniStavke}
+            onPress={() => this.props.navigation.navigate('AddEditRooms', { selectedPropertyId: propertyId })}
+          >
+            <View style={styles.margineTeksta4}>
+              <FontAwesomeIcons name="bed" size={19}>
+                <Text style={styles.tekstIzbornika}> Dodaj ili ukloni sobe </Text>
+              </FontAwesomeIcons>
+              <View style={styles.arrow}>
+                <MaterialIcons name="arrow-forward-ios" size={25}></MaterialIcons>
+              </View>
+            </View>
+          </TouchableOpacity>
+        </View>
 
         <View style={styles.txtButtonIcon}>
           <View style={styles.btn1}>
             <TouchableOpacity
               style={styles.btnBorder1}
-              onPress={() =>
-                this.props.navigation.navigate("AddEditApartments")
-              }
+              onPress={async () => {
+                let bodyAdd = JSON.stringify({ name: this.state.apartmentNameText, location: this.state.apartmentLocationText })
+                let bodyEdit = JSON.stringify({ propertyId: propertyId, name: this.state.apartmentNameText, location: this.state.apartmentLocationText })
+                if (propertyId === undefined) {
+                  await AddDataOnAPI(this.urlProperties, bodyAdd)
+                } else {
+                  await EditDataOnAPI(this.urlProperties + '/' + propertyId, bodyEdit)
+                }
+              }}
             >
               <EntypoIcon
                 name="save"
@@ -95,7 +124,7 @@ export default class App extends React.Component {
         </View>
       </View>
     );
-	}
+  }
 }
 
 const styles = StyleSheet.create({
@@ -231,7 +260,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     justifyContent: "center",
     bottom: 30,
-    width:347
+    width: 347
   },
   SaveIkona: {
     bottom: -2,

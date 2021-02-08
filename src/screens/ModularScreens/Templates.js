@@ -7,23 +7,54 @@ import IonIcon from 'react-native-vector-icons/Ionicons';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import FontAwesomeIcons from 'react-native-vector-icons/FontAwesome';
 import { colors } from '../../constants/DesignConstants';
+import { AddDataOnAPI, EditDataOnAPI } from '../../backend/ApiConnection';
+
 export default class App extends React.Component {
 
-	constructor(props) {
-        const { emailTemplateId } = props.navigation.getParam('emailTemplateId');
-		const { name } = props.navigation.getParam('name');
-		const { templateContent } = props.navigation.getParam('templateContent');
-        
-        super(props);
-        this.state = {
-            emailTemplateId: emailTemplateId,
-			name: name,
-			templateContent: templateContent,
-        }
+  constructor(props) {
+    const { emailTemplateId } = props.navigation.getParam('emailTemplateId');
+    const { name } = props.navigation.getParam('name');
+    const { templateContent } = props.navigation.getParam('templateContent');
+
+    const { templateNameText } = '';
+    const { templateContentText } = '';
+
+    super(props);
+    this.state = {
+      emailTemplateId: emailTemplateId,
+      name: name,
+      templateContent: templateContent,
+      templateNameText: templateNameText,
+      templateContentText: templateContentText,
     }
 
-	render() {
-		return (
+    this.handleChangedTextName = this.handleChangedTextName.bind(this)
+    this.handleChangedTextContent = this.handleChangedTextContent.bind(this)
+  }
+
+  urlTemplates = 'https://air2020api.azure-api.net/api/EmailTemplates'
+
+  handleChangedTextName(newText) {
+    this.setState({
+      templateNameText: newText
+    })
+    
+    console.log(this.state.templateNameText)
+  }
+
+  handleChangedTextContent(newText) {
+    this.setState({
+      templateContentText: newText
+    })
+    
+    console.log(this.state.templateContentText)
+  }
+
+  render() {
+
+    const { emailTemplateId } = this.state;
+
+    return (
       <View style={styles.View}>
         <View style={styles.Naslov}>
           <Text style={styles.settingsText}>Uredi</Text>
@@ -35,6 +66,8 @@ export default class App extends React.Component {
             <TextInput
               style={styles.TextInput1}
               placeholder="Unesite naziv predloška"
+              value={this.state.name}
+              onChangeText={this.handleChangedTextName}
             ></TextInput>
           </View>
         </View>
@@ -46,6 +79,8 @@ export default class App extends React.Component {
               style={styles.TextInput2}
               placeholder="Unesite tekst predloška"
               multiline
+              value={this.state.templateContent}
+              onChangeText={this.handleChangedTextContent}
             ></TextInput>
           </View>
         </View>
@@ -53,7 +88,15 @@ export default class App extends React.Component {
           <View style={styles.btn1}>
             <TouchableOpacity
               style={styles.btnBorder1}
-              onPress={() => this.props.navigation.navigate("AddEditRooms")}
+              onPress={async() => {
+                let bodyAdd = JSON.stringify({ name: this.state.templateNameText, templateContent: this.state.templateContentText })
+                let bodyEdit = JSON.stringify({ emailTemplateId: emailTemplateId, name: this.state.templateNameText, templateContent: this.state.templateContentText })
+                if(emailTemplateId === undefined){
+                  await AddDataOnAPI(this.urlTemplates, bodyAdd)
+                }else {
+                  await EditDataOnAPI(this.urlTemplates + '/' + emailTemplateId, bodyEdit)
+                }
+              }}
             >
               <EntypoIcon
                 name="save"
@@ -66,7 +109,7 @@ export default class App extends React.Component {
         </View>
       </View>
     );
-	}
+  }
 }
 
 const styles = StyleSheet.create({
@@ -176,7 +219,7 @@ const styles = StyleSheet.create({
     left: 20,
     top: 20,
     fontSize: 18,
-    width:340,
+    width: 340,
 
   },
 });

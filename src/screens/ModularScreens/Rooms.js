@@ -20,8 +20,76 @@ import IonIcon from "react-native-vector-icons/Ionicons";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 import FontAwesomeIcons from "react-native-vector-icons/FontAwesome";
 import { colors } from "../../constants/DesignConstants";
+import { AddDataOnAPI, EditDataOnAPI } from '../../backend/ApiConnection';
+
 export default class App extends React.Component {
+
+  constructor(props) {
+    const { unitId } = props.navigation.getParam('unitId');
+    const { name } = props.navigation.getParam('name');
+    const { capacity } = props.navigation.getParam('capacity');
+    const { price } = props.navigation.getParam('price');
+    const { propertyId } = props.navigation.getParam('propertyId');
+    const { property } = props.navigation.getParam('property');
+    const { availability } = props.navigation.getParam('availability');
+    let selectedPropertyId = props.navigation.getParam('selectedPropertyId');
+
+
+    const { roomNameText } = '';
+    const { roomCapacityText } = '';
+    const { roomPriceText } = '';
+
+    super(props);
+    this.state = {
+      unitId: unitId,
+      name: name,
+      capacity: capacity,
+      price: price,
+      propertyId: propertyId,
+      property: property,
+      availability: availability,
+      roomNameText: roomNameText,
+      roomCapacityText: roomCapacityText,
+      roomPriceText: roomPriceText,
+      selectedPropertyId: selectedPropertyId
+    }
+
+    this.handleChangedTextName = this.handleChangedTextName.bind(this)
+    this.handleChangedTextCapacity = this.handleChangedTextCapacity.bind(this)
+    this.handleChangedTextPrice = this.handleChangedTextPrice.bind(this)
+  }
+
+  urlRooms = 'https://air2020api.azure-api.net/api/Units'
+
+  handleChangedTextName(newText) {
+    this.setState({
+      roomNameText: newText
+    })
+    console.log(this.state.roomNameText)
+  }
+
+  handleChangedTextCapacity(newText) {
+    this.setState({
+      roomCapacityText: newText
+    })
+    console.log(this.state.roomCapacityText)
+  }
+
+  handleChangedTextPrice(newText) {
+    this.setState({
+      roomPriceText: newText
+    })
+    console.log(this.state.roomPriceText)
+  }
+
   render() {
+    const { unitId } = this.state;
+    let capacity = this.state.capacity === undefined ? '' : this.state.capacity + ''
+    let price = this.state.price === undefined ? '' : this.state.price + ''
+    console.log(this.state.capacity)
+    console.log(this.state.price)
+    console.log(this.state.name)
+
     return (
       <View style={styles.View}>
         <View style={styles.Naslov}>
@@ -34,6 +102,8 @@ export default class App extends React.Component {
             <TextInput
               style={styles.TextInput}
               placeholder="Unesite naziv sobe"
+              value={this.state.name}
+              onChangeText={this.handleChangedTextName}
             ></TextInput>
           </View>
         </View>
@@ -44,7 +114,8 @@ export default class App extends React.Component {
             <TextInput
               style={styles.TextInput}
               placeholder="Unesite kapacitet"
-              keyboardType='numeric'
+              value={capacity}
+              onChangeText={this.handleChangedTextCapacity}
             ></TextInput>
           </View>
         </View>
@@ -55,6 +126,8 @@ export default class App extends React.Component {
             <TextInput
               style={styles.TextInput}
               placeholder="Unesite cijenu"
+              value={price}
+              onChangeText={this.handleChangedTextPrice}
             ></TextInput>
           </View>
         </View>
@@ -63,7 +136,19 @@ export default class App extends React.Component {
           <View style={styles.btn1}>
             <TouchableOpacity
               style={styles.btnBorder1}
-              onPress={() => this.props.navigation.navigate("AddEditRooms")}
+              onPress={async () => {
+                console.log(this.state.selectedPropertyId)
+                console.log(this.state.roomNameText)
+                console.log(this.state.roomCapacityText)
+                console.log(this.state.roomPriceText)
+                let bodyAdd = JSON.stringify({ name: this.state.roomNameText, capacity: parseInt(this.state.roomCapacityText), price: parseFloat(this.state.roomPriceText), propertyId: this.state.selectedPropertyId })
+                let bodyEdit = JSON.stringify({ unitId: unitId, name: this.state.roomNameText, capacity: this.state.roomCapacityText, price: this.state.roomPriceText, propertyId: this.state.propertyId })
+                if (unitId === undefined) {
+                  await AddDataOnAPI(this.urlRooms, bodyAdd)
+                } else {
+                  await EditDataOnAPI(this.urlRooms + '/' + unitId, bodyEdit)
+                }
+              }}
             >
               <EntypoIcon
                 name="save"

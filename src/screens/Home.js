@@ -35,6 +35,7 @@ export default class App extends React.Component {
             isLoading: true,
             dataSourceRequests: null,
             dataSourceClients: null,
+            clientEmail: null,
             prijavljeniKorisnik: prijavljeniKorisnik,
         }
 
@@ -97,8 +98,12 @@ export default class App extends React.Component {
 
                 let clients = dataClients.map((clientVal) => {
                     var clientNameSurname = '';
+                    var clientEmail = ''
                     if (clientVal.clientId === clientId) {
                         var clientNameSurname = clientVal.name + ' ' + clientVal.surname;
+                        this.state = {
+                            clientEmail: clientVal.email
+                        }
                     }
 
                     return clientNameSurname;
@@ -111,7 +116,7 @@ export default class App extends React.Component {
                         NumberOfGuests={requestVal.numberOfPeople}
                         Status={status}
                         Channel={sentThrough}
-                        onPress={() => { this.props.navigation.navigate('DetailedRequest', {requestId: {requestId}, property: {property}, dateFrom: {dateFrom}, dateTo: {dateTo}, numberOfPeople: {numberOfPeople}, responseBody: {responseBody}, clients: {clients} });}}
+                        onPress={() => { this.props.navigation.navigate('DetailedRequest', {requestId: {requestId}, property: {property}, dateFrom: {dateFrom}, dateTo: {dateTo}, numberOfPeople: {numberOfPeople}, responseBody: {responseBody}, clients: {clients}, email: this.state.clientEmail });}}
                     />
                 </View>
             });

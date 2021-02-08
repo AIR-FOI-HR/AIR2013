@@ -10,6 +10,7 @@ import {
   Button,
   TouchableHighlight,
   CheckBox,
+  ActivityIndicator
 } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 import {
@@ -24,40 +25,70 @@ import FontAwesomeIcons from "react-native-vector-icons/FontAwesome";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import { colors } from "../../constants/DesignConstants";
 import { RadioButton } from "react-native-paper";
+import { DeleteDataFromAPI, FetchDataFromAPI } from '../../backend/ApiConnection'
 
 export default class App extends React.Component {
-  state = {
-    checked: "first",
-  };
+
+  constructor(props) {
+    let selectedPropertyId = props.navigation.getParam('selectedPropertyId');
+
+    super(props);
+    this.state = {
+      selectedPropertyId: selectedPropertyId,
+      checked: null,
+      dataSourceRooms: null,
+      isLoading: true
+    }
+  }
+
+  urlRooms = 'https://air2020api.azure-api.net/api/Units'
+
+  async componentDidMount() {
+    this.setState({
+      dataSourceRooms: await FetchDataFromAPI(this.urlRooms),
+      isLoading: false
+    })
+  }
   render() {
     const { checked } = this.state;
-    return (
-      <View backgroundColor="white">
-        <ScrollView
-          showsVerticalScrollIndicator={false}
-          style={styles.scrollView}
-        >
-          <View style={styles.Naslov}>
-            <Text style={styles.settingsText}>Dodaj/ukloni/uredi</Text>
-            <Text style={styles.settingsTextName}>sobe</Text>
-          </View>
 
+    if (this.state.isLoading) {
+      return (
+        <View style={styles.mainView}>
+          <ActivityIndicator />
+        </View>
+      );
+    } else {
+
+      var dataRooms = this.state.dataSourceRooms;
+
+      let rooms = dataRooms.map((requestVal, keyRequest) => {
+
+        var unitId = requestVal.unitId;
+        var name = requestVal.name;
+        var capacity = requestVal.capacity;
+        var price = requestVal.price;
+        var propertyId = requestVal.propertyId;
+        var property = requestVal.property;
+        var availability = requestVal.availability;
+
+        return <View key={keyRequest}>
           <View style={styles.marginaSlikeIokvir1}>
             <View style={styles.margineTeksta1}>
               <View style={styles.radioButton}>
                 <RadioButton
-                  value="first"
-                  status={checked === "first" ? "checked" : "unchecked"}
+                  value={unitId}
+                  status={checked === unitId ? "checked" : "unchecked"}
                   onPress={() => {
-                    this.setState({ checked: "first" });
+                    this.setState({ checked: unitId });
                   }}
                 />
               </View>
-              <Text style={styles.tekstIzbornika}> Villa Maria </Text>
+              <Text style={styles.tekstIzbornika}>{name}</Text>
               <View>
                 <View style={styles.arrow}>
                   <TouchableOpacity
-                    onPress={() => this.props.navigation.navigate("Rooms")}
+                    onPress={() => this.props.navigation.navigate("Rooms", { unitId: { unitId }, name: { name }, capacity: { capacity }, price: { price }, propertyId: { propertyId }, property: { property }, availability: { availability }, selectedPropertyId: this.state.selectedPropertyId })}
                   >
                     <MaterialIcons
                       name="arrow-forward-ios"
@@ -68,56 +99,51 @@ export default class App extends React.Component {
               </View>
             </View>
           </View>
+        </View>
 
-          <View style={styles.marginaSlikeIokvir2}>
-            <View style={styles.radioButton2}>
-              <RadioButton
-                value="first"
-                status={checked === "first" ? "checked" : "unchecked"}
-                onPress={() => {
-                  this.setState({ checked: "first" });
-                }}
-              />
-            </View>
-            <View style={styles.margineTeksta2}>
-              <Text style={styles.tekstIzbornika}> Villa Magnolia</Text>
-              <View style={styles.arrow}>
-                <TouchableOpacity
-                  onPress={() => this.props.navigation.navigate("Rooms")}
-                >
-                  <MaterialIcons
-                    name="arrow-forward-ios"
-                    size={25}
-                  ></MaterialIcons>
-                </TouchableOpacity>
-              </View>
-            </View>
-          </View>
-        </ScrollView>
-        <View style={styles.txtButtonIcon}>
-          <View style={styles.btn1}>
-            <TouchableHighlight style={styles.btnBorder1}>
-              <MaterialCommunityIcons
-                name="plus"
-                size={23}
-              ></MaterialCommunityIcons>
-            </TouchableHighlight>
-            <TouchableHighlight>
-              <Text style={styles.btnText1}>DODAJ</Text>
-            </TouchableHighlight>
-          </View>
+      });
 
-          <View style={styles.btn2}>
-            <TouchableHighlight style={styles.btnBorder2}>
-              <IonIcon name="trash" size={20} />
-            </TouchableHighlight>
-            <TouchableHighlight>
-              <Text style={styles.btnText2}>OBRIŠI</Text>
-            </TouchableHighlight>
+      return (
+        <View backgroundColor="white">
+          <ScrollView
+            showsVerticalScrollIndicator={false}
+            style={styles.scrollView}
+          >
+            <View style={styles.Naslov}>
+              <Text style={styles.settingsText}>Dodaj/ukloni/uredi</Text>
+              <Text style={styles.settingsTextName}>sobe</Text>
+            </View>
+
+            {rooms}
+
+          </ScrollView>
+          <View style={styles.txtButtonIcon}>
+            <View style={styles.btn1}>
+              <TouchableOpacity
+                style={styles.btnBorder1}
+                onPress={() => this.props.navigation.navigate("Rooms", { unitId: '', name: '', capacity: '', price: '', propertyId: '', property: '', availability: '', selectedPropertyId: this.state.selectedPropertyId })}
+              >
+                <MaterialCommunityIcons
+                  name="plus"
+                  size={23}
+                ></MaterialCommunityIcons>
+                <Text style={styles.btnText1}>DODAJ</Text>
+              </TouchableOpacity>
+            </View>
+
+            <View style={styles.btn2}>
+              <TouchableOpacity
+                style={styles.btnBorder2}
+                onPress={async () => await DeleteDataFromAPI(this.urlRooms + '/' + checked)}
+              >
+                <IonIcon name="trash" size={20} />
+                <Text style={styles.btnText2}>OBRIŠI</Text>
+              </TouchableOpacity>
+            </View>
           </View>
         </View>
-      </View>
-    );
+      );
+    }
   }
 }
 
