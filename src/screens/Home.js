@@ -131,8 +131,8 @@ export default class App extends React.Component {
 
 	render() {
 		//console.log(this.state.currentUser);
-		console.log(this.state.trenutnaBoja);
-		Ispis(this.state.trenutnaBoja);
+		//console.log(this.state.trenutnaBoja);
+		//Ispis(this.state.trenutnaBoja);
 		if (this.state.isLoading) {
 			return (
 				<View style={styles.mainView}>
@@ -180,7 +180,6 @@ export default class App extends React.Component {
 
 					return clientNameSurname;
 				});
-
 				return (
 					<View key={keyRequest}>
 						<Request
@@ -204,9 +203,11 @@ export default class App extends React.Component {
 					</View>
 				);
 			});
+			/*
 			requests.forEach(element => {
-				//console.log(element);
+				console.log(element);
 			});
+			*/
 			return (
 				<ScrollView showsVerticalScrollIndicator={false} style={styles.scrollView}>
 					{/*Zaglavlje s pozdravnom porukom i ikonom korisničkog profila*/}

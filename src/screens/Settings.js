@@ -51,7 +51,14 @@ export default class App extends React.Component {
 };
     render(){
         console.log("Settings");
-        console.log(this.state.currentUser); 
+        console.log(this.state.currentUser);
+        try{
+            var ime=this.state.currentUser.user.name;
+            var email=this.state.currentUser.user.email;
+            var imgSrc=this.state.currentUser.user.photo;
+        }
+        catch
+        {}
         return (
             <ScrollView showsVerticalScrollIndicator={false} style={styles.scrollView}>
                 {/*Zaglavlje s pozdravom i implementacija slike*/}
@@ -74,7 +81,7 @@ export default class App extends React.Component {
                                         source={require('../assets/icons/profile.png')}
                                         style={styles.imageCenter}
                                     />
-                                <Text style={styles.tekstImena}> John Joe </Text>
+                                <Text style={styles.tekstImena}> {ime} </Text>
                             </View>
                         <View style={styles.velicinaFonta}>
 
@@ -119,7 +126,7 @@ export default class App extends React.Component {
                         <View style={styles.emailStavke}>
                             <View style={styles.margineTeksta}>
                                 <EntypoIcon name="email" size={20}>
-                                    <Text style={styles.tekstIzbornika}> E-mail </Text>
+                                    <Text style={styles.tekstIzbornika}> {email} </Text>
                                 </EntypoIcon>          
                             </View>
 
