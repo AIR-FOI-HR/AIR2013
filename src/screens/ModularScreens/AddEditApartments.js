@@ -21,7 +21,7 @@ import FontAwesomeIcons from 'react-native-vector-icons/FontAwesome';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import { colors } from '../../constants/DesignConstants';
 import { RadioButton } from 'react-native-paper';
-import { FetchDataFromAPI } from '../../backend/ApiConnection'
+import { DeleteDataFromAPI, FetchDataFromAPI } from '../../backend/ApiConnection'
 
 export default class App extends React.Component {
 
@@ -98,21 +98,23 @@ export default class App extends React.Component {
 					</ScrollView>
 					<View style={styles.txtButtonIcon}>
 						<View style={styles.btn1}>
-							<TouchableHighlight style={styles.btnBorder1}>
+							<TouchableOpacity 
+							style={styles.btnBorder1}
+							onPress={() => this.props.navigation.navigate('Apartments', {propertyId: '', name: '', location: ''})}
+							>
 								<MaterialCommunityIcons name="plus" size={23}></MaterialCommunityIcons>
-							</TouchableHighlight>
-							<TouchableHighlight>
 								<Text style={styles.btnText1}>DODAJ</Text>
-							</TouchableHighlight>
+							</TouchableOpacity>
 						</View>
 
 						<View style={styles.btn2}>
-							<TouchableHighlight style={styles.btnBorder2}>
+							<TouchableOpacity 
+							style={styles.btnBorder2}
+							onPress={async () => await DeleteDataFromAPI(this.urlProperties + '/' + checked)}
+							>
 								<IonIcon name="trash" size={20} />
-							</TouchableHighlight>
-							<TouchableHighlight>
 								<Text style={styles.btnText2}>OBRIŠI</Text>
-							</TouchableHighlight>
+							</TouchableOpacity>
 						</View>
 					</View>
 				</View>
