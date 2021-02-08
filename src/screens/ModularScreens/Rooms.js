@@ -32,7 +32,7 @@ export default class App extends React.Component {
     const { propertyId } = props.navigation.getParam('propertyId');
     const { property } = props.navigation.getParam('property');
     const { availability } = props.navigation.getParam('availability');
-    const { selectedPropertyId } = props.navigation.getParam('selectedPropertyId');
+    let selectedPropertyId = props.navigation.getParam('selectedPropertyId');
 
 
     const { roomNameText } = '';
@@ -83,8 +83,12 @@ export default class App extends React.Component {
   }
 
   render() {
-    console.log(this.state.selectedPropertyId)
     const { unitId } = this.state;
+    let capacity = this.state.capacity === undefined ? '' : this.state.capacity + ''
+    let price = this.state.price === undefined ? '' : this.state.price + ''
+    console.log(this.state.capacity)
+    console.log(this.state.price)
+    console.log(this.state.name)
 
     return (
       <View style={styles.View}>
@@ -110,8 +114,7 @@ export default class App extends React.Component {
             <TextInput
               style={styles.TextInput}
               placeholder="Unesite kapacitet"
-              keyboardType='numeric'
-              value={this.state.capacity}
+              value={capacity}
               onChangeText={this.handleChangedTextCapacity}
             ></TextInput>
           </View>
@@ -123,7 +126,7 @@ export default class App extends React.Component {
             <TextInput
               style={styles.TextInput}
               placeholder="Unesite cijenu"
-              value={this.state.price}
+              value={price}
               onChangeText={this.handleChangedTextPrice}
             ></TextInput>
           </View>
@@ -134,14 +137,16 @@ export default class App extends React.Component {
             <TouchableOpacity
               style={styles.btnBorder1}
               onPress={async () => {
+                console.log(this.state.selectedPropertyId)
+                console.log(this.state.roomNameText)
+                console.log(this.state.roomCapacityText)
+                console.log(this.state.roomPriceText)
+                let bodyAdd = JSON.stringify({ name: this.state.roomNameText, capacity: parseInt(this.state.roomCapacityText), price: parseFloat(this.state.roomPriceText), propertyId: this.state.selectedPropertyId })
+                let bodyEdit = JSON.stringify({ unitId: unitId, name: this.state.roomNameText, capacity: this.state.roomCapacityText, price: this.state.roomPriceText, propertyId: this.state.propertyId })
                 if (unitId === undefined) {
-                  console.log('if')
-                  body = JSON.stringify({ name: this.state.roomNameText, capacity: this.state.roomCapacityText, price: this.state.roomPriceText, propertyId: this.state.selectedPropertyId })
-                  await AddDataOnAPI(this.urlRooms, body)
+                  await AddDataOnAPI(this.urlRooms, bodyAdd)
                 } else {
-                  console.log('else')
-                  body = JSON.stringify({ name: this.state.roomNameText, capacity: this.state.roomCapacityText, price: this.state.roomPriceText, propertyId: this.state.propertyId })
-                  await EditDataOnAPI(this.urlRooms + '/' + unitId, body)
+                  await EditDataOnAPI(this.urlRooms + '/' + unitId, bodyEdit)
                 }
               }}
             >

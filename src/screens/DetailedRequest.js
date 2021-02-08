@@ -30,6 +30,8 @@ export default class DetailedRequest extends React.Component {
         const { numberOfPeople } = props.navigation.getParam('numberOfPeople');
         const { responseBody } = props.navigation.getParam('responseBody');
         const { clients } = props.navigation.getParam('clients');
+        const { email } = props.navigation.getParam('email');
+
         
         super(props);
         this.state = {
@@ -40,10 +42,12 @@ export default class DetailedRequest extends React.Component {
             numberOfPeople: numberOfPeople,
             responseBody: responseBody,
             clients: clients,
+            email: email
         }
     }
 
     render() {
+        console.log(this.state.email)
         return (
             <ScrollView style={styles.mainViewContainer}>
                 {/*Zaglavlje s prikazom trenutne stranice i ikonom korisničkog profila*/}

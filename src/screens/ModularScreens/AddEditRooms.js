@@ -30,7 +30,7 @@ import { DeleteDataFromAPI, FetchDataFromAPI } from '../../backend/ApiConnection
 export default class App extends React.Component {
 
   constructor(props) {
-    const { selectedPropertyId } = props.navigation.getParam('selectedPropertyId');
+    let selectedPropertyId = props.navigation.getParam('selectedPropertyId');
 
     super(props);
     this.state = {
@@ -50,7 +50,6 @@ export default class App extends React.Component {
     })
   }
   render() {
-    console.log(this.state.selectedPropertyId)
     const { checked } = this.state;
 
     if (this.state.isLoading) {

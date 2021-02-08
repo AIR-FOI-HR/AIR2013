@@ -89,11 +89,12 @@ export default class App extends React.Component {
             <TouchableOpacity
               style={styles.btnBorder1}
               onPress={async() => {
-                body = JSON.stringify({ name: this.state.templateNameText, content: this.state.templateContentText })
+                let bodyAdd = JSON.stringify({ name: this.state.templateNameText, templateContent: this.state.templateContentText })
+                let bodyEdit = JSON.stringify({ emailTemplateId: emailTemplateId, name: this.state.templateNameText, templateContent: this.state.templateContentText })
                 if(emailTemplateId === undefined){
-                  await AddDataOnAPI(this.urlTemplates, body)
+                  await AddDataOnAPI(this.urlTemplates, bodyAdd)
                 }else {
-                  await EditDataOnAPI(this.urlTemplates + '/' + emailTemplateId, body)
+                  await EditDataOnAPI(this.urlTemplates + '/' + emailTemplateId, bodyEdit)
                 }
               }}
             >

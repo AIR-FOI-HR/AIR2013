@@ -16,7 +16,7 @@ export async function EditDataOnAPI(url, body) {
     console.log(url)
     const requestOptions = {
         method: 'PUT',
-        //headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'application/json' },
         body: body
     };
     await fetch(url, requestOptions)
