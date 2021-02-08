@@ -72,34 +72,36 @@ export default class App extends React.Component {
         var property = requestVal.property;
         var availability = requestVal.availability;
 
-        return <View key={keyRequest}>
-          <View style={styles.marginaSlikeIokvir1}>
-            <View style={styles.margineTeksta1}>
-              <View style={styles.radioButton}>
-                <RadioButton
-                  value={unitId}
-                  status={checked === unitId ? "checked" : "unchecked"}
-                  onPress={() => {
-                    this.setState({ checked: unitId });
-                  }}
-                />
-              </View>
-              <Text style={styles.tekstIzbornika}>{name}</Text>
-              <View>
-                <View style={styles.arrow}>
-                  <TouchableOpacity
-                    onPress={() => this.props.navigation.navigate("Rooms", { unitId: { unitId }, name: { name }, capacity: { capacity }, price: { price }, propertyId: { propertyId }, property: { property }, availability: { availability }, selectedPropertyId: this.state.selectedPropertyId })}
-                  >
-                    <MaterialIcons
-                      name="arrow-forward-ios"
-                      size={25}
-                    ></MaterialIcons>
-                  </TouchableOpacity>
+        if (this.state.selectedPropertyId === propertyId) {
+          return <View key={keyRequest}>
+            <View style={styles.marginaSlikeIokvir1}>
+              <View style={styles.margineTeksta1}>
+                <View style={styles.radioButton}>
+                  <RadioButton
+                    value={unitId}
+                    status={checked === unitId ? "checked" : "unchecked"}
+                    onPress={() => {
+                      this.setState({ checked: unitId });
+                    }}
+                  />
+                </View>
+                <Text style={styles.tekstIzbornika}>{name}</Text>
+                <View>
+                  <View style={styles.arrow}>
+                    <TouchableOpacity
+                      onPress={() => this.props.navigation.navigate("Rooms", { unitId: { unitId }, name: { name }, capacity: { capacity }, price: { price }, propertyId: { propertyId }, property: { property }, availability: { availability }, selectedPropertyId: this.state.selectedPropertyId })}
+                    >
+                      <MaterialIcons
+                        name="arrow-forward-ios"
+                        size={25}
+                      ></MaterialIcons>
+                    </TouchableOpacity>
+                  </View>
                 </View>
               </View>
             </View>
           </View>
-        </View>
+        }
 
       });
 
