@@ -10,6 +10,8 @@ import {
 } from 'react-native'
 import { ScrollView } from 'react-native-gesture-handler'
 
+import { GoogleSignin, GoogleSigninButton, statusCodes } from '@react-native-community/google-signin';
+
 import Request from '../components/Request'
 
 import Icon from 'react-native-vector-icons/Ionicons'
@@ -18,171 +20,182 @@ import { colors } from '../constants/DesignConstants'
 import { FetchDataFromAPI } from '../backend/ApiConnection'
 
 export default class App extends React.Component {
-
-    constructor(props) {
-        /*
-            prijavljeniKorisnik je googleov zapis korisnika. 
-            Za pristup emailu koristiti prijavljeniKorisnik.user.email
-            Za pristup korisničkom imenu koristiti prijavljeniKOrisnik.user.name
-            Za pristup izvoru slike koristiti prijavljeniKorisnik.user.photo
-            Za više informacija unijeti console.log(prijavljeni korisnik) ili posjetiti
+	constructor(props) {
+		super(props);
+		this.state = {
+			isLoading: true,
+			dataSourceRequests: null,
+			dataSourceClients: null,
+			clientEmail: null,
+		};
+		/*
+            this.state.currentUser je googleov zapis korisnika. 
+            Za pristup emailu koristiti this.state.currentUser.user.email
+            Za pristup korisničkom imenu koristiti this.state.currentUser.user.name
+            Za pristup izvoru slike koristiti this.state.currentUser.user.photo
+            Za više informacija unijeti console.log(this.state.currentUser) ili posjetiti
             https://github.com/react-native-google-signin/google-signin i pogledati 3. naslov
         */
-        const  {prijavljeniKorisnik} = props.navigation.getParam('prijavljeniKorisnik');
+		this.getCurrentUser();
+	}
 
-        super(props);
-        this.state = {
-            isLoading: true,
-            dataSourceRequests: null,
-            dataSourceClients: null,
-            clientEmail: null,
-            prijavljeniKorisnik: prijavljeniKorisnik,
-        }
+	urlClients = 'https://air2020api.azure-api.net/api/Clients';
+	urlRequests = 'https://air2020api.azure-api.net/api/Requests';
 
-        console.log(prijavljeniKorisnik);
-    }
+	async componentDidMount() {
+		this.setState({
+			dataSourceRequests: await FetchDataFromAPI(this.urlRequests),
+			dataSourceClients: await FetchDataFromAPI(this.urlClients),
+			isLoading: false,
+		});
+	}
 
-    urlClients = 'https://air2020api.azure-api.net/api/Clients'
-    urlRequests = 'https://air2020api.azure-api.net/api/Requests'
-    
-    async componentDidMount() {
-            this.setState({
-                dataSourceRequests: await FetchDataFromAPI(this.urlRequests),
-                dataSourceClients: await FetchDataFromAPI(this.urlClients),
-                isLoading: false
-            })
-    }
+	getCurrentUser = async () => {
+		const currentUser = await GoogleSignin.getCurrentUser();
+		this.setState({ currentUser });
+		console.log('Ušao u google');
+	};
 
-    render() {
+	render() {
+        var user = '';
+		try {
+			user = this.state.currentUser.user.name;
+		} catch (error) {}
+		if (this.state.isLoading) {
+			return (
+				<View style={styles.mainView}>
+					<ActivityIndicator />
+				</View>
+			);
+		} else {
+			var dataRequests = this.state.dataSourceRequests;
+			var dataClients = this.state.dataSourceClients;
 
-        if (this.state.isLoading) {
-            return (
-                <View style={styles.mainView}>
-                    <ActivityIndicator />
-                </View>
-            );
-        } else {
+			var statusNew = 0;
+			var statusApproved = 0;
+			var statusRejected = 0;
 
-            var dataRequests = this.state.dataSourceRequests;
-            var dataClients = this.state.dataSourceClients;
+			let requests = dataRequests.map((requestVal, keyRequest) => {
+				var sentThrough = '';
+				var status = null;
 
-            var statusNew = 0;
-            var statusApproved = 0;
-            var statusRejected = 0;
+				if (requestVal.sent === true) {
+					sentThrough = 'email';
+				}
+				if (requestVal.processed === false) {
+					status = 'new';
+					statusNew++;
+				} else if (requestVal.confirmed === true) {
+					status = 'approved';
+					statusApproved++;
+				} else if (requestVal.confirmed === false) {
+					status = 'rejected';
+					statusRejected++;
+				}
 
-            let requests = dataRequests.map((requestVal, keyRequest) => {
-                var sentThrough = '';
-                var status = null;
+				var clientId = requestVal.clientId;
+				var requestId = requestVal.requestId;
+				var property = requestVal.property;
+				var dateFrom = requestVal.fromDate;
+				var dateTo = requestVal.toDate;
+				var numberOfPeople = requestVal.numberOfPeople;
+				var responseBody = requestVal.responseBody;
 
-                if (requestVal.sent === true) {
-                    sentThrough = 'email';
-                }
-                if (requestVal.processed === false) {
-                    status = 'new';
-                    statusNew++;
-                } else if (requestVal.confirmed === true) {
-                    status = 'approved';
-                    statusApproved++;
-                } else if (requestVal.confirmed === false) {
-                    status = 'rejected';
-                    statusRejected++;
-                }
+				let clients = dataClients.map((clientVal) => {
+					var clientNameSurname = '';
+					var clientEmail = '';
+					if (clientVal.clientId === clientId) {
+						var clientNameSurname = clientVal.name + ' ' + clientVal.surname;
+						this.state = {
+							clientEmail: clientVal.email,
+						};
+					}
 
-                var clientId = requestVal.clientId;
-                var requestId = requestVal.requestId;
-                var property = requestVal.property;
-                var dateFrom = requestVal.fromDate;
-                var dateTo = requestVal.toDate;
-                var numberOfPeople = requestVal.numberOfPeople;
-                var responseBody = requestVal.responseBody;
+					return clientNameSurname;
+				});
 
-                let clients = dataClients.map((clientVal) => {
-                    var clientNameSurname = '';
-                    var clientEmail = ''
-                    if (clientVal.clientId === clientId) {
-                        var clientNameSurname = clientVal.name + ' ' + clientVal.surname;
-                        this.state = {
-                            clientEmail: clientVal.email
-                        }
-                    }
+				return (
+					<View key={keyRequest}>
+						<Request
+							GuestName={clients}
+							PropertyName={requestVal.property}
+							NumberOfGuests={requestVal.numberOfPeople}
+							Status={status}
+							Channel={sentThrough}
+							onPress={() => {
+								this.props.navigation.navigate('DetailedRequest', {
+									requestId: { requestId },
+									property: { property },
+									dateFrom: { dateFrom },
+									dateTo: { dateTo },
+									numberOfPeople: { numberOfPeople },
+									responseBody: { responseBody },
+									clients: { clients },
+									email: this.state.clientEmail,
+								});
+							}}
+						/>
+					</View>
+				);
+			});
+            
 
-                    return clientNameSurname;
-                });
+			return (
+				<ScrollView showsVerticalScrollIndicator={false} style={styles.scrollView}>
+					{/*Zaglavlje s pozdravnom porukom i ikonom korisničkog profila*/}
+					<View style={styles.mainView}>
+						<View style={styles.welcomeHeaderView}>
+							<Text style={styles.txtWelcome}>Dobrodošao,</Text>
+							<Text style={styles.txtWelcomeName}>{user}</Text>
+						</View>
 
-                return <View key={keyRequest}>
-                    <Request
-                        GuestName={clients}
-                        PropertyName={requestVal.property}
-                        NumberOfGuests={requestVal.numberOfPeople}
-                        Status={status}
-                        Channel={sentThrough}
-                        onPress={() => { this.props.navigation.navigate('DetailedRequest', {requestId: {requestId}, property: {property}, dateFrom: {dateFrom}, dateTo: {dateTo}, numberOfPeople: {numberOfPeople}, responseBody: {responseBody}, clients: {clients}, email: this.state.clientEmail });}}
-                    />
-                </View>
-            });
+						<View style={styles.profileIconView}>
+							<TouchableHighlight onPress={() => this.props.navigation.navigate('Settings')}>
+								<Image
+									source={require('../assets/icons/profile.png')}
+									style={styles.profileIconImage}
+								/>
+							</TouchableHighlight>
+						</View>
+					</View>
 
-            return (
-                <ScrollView showsVerticalScrollIndicator={false} style={styles.scrollView}>
-                    {/*Zaglavlje s pozdravnom porukom i ikonom korisničkog profila*/}
-                    <View style={styles.mainView}>
-                        <View style={styles.welcomeHeaderView}>
-                            <Text style={styles.txtWelcome}>Dobrodošao,</Text>
-                            <Text style={styles.txtWelcomeName}>{this.state.prijavljeniKorisnik.user.name}</Text>
-                        </View>
+					{/*Polje za pretraživanje i gumb za sortiranje*/}
+					<View style={styles.mainView}>
+						<View style={styles.searchBoxView}>
+							<Icon name="search" size={15} color="#789789" />
+							<TextInput placeholder="Pretraži..." style={styles.searchBoxInputField} />
+						</View>
+						<View style={styles.sortView}>
+							<Icon name="funnel-outline" size={15} color="#789789" />
+						</View>
+					</View>
 
-                        <View style={styles.profileIconView}>
-                            <TouchableHighlight
-                                onPress={() => this.props.navigation.navigate('Settings')}>
-                                <Image
-                                    source={require('../assets/icons/profile.png')}
-                                    style={styles.profileIconImage}
-                                />
-                            </TouchableHighlight>
+					{/*Color boxes*/}
+					<View style={styles.mainView}>
+						<View style={styles.colorBoxOrange}>
+							<Text style={styles.colorBoxesTextLabel}>novi</Text>
+							<Text style={styles.colorBoxesTextNumber}>{statusNew}</Text>
+						</View>
+						<View style={styles.colorBoxGreen}>
+							<Text style={styles.colorBoxesTextLabel}>odobreni</Text>
+							<Text style={styles.colorBoxesTextNumber}>{statusApproved}</Text>
+						</View>
+						<View style={styles.colorBoxRed}>
+							<Text style={styles.colorBoxesTextLabel}>odbijeni</Text>
+							<Text style={styles.colorBoxesTextNumber}>{statusRejected}</Text>
+						</View>
+					</View>
 
-                        </View>
-                    </View>
+					{/*Requests*/}
+					<View style={styles.requestView}>
+						<Text style={styles.txtWelcome}>Request overview</Text>
 
-                    {/*Polje za pretraživanje i gumb za sortiranje*/}
-                    <View style={styles.mainView}>
-                        <View style={styles.searchBoxView}>
-                            <Icon name="search" size={15} color="#789789" />
-                            <TextInput placeholder="Pretraži..." style={styles.searchBoxInputField} />
-                        </View>
-                        <View style={styles.sortView}>
-                            <Icon name="funnel-outline" size={15} color="#789789" />
-                        </View>
-                    </View>
-
-                    {/*Color boxes*/}
-                    <View style={styles.mainView}>
-                        <View style={styles.colorBoxOrange}>
-                            <Text style={styles.colorBoxesTextLabel}>novi</Text>
-                            <Text style={styles.colorBoxesTextNumber}>{statusNew}</Text>
-                        </View>
-                        <View style={styles.colorBoxGreen}>
-                            <Text style={styles.colorBoxesTextLabel}>odobreni</Text>
-                            <Text style={styles.colorBoxesTextNumber}>{statusApproved}</Text>
-                        </View>
-                        <View style={styles.colorBoxRed}>
-                            <Text style={styles.colorBoxesTextLabel}>odbijeni</Text>
-                            <Text style={styles.colorBoxesTextNumber}>{statusRejected}</Text>
-                        </View>
-                    </View>
-
-
-                    {/*Requests*/}
-                    <View style={styles.requestView}>
-                        <Text style={styles.txtWelcome}>Request overview</Text>
-
-                        {requests}
-
-                    </View>
-
-                </ScrollView>
-
-            );
-        }
-    }
+						{requests}
+					</View>
+				</ScrollView>
+			);
+		}
+	}
 }
 
 const styles = StyleSheet.create({
