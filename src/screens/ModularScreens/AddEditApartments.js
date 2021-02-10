@@ -1,16 +1,16 @@
 import React from 'react';
 import {
-	View,
-	Text,
-	Image,
-	StyleSheet,
-	TextInput,
-	TouchableOpacity,
-	Switch,
-	Button,
-	TouchableHighlight,
-	CheckBox,
-	ActivityIndicator
+  View,
+  Text,
+  Image,
+  StyleSheet,
+  TextInput,
+  TouchableOpacity,
+  Switch,
+  Button,
+  TouchableHighlight,
+  CheckBox,
+  ActivityIndicator
 } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 import { GoogleSignin, GoogleSigninButton, statusCodes } from '@react-native-community/google-signin';
@@ -25,67 +25,87 @@ import { DeleteDataFromAPI, FetchDataFromAPI } from '../../backend/ApiConnection
 
 export default class App extends React.Component {
 
-	state = {
-		checked: null,
-		dataSourceProperties: null,
-		isLoading: true
-	};
+  state = {
+    checked: null,
+    dataSourceProperties: null,
+    isLoading: true
+  };
 
-	urlProperties = 'https://air2020api.azure-api.net/api/Properties'
+  urlProperties = 'https://air2020api.azure-api.net/api/Properties'
 
-	async componentDidMount() {
-		this.setState({
-			dataSourceProperties: await FetchDataFromAPI(this.urlProperties),
-			isLoading: false
-		})
-	}
+  async componentDidMount() {
+    this.setState({
+      dataSourceProperties: await FetchDataFromAPI(this.urlProperties),
+      isLoading: false
+    })
 
-	render() {
-		const { checked } = this.state;
+    this.didFocusSubscription = this.props.navigation.addListener(
+      'willFocus',
+      async () => {
+        this.setState({
+          dataSourceProperties: await FetchDataFromAPI(this.urlProperties),
+          isLoading: false
+        })
+      }
+    );
+  }
 
-		if (this.state.isLoading) {
-			return (
-				<View style={styles.mainView}>
-					<ActivityIndicator />
-				</View>
-			);
-		} else {
+  componentWillUnmount() {
+    this.didFocusSubscription.remove();
+  }
 
-			var dataProperties = this.state.dataSourceProperties;
+  componentDidUpdate(prevState) {
+    if (prevState.dataSourceProperties !== this.state.dataSourceProperties) {
+      this.render();
+    }
+  }
 
-			let properties = dataProperties.map((requestVal, keyRequest) => {
+  render() {
+    const { checked } = this.state;
 
-				var propertyId = requestVal.propertyId;
-				var name = requestVal.name;
-				var location = requestVal.location;
-				var unit = requestVal.unit;
+    if (this.state.isLoading) {
+      return (
+        <View style={styles.mainView}>
+          <ActivityIndicator />
+        </View>
+      );
+    } else {
 
-				return <View key={keyRequest}>
-					<View style={styles.marginaSlikeIokvir1}>
-						<View style={styles.margineTeksta1}>
-							<View style={styles.radioButton}>
-								<RadioButton
-									value= {propertyId}
-									status={checked === propertyId ? 'checked' : 'unchecked'}
-									onPress={() => {
-										this.setState({ checked: propertyId });
-									}}
-								/>
-							</View>
-							<Text style={styles.tekstIzbornika}>{name}</Text>
-							<View>
-								<View style={styles.arrow}>
-									<TouchableOpacity onPress={() => this.props.navigation.navigate('Apartments', {propertyId: {propertyId}, name: {name}, location: {location}})}>
-										<MaterialIcons name="arrow-forward-ios" size={25}></MaterialIcons>
-									</TouchableOpacity>
-								</View>
-							</View>
-						</View>
-					</View>
-				</View>
-			});
+      var dataProperties = this.state.dataSourceProperties;
 
-			return (
+      let properties = dataProperties.map((requestVal, keyRequest) => {
+
+        var propertyId = requestVal.propertyId;
+        var name = requestVal.name;
+        var location = requestVal.location;
+        var unit = requestVal.unit;
+
+        return <View key={keyRequest}>
+          <View style={styles.marginaSlikeIokvir1}>
+            <View style={styles.margineTeksta1}>
+              <View style={styles.radioButton}>
+                <RadioButton
+                  value={propertyId}
+                  status={checked === propertyId ? 'checked' : 'unchecked'}
+                  onPress={() => {
+                    this.setState({ checked: propertyId });
+                  }}
+                />
+              </View>
+              <Text style={styles.tekstIzbornika}>{name}</Text>
+              <View>
+                <View style={styles.arrow}>
+                  <TouchableOpacity onPress={() => this.props.navigation.navigate('Apartments', { propertyId: { propertyId }, name: { name }, location: { location } })}>
+                    <MaterialIcons name="arrow-forward-ios" size={25}></MaterialIcons>
+                  </TouchableOpacity>
+                </View>
+              </View>
+            </View>
+          </View>
+        </View>
+      });
+
+      return (
         <View style={styles.background}>
           <ScrollView
             showsVerticalScrollIndicator={false}
@@ -121,9 +141,12 @@ export default class App extends React.Component {
             <View style={styles.btn2}>
               <TouchableOpacity
                 style={styles.btnBorder2}
-                onPress={async () =>
+                onPress={async () => {
                   await DeleteDataFromAPI(this.urlProperties + "/" + checked)
-                }
+                  this.setState({
+                    dataSourceProperties: await FetchDataFromAPI(this.urlProperties)
+                  })
+                }}
               >
                 <IonIcon name="trash" size={20} />
                 <Text style={styles.btnText2}>OBRIŠI</Text>
@@ -132,8 +155,8 @@ export default class App extends React.Component {
           </View>
         </View>
       );
-		}
-	}
+    }
+  }
 }
 
 const styles = StyleSheet.create({

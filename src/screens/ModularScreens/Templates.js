@@ -16,16 +16,11 @@ export default class App extends React.Component {
     const { name } = props.navigation.getParam('name');
     const { templateContent } = props.navigation.getParam('templateContent');
 
-    const { templateNameText } = '';
-    const { templateContentText } = '';
-
     super(props);
     this.state = {
       emailTemplateId: emailTemplateId,
       name: name,
-      templateContent: templateContent,
-      templateNameText: templateNameText,
-      templateContentText: templateContentText,
+      templateContent: templateContent
     }
 
     this.handleChangedTextName = this.handleChangedTextName.bind(this)
@@ -36,18 +31,18 @@ export default class App extends React.Component {
 
   handleChangedTextName(newText) {
     this.setState({
-      templateNameText: newText
+      name: newText
     })
     
-    console.log(this.state.templateNameText)
+    console.log(this.state.name)
   }
 
   handleChangedTextContent(newText) {
     this.setState({
-      templateContentText: newText
+      templateContent: newText
     })
     
-    console.log(this.state.templateContentText)
+    console.log(this.state.templateContent)
   }
 
   render() {
@@ -89,13 +84,14 @@ export default class App extends React.Component {
             <TouchableOpacity
               style={styles.btnBorder1}
               onPress={async() => {
-                let bodyAdd = JSON.stringify({ name: this.state.templateNameText, templateContent: this.state.templateContentText })
-                let bodyEdit = JSON.stringify({ emailTemplateId: emailTemplateId, name: this.state.templateNameText, templateContent: this.state.templateContentText })
+                let bodyAdd = JSON.stringify({ name: this.state.name, templateContent: this.state.templateContent })
+                let bodyEdit = JSON.stringify({ emailTemplateId: emailTemplateId, name: this.state.name, templateContent: this.state.templateContent })
                 if(emailTemplateId === undefined){
                   await AddDataOnAPI(this.urlTemplates, bodyAdd)
                 }else {
                   await EditDataOnAPI(this.urlTemplates + '/' + emailTemplateId, bodyEdit)
                 }
+                this.props.navigation.navigate("AddEditTemplate")
               }}
             >
               <EntypoIcon

@@ -19,35 +19,64 @@ import FontIcons from 'react-native-vector-icons/Fontisto';
 import { colors } from '../constants/DesignConstants.js';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import FeatherIcon from 'react-native-vector-icons/Feather';
+import { EditDataOnAPI } from '../backend/ApiConnection';
+import { SendEmail } from '../backend/SendEmail.js';
 
 export default class DetailedRequest extends React.Component {
 
     constructor(props) {
         const { requestId } = props.navigation.getParam('requestId');
         const { property } = props.navigation.getParam('property');
+        const { unit } = props.navigation.getParam('unit');
         const { dateFrom } = props.navigation.getParam('dateFrom');
         const { dateTo } = props.navigation.getParam('dateTo');
+        const { priceUponRequest } = props.navigation.getParam('priceUponRequest');
+        const { confirmed } = props.navigation.getParam('confirmed');
+        const { processed } = props.navigation.getParam('processed');
+        const { sent } = props.navigation.getParam('sent');
         const { numberOfPeople } = props.navigation.getParam('numberOfPeople');
+        const { responseSubject } = props.navigation.getParam('responseSubject');
         const { responseBody } = props.navigation.getParam('responseBody');
+        const { clientId } = props.navigation.getParam('clientId');
+        const { client } = props.navigation.getParam('client');
         const { clients } = props.navigation.getParam('clients');
-        const { email } = props.navigation.getParam('email');
+        const { clientEmail } = props.navigation.getParam('clientEmail');
 
-        
         super(props);
         this.state = {
             requestId: requestId,
             property: property,
+            unit: unit,
             dateFrom: dateFrom,
             dateTo: dateTo,
+            priceUponRequest: priceUponRequest,
+            confirmed: confirmed,
+            processed: processed,
+            sent: sent,
             numberOfPeople: numberOfPeople,
+            responseSubject: responseSubject,
             responseBody: responseBody,
-            clients: clients,
-            email: email
+            clientId: clientId,
+            client: client,
+            clientNameSurname: clients,
+            clientEmail: clientEmail,
         }
+
+        this.handleChangedTextResponse = this.handleChangedTextResponse.bind(this)
+    }
+
+    urlRequests = 'https://air2020api.azure-api.net/api/Requests';
+
+    handleChangedTextResponse(newText) {
+        this.setState({
+            responseBody: newText
+        })
+
+        console.log(this.state.responseBody)
     }
 
     render() {
-        console.log(this.state.email)
+        const { requestId } = this.state;
         return (
             <ScrollView style={styles.mainViewContainer}>
                 {/*Zaglavlje s prikazom trenutne stranice i ikonom korisničkog profila*/}
@@ -76,7 +105,7 @@ export default class DetailedRequest extends React.Component {
                                 />
                             </View>
                             <View style={styles.guestNameView}>
-                                <Text style={styles.txtGuestName}>{this.state.clients}</Text>
+                                <Text style={styles.txtGuestName}>{this.state.clientNameSurname}</Text>
                             </View>
                             <View style={styles.propertyView}>
                                 <FontAwesomeIcons name="home" size={30}>
@@ -101,29 +130,86 @@ export default class DetailedRequest extends React.Component {
                             </View>
                         </View>
 
-                         
-                         {/*Obavijesti korisniku*/}
-                         <View style={styles.messageBodyView}>
+
+                        {/*Obavijesti korisniku*/}
+                        <View style={styles.messageBodyView}>
                             {/*<Text style={styles.txtObavijesti}>{this.state.responseBody}</Text>*/}
-                            <TextInput multiline>{this.state.responseBody}</TextInput>
+                            <TextInput
+                                multiline
+                                defaultValue={this.state.responseBody}
+                                onChangeText={this.handleChangedTextResponse}
+                            ></TextInput>
                         </View>
 
 
 
                         {/*Buttoni u podnožju*/}
                         <View style={styles.buttonsView}>
-                            
-                                                 
 
-                            <TouchableOpacity  style={styles.btnSendEmail}>
-                                
-                                    <FeatherIcon name="send" size={18} />
-                                    <Text style={styles.btnText2} >POŠALJI</Text>
-                                
+                            <TouchableOpacity
+                                style={styles.btnSendEmail}
+                                onPress={async () => {
+                                    let bodyEdit = JSON.stringify({
+                                        requestId: requestId,
+                                        property: this.state.property,
+                                        unit: this.state.unit,
+                                        dateFrom: this.state.dateFrom,
+                                        dateTo: this.state.dateTo,
+                                        priceUponRequest: this.state.priceUponRequest,
+                                        confirmed: this.state.confirmed,
+                                        processed: this.state.processed,
+                                        sent: this.state.sent,
+                                        numberOfPeople: this.state.numberOfPeople,
+                                        responseSubject: this.state.responseSubject,
+                                        responseBody: this.state.responseBody,
+                                        clientId: this.state.clientId,
+                                        client: this.state.client
+                                    })
+                                    await EditDataOnAPI(this.urlRequests + '/' + requestId, bodyEdit)
+                                }}
+                            >
+
+                                <EntypoIcon
+                                    name="save"
+                                    size={22}
+                                    style={styles.SaveIkona}
+                                ></EntypoIcon>
+                                <Text style={styles.btnText2} >SPREMI</Text>
+
+                            </TouchableOpacity>
+
+                            <TouchableOpacity 
+                            style={styles.btnSendEmail}
+                            onPress={async () => { 
+                                let bodyEdit = JSON.stringify({
+                                        requestId: requestId,
+                                        property: this.state.property,
+                                        unit: this.state.unit,
+                                        dateFrom: this.state.dateFrom,
+                                        dateTo: this.state.dateTo,
+                                        priceUponRequest: this.state.priceUponRequest,
+                                        confirmed: this.state.confirmed,
+                                        processed: this.state.processed,
+                                        sent: true,
+                                        numberOfPeople: this.state.numberOfPeople,
+                                        responseSubject: this.state.responseSubject,
+                                        responseBody: this.state.responseBody,
+                                        clientId: this.state.clientId,
+                                        client: this.state.client
+                                    })
+                                await SendEmail(this.state.clientEmail, this.state.responseSubject, this.state.responseBody) 
+                                await EditDataOnAPI(this.urlRequests + '/' + requestId, bodyEdit)
+                                this.props.navigation.navigate("Home")
+                                }}
+                            >
+
+                                <FeatherIcon name="send" size={18} />
+                                <Text style={styles.btnText2} >POŠALJI</Text>
+
                             </TouchableOpacity>
                         </View>
-                        
-                       
+
+
                     </View>
                 </View>
 
@@ -256,7 +342,7 @@ const styles = StyleSheet.create({
     },
     messageBodyView: {
         margin: 0,
-        position:'relative'
+        position: 'relative'
     },
     txtObavijesti: {
         fontSize: 10,

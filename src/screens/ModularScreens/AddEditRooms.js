@@ -48,7 +48,28 @@ export default class App extends React.Component {
       dataSourceRooms: await FetchDataFromAPI(this.urlRooms),
       isLoading: false
     })
+
+    this.didFocusSubscription = this.props.navigation.addListener(
+      'willFocus',
+      async () => {
+        this.setState({
+          dataSourceRooms: await FetchDataFromAPI(this.urlRooms),
+          isLoading: false
+        })
+      }
+    );
   }
+
+  componentWillUnmount() {
+    this.didFocusSubscription.remove();
+  }
+
+  componentDidUpdate(prevState) {
+    if (prevState.dataSourceRooms !== this.state.dataSourceRooms) {
+      this.render();
+    }
+  }
+
   render() {
     const { checked } = this.state;
 
@@ -136,7 +157,12 @@ export default class App extends React.Component {
             <View style={styles.btn2}>
               <TouchableOpacity
                 style={styles.btnBorder2}
-                onPress={async () => await DeleteDataFromAPI(this.urlRooms + '/' + checked)}
+                onPress={async () => {
+                  await DeleteDataFromAPI(this.urlRooms + '/' + checked)
+                  this.setState({
+                    dataSourceRooms: await FetchDataFromAPI(this.urlRooms)
+                  })
+                }}
               >
                 <IonIcon name="trash" size={20} />
                 <Text style={styles.btnText2}>OBRIŠI</Text>
@@ -247,7 +273,7 @@ const styles = StyleSheet.create({
     padding: 8,
     width: "200%",
     height: "24%",
-    left:11
+    left: 11
   },
   btnText1: {
     fontWeight: "bold",

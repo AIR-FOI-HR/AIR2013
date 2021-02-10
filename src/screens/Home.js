@@ -1,12 +1,12 @@
 import React from 'react'
 import {
-    View,
-    Text,
-    Image,
-    StyleSheet,
-    TextInput,
-    TouchableHighlight,
-    ActivityIndicator,
+	View,
+	Text,
+	Image,
+	StyleSheet,
+	TextInput,
+	TouchableHighlight,
+	ActivityIndicator,
 } from 'react-native'
 import { ScrollView } from 'react-native-gesture-handler'
 
@@ -29,13 +29,13 @@ export default class App extends React.Component {
 			clientEmail: null,
 		};
 		/*
-            this.state.currentUser je googleov zapis korisnika. 
-            Za pristup emailu koristiti this.state.currentUser.user.email
-            Za pristup korisničkom imenu koristiti this.state.currentUser.user.name
-            Za pristup izvoru slike koristiti this.state.currentUser.user.photo
-            Za više informacija unijeti console.log(this.state.currentUser) ili posjetiti
-            https://github.com/react-native-google-signin/google-signin i pogledati 3. naslov
-        */
+			this.state.currentUser je googleov zapis korisnika. 
+			Za pristup emailu koristiti this.state.currentUser.user.email
+			Za pristup korisničkom imenu koristiti this.state.currentUser.user.name
+			Za pristup izvoru slike koristiti this.state.currentUser.user.photo
+			Za više informacija unijeti console.log(this.state.currentUser) ili posjetiti
+			https://github.com/react-native-google-signin/google-signin i pogledati 3. naslov
+		*/
 		this.getCurrentUser();
 	}
 
@@ -48,6 +48,21 @@ export default class App extends React.Component {
 			dataSourceClients: await FetchDataFromAPI(this.urlClients),
 			isLoading: false,
 		});
+
+		this.didFocusSubscription = this.props.navigation.addListener(
+			'willFocus',
+			async () => {
+				this.setState({
+					dataSourceRequests: await FetchDataFromAPI(this.urlRequests),
+					dataSourceClients: await FetchDataFromAPI(this.urlClients),
+					isLoading: false,
+				})
+			}
+		);
+	}
+
+	componentWillUnmount() {
+		this.didFocusSubscription.remove();
 	}
 
 	getCurrentUser = async () => {
@@ -57,10 +72,10 @@ export default class App extends React.Component {
 	};
 
 	render() {
-        var user = '';
+		var user = '';
 		try {
 			user = this.state.currentUser.user.name;
-		} catch (error) {}
+		} catch (error) { }
 		if (this.state.isLoading) {
 			return (
 				<View style={styles.mainView}>
@@ -79,36 +94,42 @@ export default class App extends React.Component {
 				var sentThrough = '';
 				var status = null;
 
-				if (requestVal.sent === true) {
+				if (requestVal.sent === true && requestVal.confirmed === true) {
 					sentThrough = 'email';
-				}
-				if (requestVal.processed === false) {
-					status = 'new';
-					statusNew++;
-				} else if (requestVal.confirmed === true) {
 					status = 'approved';
 					statusApproved++;
-				} else if (requestVal.confirmed === false) {
+				}
+				if (requestVal.sent === false) {
+					sentThrough = 'email';
+					status = 'new';
+					statusNew++;
+				} else if (requestVal.sent === true && requestVal.confirmed === false) {
+					sentThrough = 'email';
 					status = 'rejected';
 					statusRejected++;
 				}
 
-				var clientId = requestVal.clientId;
 				var requestId = requestVal.requestId;
 				var property = requestVal.property;
+				var unit = requestVal.unit;
 				var dateFrom = requestVal.fromDate;
 				var dateTo = requestVal.toDate;
+				var priceUponRequest = requestVal.priceUponRequest;
+				var confirmed = requestVal.confirmed;
+				var processed = requestVal.processed;
+				var sent = requestVal.sent;
 				var numberOfPeople = requestVal.numberOfPeople;
+				var responseSubject = requestVal.responseSubject;
 				var responseBody = requestVal.responseBody;
+				var clientId = requestVal.clientId;
+				var client = requestVal.client;
+				var clientEmail = ""
 
-				let clients = dataClients.map((clientVal) => {
+				let clients = dataClients.map((clientVal, keyClient) => {
 					var clientNameSurname = '';
-					var clientEmail = '';
 					if (clientVal.clientId === clientId) {
 						var clientNameSurname = clientVal.name + ' ' + clientVal.surname;
-						this.state = {
-							clientEmail: clientVal.email,
-						};
+						clientEmail = clientVal.email
 					}
 
 					return clientNameSurname;
@@ -126,19 +147,28 @@ export default class App extends React.Component {
 								this.props.navigation.navigate('DetailedRequest', {
 									requestId: { requestId },
 									property: { property },
+									unit: { unit },
 									dateFrom: { dateFrom },
 									dateTo: { dateTo },
+									priceUponRequest: { priceUponRequest },
+									confirmed: { confirmed },
+									processed: { processed },
+									sent: { sent },
 									numberOfPeople: { numberOfPeople },
+									responseSubject: { responseSubject },
 									responseBody: { responseBody },
+									clientId: { clientId },
+									client: { client },
 									clients: { clients },
-									email: this.state.clientEmail,
+									clientEmail: { clientEmail }
+
 								});
 							}}
 						/>
 					</View>
 				);
 			});
-            
+
 
 			return (
 				<ScrollView showsVerticalScrollIndicator={false} style={styles.scrollView}>
@@ -199,105 +229,105 @@ export default class App extends React.Component {
 }
 
 const styles = StyleSheet.create({
-    scrollView: {
-        backgroundColor: colors.white,
-        paddingHorizontal: 20,
-        height: '100%'
-    },
-    mainView: {
-        flexDirection: "row",
-        width: "100%",
-        marginTop: 40,
-        alignItems: "center",
-        justifyContent: 'space-between'
-    },
-    welcomeHeaderView: {
-        width: "80%"
-    },
-    txtWelcome: {
-        fontSize: 30,
-        fontWeight: "700"
-    },
-    txtWelcomeName: {
-        fontSize: 30,
-        fontWeight: "100"
-    },
-    profileIconView: {
-        width: "20%",
-        alignItems: "flex-end"
-    },
-    profileIconImage: {
-        width: 50,
-        height: 50
-    },
-    searchBoxView: {
-        flexDirection: "row",
-        alignItems: "center",
-        elevation: 3,
-        width: "85%",
-        backgroundColor: colors.white,
-        paddingHorizontal: 20,
-        height: 35,
-        borderRadius: 10,
-        marginLeft: 1
-    },
-    searchBoxInputField: {
-        paddingHorizontal: 10,
-        fontSize: 12
-    },
-    sortView: {
-        alignItems: "center",
-        elevation: 2,
-        width: "15%",
-        backgroundColor: colors.white,
-        marginLeft: 5,
-        height: 35,
-        borderRadius: 10,
-        marginLeft: 1,
-        justifyContent: "center"
-    },
-    colorBoxOrange: {
-        backgroundColor: colors.yellow,
-        height: 100,
-        width: 100,
-        borderRadius: 10,
-        padding: 15,
-        justifyContent: "center",
-        alignItems: "center",
-        elevation: 5
-    },
-    colorBoxGreen: {
-        backgroundColor: colors.green,
-        height: 100,
-        width: 100,
-        borderRadius: 10,
-        padding: 15,
-        justifyContent: "center",
-        alignItems: "center",
-        elevation: 5
-    },
-    colorBoxRed: {
-        backgroundColor: colors.red,
-        height: 100,
-        width: 100,
-        borderRadius: 10,
-        padding: 15,
-        justifyContent: "center",
-        alignItems: "center",
-        elevation: 5
-    },
-    colorBoxesTextLabel: {
-        color: colors.white,
-        fontSize: 17,
-    },
-    colorBoxesTextNumber: {
-        color: colors.white,
-        fontSize: 45
-    },
-    requestView: {
-        flexDirection: "column",
-        width: "100%",
-        marginTop: 40,
-        justifyContent: 'space-between'
-    }
+	scrollView: {
+		backgroundColor: colors.white,
+		paddingHorizontal: 20,
+		height: '100%'
+	},
+	mainView: {
+		flexDirection: "row",
+		width: "100%",
+		marginTop: 40,
+		alignItems: "center",
+		justifyContent: 'space-between'
+	},
+	welcomeHeaderView: {
+		width: "80%"
+	},
+	txtWelcome: {
+		fontSize: 30,
+		fontWeight: "700"
+	},
+	txtWelcomeName: {
+		fontSize: 30,
+		fontWeight: "100"
+	},
+	profileIconView: {
+		width: "20%",
+		alignItems: "flex-end"
+	},
+	profileIconImage: {
+		width: 50,
+		height: 50
+	},
+	searchBoxView: {
+		flexDirection: "row",
+		alignItems: "center",
+		elevation: 3,
+		width: "85%",
+		backgroundColor: colors.white,
+		paddingHorizontal: 20,
+		height: 35,
+		borderRadius: 10,
+		marginLeft: 1
+	},
+	searchBoxInputField: {
+		paddingHorizontal: 10,
+		fontSize: 12
+	},
+	sortView: {
+		alignItems: "center",
+		elevation: 2,
+		width: "15%",
+		backgroundColor: colors.white,
+		marginLeft: 5,
+		height: 35,
+		borderRadius: 10,
+		marginLeft: 1,
+		justifyContent: "center"
+	},
+	colorBoxOrange: {
+		backgroundColor: colors.yellow,
+		height: 100,
+		width: 100,
+		borderRadius: 10,
+		padding: 15,
+		justifyContent: "center",
+		alignItems: "center",
+		elevation: 5
+	},
+	colorBoxGreen: {
+		backgroundColor: colors.green,
+		height: 100,
+		width: 100,
+		borderRadius: 10,
+		padding: 15,
+		justifyContent: "center",
+		alignItems: "center",
+		elevation: 5
+	},
+	colorBoxRed: {
+		backgroundColor: colors.red,
+		height: 100,
+		width: 100,
+		borderRadius: 10,
+		padding: 15,
+		justifyContent: "center",
+		alignItems: "center",
+		elevation: 5
+	},
+	colorBoxesTextLabel: {
+		color: colors.white,
+		fontSize: 17,
+	},
+	colorBoxesTextNumber: {
+		color: colors.white,
+		fontSize: 45
+	},
+	requestView: {
+		flexDirection: "column",
+		width: "100%",
+		marginTop: 40,
+		justifyContent: 'space-between'
+	}
 })

@@ -1,7 +1,4 @@
-#Mon Feb 08 14:23:50 EET 2021
-base.1=C\:\\Users\\Mario\\source\\repos\\mRent\\AIR2013\\android\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
-path.1=classes.dex
-base.0=C\:\\Users\\Sven\\Desktop\\FAKS\\7.semestar\\air\\AIR2013\\android\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
-renamed.1=classes2.dex
+#Tue Feb 09 21:08:30 EET 2021
+base.0=C\:\\Users\\Mario\\source\\repos\\mRent\\AIR2013\\android\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
 renamed.0=classes.dex
 path.0=classes.dex

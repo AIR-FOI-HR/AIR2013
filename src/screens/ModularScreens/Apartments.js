@@ -8,6 +8,7 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import FontAwesomeIcons from 'react-native-vector-icons/FontAwesome';
 import { colors } from '../../constants/DesignConstants';
 import { AddDataOnAPI, EditDataOnAPI } from '../../backend/ApiConnection';
+import { Alert } from 'react-native';
 
 export default class App extends React.Component {
 
@@ -16,16 +17,11 @@ export default class App extends React.Component {
     const { name } = props.navigation.getParam('name');
     const { location } = props.navigation.getParam('location');
 
-    const { apartmentNameText } = '';
-    const { apartmentLocationText } = '';
-
     super(props);
     this.state = {
       propertyId: propertyId,
       name: name,
-      location: location,
-      apartmentNameText: apartmentNameText,
-      apartmentLocationText: apartmentLocationText,
+      location: location
     }
 
     this.handleChangedTextName = this.handleChangedTextName.bind(this)
@@ -36,18 +32,18 @@ export default class App extends React.Component {
 
   handleChangedTextName(newText) {
     this.setState({
-      apartmentNameText: newText
+      name: newText
     })
 
-    console.log(this.state.apartmentNameText)
+    console.log(this.state.name)
   }
 
   handleChangedTextLocation(newText) {
     this.setState({
-      apartmentLocationText: newText
+      location: newText
     })
 
-    console.log(this.state.apartmentLocationText)
+    console.log(this.state.location)
   }
 
   render() {
@@ -83,10 +79,19 @@ export default class App extends React.Component {
           </View>
         </View>
 
+
+
         <View style={styles.marginaSlikeIokvir4}>
           <TouchableOpacity
             style={styles.dodajUkloniStavke}
-            onPress={() => this.props.navigation.navigate('AddEditRooms', { selectedPropertyId: propertyId })}
+            onPress={() => {
+              if (propertyId !== undefined) {
+                this.props.navigation.navigate('AddEditRooms', { selectedPropertyId: propertyId })
+              }
+              else{
+                Alert.alert('Nije moguće dodati sobu nepostojećem apartmanu!')
+              }
+            }}
           >
             <View style={styles.margineTeksta4}>
               <FontAwesomeIcons name="bed" size={19}>
@@ -99,18 +104,21 @@ export default class App extends React.Component {
           </TouchableOpacity>
         </View>
 
+
+
         <View style={styles.txtButtonIcon}>
           <View style={styles.btn1}>
             <TouchableOpacity
               style={styles.btnBorder1}
               onPress={async () => {
-                let bodyAdd = JSON.stringify({ name: this.state.apartmentNameText, location: this.state.apartmentLocationText })
-                let bodyEdit = JSON.stringify({ propertyId: propertyId, name: this.state.apartmentNameText, location: this.state.apartmentLocationText })
+                let bodyAdd = JSON.stringify({ name: this.state.name, location: this.state.location })
+                let bodyEdit = JSON.stringify({ propertyId: propertyId, name: this.state.name, location: this.state.location })
                 if (propertyId === undefined) {
                   await AddDataOnAPI(this.urlProperties, bodyAdd)
                 } else {
                   await EditDataOnAPI(this.urlProperties + '/' + propertyId, bodyEdit)
                 }
+                this.props.navigation.navigate("AddEditApartments")
               }}
             >
               <EntypoIcon
@@ -135,7 +143,7 @@ const styles = StyleSheet.create({
   },
   Naslov: {
     width: "80%",
-    marginBottom:40
+    marginBottom: 40
   },
   mainView: {
     flexDirection: "row",

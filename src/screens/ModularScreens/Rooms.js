@@ -34,11 +34,6 @@ export default class App extends React.Component {
     const { availability } = props.navigation.getParam('availability');
     let selectedPropertyId = props.navigation.getParam('selectedPropertyId');
 
-
-    const { roomNameText } = '';
-    const { roomCapacityText } = '';
-    const { roomPriceText } = '';
-
     super(props);
     this.state = {
       unitId: unitId,
@@ -48,9 +43,6 @@ export default class App extends React.Component {
       propertyId: propertyId,
       property: property,
       availability: availability,
-      roomNameText: roomNameText,
-      roomCapacityText: roomCapacityText,
-      roomPriceText: roomPriceText,
       selectedPropertyId: selectedPropertyId
     }
 
@@ -63,32 +55,29 @@ export default class App extends React.Component {
 
   handleChangedTextName(newText) {
     this.setState({
-      roomNameText: newText
+      name: newText
     })
-    console.log(this.state.roomNameText)
+    console.log(this.state.name)
   }
 
   handleChangedTextCapacity(newText) {
     this.setState({
-      roomCapacityText: newText
+      capacity: newText
     })
-    console.log(this.state.roomCapacityText)
+    console.log(this.state.capacity)
   }
 
   handleChangedTextPrice(newText) {
     this.setState({
-      roomPriceText: newText
+      price: newText
     })
-    console.log(this.state.roomPriceText)
+    console.log(this.state.price)
   }
 
   render() {
     const { unitId } = this.state;
     let capacity = this.state.capacity === undefined ? '' : this.state.capacity + ''
     let price = this.state.price === undefined ? '' : this.state.price + ''
-    console.log(this.state.capacity)
-    console.log(this.state.price)
-    console.log(this.state.name)
 
     return (
       <View style={styles.View}>
@@ -137,17 +126,14 @@ export default class App extends React.Component {
             <TouchableOpacity
               style={styles.btnBorder1}
               onPress={async () => {
-                console.log(this.state.selectedPropertyId)
-                console.log(this.state.roomNameText)
-                console.log(this.state.roomCapacityText)
-                console.log(this.state.roomPriceText)
-                let bodyAdd = JSON.stringify({ name: this.state.roomNameText, capacity: parseInt(this.state.roomCapacityText), price: parseFloat(this.state.roomPriceText), propertyId: this.state.selectedPropertyId })
-                let bodyEdit = JSON.stringify({ unitId: unitId, name: this.state.roomNameText, capacity: this.state.roomCapacityText, price: this.state.roomPriceText, propertyId: this.state.propertyId })
+                let bodyAdd = JSON.stringify({ name: this.state.name, capacity: parseInt(this.state.capacity), price: parseFloat(this.state.price), propertyId: this.state.selectedPropertyId })
+                let bodyEdit = JSON.stringify({ unitId: unitId, name: this.state.name, capacity: this.state.capacity, price: this.state.price, propertyId: this.state.propertyId })
                 if (unitId === undefined) {
                   await AddDataOnAPI(this.urlRooms, bodyAdd)
                 } else {
                   await EditDataOnAPI(this.urlRooms + '/' + unitId, bodyEdit)
                 }
+                this.props.navigation.navigate("AddEditRooms")
               }}
             >
               <EntypoIcon
