@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\Mario\\source\\repos\\mRent\\AIR2013\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-watch-v21\\values-watch-v21.xml",
+            "outputFile": "C:\\Users\\Sven\\Desktop\\FAKS\\7.semestar\\air\\AIR2013\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-watch-v21\\values-watch-v21.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Mario\\.gradle\\caches\\transforms-2\\files-2.1\\9b919a9a3d6db9fab1a25a621682b832\\appcompat-1.1.0\\res\\values-watch-v21\\values-watch-v21.xml",
+                    "source": "C:\\Users\\Sven\\.gradle\\caches\\transforms-2\\files-2.1\\9b919a9a3d6db9fab1a25a621682b832\\appcompat-1.1.0\\res\\values-watch-v21\\values-watch-v21.xml",
                     "from": {
                         "startLines": "2,6,10",
                         "startColumns": "4,4,4",
