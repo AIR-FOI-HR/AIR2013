@@ -217,7 +217,7 @@ const styles = StyleSheet.create({
     bottom: 120,
   },
   btn2: {
-    right: 24,
+    right: 16,
     bottom: 120,
   },
   btnBorder1: {
@@ -228,7 +228,8 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     padding: 8,
     width: "200%",
-    height: "23%",
+    height: "22%",
+    left:2
   },
   btnBorder2: {
     top: 35,
@@ -238,20 +239,20 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     padding: 8,
     width: "200%",
-    height: "23%",
-    left: 11,
+    height: "22%",
+    left: 7,
   },
-  btnText1: {
+ btnText1: {
     fontWeight: "bold",
-    fontSize: 14,
+    fontSize: 15,
     left: 55,
-    bottom: 20,
+    bottom: 22,
   },
   btnText2: {
     fontWeight: "bold",
-    fontSize: 14,
+    fontSize: 15,
     left: 55,
-    bottom: 15,
+    bottom: 20,
   },
   arrow: {
     left: 300,

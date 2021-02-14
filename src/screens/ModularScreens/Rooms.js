@@ -257,8 +257,8 @@ const styles = StyleSheet.create({
     width: "100%",
   },
   btn1: {
-    left: 200,
-    top: 90,
+    left: 205,
+    bottom: -100,
     height: 110,
   },
   btnBorder1: {

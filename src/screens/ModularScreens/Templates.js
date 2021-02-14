@@ -66,32 +66,43 @@ export default class App extends React.Component {
             ></TextInput>
           </View>
         </View>
-
-        <View style={styles.marginaSlikeIokvir2}>
-          <View style={styles.margineTeksta2}>
-            <Text style={styles.tekstIzbornika2}>Tekst predloška </Text>
-            <TextInput
-              style={styles.TextInput2}
-              placeholder="Unesite tekst predloška"
-              multiline
-              defaultValue={this.state.templateContent}
-              onChangeText={this.handleChangedTextContent}
-            ></TextInput>
+        <View style={styles.TxtInput2iNaslov2}>
+          <Text style={styles.tekstIzbornika2}>Tekst predloška </Text>
+          <View style={styles.marginaSlikeIokvir2}>
+            <View style={styles.margineTeksta2}>
+              <TextInput
+                style={styles.TextInput2}
+                placeholder="Unesite tekst predloška"
+                multiline
+                defaultValue={this.state.templateContent}
+                onChangeText={this.handleChangedTextContent}
+              ></TextInput>
+            </View>
           </View>
         </View>
         <View style={styles.txtButtonIcon}>
           <View style={styles.btn1}>
             <TouchableOpacity
               style={styles.btnBorder1}
-              onPress={async() => {
-                let bodyAdd = JSON.stringify({ name: this.state.name, templateContent: this.state.templateContent })
-                let bodyEdit = JSON.stringify({ emailTemplateId: emailTemplateId, name: this.state.name, templateContent: this.state.templateContent })
-                if(emailTemplateId === undefined){
-                  await AddDataOnAPI(this.urlTemplates, bodyAdd)
-                }else {
-                  await EditDataOnAPI(this.urlTemplates + '/' + emailTemplateId, bodyEdit)
+              onPress={async () => {
+                let bodyAdd = JSON.stringify({
+                  name: this.state.name,
+                  templateContent: this.state.templateContent,
+                });
+                let bodyEdit = JSON.stringify({
+                  emailTemplateId: emailTemplateId,
+                  name: this.state.name,
+                  templateContent: this.state.templateContent,
+                });
+                if (emailTemplateId === undefined) {
+                  await AddDataOnAPI(this.urlTemplates, bodyAdd);
+                } else {
+                  await EditDataOnAPI(
+                    this.urlTemplates + "/" + emailTemplateId,
+                    bodyEdit
+                  );
                 }
-                this.props.navigation.navigate("AddEditTemplate")
+                this.props.navigation.navigate("AddEditTemplate");
               }}
             >
               <EntypoIcon
@@ -141,8 +152,8 @@ const styles = StyleSheet.create({
   tekstIzbornika2: {
     fontWeight: "bold",
     fontSize: 18,
-    left: 28,
-    top: 188,
+    left: 14,
+    bottom:42,
   },
   margineTeksta1: {
     marginBottom: 0,
@@ -176,14 +187,14 @@ const styles = StyleSheet.create({
     borderRadius: 22,
     borderWidth: 2,
     borderColor: "grey",
-    height: 400,
+    height: 430,
     justifyContent: "center",
     bottom: 140,
     width: "100%",
   },
   btn1: {
     left: 205,
-    bottom: 120,
+    bottom: 180,
     height: 110,
   },
   btnBorder1: {
@@ -218,4 +229,7 @@ const styles = StyleSheet.create({
     width: 340,
 
   },
+  TxtInput2iNaslov2:{
+    bottom:20
+  }
 });

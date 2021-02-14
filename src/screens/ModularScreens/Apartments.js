@@ -143,7 +143,7 @@ const styles = StyleSheet.create({
   },
   Naslov: {
     width: "80%",
-    marginBottom: 40
+    marginBottom: 40,
   },
   mainView: {
     flexDirection: "row",
@@ -257,6 +257,7 @@ const styles = StyleSheet.create({
     width: "41%",
     height: "43%",
     bottom: 60,
+    left: 11,
   },
   btnText1: {
     fontWeight: "bold",

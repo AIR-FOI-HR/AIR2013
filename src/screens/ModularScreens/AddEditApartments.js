@@ -247,6 +247,7 @@ const styles = StyleSheet.create({
     padding: 8,
     width: "200%",
     height: "24%",
+    left:2
   },
   btnBorder2: {
     top: 35,
