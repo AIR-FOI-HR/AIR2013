@@ -51,10 +51,15 @@ export default class App extends React.Component {
     render(){
         var ime="";
         var email="";
+        var imgSrc = "";
+        //var imgSrc = "../assets/icons/profile.png";
         try {
 			ime = this.state.currentUser.user.name;
 			email = this.state.currentUser.user.email;
-			//var imgSrc = this.state.currentUser.user.photo;
+			if(this.state.currentUser.user.photo!=undefined)
+            {
+                imgSrc = this.state.currentUser.user.photo;
+            }
 		} catch(error) {};
         return (
 			<ScrollView showsVerticalScrollIndicator={false} style={styles.scrollView}>
@@ -65,13 +70,13 @@ export default class App extends React.Component {
 						<Text style={styles.settingsTextName}>konfiguracija</Text>
 					</View>
 					<View style={styles.profileIconView}>
-						<Image source={require('../assets/icons/profile.png')} style={styles.profileIconImage} />
+						<Image source={{ uri: imgSrc}} style={styles.profileIconImage} />
 					</View>
 					{/*Profilna fotografija, ime i prezime korisnika*/}
 				</View>
 				<View style={styles.marginaSlikeIokvir}>
 					<View style={styles.imeISlika}>
-						<Image source={require('../assets/icons/profile.png')} style={styles.imageCenter} />
+						<Image source={{ uri: imgSrc }} style={styles.imageCenter} />
 						<Text style={styles.tekstImena}> {ime} </Text>
 					</View>
 					<View style={styles.velicinaFonta}>{/*Izbornik sa switchem i ikonicama*/}</View>
@@ -185,7 +190,8 @@ const styles = StyleSheet.create({
     },
     profileIconImage: {
         width:50,
-        height:50
+        height:50,
+		borderRadius: 50 / 2,
     },
     sortView: {
         alignItems:"center",

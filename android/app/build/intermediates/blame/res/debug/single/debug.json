@@ -312,6 +312,10 @@
         "source": "C:\\Users\\Sven\\.gradle\\caches\\transforms-2\\files-2.1\\9b919a9a3d6db9fab1a25a621682b832\\appcompat-1.1.0\\res\\drawable-hdpi-v4\\abc_ic_menu_copy_mtrl_am_alpha.png"
     },
     {
+        "merged": "C:\\Users\\Sven\\Desktop\\FAKS\\7.semestar\\air\\AIR2013\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-ldpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\Sven\\Desktop\\FAKS\\7.semestar\\air\\AIR2013\\android\\app\\src\\main\\res\\mipmap-ldpi\\ic_launcher_round.png"
+    },
+    {
         "merged": "C:\\Users\\Sven\\Desktop\\FAKS\\7.semestar\\air\\AIR2013\\android\\app\\build\\intermediates\\res\\merged\\debug\\color_mtrl_text_btn_text_color_selector.xml.flat",
         "source": "C:\\Users\\Sven\\.gradle\\caches\\transforms-2\\files-2.1\\d2d703d0888c9f273ca129b029ce5ac5\\material-1.1.0\\res\\color\\mtrl_text_btn_text_color_selector.xml"
     },
@@ -1838,6 +1842,10 @@
     {
         "merged": "C:\\Users\\Sven\\Desktop\\FAKS\\7.semestar\\air\\AIR2013\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_ic_menu_cut_mtrl_alpha.png.flat",
         "source": "C:\\Users\\Sven\\.gradle\\caches\\transforms-2\\files-2.1\\9b919a9a3d6db9fab1a25a621682b832\\appcompat-1.1.0\\res\\drawable-xxhdpi-v4\\abc_ic_menu_cut_mtrl_alpha.png"
+    },
+    {
+        "merged": "C:\\Users\\Sven\\Desktop\\FAKS\\7.semestar\\air\\AIR2013\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-ldpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\Sven\\Desktop\\FAKS\\7.semestar\\air\\AIR2013\\android\\app\\src\\main\\res\\mipmap-ldpi\\ic_launcher.png"
     },
     {
         "merged": "C:\\Users\\Sven\\Desktop\\FAKS\\7.semestar\\air\\AIR2013\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_design_password_eye.xml.flat",
