@@ -1024,6 +1024,10 @@
         "source": "C:\\Users\\Mario\\.gradle\\caches\\transforms-2\\files-2.1\\d2d703d0888c9f273ca129b029ce5ac5\\material-1.1.0\\res\\color\\test_mtrl_calendar_day.xml"
     },
     {
+        "merged": "C:\\Users\\Mario\\source\\repos\\mRent\\AIR2013\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-ldpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\Mario\\source\\repos\\mRent\\AIR2013\\android\\app\\src\\main\\res\\mipmap-ldpi\\ic_launcher.png"
+    },
+    {
         "merged": "C:\\Users\\Mario\\source\\repos\\mRent\\AIR2013\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21_abc_btn_colored_material.xml.flat",
         "source": "C:\\Users\\Mario\\.gradle\\caches\\transforms-2\\files-2.1\\9b919a9a3d6db9fab1a25a621682b832\\appcompat-1.1.0\\res\\drawable-v21\\abc_btn_colored_material.xml"
     },
@@ -1430,6 +1434,10 @@
     {
         "merged": "C:\\Users\\Mario\\source\\repos\\mRent\\AIR2013\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_btn_radio_on_to_off_mtrl_animation.xml.flat",
         "source": "C:\\Users\\Mario\\.gradle\\caches\\transforms-2\\files-2.1\\9b919a9a3d6db9fab1a25a621682b832\\appcompat-1.1.0\\res\\drawable\\btn_radio_on_to_off_mtrl_animation.xml"
+    },
+    {
+        "merged": "C:\\Users\\Mario\\source\\repos\\mRent\\AIR2013\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-ldpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\Mario\\source\\repos\\mRent\\AIR2013\\android\\app\\src\\main\\res\\mipmap-ldpi\\ic_launcher_round.png"
     },
     {
         "merged": "C:\\Users\\Mario\\source\\repos\\mRent\\AIR2013\\android\\app\\build\\intermediates\\res\\merged\\debug\\interpolator-v21_mtrl_fast_out_linear_in.xml.flat",
