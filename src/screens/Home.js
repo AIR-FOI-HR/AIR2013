@@ -71,9 +71,14 @@ export default class App extends React.Component {
 	};
 
 	render() {
+		var imgSrc='';
 		var user = '';
 		try {
 			user = this.state.currentUser.user.name;
+			if (this.state.currentUser.user.photo != undefined)
+			{
+				imgSrc = this.state.currentUser.user.photo;
+			}
 		} catch (error) {}
 		if (this.state.isLoading) {
 			return (
@@ -308,10 +313,8 @@ export default class App extends React.Component {
 
 						<View style={styles.profileIconView}>
 							<TouchableOpacity onPress={() => this.props.navigation.navigate('Settings')}>
-								<Image
-									source={require('../assets/icons/profile.png')}
-									style={styles.profileIconImage}
-								/>
+								<Image source={{ uri: imgSrc }} 
+								style={styles.profileIconImage} />
 							</TouchableOpacity>
 						</View>
 					</View>
@@ -427,6 +430,7 @@ const styles = StyleSheet.create({
 	profileIconImage: {
 		width: 50,
 		height: 50,
+		borderRadius: 50 / 2,
 	},
 	searchBoxView: {
 		flexDirection: 'row',
