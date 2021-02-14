@@ -18,7 +18,7 @@ MERGED from [:react-native-gesture-handler] C:\Users\Mario\source\repos\mRent\AI
 MERGED from [:react-native-reanimated] C:\Users\Mario\source\repos\mRent\AIR2013\node_modules\react-native-reanimated\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
 MERGED from [:react-native-safe-area-context] C:\Users\Mario\source\repos\mRent\AIR2013\node_modules\react-native-safe-area-context\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-9:12
 MERGED from [:react-native-screens] C:\Users\Mario\source\repos\mRent\AIR2013\node_modules\react-native-screens\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
-MERGED from [com.facebook.react:react-native:0.63.4] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\179d4ab47e682e6ba3bf75198803a8a4\jetified-react-native-0.63.4\AndroidManifest.xml:2:1-13:12
+MERGED from [com.facebook.react:react-native:0.63.3] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\b737c438c005e940f0e04bc6f1ae9cd8\jetified-react-native-0.63.3\AndroidManifest.xml:2:1-13:12
 MERGED from [com.google.android.material:material:1.1.0] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\d2d703d0888c9f273ca129b029ce5ac5\material-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.appcompat:appcompat:1.1.0] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\9b919a9a3d6db9fab1a25a621682b832\appcompat-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\4b86c3a0779b044f14768670b810aaff\swiperefreshlayout-1.0.0\AndroidManifest.xml:17:1-22:12
@@ -112,8 +112,8 @@ application
 ADDED from C:\Users\Mario\source\repos\mRent\AIR2013\android\app\src\main\AndroidManifest.xml:6:5-25:19
 MERGED from C:\Users\Mario\source\repos\mRent\AIR2013\android\app\src\main\AndroidManifest.xml:6:5-25:19
 MERGED from C:\Users\Mario\source\repos\mRent\AIR2013\android\app\src\main\AndroidManifest.xml:6:5-25:19
-MERGED from [com.facebook.react:react-native:0.63.4] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\179d4ab47e682e6ba3bf75198803a8a4\jetified-react-native-0.63.4\AndroidManifest.xml:11:5-20
-MERGED from [com.facebook.react:react-native:0.63.4] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\179d4ab47e682e6ba3bf75198803a8a4\jetified-react-native-0.63.4\AndroidManifest.xml:11:5-20
+MERGED from [com.facebook.react:react-native:0.63.3] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\b737c438c005e940f0e04bc6f1ae9cd8\jetified-react-native-0.63.3\AndroidManifest.xml:11:5-20
+MERGED from [com.facebook.react:react-native:0.63.3] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\b737c438c005e940f0e04bc6f1ae9cd8\jetified-react-native-0.63.3\AndroidManifest.xml:11:5-20
 MERGED from [com.google.android.material:material:1.1.0] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\d2d703d0888c9f273ca129b029ce5ac5\material-1.1.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.1.0] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\d2d703d0888c9f273ca129b029ce5ac5\material-1.1.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.firebase:firebase-auth:20.0.1] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\26603fb68c812a3ba1348435bd1f992f\jetified-firebase-auth-20.0.1\AndroidManifest.xml:26:5-81:19
@@ -220,8 +220,8 @@ MERGED from [:react-native-safe-area-context] C:\Users\Mario\source\repos\mRent\
 MERGED from [:react-native-safe-area-context] C:\Users\Mario\source\repos\mRent\AIR2013\node_modules\react-native-safe-area-context\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-screens] C:\Users\Mario\source\repos\mRent\AIR2013\node_modules\react-native-screens\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
 MERGED from [:react-native-screens] C:\Users\Mario\source\repos\mRent\AIR2013\node_modules\react-native-screens\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
-MERGED from [com.facebook.react:react-native:0.63.4] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\179d4ab47e682e6ba3bf75198803a8a4\jetified-react-native-0.63.4\AndroidManifest.xml:7:5-9:41
-MERGED from [com.facebook.react:react-native:0.63.4] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\179d4ab47e682e6ba3bf75198803a8a4\jetified-react-native-0.63.4\AndroidManifest.xml:7:5-9:41
+MERGED from [com.facebook.react:react-native:0.63.3] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\b737c438c005e940f0e04bc6f1ae9cd8\jetified-react-native-0.63.3\AndroidManifest.xml:7:5-9:41
+MERGED from [com.facebook.react:react-native:0.63.3] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\b737c438c005e940f0e04bc6f1ae9cd8\jetified-react-native-0.63.3\AndroidManifest.xml:7:5-9:41
 MERGED from [com.google.android.material:material:1.1.0] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\d2d703d0888c9f273ca129b029ce5ac5\material-1.1.0\AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.material:material:1.1.0] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\d2d703d0888c9f273ca129b029ce5ac5\material-1.1.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.appcompat:appcompat:1.1.0] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\9b919a9a3d6db9fab1a25a621682b832\appcompat-1.1.0\AndroidManifest.xml:20:5-22:41
