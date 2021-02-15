@@ -77,8 +77,8 @@ export default class DetailedRequest extends React.Component {
 
     render() {
         const { requestId } = this.state;
-        console.log(this.state.dateFrom)
-        console.log(this.state.dateTo)
+        //console.log(this.state.dateFrom)
+        //console.log(this.state.dateTo)
 
         return (
             <ScrollView style={styles.mainViewContainer}>
@@ -100,36 +100,42 @@ export default class DetailedRequest extends React.Component {
 
                 <View style={styles.mainView}>
                     <View style={styles.mainCardView}>
+                        <View style={styles.userData}>
+                            <Image
+                                source={require('../assets/icons/profile.png')}
+                                style={styles.guestImage}
+                            />
+                        </View>
+                        <View style={styles.guestNameView}>
+                            <Text style={styles.txtGuestName}>{this.state.clientNameSurname}</Text>
+                        </View>
                         <View style={styles.podaciSIkonamaView}>
-                            <View style={styles.userData}>
-                                <Image
-                                    source={require('../assets/icons/profile.png')}
-                                    style={styles.guestImage}
-                                />
+                            <View>
+                                <View style={styles.propertyView}>
+                                    <FontAwesomeIcons name="home" size={30}>
+                                    </FontAwesomeIcons>
+                                </View>
+                                <View style={styles.txtVilla}>
+                                    <Text style={styles.txtVilla}>{this.state.property}</Text>
+                                </View>
                             </View>
-                            <View style={styles.guestNameView}>
-                                <Text style={styles.txtGuestName}>{this.state.clientNameSurname}</Text>
+                            <View>
+                                <View style={styles.propertyView}>
+                                    <EntypoIcon name="calendar" size={30}>
+                                    </EntypoIcon>
+                                </View>
+                                <View style={styles.timespanView}>
+                                    <Text style={styles.txtTimespan}>{this.state.dateFrom.substring(5, 10) + ' - ' + this.state.dateTo.substring(5, 10)}</Text>
+                                </View>
                             </View>
-                            <View style={styles.propertyView}>
-                                <FontAwesomeIcons name="home" size={30}>
-                                </FontAwesomeIcons>
-                            </View>
-                            <View style={styles.txtVilla}>
-                                <Text style={styles.txtVilla}>{this.state.property}</Text>
-                            </View>
-                            <View style={styles.propertyView}>
-                                <EntypoIcon name="calendar" size={30}>
-                                </EntypoIcon>
-                            </View>
-                            <View style={styles.timespanView}>
-                                <Text style={styles.txtTimespan}>{this.state.dateFrom.substring(5, 10) + ' - ' + this.state.dateTo.substring(5, 10)}</Text>
-                            </View>
-                            <View style={styles.propertyView}>
-                                <MaterialIcons name="people-alt" size={30}>
-                                </MaterialIcons>
-                            </View>
-                            <View style={styles.numberOfPeopleView}>
-                                <Text style={styles.txtNumberOfPeople}>{this.state.numberOfPeople}</Text>
+                            <View>
+                                <View style={styles.propertyView}>
+                                    <MaterialIcons name="people-alt" size={30}>
+                                    </MaterialIcons>
+                                </View>
+                                <View style={styles.numberOfPeopleView}>
+                                    <Text style={styles.txtNumberOfPeople}>{this.state.numberOfPeople}</Text>
+                                </View>
                             </View>
                         </View>
 
@@ -181,10 +187,10 @@ export default class DetailedRequest extends React.Component {
 
                             </TouchableOpacity>
 
-                            <TouchableOpacity 
-                            style={styles.btnSendEmail}
-                            onPress={async () => { 
-                                let bodyEdit = JSON.stringify({
+                            <TouchableOpacity
+                                style={styles.btnSendEmail}
+                                onPress={async () => {
+                                    let bodyEdit = JSON.stringify({
                                         requestId: requestId,
                                         property: this.state.property,
                                         unit: this.state.unit,
@@ -200,9 +206,9 @@ export default class DetailedRequest extends React.Component {
                                         clientId: this.state.clientId,
                                         client: this.state.client
                                     })
-                                await SendEmail(this.state.clientEmail, this.state.responseSubject, this.state.responseBody) 
-                                await EditDataOnAPI(this.urlRequests + '/' + requestId, bodyEdit)
-                                this.props.navigation.navigate("Home")
+                                    await SendEmail(this.state.clientEmail, this.state.responseSubject, this.state.responseBody)
+                                    await EditDataOnAPI(this.urlRequests + '/' + requestId, bodyEdit)
+                                    this.props.navigation.navigate("Home")
                                 }}
                             >
 
@@ -244,7 +250,9 @@ const styles = StyleSheet.create({
 
     },
     podaciSIkonamaView: {
-
+        flexDirection: 'row',
+        width: "100%",
+        justifyContent: 'space-evenly'
     },
     welcomeTextName: {
         fontSize: 30,
@@ -266,7 +274,7 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         backgroundColor: '#FFF',
         elevation: 3,
-        height: 720
+        height: 518
     },
     userData: {
         textAlign: 'center',
@@ -274,9 +282,9 @@ const styles = StyleSheet.create({
         justifyContent: 'center'
     },
     guestImage: {
-        width: 80,
-        height: 80,
-        marginTop: 10
+        width: 60,
+        height: 60,
+        marginTop: 5
     },
     guestNameView: {
         flexDirection: 'row',

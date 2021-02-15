@@ -75,8 +75,8 @@ export default class App extends React.Component {
 
     if (this.state.isLoading) {
       return (
-        <View style={styles.mainView}>
-          <ActivityIndicator />
+        <View style={[styles.container, styles.horizontal]}>
+          <ActivityIndicator size="large" color="#236E9F"/>
         </View>
       );
     } else {
@@ -176,6 +176,15 @@ export default class App extends React.Component {
 }
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: "center"
+  },
+  horizontal: {
+    flexDirection: "row",
+    justifyContent: "space-around",
+    padding: 10
+  },
   scrollView: {
     backgroundColor: "#fff",
     paddingHorizontal: 20,

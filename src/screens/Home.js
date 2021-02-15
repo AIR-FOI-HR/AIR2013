@@ -47,7 +47,7 @@ export default class App extends React.Component {
 			requestFilter: undefined,
 			propertyFilter: undefined,
 		});
-		
+
 
 		this.didFocusSubscription = this.props.navigation.addListener('willFocus', async () => {
 			this.setState({
@@ -73,19 +73,18 @@ export default class App extends React.Component {
 	};
 
 	render() {
-		var imgSrc='';
+		var imgSrc = '';
 		var user = '';
 		try {
 			user = this.state.currentUser.user.name;
-			if (this.state.currentUser.user.photo != undefined)
-			{
+			if (this.state.currentUser.user.photo != undefined) {
 				imgSrc = this.state.currentUser.user.photo;
 			}
-		} catch (error) {}
+		} catch (error) { }
 		if (this.state.isLoading) {
 			return (
-				<View style={styles.mainView}>
-					<ActivityIndicator />
+				<View style={[styles.container, styles.horizontal]}>
+					<ActivityIndicator size="large" color="#236E9F" />
 				</View>
 			);
 		} else {
@@ -109,12 +108,10 @@ export default class App extends React.Component {
 									this.setState({
 										propertyFilter: undefined,
 									});
-									console.log(this.state.propertyFilter);
 								} else {
 									this.setState({
 										propertyFilter: propertyName,
 									});
-									console.log(this.state.propertyFilter);
 								}
 							}}
 						>
@@ -159,9 +156,6 @@ export default class App extends React.Component {
 				var client = requestVal.client;
 				var clientEmail = '';
 
-				console.log(dateFrom)
-				console.log(dateTo)
-
 				let clients = dataClients.map((clientVal, keyClient) => {
 					var clientNameSurname = '';
 					if (clientVal.clientId === clientId) {
@@ -201,6 +195,8 @@ export default class App extends React.Component {
 											clients: { clients },
 											clientEmail: { clientEmail },
 										});
+										console.log(dateFrom)
+										console.log(dateTo)
 									}}
 								/>
 							</View>
@@ -318,8 +314,8 @@ export default class App extends React.Component {
 
 						<View style={styles.profileIconView}>
 							<TouchableOpacity onPress={() => this.props.navigation.navigate('Settings')}>
-								<Image source={{ uri: imgSrc }} 
-								style={styles.profileIconImage} />
+								<Image source={{ uri: imgSrc }}
+									style={styles.profileIconImage} />
 							</TouchableOpacity>
 						</View>
 					</View>
@@ -390,7 +386,7 @@ export default class App extends React.Component {
 						</TouchableOpacity>
 					</View>
 
-					<View style={styles.requestView}>{properties}</View>
+					<View style={styles.propertiesFilter}>{properties}</View>
 
 					{/*Requests*/}
 					<View style={styles.requestView}>
@@ -405,6 +401,15 @@ export default class App extends React.Component {
 }
 
 const styles = StyleSheet.create({
+	container: {
+		flex: 1,
+		justifyContent: "center"
+	},
+	horizontal: {
+		flexDirection: "row",
+		justifyContent: "space-around",
+		padding: 10
+	},
 	scrollView: {
 		backgroundColor: colors.white,
 		paddingHorizontal: 20,
@@ -463,16 +468,6 @@ const styles = StyleSheet.create({
 		marginRight: 5,
 		justifyContent: 'center',
 	},
-	btnPropertyFilter: {
-		borderColor: colors.tertiary,
-		backgroundColor: colors.white,
-		borderRadius: 8,
-		borderWidth: 2,
-		padding: 8,
-		width: '40%',
-		flexDirection: 'row',
-		justifyContent: 'space-around',
-	},
 	btnText2: {
 		fontWeight: 'bold',
 		fontSize: 14,
@@ -521,5 +516,19 @@ const styles = StyleSheet.create({
 		width: '100%',
 		marginTop: 40,
 		justifyContent: 'space-between',
+	},
+	propertiesFilter: {
+		flexDirection: 'row',
+		width: '100%',
+		marginTop: 40,
+		justifyContent: 'space-evenly'
+	},
+	btnPropertyFilter: {
+		borderColor: "#236E9F",
+		backgroundColor: colors.white,
+		borderRadius: 8,
+		borderWidth: 2,
+		padding: 8,
+		width: '100%',
 	},
 });
