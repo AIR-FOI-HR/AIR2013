@@ -39,16 +39,14 @@ export default class App extends React.Component {
 	urlProperties = 'https://air2020api.azure-api.net/api/Properties';
 
 	async componentDidMount() {
-		this.interval = setInterval(async () => {
-			this.setState({
-				dataSourceRequests: await FetchDataFromAPI(this.urlRequests),
-				dataSourceClients: await FetchDataFromAPI(this.urlClients),
-				dataSourceProperties: await FetchDataFromAPI(this.urlProperties),
-				isLoading: false,
-				requestFilter: undefined,
-				propertyFilter: undefined,
-			});
-		  }, 30000);
+		this.setState({
+			dataSourceRequests: await FetchDataFromAPI(this.urlRequests),
+			dataSourceClients: await FetchDataFromAPI(this.urlClients),
+			dataSourceProperties: await FetchDataFromAPI(this.urlProperties),
+			isLoading: false,
+			requestFilter: undefined,
+			propertyFilter: undefined,
+		});
 		
 
 		this.didFocusSubscription = this.props.navigation.addListener('willFocus', async () => {
@@ -160,6 +158,9 @@ export default class App extends React.Component {
 				var clientId = requestVal.clientId;
 				var client = requestVal.client;
 				var clientEmail = '';
+
+				console.log(dateFrom)
+				console.log(dateTo)
 
 				let clients = dataClients.map((clientVal, keyClient) => {
 					var clientNameSurname = '';

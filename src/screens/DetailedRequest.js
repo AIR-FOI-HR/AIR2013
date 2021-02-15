@@ -77,6 +77,9 @@ export default class DetailedRequest extends React.Component {
 
     render() {
         const { requestId } = this.state;
+        console.log(this.state.dateFrom)
+        console.log(this.state.dateTo)
+
         return (
             <ScrollView style={styles.mainViewContainer}>
                 {/*Zaglavlje s prikazom trenutne stranice i ikonom korisničkog profila*/}

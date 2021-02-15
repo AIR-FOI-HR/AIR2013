@@ -51,7 +51,7 @@ export default class App extends React.Component {
     render(){
         var ime="";
         var email="";
-        var imgSrc = "";
+        var imgSrc = "slika";
         //var imgSrc = "../assets/icons/profile.png";
         try {
 			ime = this.state.currentUser.user.name;
