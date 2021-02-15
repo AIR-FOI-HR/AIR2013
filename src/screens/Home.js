@@ -39,14 +39,17 @@ export default class App extends React.Component {
 	urlProperties = 'https://air2020api.azure-api.net/api/Properties';
 
 	async componentDidMount() {
-		this.setState({
-			dataSourceRequests: await FetchDataFromAPI(this.urlRequests),
-			dataSourceClients: await FetchDataFromAPI(this.urlClients),
-			dataSourceProperties: await FetchDataFromAPI(this.urlProperties),
-			isLoading: false,
-			requestFilter: undefined,
-			propertyFilter: undefined,
-		});
+		this.interval = setInterval(async () => {
+			this.setState({
+				dataSourceRequests: await FetchDataFromAPI(this.urlRequests),
+				dataSourceClients: await FetchDataFromAPI(this.urlClients),
+				dataSourceProperties: await FetchDataFromAPI(this.urlProperties),
+				isLoading: false,
+				requestFilter: undefined,
+				propertyFilter: undefined,
+			});
+		  }, 30000);
+		
 
 		this.didFocusSubscription = this.props.navigation.addListener('willFocus', async () => {
 			this.setState({
@@ -62,6 +65,7 @@ export default class App extends React.Component {
 
 	componentWillUnmount() {
 		this.didFocusSubscription.remove();
+		clearInterval(this.interval);
 	}
 
 	getCurrentUser = async () => {
