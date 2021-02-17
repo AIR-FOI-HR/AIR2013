@@ -166,40 +166,6 @@ export default class DetailedRequest extends React.Component {
 
                         {/*Buttoni u podnožju*/}
                         <View style={styles.buttonsView}>
-
-                            <TouchableOpacity
-                                style={styles.btnSendEmail}
-                                onPress={async () => {
-                                    let bodyEdit = JSON.stringify({
-                                        requestId: requestId,
-                                        property: this.state.property,
-                                        unit: this.state.unit,
-                                        dateFrom: this.state.dateFrom,
-                                        dateTo: this.state.dateTo,
-                                        priceUponRequest: this.state.priceUponRequest,
-                                        confirmed: this.state.confirmed,
-                                        processed: this.state.processed,
-                                        sent: this.state.sent,
-                                        numberOfPeople: this.state.numberOfPeople,
-                                        responseSubject: this.state.responseSubject,
-                                        responseBody: this.state.responseBody,
-                                        clientId: this.state.clientId,
-                                        client: this.state.client
-                                    })
-                                    await EditDataOnAPI(this.urlRequests + '/' + requestId, bodyEdit)
-                                    Alert.alert("Promjena je spremljena!")
-                                }}
-                            >
-
-                                <EntypoIcon
-                                    name="save"
-                                    size={22}
-                                    style={styles.SaveIkona}
-                                ></EntypoIcon>
-                                <Text style={styles.btnText2} >SPREMI</Text>
-
-                            </TouchableOpacity>
-
                             <TouchableOpacity
                                 style={styles.btnSendEmail}
                                 onPress={async () => {
@@ -224,17 +190,12 @@ export default class DetailedRequest extends React.Component {
                                     this.props.navigation.navigate("Home")
                                 }}
                             >
-
                                 <FeatherIcon name="send" size={18} />
                                 <Text style={styles.btnText2} >POŠALJI</Text>
-
                             </TouchableOpacity>
                         </View>
-
-
                     </View>
                 </View>
-
             </ScrollView>
         );
     }
