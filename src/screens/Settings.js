@@ -51,7 +51,7 @@ export default class App extends React.Component {
     render(){
         var ime="";
         var email="";
-        var imgSrc = "slika";
+        var imgSrc = "img";
         //var imgSrc = "../assets/icons/profile.png";
         try {
 			ime = this.state.currentUser.user.name;
@@ -61,6 +61,7 @@ export default class App extends React.Component {
                 imgSrc = this.state.currentUser.user.photo;
             }
 		} catch(error) {};
+        
         return (
 			<ScrollView showsVerticalScrollIndicator={false} style={styles.scrollView}>
 				{/*Zaglavlje s pozdravom i implementacija slike*/}

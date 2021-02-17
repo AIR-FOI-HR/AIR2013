@@ -5,7 +5,6 @@ import {
     Image,
     StyleSheet,
     TextInput,
-    Button,
     TouchableHighlight,
     TouchableOpacity,
     ActivityIndicator,
@@ -15,12 +14,14 @@ import Icon from 'react-native-vector-icons/Ionicons'
 import EntypoIcon from 'react-native-vector-icons/Entypo';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import FontAwesomeIcons from 'react-native-vector-icons/FontAwesome';
+import { GoogleSignin, Button, statusCodes } from '@react-native-community/google-signin';
 import FontIcons from 'react-native-vector-icons/Fontisto';
 import { colors } from '../constants/DesignConstants.js';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import FeatherIcon from 'react-native-vector-icons/Feather';
 import { EditDataOnAPI } from '../backend/ApiConnection';
 import { SendEmail } from '../backend/SendEmail.js';
+import { Alert } from 'react-native';
 
 export default class DetailedRequest extends React.Component {
 
@@ -63,6 +64,7 @@ export default class DetailedRequest extends React.Component {
         }
 
         this.handleChangedTextResponse = this.handleChangedTextResponse.bind(this)
+        this.getCurrentUser();
     }
 
     urlRequests = 'https://air2020api.azure-api.net/api/Requests';
@@ -75,10 +77,23 @@ export default class DetailedRequest extends React.Component {
         console.log(this.state.responseBody)
     }
 
+    getCurrentUser = async () => {
+        const currentUser = await GoogleSignin.getCurrentUser();
+        this.setState({ currentUser });
+        console.log("Ušao u google");
+
+    };
+
     render() {
         const { requestId } = this.state;
-        //console.log(this.state.dateFrom)
-        //console.log(this.state.dateTo)
+
+        var imgSrc = "img";
+        //var imgSrc = "../assets/icons/profile.png";
+        try {
+            if (this.state.currentUser.user.photo != undefined) {
+                imgSrc = this.state.currentUser.user.photo;
+            }
+        } catch (error) { };
 
         return (
             <ScrollView style={styles.mainViewContainer}>
@@ -89,10 +104,7 @@ export default class DetailedRequest extends React.Component {
                         <Text style={styles.welcomeTextName}>zahtjeva</Text>
                     </View>
                     <View style={styles.profileIconView}>
-                        <Image
-                            source={require('../assets/icons/profile.png')}
-                            style={styles.profileIconImage}
-                        />
+                        <Image source={{ uri: imgSrc }} style={styles.profileIconImage} />
                     </View>
                 </View>
 
@@ -175,6 +187,7 @@ export default class DetailedRequest extends React.Component {
                                         client: this.state.client
                                     })
                                     await EditDataOnAPI(this.urlRequests + '/' + requestId, bodyEdit)
+                                    Alert.alert("Promjena je spremljena!")
                                 }}
                             >
 
@@ -265,7 +278,8 @@ const styles = StyleSheet.create({
     },
     profileIconImage: {
         width: 50,
-        height: 50
+        height: 50,
+        borderRadius: 50 / 2
     },
     mainCardView: {
         borderColor: '#feca57',

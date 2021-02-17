@@ -21,6 +21,7 @@ import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 import FontAwesomeIcons from "react-native-vector-icons/FontAwesome";
 import { colors } from "../../constants/DesignConstants";
 import { AddDataOnAPI, EditDataOnAPI } from '../../backend/ApiConnection';
+import { Alert } from "react-native";
 
 export default class App extends React.Component {
 
@@ -126,13 +127,16 @@ export default class App extends React.Component {
             <TouchableOpacity
               style={styles.btnBorder1}
               onPress={async () => {
-                let bodyAdd = JSON.stringify({ name: this.state.name, capacity: parseInt(this.state.capacity), price: parseFloat(this.state.price), propertyId: this.state.selectedPropertyId })
-                let bodyEdit = JSON.stringify({ unitId: unitId, name: this.state.name, capacity: this.state.capacity, price: this.state.price, propertyId: this.state.propertyId })
+                let bodyAdd = JSON.stringify({name: this.state.name, capacity: parseInt(this.state.capacity), price: parseFloat(this.state.price), propertyId: this.state.selectedPropertyId})
+                let bodyEdit = JSON.stringify({unitId: unitId, name: this.state.name, capacity: this.state.capacity, price: this.state.price, propertyId: this.state.propertyId})
                 if (unitId === undefined) {
                   await AddDataOnAPI(this.urlRooms, bodyAdd)
+                  Alert.alert("Soba je uspješno dodana!")
                 } else {
                   await EditDataOnAPI(this.urlRooms + '/' + unitId, bodyEdit)
+                  Alert.alert("Soba je uspješno promijenjena!")
                 }
+                
                 this.props.navigation.navigate("AddEditRooms")
               }}
             >

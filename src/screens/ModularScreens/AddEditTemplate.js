@@ -20,6 +20,7 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import { colors } from '../../constants/DesignConstants';
 import { RadioButton } from 'react-native-paper';
 import { DeleteDataFromAPI, FetchDataFromAPI } from '../../backend/ApiConnection'
+import { Alert } from 'react-native';
 
 export default class App extends React.Component {
 
@@ -127,7 +128,9 @@ export default class App extends React.Component {
             <View style={styles.btn2}>
               <TouchableOpacity
                 style={styles.btnBorder2}
-                onPress={async () => {await DeleteDataFromAPI(this.urlTemplates + '/' + checked)
+                onPress={async () => {
+                  await DeleteDataFromAPI(this.urlTemplates + '/' + checked)
+                  Alert.alert("Predložak je uspješno obrisan!")
                   this.setState({
                     dataSourceTemplates: await FetchDataFromAPI(this.urlTemplates)
                   })

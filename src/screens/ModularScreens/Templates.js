@@ -8,6 +8,7 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import FontAwesomeIcons from 'react-native-vector-icons/FontAwesome';
 import { colors } from '../../constants/DesignConstants';
 import { AddDataOnAPI, EditDataOnAPI } from '../../backend/ApiConnection';
+import { Alert } from "react-native";
 
 export default class App extends React.Component {
 
@@ -85,22 +86,17 @@ export default class App extends React.Component {
             <TouchableOpacity
               style={styles.btnBorder1}
               onPress={async () => {
-                let bodyAdd = JSON.stringify({
-                  name: this.state.name,
-                  templateContent: this.state.templateContent,
-                });
-                let bodyEdit = JSON.stringify({
-                  emailTemplateId: emailTemplateId,
-                  name: this.state.name,
-                  templateContent: this.state.templateContent,
-                });
+                let bodyAdd = JSON.stringify({name: this.state.name, templateContent: this.state.templateContent});
+                let bodyEdit = JSON.stringify({emailTemplateId: emailTemplateId, name: this.state.name, templateContent: this.state.templateContent});
                 if (emailTemplateId === undefined) {
                   await AddDataOnAPI(this.urlTemplates, bodyAdd);
+                  Alert.alert("Predložak je uspješno dodan!")
                 } else {
                   await EditDataOnAPI(
                     this.urlTemplates + "/" + emailTemplateId,
                     bodyEdit
                   );
+                  Alert.alert("Predložak je uspješno promijenjen!")
                 }
                 this.props.navigation.navigate("AddEditTemplate");
               }}

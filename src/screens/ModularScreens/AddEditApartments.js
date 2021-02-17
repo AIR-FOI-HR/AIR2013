@@ -22,6 +22,7 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import { colors } from '../../constants/DesignConstants';
 import { RadioButton } from 'react-native-paper';
 import { DeleteDataFromAPI, FetchDataFromAPI } from '../../backend/ApiConnection'
+import { Alert } from 'react-native';
 
 export default class App extends React.Component {
 
@@ -143,6 +144,7 @@ export default class App extends React.Component {
                 style={styles.btnBorder2}
                 onPress={async () => {
                   await DeleteDataFromAPI(this.urlProperties + "/" + checked)
+                  Alert.alert("Apartman je uspješno obrisan!")
                   this.setState({
                     dataSourceProperties: await FetchDataFromAPI(this.urlProperties)
                   })

@@ -73,7 +73,7 @@ export default class App extends React.Component {
 	};
 
 	render() {
-		var imgSrc = '';
+		var imgSrc = 'img';
 		var user = '';
 		try {
 			user = this.state.currentUser.user.name;
@@ -81,6 +81,7 @@ export default class App extends React.Component {
 				imgSrc = this.state.currentUser.user.photo;
 			}
 		} catch (error) { }
+		
 		if (this.state.isLoading) {
 			return (
 				<View style={[styles.container, styles.horizontal]}>

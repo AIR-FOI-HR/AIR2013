@@ -20,7 +20,7 @@ export async function EditDataOnAPI(url, body) {
         body: body
     };
     await fetch(url, requestOptions)
-        .then(response => response.json())
+        .then(response => response)
         .then(data => {
             console.log(data)
         })
