@@ -84,9 +84,9 @@ function dynamicFrameColor(requestStatus) {
       alignItems: "center",
       elevation: 3,
       width: "99.5%",
-      backgroundColor: "#FFF",
+      backgroundColor: colors.yellow,
       paddingHorizontal: 20,
-      height: 100,
+      height: 50,
       borderRadius: 10,
       marginLeft: 1,
       marginTop: 10,
@@ -94,6 +94,7 @@ function dynamicFrameColor(requestStatus) {
       borderWidth: 1,
       borderColor: colors.yellow,
       justifyContent: "space-between",
+      
     };
   } else if (requestStatus === "approved") {
     return {
@@ -101,9 +102,9 @@ function dynamicFrameColor(requestStatus) {
       alignItems: "center",
       elevation: 3,
       width: "99.5%",
-      backgroundColor: "#FFF",
+      backgroundColor: colors.green,
       paddingHorizontal: 20,
-      height: 100,
+      height: 50,
       borderRadius: 10,
       marginLeft: 1,
       marginTop: 10,
@@ -118,9 +119,9 @@ function dynamicFrameColor(requestStatus) {
       alignItems: "center",
       elevation: 3,
       width: "99.5%",
-      backgroundColor: "#FFF",
+      backgroundColor: colors.red,
       paddingHorizontal: 20,
-      height: 100,
+      height: 50,
       borderRadius: 10,
       marginLeft: 1,
       marginTop: 10,
@@ -139,20 +140,14 @@ export default class App extends React.Component {
         onPress={this.props.onPress}
         style={dynamicFrameColor(this.props.Status)}
       >
-        <View>
-          <Image
-            source={require("../assets/icons/profile.png")}
-            style={styles.profileIconImage}
-          />
+       
+        <View style={{ width: "73%", flexDirection: 'row', justifyContent: 'flex-start' }}>
+          <Text style={styles.txtPropertyName}>{this.props.PropertyName} |</Text>
+          <Text style={styles.txtNameSurname}> {this.props.GuestName}</Text>
+         
+          
         </View>
-        <View style={{ width: "73%" }}>
-          <Text style={styles.txtNameSurname}>{this.props.GuestName}</Text>
-          <Text style={styles.txtPropertyName}>{this.props.PropertyName}</Text>
-          <Text style={styles.txtPeopleNumber}>
-            for {this.props.NumberOfGuests}
-          </Text>
-        </View>
-        <View>{setProperColor(this.props.Status, this.props.Channel)}</View>
+        
       </TouchableOpacity>
     );
   }
@@ -163,17 +158,18 @@ const styles = StyleSheet.create({
     width: 40,
     height: 40,
     marginRight: 10,
-    borderRadius: 17,
+    borderRadius: 17
   },
   txtNameSurname: {
     fontSize: 20,
     fontWeight: "700",
-    color: "#353b48",
+    color: colors.white
   },
   txtPropertyName: {
     fontSize: 10,
     fontWeight: "300",
-    color: "#353b48",
+    color: colors.subtleWhite,
+    fontSize: 20
   },
   txtPeopleNumber: {
     fontSize: 10,

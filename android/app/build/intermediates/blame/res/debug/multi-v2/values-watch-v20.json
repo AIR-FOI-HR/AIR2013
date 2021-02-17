@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\Sven\\Desktop\\FAKS\\7.semestar\\air\\AIR2013\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-watch-v20\\values-watch-v20.xml",
+            "outputFile": "/home/josip/ReactNativeProjects/AIR2013/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-watch-v20/values-watch-v20.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Sven\\.gradle\\caches\\transforms-2\\files-2.1\\c4d4847f42f6c0708c7a695ad8556bb1\\play-services-auth-18.1.0\\res\\values-watch-v20\\values.xml",
+                    "source": "/home/josip/.gradle/caches/transforms-2/files-2.1/c4d4847f42f6c0708c7a695ad8556bb1/play-services-auth-18.1.0/res/values-watch-v20/values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11",
                         "startColumns": "0,0,0,0,0,0,0,0",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Sven\\.gradle\\caches\\transforms-2\\files-2.1\\9b919a9a3d6db9fab1a25a621682b832\\appcompat-1.1.0\\res\\values-watch-v20\\values-watch-v20.xml",
+                    "source": "/home/josip/.gradle/caches/transforms-2/files-2.1/9b919a9a3d6db9fab1a25a621682b832/appcompat-1.1.0/res/values-watch-v20/values-watch-v20.xml",
                     "from": {
                         "startLines": "2,5,8",
                         "startColumns": "4,4,4",

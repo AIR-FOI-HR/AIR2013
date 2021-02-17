@@ -5,11 +5,26 @@ import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler';
 import { GoogleSignin, GoogleSigninButton, statusCodes } from '@react-native-community/google-signin';
 
 import Request from '../components/Request';
+import Request2 from '../components/Request2';
 
 import Icon from 'react-native-vector-icons/Ionicons';
 
 import { colors } from '../constants/DesignConstants';
 import { FetchDataFromAPI } from '../backend/ApiConnection';
+
+
+
+const submit = (param) => {
+	//global.defaultIndicator = param;
+
+	if(!defaultIndicator) {
+		//RequestDesign = "Request";
+	} else {
+		//RequestDesign = "Request2";
+	}
+
+}
+export {submit};
 
 export default class App extends React.Component {
 	constructor(props) {
@@ -21,7 +36,7 @@ export default class App extends React.Component {
 			dataSourceProperties: null,
 			clientEmail: null,
 			requestFilter: undefined,
-			propertyFilter: undefined,
+			propertyFilter: undefined
 		};
 		/*
 			this.state.currentUser je googleov zapis korisnika. 
@@ -33,6 +48,8 @@ export default class App extends React.Component {
 		*/
 		this.getCurrentUser();
 	}
+	
+
 
 	urlClients = 'https://air2020api.azure-api.net/api/Clients';
 	urlRequests = 'https://air2020api.azure-api.net/api/Requests';
@@ -73,6 +90,8 @@ export default class App extends React.Component {
 	};
 
 	render() {
+		
+
 		var imgSrc = '';
 		var user = '';
 		try {
@@ -165,142 +184,151 @@ export default class App extends React.Component {
 
 					return clientNameSurname;
 				});
+				
+				//FILTER
+				
+					//FILTER1
+					if (this.state.requestFilter === undefined) {
+						if (this.state.propertyFilter === undefined) {
 
-				if (this.state.requestFilter === undefined) {
-					if (this.state.propertyFilter === undefined) {
-						return (
-							<View key={keyRequest}>
-								<Request
-									GuestName={clients}
-									PropertyName={requestVal.property}
-									NumberOfGuests={requestVal.numberOfPeople}
-									Status={status}
-									Channel={sentThrough}
-									onPress={() => {
-										this.props.navigation.navigate('DetailedRequest', {
-											requestId: { requestId },
-											property: { property },
-											unit: { unit },
-											dateFrom: { dateFrom },
-											dateTo: { dateTo },
-											priceUponRequest: { priceUponRequest },
-											confirmed: { confirmed },
-											processed: { processed },
-											sent: { sent },
-											numberOfPeople: { numberOfPeople },
-											responseSubject: { responseSubject },
-											responseBody: { responseBody },
-											clientId: { clientId },
-											client: { client },
-											clients: { clients },
-											clientEmail: { clientEmail },
-										});
-										console.log(dateFrom)
-										console.log(dateTo)
-									}}
-								/>
-							</View>
-						);
-					} else if (requestVal.property === this.state.propertyFilter) {
-						return (
-							<View key={keyRequest}>
-								<Request
-									GuestName={clients}
-									PropertyName={requestVal.property}
-									NumberOfGuests={requestVal.numberOfPeople}
-									Status={status}
-									Channel={sentThrough}
-									onPress={() => {
-										this.props.navigation.navigate('DetailedRequest', {
-											requestId: { requestId },
-											property: { property },
-											unit: { unit },
-											dateFrom: { dateFrom },
-											dateTo: { dateTo },
-											priceUponRequest: { priceUponRequest },
-											confirmed: { confirmed },
-											processed: { processed },
-											sent: { sent },
-											numberOfPeople: { numberOfPeople },
-											responseSubject: { responseSubject },
-											responseBody: { responseBody },
-											clientId: { clientId },
-											client: { client },
-											clients: { clients },
-											clientEmail: { clientEmail },
-										});
-									}}
-								/>
-							</View>
-						);
+							return (
+								
+								<View key={keyRequest}>
+									
+									<Request
+										GuestName={clients}
+										PropertyName={requestVal.property}
+										NumberOfGuests={requestVal.numberOfPeople}
+										Status={status}
+										Channel={sentThrough}
+										onPress={() => {
+											this.props.navigation.navigate('DetailedRequest', {
+												requestId: { requestId },
+												property: { property },
+												unit: { unit },
+												dateFrom: { dateFrom },
+												dateTo: { dateTo },
+												priceUponRequest: { priceUponRequest },
+												confirmed: { confirmed },
+												processed: { processed },
+												sent: { sent },
+												numberOfPeople: { numberOfPeople },
+												responseSubject: { responseSubject },
+												responseBody: { responseBody },
+												clientId: { clientId },
+												client: { client },
+												clients: { clients },
+												clientEmail: { clientEmail },
+											});
+											console.log(dateFrom)
+											console.log(dateTo)
+										}}
+									/>
+								</View>
+							);
+						} else if (requestVal.property === this.state.propertyFilter) {
+							return (
+								<View key={keyRequest}>
+									<Request
+										GuestName={clients}
+										PropertyName={requestVal.property}
+										NumberOfGuests={requestVal.numberOfPeople}
+										Status={status}
+										Channel={sentThrough}
+										onPress={() => {
+											this.props.navigation.navigate('DetailedRequest', {
+												requestId: { requestId },
+												property: { property },
+												unit: { unit },
+												dateFrom: { dateFrom },
+												dateTo: { dateTo },
+												priceUponRequest: { priceUponRequest },
+												confirmed: { confirmed },
+												processed: { processed },
+												sent: { sent },
+												numberOfPeople: { numberOfPeople },
+												responseSubject: { responseSubject },
+												responseBody: { responseBody },
+												clientId: { clientId },
+												client: { client },
+												clients: { clients },
+												clientEmail: { clientEmail },
+											});
+										}}
+									/>
+								</View>
+							);
+						}
+					} else if (status === this.state.requestFilter) {
+						if (this.state.propertyFilter === undefined) {
+							return (
+								<View key={keyRequest}>
+									<Request
+										GuestName={clients}
+										PropertyName={requestVal.property}
+										NumberOfGuests={requestVal.numberOfPeople}
+										Status={status}
+										Channel={sentThrough}
+										onPress={() => {
+											this.props.navigation.navigate('DetailedRequest', {
+												requestId: { requestId },
+												property: { property },
+												unit: { unit },
+												dateFrom: { dateFrom },
+												dateTo: { dateTo },
+												priceUponRequest: { priceUponRequest },
+												confirmed: { confirmed },
+												processed: { processed },
+												sent: { sent },
+												numberOfPeople: { numberOfPeople },
+												responseSubject: { responseSubject },
+												responseBody: { responseBody },
+												clientId: { clientId },
+												client: { client },
+												clients: { clients },
+												clientEmail: { clientEmail },
+											});
+										}}
+									/>
+								</View>
+							);
+						} else if (requestVal.property === this.state.propertyFilter) {
+							return (
+								<View key={keyRequest}>
+									<Request
+										GuestName={clients}
+										PropertyName={requestVal.property}
+										NumberOfGuests={requestVal.numberOfPeople}
+										Status={status}
+										Channel={sentThrough}
+										onPress={() => {
+											this.props.navigation.navigate('DetailedRequest', {
+												requestId: { requestId },
+												property: { property },
+												unit: { unit },
+												dateFrom: { dateFrom },
+												dateTo: { dateTo },
+												priceUponRequest: { priceUponRequest },
+												confirmed: { confirmed },
+												processed: { processed },
+												sent: { sent },
+												numberOfPeople: { numberOfPeople },
+												responseSubject: { responseSubject },
+												responseBody: { responseBody },
+												clientId: { clientId },
+												client: { client },
+												clients: { clients },
+												clientEmail: { clientEmail },
+											});
+										}}
+									/>
+								</View>
+							);
+						}
 					}
-				} else if (status === this.state.requestFilter) {
-					if (this.state.propertyFilter === undefined) {
-						return (
-							<View key={keyRequest}>
-								<Request
-									GuestName={clients}
-									PropertyName={requestVal.property}
-									NumberOfGuests={requestVal.numberOfPeople}
-									Status={status}
-									Channel={sentThrough}
-									onPress={() => {
-										this.props.navigation.navigate('DetailedRequest', {
-											requestId: { requestId },
-											property: { property },
-											unit: { unit },
-											dateFrom: { dateFrom },
-											dateTo: { dateTo },
-											priceUponRequest: { priceUponRequest },
-											confirmed: { confirmed },
-											processed: { processed },
-											sent: { sent },
-											numberOfPeople: { numberOfPeople },
-											responseSubject: { responseSubject },
-											responseBody: { responseBody },
-											clientId: { clientId },
-											client: { client },
-											clients: { clients },
-											clientEmail: { clientEmail },
-										});
-									}}
-								/>
-							</View>
-						);
-					} else if (requestVal.property === this.state.propertyFilter) {
-						return (
-							<View key={keyRequest}>
-								<Request
-									GuestName={clients}
-									PropertyName={requestVal.property}
-									NumberOfGuests={requestVal.numberOfPeople}
-									Status={status}
-									Channel={sentThrough}
-									onPress={() => {
-										this.props.navigation.navigate('DetailedRequest', {
-											requestId: { requestId },
-											property: { property },
-											unit: { unit },
-											dateFrom: { dateFrom },
-											dateTo: { dateTo },
-											priceUponRequest: { priceUponRequest },
-											confirmed: { confirmed },
-											processed: { processed },
-											sent: { sent },
-											numberOfPeople: { numberOfPeople },
-											responseSubject: { responseSubject },
-											responseBody: { responseBody },
-											clientId: { clientId },
-											client: { client },
-											clients: { clients },
-											clientEmail: { clientEmail },
-										});
-									}}
-								/>
-							</View>
-						);
-					}
-				}
+				
+				
+
 			});
 
 			return (

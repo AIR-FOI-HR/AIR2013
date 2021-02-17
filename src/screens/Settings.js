@@ -17,6 +17,9 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import FontAwesomeIcons from 'react-native-vector-icons/FontAwesome'; 
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import { colors } from "../constants/DesignConstants";
+import {submit} from './Home'
+
+
 export default class App extends React.Component {
 
     constructor(props) { //Konstruktor za switch 1 i 2
@@ -200,7 +203,7 @@ export default class App extends React.Component {
               <View style={styles.btn1}>
                 <TouchableHighlight
                   style={styles.btnBorder1}
-                  onPress={() => this.changeBackgroundColor(colors.tertiary)}
+                  onPress={() => {submit("Request"); this.props.navigation.navigate('Home') }}
                 >
                   <Text style={styles.btnText1}>DIZAJN 1</Text>
                 </TouchableHighlight>
@@ -209,7 +212,7 @@ export default class App extends React.Component {
               <View style={styles.btn2}>
                 <TouchableHighlight
                   style={styles.btnBorder2}
-                  onPress={async () => {}}
+                  onPress={() => {submit("Request2"); this.props.navigation.navigate('Home') }}
                 >
                   <Text style={styles.btnText2}>DIZAJN 2</Text>
                 </TouchableHighlight>
