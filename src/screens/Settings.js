@@ -21,211 +21,207 @@ import {submit} from './Home'
 
 
 export default class App extends React.Component {
-
-    constructor(props) { //Konstruktor za switch 1 i 2
-        super(props);
-        this.state = {
-            toggle: false,
-            toggle2: false,
-        };
-        this.getCurrentUser();
-    }
-
-    getCurrentUser = async () => 
-    {
-        const currentUser = await GoogleSignin.getCurrentUser();
-        this.setState({ currentUser });
-        console.log("Ušao u google");
-
+  constructor(props) {
+    //Konstruktor za switch 1 i 2
+    super(props);
+    this.state = {
+      toggle: false,
+      toggle2: false,
     };
+    this.getCurrentUser();
+  }
 
+  getCurrentUser = async () => {
+    const currentUser = await GoogleSignin.getCurrentUser();
+    this.setState({ currentUser });
+    console.log("Ušao u google");
+  };
 
-    signOut = async () => {
-    try 
-    {
-        await GoogleSignin.revokeAccess();
-        await GoogleSignin.signOut();
-        this.setState({ currentUser: null }); // Remember to remove the user from your app's state as well
-		this.props.navigation.navigate('SignIn');
-
+  signOut = async () => {
+    try {
+      await GoogleSignin.revokeAccess();
+      await GoogleSignin.signOut();
+      this.setState({ currentUser: null }); // Remember to remove the user from your app's state as well
+      this.props.navigation.navigate("SignIn");
     } catch (error) {
-        console.error(error);
+      console.error(error);
     }
-};
-    render(){
-        var ime="";
-        var email="";
-        var imgSrc = "slika";
-        //var imgSrc = "../assets/icons/profile.png";
-        try {
-			ime = this.state.currentUser.user.name;
-			email = this.state.currentUser.user.email;
-			if(this.state.currentUser.user.photo!=undefined)
-            {
-                imgSrc = this.state.currentUser.user.photo;
-            }
-		} catch(error) {};
-        
-        return (
-          <ScrollView
-            showsVerticalScrollIndicator={false}
-            style={styles.scrollView}
-          >
-            {/*Zaglavlje s pozdravom i implementacija slike*/}
-            <View style={styles.mainView}>
-              <View style={styles.postavkeIKonf}>
-                <Text style={styles.settingsText}>Postavke i</Text>
-                <Text style={styles.settingsTextName}>konfiguracija</Text>
-              </View>
-              <View style={styles.profileIconView}>
-                <TouchableOpacity
-                  onPress={() => this.props.navigation.navigate("Home")}
-                >
-                  <Image
-                    source={{ uri: imgSrc }}
-                    style={styles.profileIconImage}
-                  />
-                </TouchableOpacity>
-              </View>
-              {/*Profilna fotografija, ime i prezime korisnika*/}
-            </View>
-            <View style={styles.marginaSlikeIokvir}>
-              <View style={styles.imeISlika}>
-                <Image source={{ uri: imgSrc }} style={styles.imageCenter} />
-                <Text style={styles.tekstImena}> {ime} </Text>
-              </View>
-              <View style={styles.velicinaFonta}>
-                {/*Izbornik sa switchem i ikonicama*/}
-              </View>
-              <View style={styles.margineTeksta}>
-                <EntypoIcon
-                  name="light-up"
-                  size={22}
-                  style={styles.lightUp}
-                ></EntypoIcon>
-                <View>
-                  <View style={styles.darkMode}>
-                    <Text style={styles.tekstIzbornika}> Tamna tema </Text>
-                  </View>
-                  <View style={styles.switchPlace1}>
-                    <Switch
-                      trackColor={{ false: "gray", true: "teal" }}
-                      thumbColor="white"
-                      ios_backgroundColor="gray"
-                      onValueChange={(value) =>
-                        this.setState({ toggle: value })
-                      }
-                      value={this.state.toggle}
-                    />
-                  </View>
-                </View>
-              </View>
-              <View style={styles.margineTeksta}>
-                <View style={styles.notificationIcon}>
-                  <IonIcon name="notifications" size={22}></IonIcon>
-                </View>
-                <View style={styles.notificationTxt}>
-                  <Text style={styles.tekstIzbornika}> Obavijesti </Text>
-                </View>
-                <View style={styles.switchPlace2}>
-                  <Switch
-                    trackColor={{ false: "gray", true: "teal" }}
-                    thumbColor="white"
-                    ios_backgroundColor="gray"
-                    onValueChange={(value) => this.setState({ toggle2: value })}
-                    value={this.state.toggle2}
-                  />
-                </View>
-              </View>
+  };
+  render() {
 
-              <View style={styles.emailStavke}>
-                <View style={styles.margineTeksta}>
-                  <EntypoIcon name="email" size={20}>
-                    <Text style={styles.tekstIzbornika}> {email}</Text>
-                  </EntypoIcon>
-                </View>
 
-                <View style={styles.margineTeksta}>
-                  <TouchableOpacity
-                    style={styles.dodajUkloniStavke}
-                    onPress={() =>
-                      this.props.navigation.navigate("AddAparOrTemp")
-                    }
-                  >
-                    <FontAwesomeIcons name="home" size={24}>
-                      <Text style={styles.tekstIzbornika}>
-                        {" "}
-                        Dodaj ili ukloni stavke{" "}
-                      </Text>
-                    </FontAwesomeIcons>
-                    <View style={styles.arrow}>
-                      <MaterialIcons
-                        name="arrow-forward-ios"
-                        size={25}
-                      ></MaterialIcons>
-                    </View>
-                  </TouchableOpacity>
-                </View>
+    var ime = "";
+    var email = "";
+    var imgSrc = "slika";
+    //var imgSrc = "../assets/icons/profile.png";
+    try {
+      ime = this.state.currentUser.user.name;
+      email = this.state.currentUser.user.email;
+      if (this.state.currentUser.user.photo != undefined) {
+        imgSrc = this.state.currentUser.user.photo;
+      }
+    } catch (error) {}
 
-                <View style={styles.margineOdjave}>
-                  <TouchableOpacity
-                    style={styles.opacityOdjava}
-                    onPress={() => {
-                      this.signOut();
-                    }}
-                  >
-                    <View style={styles.logoutIcon}>
-                      <MaterialIcons name="logout" size={24}></MaterialIcons>
-                    </View>
-                    <Text style={styles.tekstIzbornika}> Odjavi se </Text>
-                  </TouchableOpacity>
-                </View>
+    return (
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        style={styles.scrollView}
+      >
+        {/*Zaglavlje s pozdravom i implementacija slike*/}
+        <View style={styles.mainView}>
+          <View style={styles.postavkeIKonf}>
+            <Text style={styles.settingsText}>Postavke i</Text>
+            <Text style={styles.settingsTextName}>konfiguracija</Text>
+          </View>
+          <View style={styles.profileIconView}>
+            <TouchableOpacity
+              onPress={() => this.props.navigation.navigate("Home")}
+            >
+              <Image source={{ uri: imgSrc }} style={styles.profileIconImage} />
+            </TouchableOpacity>
+          </View>
+          {/*Profilna fotografija, ime i prezime korisnika*/}
+        </View>
+        <View style={styles.marginaSlikeIokvir}>
+          <View style={styles.imeISlika}>
+            <Image source={{ uri: imgSrc }} style={styles.imageCenter} />
+            <Text style={styles.tekstImena}> {ime} </Text>
+          </View>
+          <View style={styles.velicinaFonta}>
+            {/*Izbornik sa switchem i ikonicama*/}
+          </View>
+          <View style={styles.margineTeksta}>
+            <EntypoIcon
+              name="light-up"
+              size={22}
+              style={styles.lightUp}
+            ></EntypoIcon>
+            <View>
+              <View style={styles.darkMode}>
+                <Text style={styles.tekstIzbornika}> Tamna tema </Text>
+              </View>
+              <View style={styles.switchPlace1}>
+                <Switch
+                  trackColor={{ false: "gray", true: "teal" }}
+                  thumbColor="white"
+                  ios_backgroundColor="gray"
+                  onValueChange={(value) => this.setState({ toggle: value })}
+                  value={this.state.toggle}
+                />
               </View>
             </View>
-            <View
-              style={{
-                borderBottomColor: "black",
-                borderBottomWidth: 1,
-                bottom: 340,
+          </View>
+          <View style={styles.margineTeksta}>
+            <View style={styles.notificationIcon}>
+              <IonIcon name="notifications" size={22}></IonIcon>
+            </View>
+            <View style={styles.notificationTxt}>
+              <Text style={styles.tekstIzbornika}> Obavijesti </Text>
+            </View>
+            <View style={styles.switchPlace2}>
+              <Switch
+                trackColor={{ false: "gray", true: "teal" }}
+                thumbColor="white"
+                ios_backgroundColor="gray"
+                onValueChange={(value) => this.setState({ toggle2: value })}
+                value={this.state.toggle2}
+              />
+            </View>
+          </View>
+
+          <View style={styles.emailStavke}>
+            <View style={styles.margineTeksta}>
+              <EntypoIcon name="email" size={20}>
+                <Text style={styles.tekstIzbornika}> {email}</Text>
+              </EntypoIcon>
+            </View>
+
+            <View style={styles.margineTeksta}>
+              <TouchableOpacity
+                style={styles.dodajUkloniStavke}
+                onPress={() => this.props.navigation.navigate("AddAparOrTemp")}
+              >
+                <FontAwesomeIcons name="home" size={24}>
+                  <Text style={styles.tekstIzbornika}>
+                    {" "}
+                    Dodaj ili ukloni stavke{" "}
+                  </Text>
+                </FontAwesomeIcons>
+                <View style={styles.arrow}>
+                  <MaterialIcons
+                    name="arrow-forward-ios"
+                    size={25}
+                  ></MaterialIcons>
+                </View>
+              </TouchableOpacity>
+            </View>
+
+            <View style={styles.margineOdjave}>
+              <TouchableOpacity
+                style={styles.opacityOdjava}
+                onPress={() => {
+                  this.signOut();
+                }}
+              >
+                <View style={styles.logoutIcon}>
+                  <MaterialIcons name="logout" size={24}></MaterialIcons>
+                </View>
+                <Text style={styles.tekstIzbornika}> Odjavi se </Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+        </View>
+        <View
+          style={{
+            borderBottomColor: "black",
+            borderBottomWidth: 1,
+            bottom: 340,
+          }}
+        />
+        <View
+          style={{
+            borderBottomColor: "black",
+            borderBottomWidth: 1,
+            bottom: 210,
+          }}
+        />
+        <Text style={styles.dizajnKarticaTekst}>
+          Odaberite dizajn kartica po želji:
+        </Text>
+        <View style={styles.txtButtonIcon}>
+          <View style={styles.btn1}>
+            <TouchableHighlight
+              style={[
+                styles.btnBorder1,
+              ]}
+              onPress={() => {
+                submit("Request");
+                this.props.navigation.navigate("Home");
               }}
-            />
-            <View
-              style={{
-                borderBottomColor: "black",
-                borderBottomWidth: 1,
-                bottom: 210,
+            >
+              <Text style={styles.btnText1}>DIZAJN 1</Text>
+            </TouchableHighlight>
+          </View>
+
+          <View style={styles.btn2}>
+            <TouchableHighlight
+              style={styles.btnBorder2}
+              onPress={() => {
+                submit("Request2");
+                this.props.navigation.navigate("Home");
               }}
-            />
-            <Text style={styles.dizajnKarticaTekst}>
-              Odaberite dizajn kartica po želji:
-            </Text>
-            <View style={styles.txtButtonIcon}>
-              <View style={styles.btn1}>
-                <TouchableHighlight
-                  style={styles.btnBorder1}
-                  onPress={() => {submit("Request"); this.props.navigation.navigate('Home') }}
-                >
-                  <Text style={styles.btnText1}>DIZAJN 1</Text>
-                </TouchableHighlight>
-              </View>
-
-              <View style={styles.btn2}>
-                <TouchableHighlight
-                  style={styles.btnBorder2}
-                  onPress={() => {submit("Request2"); this.props.navigation.navigate('Home') }}
-                >
-                  <Text style={styles.btnText2}>DIZAJN 2</Text>
-                </TouchableHighlight>
-              </View>
-            </View>
-            <View style={styles.foi}>
-              <Text style={styles.foiText}>Made @</Text>
-              <Image source={require("../assets/images/foiLogo.png")}></Image>
-            </View>
-          </ScrollView>
-        );
-    }
-
+            >
+              <Text style={styles.btnText2}>DIZAJN 2</Text>
+            </TouchableHighlight>
+          </View>
+        </View>
+        <View style={styles.foi}>
+          <Text style={styles.foiText}>Made @</Text>
+          <Image source={require("../assets/images/foiLogo.png")}></Image>
+        </View>
+      </ScrollView>
+    );
+  }
 }
 
 const styles = StyleSheet.create({
@@ -382,7 +378,6 @@ const styles = StyleSheet.create({
   btnBorder1: {
     top: 35,
     borderColor: colors.black,
-    backgroundColor: colors.white,
     borderRadius: 8,
     borderWidth: 2,
     padding: 8,
@@ -393,7 +388,6 @@ const styles = StyleSheet.create({
   btnBorder2: {
     top: 35,
     borderColor: colors.black,
-    backgroundColor: colors.white,
     borderRadius: 8,
     borderWidth: 2,
     padding: 8,
@@ -420,18 +414,5 @@ const styles = StyleSheet.create({
     textAlign: "center",
     //fontWeight: "bold",
     fontSize: 17,
-  },
-  btnNormal: {
-    borderColor: "blue",
-    borderWidth: 1,
-    borderRadius: 10,
-    height: 30,
-    width: 100,
-  },
-  btnPress: {
-    borderColor: "blue",
-    borderWidth: 1,
-    height: 30,
-    width: 100,
   },
 });

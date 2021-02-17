@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   View,
   Text,
@@ -55,7 +55,9 @@ export default class App extends React.Component {
       clientEmail: null,
       requestFilter: undefined,
       propertyFilter: undefined,
+      colorBorderChange:0,
     };
+    
     /*
 			this.state.currentUser je googleov zapis korisnika. 
 			Za pristup emailu koristiti this.state.currentUser.user.email
@@ -106,10 +108,12 @@ export default class App extends React.Component {
     this.setState({ currentUser });
     console.log("Ušao u google");
   };
-
   render() {
+    
     var imgSrc = "";
     var user = "";
+    
+
     try {
       user = this.state.currentUser.user.name;
       if (this.state.currentUser.user.photo != undefined) {
@@ -376,8 +380,19 @@ export default class App extends React.Component {
           {/*Color boxes*/}
           <View style={styles.mainView}>
             <TouchableOpacity
-              style={styles.colorBoxOrange}
+              style={[
+                styles.colorBoxOrange,
+                {
+                  borderColor:
+                    this.state.colorBorderChange== 1 ? colors.yellow30 : colors.black,
+                },
+              ]}
               onPress={() => {
+                if (this.state.colorBorderChange != 1) {
+                  this.state.colorBorderChange = 1;
+                } else {
+                  this.state.colorBorderChange = 0;
+                }
                 if (this.state.requestFilter === "new") {
                   this.setState({
                     requestFilter: undefined,
@@ -387,14 +402,28 @@ export default class App extends React.Component {
                     requestFilter: "new",
                   });
                 }
+                console.log(this.state.colorBorderChange);
               }}
             >
               <Text style={styles.colorBoxesTextLabel}>novi</Text>
               <Text style={styles.colorBoxesTextNumber}>{statusNew}</Text>
             </TouchableOpacity>
             <TouchableOpacity
-              style={styles.colorBoxGreen}
+              style={[
+                styles.colorBoxGreen,
+                {
+                  borderColor:
+                    this.state.colorBorderChange == 2
+                      ? colors.green30
+                      : colors.black,
+                },
+              ]}
               onPress={() => {
+                if (this.state.colorBorderChange != 2) {
+                  this.state.colorBorderChange = 2;
+                } else {
+                  this.state.colorBorderChange = 0;
+                }
                 if (this.state.requestFilter === "approved") {
                   this.setState({
                     requestFilter: undefined,
@@ -410,8 +439,21 @@ export default class App extends React.Component {
               <Text style={styles.colorBoxesTextNumber}>{statusApproved}</Text>
             </TouchableOpacity>
             <TouchableOpacity
-              style={styles.colorBoxRed}
+              style={[
+                styles.colorBoxRed,
+                {
+                  borderColor:
+                    this.state.colorBorderChange == 3
+                      ? colors.red40
+                      : colors.black,
+                },
+              ]}
               onPress={() => {
+                if (this.state.colorBorderChange != 3) {
+                  this.state.colorBorderChange = 3;
+                } else {
+                  this.state.colorBorderChange = 0;
+                }
                 if (this.state.requestFilter === "rejected") {
                   this.setState({
                     requestFilter: undefined,
@@ -517,6 +559,7 @@ const styles = StyleSheet.create({
   },
   colorBoxOrange: {
     backgroundColor: colors.yellow,
+    borderWidth: 5,
     height: 100,
     width: 100,
     borderRadius: 10,
@@ -530,6 +573,7 @@ const styles = StyleSheet.create({
     height: 100,
     width: 100,
     borderRadius: 10,
+    borderWidth: 5,
     padding: 15,
     justifyContent: "center",
     alignItems: "center",
@@ -537,6 +581,7 @@ const styles = StyleSheet.create({
   },
   colorBoxRed: {
     backgroundColor: colors.red,
+    borderWidth: 5,
     height: 100,
     width: 100,
     borderRadius: 10,
@@ -547,7 +592,7 @@ const styles = StyleSheet.create({
   },
   colorBoxesTextLabel: {
     color: colors.white,
-    fontSize: 17,
+    fontSize: 15,
   },
   colorBoxesTextNumber: {
     color: colors.white,
