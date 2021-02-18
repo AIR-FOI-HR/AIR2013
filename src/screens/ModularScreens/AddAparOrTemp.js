@@ -4,13 +4,10 @@ import {
     Text,
     Image,
     StyleSheet,
-    TextInput,
     TouchableOpacity,
-    Switch,
 } from 'react-native'
 import { ScrollView } from 'react-native-gesture-handler'
-import {GoogleSignin, GoogleSigninButton, statusCodes} from '@react-native-community/google-signin';
-import EntypoIcon from 'react-native-vector-icons/Entypo';
+import {GoogleSignin} from '@react-native-community/google-signin';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import FontAwesomeIcons from 'react-native-vector-icons/FontAwesome'; 
 

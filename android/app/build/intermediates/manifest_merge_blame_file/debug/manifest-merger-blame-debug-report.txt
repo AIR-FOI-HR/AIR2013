@@ -9,225 +9,423 @@
 9        android:targetSdkVersion="29" />
 10
 11    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
-11-->C:\Users\Sven\Desktop\FAKS\7.semestar\air\AIR2013\android\app\src\debug\AndroidManifest.xml:5:5-77
-11-->C:\Users\Sven\Desktop\FAKS\7.semestar\air\AIR2013\android\app\src\debug\AndroidManifest.xml:5:22-75
+11-->C:\Users\Mario\source\repos\mRent\AIR2013\android\app\src\debug\AndroidManifest.xml:5:5-77
+11-->C:\Users\Mario\source\repos\mRent\AIR2013\android\app\src\debug\AndroidManifest.xml:5:22-75
 12    <uses-permission android:name="android.permission.INTERNET" />
-12-->C:\Users\Sven\Desktop\FAKS\7.semestar\air\AIR2013\android\app\src\main\AndroidManifest.xml:4:5-67
-12-->C:\Users\Sven\Desktop\FAKS\7.semestar\air\AIR2013\android\app\src\main\AndroidManifest.xml:4:22-64
-13    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-13-->[com.facebook.flipper:flipper:0.54.0] C:\Users\Sven\.gradle\caches\transforms-2\files-2.1\eec3d2ad0df41b19092066a245b7e22d\flipper-0.54.0\AndroidManifest.xml:16:5-76
-13-->[com.facebook.flipper:flipper:0.54.0] C:\Users\Sven\.gradle\caches\transforms-2\files-2.1\eec3d2ad0df41b19092066a245b7e22d\flipper-0.54.0\AndroidManifest.xml:16:22-73
-14    <uses-permission android:name="android.permission.WAKE_LOCK" />
-14-->[:react-native-firebase_auth] C:\Users\Sven\Desktop\FAKS\7.semestar\air\AIR2013\node_modules\@react-native-firebase\auth\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:12:5-68
-14-->[:react-native-firebase_auth] C:\Users\Sven\Desktop\FAKS\7.semestar\air\AIR2013\node_modules\@react-native-firebase\auth\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:12:22-65
-15    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-15-->[:react-native-firebase_auth] C:\Users\Sven\Desktop\FAKS\7.semestar\air\AIR2013\node_modules\@react-native-firebase\auth\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:13:5-79
-15-->[:react-native-firebase_auth] C:\Users\Sven\Desktop\FAKS\7.semestar\air\AIR2013\node_modules\@react-native-firebase\auth\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:13:22-76
-16
-17    <application
-17-->C:\Users\Sven\Desktop\FAKS\7.semestar\air\AIR2013\android\app\src\main\AndroidManifest.xml:6:5-25:19
-18        android:name="com.mrent.MainApplication"
-18-->C:\Users\Sven\Desktop\FAKS\7.semestar\air\AIR2013\android\app\src\main\AndroidManifest.xml:7:7-38
-19        android:allowBackup="false"
-19-->C:\Users\Sven\Desktop\FAKS\7.semestar\air\AIR2013\android\app\src\main\AndroidManifest.xml:11:7-34
-20        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-20-->[androidx.core:core:1.1.0] C:\Users\Sven\.gradle\caches\transforms-2\files-2.1\be5a9b2a3af24478e39659cbf216f01d\core-1.1.0\AndroidManifest.xml:24:18-86
-21        android:debuggable="true"
-22        android:icon="@mipmap/ic_launcher"
-22-->C:\Users\Sven\Desktop\FAKS\7.semestar\air\AIR2013\android\app\src\main\AndroidManifest.xml:9:7-41
-23        android:label="@string/app_name"
-23-->C:\Users\Sven\Desktop\FAKS\7.semestar\air\AIR2013\android\app\src\main\AndroidManifest.xml:8:7-39
-24        android:roundIcon="@mipmap/ic_launcher_round"
-24-->C:\Users\Sven\Desktop\FAKS\7.semestar\air\AIR2013\android\app\src\main\AndroidManifest.xml:10:7-52
-25        android:theme="@style/AppTheme"
-25-->C:\Users\Sven\Desktop\FAKS\7.semestar\air\AIR2013\android\app\src\main\AndroidManifest.xml:12:7-38
-26        android:usesCleartextTraffic="true" >
-26-->C:\Users\Sven\Desktop\FAKS\7.semestar\air\AIR2013\android\app\src\debug\AndroidManifest.xml:7:18-53
-27        <activity
-27-->C:\Users\Sven\Desktop\FAKS\7.semestar\air\AIR2013\android\app\src\main\AndroidManifest.xml:13:7-23:18
-28            android:name="com.mrent.MainActivity"
-28-->C:\Users\Sven\Desktop\FAKS\7.semestar\air\AIR2013\android\app\src\main\AndroidManifest.xml:14:9-37
-29            android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode"
-29-->C:\Users\Sven\Desktop\FAKS\7.semestar\air\AIR2013\android\app\src\main\AndroidManifest.xml:16:9-86
-30            android:label="@string/app_name"
-30-->C:\Users\Sven\Desktop\FAKS\7.semestar\air\AIR2013\android\app\src\main\AndroidManifest.xml:15:9-41
-31            android:launchMode="singleTask"
-31-->C:\Users\Sven\Desktop\FAKS\7.semestar\air\AIR2013\android\app\src\main\AndroidManifest.xml:17:9-40
-32            android:windowSoftInputMode="adjustResize" >
-32-->C:\Users\Sven\Desktop\FAKS\7.semestar\air\AIR2013\android\app\src\main\AndroidManifest.xml:18:9-51
-33            <intent-filter>
-33-->C:\Users\Sven\Desktop\FAKS\7.semestar\air\AIR2013\android\app\src\main\AndroidManifest.xml:19:9-22:25
-34                <action android:name="android.intent.action.MAIN" />
-34-->C:\Users\Sven\Desktop\FAKS\7.semestar\air\AIR2013\android\app\src\main\AndroidManifest.xml:20:13-65
-34-->C:\Users\Sven\Desktop\FAKS\7.semestar\air\AIR2013\android\app\src\main\AndroidManifest.xml:20:21-62
-35
-36                <category android:name="android.intent.category.LAUNCHER" />
-36-->C:\Users\Sven\Desktop\FAKS\7.semestar\air\AIR2013\android\app\src\main\AndroidManifest.xml:21:13-73
-36-->C:\Users\Sven\Desktop\FAKS\7.semestar\air\AIR2013\android\app\src\main\AndroidManifest.xml:21:23-70
-37            </intent-filter>
-38        </activity>
-39        <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
-39-->C:\Users\Sven\Desktop\FAKS\7.semestar\air\AIR2013\android\app\src\main\AndroidManifest.xml:24:7-84
-39-->C:\Users\Sven\Desktop\FAKS\7.semestar\air\AIR2013\android\app\src\main\AndroidManifest.xml:24:17-81
-40        <activity
-40-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Sven\.gradle\caches\transforms-2\files-2.1\87521ae40d986be121fcbdf076a51ab1\jetified-firebase-auth-20.0.1\AndroidManifest.xml:27:9-44:20
-41            android:name="com.google.firebase.auth.internal.GenericIdpActivity"
-41-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Sven\.gradle\caches\transforms-2\files-2.1\87521ae40d986be121fcbdf076a51ab1\jetified-firebase-auth-20.0.1\AndroidManifest.xml:28:13-80
-42            android:excludeFromRecents="true"
-42-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Sven\.gradle\caches\transforms-2\files-2.1\87521ae40d986be121fcbdf076a51ab1\jetified-firebase-auth-20.0.1\AndroidManifest.xml:29:13-46
-43            android:exported="true"
-43-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Sven\.gradle\caches\transforms-2\files-2.1\87521ae40d986be121fcbdf076a51ab1\jetified-firebase-auth-20.0.1\AndroidManifest.xml:30:13-36
-44            android:launchMode="singleTask"
-44-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Sven\.gradle\caches\transforms-2\files-2.1\87521ae40d986be121fcbdf076a51ab1\jetified-firebase-auth-20.0.1\AndroidManifest.xml:31:13-44
-45            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
-45-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Sven\.gradle\caches\transforms-2\files-2.1\87521ae40d986be121fcbdf076a51ab1\jetified-firebase-auth-20.0.1\AndroidManifest.xml:32:13-72
-46            <intent-filter>
-46-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Sven\.gradle\caches\transforms-2\files-2.1\87521ae40d986be121fcbdf076a51ab1\jetified-firebase-auth-20.0.1\AndroidManifest.xml:33:13-43:29
-47                <action android:name="android.intent.action.VIEW" />
-47-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Sven\.gradle\caches\transforms-2\files-2.1\87521ae40d986be121fcbdf076a51ab1\jetified-firebase-auth-20.0.1\AndroidManifest.xml:34:17-69
-47-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Sven\.gradle\caches\transforms-2\files-2.1\87521ae40d986be121fcbdf076a51ab1\jetified-firebase-auth-20.0.1\AndroidManifest.xml:34:25-66
-48
-49                <category android:name="android.intent.category.DEFAULT" />
-49-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Sven\.gradle\caches\transforms-2\files-2.1\87521ae40d986be121fcbdf076a51ab1\jetified-firebase-auth-20.0.1\AndroidManifest.xml:36:17-76
-49-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Sven\.gradle\caches\transforms-2\files-2.1\87521ae40d986be121fcbdf076a51ab1\jetified-firebase-auth-20.0.1\AndroidManifest.xml:36:27-73
-50                <category android:name="android.intent.category.BROWSABLE" />
-50-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Sven\.gradle\caches\transforms-2\files-2.1\87521ae40d986be121fcbdf076a51ab1\jetified-firebase-auth-20.0.1\AndroidManifest.xml:37:17-78
-50-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Sven\.gradle\caches\transforms-2\files-2.1\87521ae40d986be121fcbdf076a51ab1\jetified-firebase-auth-20.0.1\AndroidManifest.xml:37:27-75
-51
-52                <data
-52-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Sven\.gradle\caches\transforms-2\files-2.1\87521ae40d986be121fcbdf076a51ab1\jetified-firebase-auth-20.0.1\AndroidManifest.xml:39:17-42:51
-53                    android:host="firebase.auth"
-53-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Sven\.gradle\caches\transforms-2\files-2.1\87521ae40d986be121fcbdf076a51ab1\jetified-firebase-auth-20.0.1\AndroidManifest.xml:40:21-49
-54                    android:path="/"
-54-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Sven\.gradle\caches\transforms-2\files-2.1\87521ae40d986be121fcbdf076a51ab1\jetified-firebase-auth-20.0.1\AndroidManifest.xml:41:21-37
-55                    android:scheme="genericidp" />
-55-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Sven\.gradle\caches\transforms-2\files-2.1\87521ae40d986be121fcbdf076a51ab1\jetified-firebase-auth-20.0.1\AndroidManifest.xml:42:21-48
-56            </intent-filter>
-57        </activity>
-58        <activity
-58-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Sven\.gradle\caches\transforms-2\files-2.1\87521ae40d986be121fcbdf076a51ab1\jetified-firebase-auth-20.0.1\AndroidManifest.xml:45:9-62:20
-59            android:name="com.google.firebase.auth.internal.RecaptchaActivity"
-59-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Sven\.gradle\caches\transforms-2\files-2.1\87521ae40d986be121fcbdf076a51ab1\jetified-firebase-auth-20.0.1\AndroidManifest.xml:46:13-79
-60            android:excludeFromRecents="true"
-60-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Sven\.gradle\caches\transforms-2\files-2.1\87521ae40d986be121fcbdf076a51ab1\jetified-firebase-auth-20.0.1\AndroidManifest.xml:47:13-46
-61            android:exported="true"
-61-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Sven\.gradle\caches\transforms-2\files-2.1\87521ae40d986be121fcbdf076a51ab1\jetified-firebase-auth-20.0.1\AndroidManifest.xml:48:13-36
-62            android:launchMode="singleTask"
-62-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Sven\.gradle\caches\transforms-2\files-2.1\87521ae40d986be121fcbdf076a51ab1\jetified-firebase-auth-20.0.1\AndroidManifest.xml:49:13-44
-63            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
-63-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Sven\.gradle\caches\transforms-2\files-2.1\87521ae40d986be121fcbdf076a51ab1\jetified-firebase-auth-20.0.1\AndroidManifest.xml:50:13-72
-64            <intent-filter>
-64-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Sven\.gradle\caches\transforms-2\files-2.1\87521ae40d986be121fcbdf076a51ab1\jetified-firebase-auth-20.0.1\AndroidManifest.xml:51:13-61:29
-65                <action android:name="android.intent.action.VIEW" />
-65-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Sven\.gradle\caches\transforms-2\files-2.1\87521ae40d986be121fcbdf076a51ab1\jetified-firebase-auth-20.0.1\AndroidManifest.xml:34:17-69
-65-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Sven\.gradle\caches\transforms-2\files-2.1\87521ae40d986be121fcbdf076a51ab1\jetified-firebase-auth-20.0.1\AndroidManifest.xml:34:25-66
+12-->C:\Users\Mario\source\repos\mRent\AIR2013\android\app\src\main\AndroidManifest.xml:4:5-67
+12-->C:\Users\Mario\source\repos\mRent\AIR2013\android\app\src\main\AndroidManifest.xml:4:22-64
+13    <uses-permission android:name="android.permission.VIBRATE" />
+13-->C:\Users\Mario\source\repos\mRent\AIR2013\android\app\src\main\AndroidManifest.xml:5:5-66
+13-->C:\Users\Mario\source\repos\mRent\AIR2013\android\app\src\main\AndroidManifest.xml:5:22-63
+14    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+14-->C:\Users\Mario\source\repos\mRent\AIR2013\android\app\src\main\AndroidManifest.xml:6:5-80
+14-->C:\Users\Mario\source\repos\mRent\AIR2013\android\app\src\main\AndroidManifest.xml:6:22-78
+15    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+15-->[com.facebook.flipper:flipper:0.54.0] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\eec3d2ad0df41b19092066a245b7e22d\flipper-0.54.0\AndroidManifest.xml:16:5-76
+15-->[com.facebook.flipper:flipper:0.54.0] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\eec3d2ad0df41b19092066a245b7e22d\flipper-0.54.0\AndroidManifest.xml:16:22-73
+16    <uses-permission android:name="android.permission.WAKE_LOCK" />
+16-->[:react-native-firebase_auth] C:\Users\Mario\source\repos\mRent\AIR2013\node_modules\@react-native-firebase\auth\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:12:5-68
+16-->[:react-native-firebase_auth] C:\Users\Mario\source\repos\mRent\AIR2013\node_modules\@react-native-firebase\auth\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:12:22-65
+17    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- Required by older versions of Google Play services to create IID tokens -->
+17-->[:react-native-firebase_auth] C:\Users\Mario\source\repos\mRent\AIR2013\node_modules\@react-native-firebase\auth\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:13:5-79
+17-->[:react-native-firebase_auth] C:\Users\Mario\source\repos\mRent\AIR2013\node_modules\@react-native-firebase\auth\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:13:22-76
+18    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" /> <!-- for android -->
+18-->[com.google.firebase:firebase-iid:21.0.1] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\d411fa0537d75511b34b44977833a35b\firebase-iid-21.0.1\AndroidManifest.xml:26:5-82
+18-->[com.google.firebase:firebase-iid:21.0.1] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\d411fa0537d75511b34b44977833a35b\firebase-iid-21.0.1\AndroidManifest.xml:26:22-79
+19    <!-- <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS"/> -->
+20    <!-- <uses-permission android:name="com.android.launcher.permission.WRITE_SETTINGS"/> -->
+21    <!-- <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" /> -->
+22    <!-- <uses-permission android:name="com.android.launcher.permission.UNINSTALL_SHORTCUT" /> -->
+23    <!-- for Samsung -->
+24    <uses-permission android:name="com.sec.android.provider.badge.permission.READ" />
+24-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\241a12f3d61c494ec05260624f184e40\ShortcutBadger-1.1.22\AndroidManifest.xml:19:5-86
+24-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\241a12f3d61c494ec05260624f184e40\ShortcutBadger-1.1.22\AndroidManifest.xml:19:22-83
+25    <uses-permission android:name="com.sec.android.provider.badge.permission.WRITE" /> <!-- for htc -->
+25-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\241a12f3d61c494ec05260624f184e40\ShortcutBadger-1.1.22\AndroidManifest.xml:20:5-87
+25-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\241a12f3d61c494ec05260624f184e40\ShortcutBadger-1.1.22\AndroidManifest.xml:20:22-84
+26    <uses-permission android:name="com.htc.launcher.permission.READ_SETTINGS" />
+26-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\241a12f3d61c494ec05260624f184e40\ShortcutBadger-1.1.22\AndroidManifest.xml:23:5-81
+26-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\241a12f3d61c494ec05260624f184e40\ShortcutBadger-1.1.22\AndroidManifest.xml:23:22-78
+27    <uses-permission android:name="com.htc.launcher.permission.UPDATE_SHORTCUT" /> <!-- for sony -->
+27-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\241a12f3d61c494ec05260624f184e40\ShortcutBadger-1.1.22\AndroidManifest.xml:24:5-83
+27-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\241a12f3d61c494ec05260624f184e40\ShortcutBadger-1.1.22\AndroidManifest.xml:24:22-80
+28    <uses-permission android:name="com.sonyericsson.home.permission.BROADCAST_BADGE" />
+28-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\241a12f3d61c494ec05260624f184e40\ShortcutBadger-1.1.22\AndroidManifest.xml:27:5-88
+28-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\241a12f3d61c494ec05260624f184e40\ShortcutBadger-1.1.22\AndroidManifest.xml:27:22-85
+29    <uses-permission android:name="com.sonymobile.home.permission.PROVIDER_INSERT_BADGE" /> <!-- for apex -->
+29-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\241a12f3d61c494ec05260624f184e40\ShortcutBadger-1.1.22\AndroidManifest.xml:28:5-92
+29-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\241a12f3d61c494ec05260624f184e40\ShortcutBadger-1.1.22\AndroidManifest.xml:28:22-89
+30    <uses-permission android:name="com.anddoes.launcher.permission.UPDATE_COUNT" /> <!-- for solid -->
+30-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\241a12f3d61c494ec05260624f184e40\ShortcutBadger-1.1.22\AndroidManifest.xml:31:5-84
+30-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\241a12f3d61c494ec05260624f184e40\ShortcutBadger-1.1.22\AndroidManifest.xml:31:22-81
+31    <uses-permission android:name="com.majeur.launcher.permission.UPDATE_BADGE" /> <!-- for huawei -->
+31-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\241a12f3d61c494ec05260624f184e40\ShortcutBadger-1.1.22\AndroidManifest.xml:34:5-83
+31-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\241a12f3d61c494ec05260624f184e40\ShortcutBadger-1.1.22\AndroidManifest.xml:34:22-80
+32    <uses-permission android:name="com.huawei.android.launcher.permission.CHANGE_BADGE" />
+32-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\241a12f3d61c494ec05260624f184e40\ShortcutBadger-1.1.22\AndroidManifest.xml:37:5-91
+32-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\241a12f3d61c494ec05260624f184e40\ShortcutBadger-1.1.22\AndroidManifest.xml:37:22-88
+33    <uses-permission android:name="com.huawei.android.launcher.permission.READ_SETTINGS" />
+33-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\241a12f3d61c494ec05260624f184e40\ShortcutBadger-1.1.22\AndroidManifest.xml:38:5-92
+33-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\241a12f3d61c494ec05260624f184e40\ShortcutBadger-1.1.22\AndroidManifest.xml:38:22-89
+34    <uses-permission android:name="com.huawei.android.launcher.permission.WRITE_SETTINGS" /> <!-- for ZUK -->
+34-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\241a12f3d61c494ec05260624f184e40\ShortcutBadger-1.1.22\AndroidManifest.xml:39:5-93
+34-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\241a12f3d61c494ec05260624f184e40\ShortcutBadger-1.1.22\AndroidManifest.xml:39:22-90
+35    <uses-permission android:name="android.permission.READ_APP_BADGE" /> <!-- for OPPO -->
+35-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\241a12f3d61c494ec05260624f184e40\ShortcutBadger-1.1.22\AndroidManifest.xml:42:5-73
+35-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\241a12f3d61c494ec05260624f184e40\ShortcutBadger-1.1.22\AndroidManifest.xml:42:22-70
+36    <uses-permission android:name="com.oppo.launcher.permission.READ_SETTINGS" />
+36-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\241a12f3d61c494ec05260624f184e40\ShortcutBadger-1.1.22\AndroidManifest.xml:45:5-82
+36-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\241a12f3d61c494ec05260624f184e40\ShortcutBadger-1.1.22\AndroidManifest.xml:45:22-79
+37    <uses-permission android:name="com.oppo.launcher.permission.WRITE_SETTINGS" /> <!-- for EvMe -->
+37-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\241a12f3d61c494ec05260624f184e40\ShortcutBadger-1.1.22\AndroidManifest.xml:46:5-83
+37-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\241a12f3d61c494ec05260624f184e40\ShortcutBadger-1.1.22\AndroidManifest.xml:46:22-80
+38    <uses-permission android:name="me.everything.badger.permission.BADGE_COUNT_READ" />
+38-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\241a12f3d61c494ec05260624f184e40\ShortcutBadger-1.1.22\AndroidManifest.xml:49:5-88
+38-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\241a12f3d61c494ec05260624f184e40\ShortcutBadger-1.1.22\AndroidManifest.xml:49:22-85
+39    <uses-permission android:name="me.everything.badger.permission.BADGE_COUNT_WRITE" />
+39-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\241a12f3d61c494ec05260624f184e40\ShortcutBadger-1.1.22\AndroidManifest.xml:50:5-89
+39-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\241a12f3d61c494ec05260624f184e40\ShortcutBadger-1.1.22\AndroidManifest.xml:50:22-86
+40
+41    <application
+41-->C:\Users\Mario\source\repos\mRent\AIR2013\android\app\src\main\AndroidManifest.xml:8:5-43:19
+42        android:name="com.mrent.MainApplication"
+42-->C:\Users\Mario\source\repos\mRent\AIR2013\android\app\src\main\AndroidManifest.xml:9:7-38
+43        android:allowBackup="false"
+43-->C:\Users\Mario\source\repos\mRent\AIR2013\android\app\src\main\AndroidManifest.xml:13:7-34
+44        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+44-->[androidx.core:core:1.1.0] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\be5a9b2a3af24478e39659cbf216f01d\core-1.1.0\AndroidManifest.xml:24:18-86
+45        android:debuggable="true"
+46        android:icon="@mipmap/ic_launcher"
+46-->C:\Users\Mario\source\repos\mRent\AIR2013\android\app\src\main\AndroidManifest.xml:11:7-41
+47        android:label="@string/app_name"
+47-->C:\Users\Mario\source\repos\mRent\AIR2013\android\app\src\main\AndroidManifest.xml:10:7-39
+48        android:roundIcon="@mipmap/ic_launcher_round"
+48-->C:\Users\Mario\source\repos\mRent\AIR2013\android\app\src\main\AndroidManifest.xml:12:7-52
+49        android:theme="@style/AppTheme"
+49-->C:\Users\Mario\source\repos\mRent\AIR2013\android\app\src\main\AndroidManifest.xml:14:7-38
+50        android:usesCleartextTraffic="true" > <!-- Change the value to true to enable pop-up for in foreground on receiving remote notifications (for prevent duplicating while showing local notifications set this to false) -->
+50-->C:\Users\Mario\source\repos\mRent\AIR2013\android\app\src\debug\AndroidManifest.xml:7:18-53
+51        <meta-data
+51-->C:\Users\Mario\source\repos\mRent\AIR2013\android\app\src\main\AndroidManifest.xml:16:7-17:42
+52            android:name="com.dieam.reactnativepushnotification.notification_foreground"
+52-->C:\Users\Mario\source\repos\mRent\AIR2013\android\app\src\main\AndroidManifest.xml:16:19-95
+53            android:value="false" /> <!-- Change the resource name to your App's accent color - or any other color you want -->
+53-->C:\Users\Mario\source\repos\mRent\AIR2013\android\app\src\main\AndroidManifest.xml:17:19-40
+54        <meta-data
+54-->C:\Users\Mario\source\repos\mRent\AIR2013\android\app\src\main\AndroidManifest.xml:19:7-20:60
+55            android:name="com.dieam.reactnativepushnotification.notification_color"
+55-->C:\Users\Mario\source\repos\mRent\AIR2013\android\app\src\main\AndroidManifest.xml:19:19-90
+56            android:resource="@android:color/white" /> <!-- or @android:color/{name} to use a standard color -->
+56-->C:\Users\Mario\source\repos\mRent\AIR2013\android\app\src\main\AndroidManifest.xml:20:19-58
+57        <receiver android:name="com.dieam.reactnativepushnotification.modules.RNPushNotificationActions" />
+57-->C:\Users\Mario\source\repos\mRent\AIR2013\android\app\src\main\AndroidManifest.xml:22:7-106
+57-->C:\Users\Mario\source\repos\mRent\AIR2013\android\app\src\main\AndroidManifest.xml:22:17-103
+58        <receiver android:name="com.dieam.reactnativepushnotification.modules.RNPushNotificationPublisher" />
+58-->C:\Users\Mario\source\repos\mRent\AIR2013\android\app\src\main\AndroidManifest.xml:23:7-108
+58-->C:\Users\Mario\source\repos\mRent\AIR2013\android\app\src\main\AndroidManifest.xml:23:17-105
+59        <receiver android:name="com.dieam.reactnativepushnotification.modules.RNPushNotificationBootEventReceiver" >
+59-->C:\Users\Mario\source\repos\mRent\AIR2013\android\app\src\main\AndroidManifest.xml:24:7-30:18
+59-->C:\Users\Mario\source\repos\mRent\AIR2013\android\app\src\main\AndroidManifest.xml:24:17-113
+60            <intent-filter>
+60-->C:\Users\Mario\source\repos\mRent\AIR2013\android\app\src\main\AndroidManifest.xml:25:11-29:27
+61                <action android:name="android.intent.action.BOOT_COMPLETED" />
+61-->C:\Users\Mario\source\repos\mRent\AIR2013\android\app\src\main\AndroidManifest.xml:26:15-77
+61-->C:\Users\Mario\source\repos\mRent\AIR2013\android\app\src\main\AndroidManifest.xml:26:23-74
+62                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+62-->C:\Users\Mario\source\repos\mRent\AIR2013\android\app\src\main\AndroidManifest.xml:27:15-80
+62-->C:\Users\Mario\source\repos\mRent\AIR2013\android\app\src\main\AndroidManifest.xml:27:23-77
+63                <action android:name="com.htc.intent.action.QUICKBOOT_POWERON" />
+63-->C:\Users\Mario\source\repos\mRent\AIR2013\android\app\src\main\AndroidManifest.xml:28:15-79
+63-->C:\Users\Mario\source\repos\mRent\AIR2013\android\app\src\main\AndroidManifest.xml:28:23-77
+64            </intent-filter>
+65        </receiver>
 66
-67                <category android:name="android.intent.category.DEFAULT" />
-67-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Sven\.gradle\caches\transforms-2\files-2.1\87521ae40d986be121fcbdf076a51ab1\jetified-firebase-auth-20.0.1\AndroidManifest.xml:36:17-76
-67-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Sven\.gradle\caches\transforms-2\files-2.1\87521ae40d986be121fcbdf076a51ab1\jetified-firebase-auth-20.0.1\AndroidManifest.xml:36:27-73
-68                <category android:name="android.intent.category.BROWSABLE" />
-68-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Sven\.gradle\caches\transforms-2\files-2.1\87521ae40d986be121fcbdf076a51ab1\jetified-firebase-auth-20.0.1\AndroidManifest.xml:37:17-78
-68-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Sven\.gradle\caches\transforms-2\files-2.1\87521ae40d986be121fcbdf076a51ab1\jetified-firebase-auth-20.0.1\AndroidManifest.xml:37:27-75
-69
-70                <data
-70-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Sven\.gradle\caches\transforms-2\files-2.1\87521ae40d986be121fcbdf076a51ab1\jetified-firebase-auth-20.0.1\AndroidManifest.xml:39:17-42:51
-71                    android:host="firebase.auth"
-71-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Sven\.gradle\caches\transforms-2\files-2.1\87521ae40d986be121fcbdf076a51ab1\jetified-firebase-auth-20.0.1\AndroidManifest.xml:40:21-49
-72                    android:path="/"
-72-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Sven\.gradle\caches\transforms-2\files-2.1\87521ae40d986be121fcbdf076a51ab1\jetified-firebase-auth-20.0.1\AndroidManifest.xml:41:21-37
-73                    android:scheme="recaptcha" />
-73-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Sven\.gradle\caches\transforms-2\files-2.1\87521ae40d986be121fcbdf076a51ab1\jetified-firebase-auth-20.0.1\AndroidManifest.xml:42:21-48
-74            </intent-filter>
-75        </activity>
-76
-77        <service
-77-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Sven\.gradle\caches\transforms-2\files-2.1\87521ae40d986be121fcbdf076a51ab1\jetified-firebase-auth-20.0.1\AndroidManifest.xml:64:9-73:19
-78            android:name="com.google.firebase.auth.api.fallback.service.FirebaseAuthFallbackService"
-78-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Sven\.gradle\caches\transforms-2\files-2.1\87521ae40d986be121fcbdf076a51ab1\jetified-firebase-auth-20.0.1\AndroidManifest.xml:65:13-101
-79            android:enabled="true"
-79-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Sven\.gradle\caches\transforms-2\files-2.1\87521ae40d986be121fcbdf076a51ab1\jetified-firebase-auth-20.0.1\AndroidManifest.xml:66:13-35
-80            android:exported="false" >
-80-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Sven\.gradle\caches\transforms-2\files-2.1\87521ae40d986be121fcbdf076a51ab1\jetified-firebase-auth-20.0.1\AndroidManifest.xml:67:13-37
-81            <intent-filter>
-81-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Sven\.gradle\caches\transforms-2\files-2.1\87521ae40d986be121fcbdf076a51ab1\jetified-firebase-auth-20.0.1\AndroidManifest.xml:68:13-72:29
-82                <action android:name="com.google.firebase.auth.api.gms.service.START" />
-82-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Sven\.gradle\caches\transforms-2\files-2.1\87521ae40d986be121fcbdf076a51ab1\jetified-firebase-auth-20.0.1\AndroidManifest.xml:69:17-89
-82-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Sven\.gradle\caches\transforms-2\files-2.1\87521ae40d986be121fcbdf076a51ab1\jetified-firebase-auth-20.0.1\AndroidManifest.xml:69:25-86
-83
-84                <category android:name="android.intent.category.DEFAULT" />
-84-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Sven\.gradle\caches\transforms-2\files-2.1\87521ae40d986be121fcbdf076a51ab1\jetified-firebase-auth-20.0.1\AndroidManifest.xml:36:17-76
-84-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Sven\.gradle\caches\transforms-2\files-2.1\87521ae40d986be121fcbdf076a51ab1\jetified-firebase-auth-20.0.1\AndroidManifest.xml:36:27-73
-85            </intent-filter>
-86        </service>
-87        <service
-87-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Sven\.gradle\caches\transforms-2\files-2.1\87521ae40d986be121fcbdf076a51ab1\jetified-firebase-auth-20.0.1\AndroidManifest.xml:74:9-80:19
-88            android:name="com.google.firebase.components.ComponentDiscoveryService"
-88-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Sven\.gradle\caches\transforms-2\files-2.1\87521ae40d986be121fcbdf076a51ab1\jetified-firebase-auth-20.0.1\AndroidManifest.xml:75:13-84
-89            android:directBootAware="true"
-89-->[com.google.firebase:firebase-common:19.4.0] C:\Users\Sven\.gradle\caches\transforms-2\files-2.1\9a45aac59a66ce6e443b10f75c58775b\jetified-firebase-common-19.4.0\AndroidManifest.xml:35:13-43
-90            android:exported="false" >
-90-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Sven\.gradle\caches\transforms-2\files-2.1\87521ae40d986be121fcbdf076a51ab1\jetified-firebase-auth-20.0.1\AndroidManifest.xml:76:13-37
-91            <meta-data
-91-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Sven\.gradle\caches\transforms-2\files-2.1\87521ae40d986be121fcbdf076a51ab1\jetified-firebase-auth-20.0.1\AndroidManifest.xml:77:13-79:85
-92                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
-92-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Sven\.gradle\caches\transforms-2\files-2.1\87521ae40d986be121fcbdf076a51ab1\jetified-firebase-auth-20.0.1\AndroidManifest.xml:78:17-109
-93                android:value="com.google.firebase.components.ComponentRegistrar" />
-93-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Sven\.gradle\caches\transforms-2\files-2.1\87521ae40d986be121fcbdf076a51ab1\jetified-firebase-auth-20.0.1\AndroidManifest.xml:79:17-82
-94        </service>
-95
-96        <provider
-96-->[com.google.firebase:firebase-common:19.4.0] C:\Users\Sven\.gradle\caches\transforms-2\files-2.1\9a45aac59a66ce6e443b10f75c58775b\jetified-firebase-common-19.4.0\AndroidManifest.xml:26:9-31:39
-97            android:name="com.google.firebase.provider.FirebaseInitProvider"
-97-->[com.google.firebase:firebase-common:19.4.0] C:\Users\Sven\.gradle\caches\transforms-2\files-2.1\9a45aac59a66ce6e443b10f75c58775b\jetified-firebase-common-19.4.0\AndroidManifest.xml:27:13-77
-98            android:authorities="com.mrent.firebaseinitprovider"
-98-->[com.google.firebase:firebase-common:19.4.0] C:\Users\Sven\.gradle\caches\transforms-2\files-2.1\9a45aac59a66ce6e443b10f75c58775b\jetified-firebase-common-19.4.0\AndroidManifest.xml:28:13-72
-99            android:directBootAware="true"
-99-->[com.google.firebase:firebase-common:19.4.0] C:\Users\Sven\.gradle\caches\transforms-2\files-2.1\9a45aac59a66ce6e443b10f75c58775b\jetified-firebase-common-19.4.0\AndroidManifest.xml:29:13-43
-100            android:exported="false"
-100-->[com.google.firebase:firebase-common:19.4.0] C:\Users\Sven\.gradle\caches\transforms-2\files-2.1\9a45aac59a66ce6e443b10f75c58775b\jetified-firebase-common-19.4.0\AndroidManifest.xml:30:13-37
-101            android:initOrder="100" />
-101-->[com.google.firebase:firebase-common:19.4.0] C:\Users\Sven\.gradle\caches\transforms-2\files-2.1\9a45aac59a66ce6e443b10f75c58775b\jetified-firebase-common-19.4.0\AndroidManifest.xml:31:13-36
-102
-103        <activity
-103-->[com.google.android.gms:play-services-auth:18.1.0] C:\Users\Sven\.gradle\caches\transforms-2\files-2.1\c4d4847f42f6c0708c7a695ad8556bb1\play-services-auth-18.1.0\AndroidManifest.xml:23:9-27:75
-104            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
-104-->[com.google.android.gms:play-services-auth:18.1.0] C:\Users\Sven\.gradle\caches\transforms-2\files-2.1\c4d4847f42f6c0708c7a695ad8556bb1\play-services-auth-18.1.0\AndroidManifest.xml:24:13-93
-105            android:excludeFromRecents="true"
-105-->[com.google.android.gms:play-services-auth:18.1.0] C:\Users\Sven\.gradle\caches\transforms-2\files-2.1\c4d4847f42f6c0708c7a695ad8556bb1\play-services-auth-18.1.0\AndroidManifest.xml:25:13-46
-106            android:exported="false"
-106-->[com.google.android.gms:play-services-auth:18.1.0] C:\Users\Sven\.gradle\caches\transforms-2\files-2.1\c4d4847f42f6c0708c7a695ad8556bb1\play-services-auth-18.1.0\AndroidManifest.xml:26:13-37
-107            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-107-->[com.google.android.gms:play-services-auth:18.1.0] C:\Users\Sven\.gradle\caches\transforms-2\files-2.1\c4d4847f42f6c0708c7a695ad8556bb1\play-services-auth-18.1.0\AndroidManifest.xml:27:13-72
-108        <!--
-109            Service handling Google Sign-In user revocation. For apps that do not integrate with
-110            Google Sign-In, this service will never be started.
-111        -->
-112        <service
-112-->[com.google.android.gms:play-services-auth:18.1.0] C:\Users\Sven\.gradle\caches\transforms-2\files-2.1\c4d4847f42f6c0708c7a695ad8556bb1\play-services-auth-18.1.0\AndroidManifest.xml:33:9-37:51
-113            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
-113-->[com.google.android.gms:play-services-auth:18.1.0] C:\Users\Sven\.gradle\caches\transforms-2\files-2.1\c4d4847f42f6c0708c7a695ad8556bb1\play-services-auth-18.1.0\AndroidManifest.xml:34:13-89
-114            android:exported="true"
-114-->[com.google.android.gms:play-services-auth:18.1.0] C:\Users\Sven\.gradle\caches\transforms-2\files-2.1\c4d4847f42f6c0708c7a695ad8556bb1\play-services-auth-18.1.0\AndroidManifest.xml:35:13-36
-115            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
-115-->[com.google.android.gms:play-services-auth:18.1.0] C:\Users\Sven\.gradle\caches\transforms-2\files-2.1\c4d4847f42f6c0708c7a695ad8556bb1\play-services-auth-18.1.0\AndroidManifest.xml:36:13-107
-116            android:visibleToInstantApps="true" />
-116-->[com.google.android.gms:play-services-auth:18.1.0] C:\Users\Sven\.gradle\caches\transforms-2\files-2.1\c4d4847f42f6c0708c7a695ad8556bb1\play-services-auth-18.1.0\AndroidManifest.xml:37:13-48
-117
-118        <activity
-118-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\Sven\.gradle\caches\transforms-2\files-2.1\74324298ca0e0089c5bebaaa76f47069\play-services-base-17.1.0\AndroidManifest.xml:23:9-26:75
-119            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-119-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\Sven\.gradle\caches\transforms-2\files-2.1\74324298ca0e0089c5bebaaa76f47069\play-services-base-17.1.0\AndroidManifest.xml:24:13-79
-120            android:exported="false"
-120-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\Sven\.gradle\caches\transforms-2\files-2.1\74324298ca0e0089c5bebaaa76f47069\play-services-base-17.1.0\AndroidManifest.xml:25:13-37
-121            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-121-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\Sven\.gradle\caches\transforms-2\files-2.1\74324298ca0e0089c5bebaaa76f47069\play-services-base-17.1.0\AndroidManifest.xml:26:13-72
-122
-123        <meta-data
-123-->[com.google.android.gms:play-services-basement:17.1.1] C:\Users\Sven\.gradle\caches\transforms-2\files-2.1\413e280e231a16c7fb8eddb0388bfe68\jetified-play-services-basement-17.1.1\AndroidManifest.xml:23:9-25:69
-124            android:name="com.google.android.gms.version"
-124-->[com.google.android.gms:play-services-basement:17.1.1] C:\Users\Sven\.gradle\caches\transforms-2\files-2.1\413e280e231a16c7fb8eddb0388bfe68\jetified-play-services-basement-17.1.1\AndroidManifest.xml:24:13-58
-125            android:value="@integer/google_play_services_version" />
-125-->[com.google.android.gms:play-services-basement:17.1.1] C:\Users\Sven\.gradle\caches\transforms-2\files-2.1\413e280e231a16c7fb8eddb0388bfe68\jetified-play-services-basement-17.1.1\AndroidManifest.xml:25:13-66
-126    </application>
-127
-128</manifest>
+67        <activity
+67-->C:\Users\Mario\source\repos\mRent\AIR2013\android\app\src\main\AndroidManifest.xml:31:7-41:18
+68            android:name="com.mrent.MainActivity"
+68-->C:\Users\Mario\source\repos\mRent\AIR2013\android\app\src\main\AndroidManifest.xml:32:9-37
+69            android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode"
+69-->C:\Users\Mario\source\repos\mRent\AIR2013\android\app\src\main\AndroidManifest.xml:34:9-86
+70            android:label="@string/app_name"
+70-->C:\Users\Mario\source\repos\mRent\AIR2013\android\app\src\main\AndroidManifest.xml:33:9-41
+71            android:launchMode="singleTask"
+71-->C:\Users\Mario\source\repos\mRent\AIR2013\android\app\src\main\AndroidManifest.xml:35:9-40
+72            android:windowSoftInputMode="adjustResize" >
+72-->C:\Users\Mario\source\repos\mRent\AIR2013\android\app\src\main\AndroidManifest.xml:36:9-51
+73            <intent-filter>
+73-->C:\Users\Mario\source\repos\mRent\AIR2013\android\app\src\main\AndroidManifest.xml:37:9-40:25
+74                <action android:name="android.intent.action.MAIN" />
+74-->C:\Users\Mario\source\repos\mRent\AIR2013\android\app\src\main\AndroidManifest.xml:38:13-65
+74-->C:\Users\Mario\source\repos\mRent\AIR2013\android\app\src\main\AndroidManifest.xml:38:21-62
+75
+76                <category android:name="android.intent.category.LAUNCHER" />
+76-->C:\Users\Mario\source\repos\mRent\AIR2013\android\app\src\main\AndroidManifest.xml:39:13-73
+76-->C:\Users\Mario\source\repos\mRent\AIR2013\android\app\src\main\AndroidManifest.xml:39:23-70
+77            </intent-filter>
+78        </activity>
+79        <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
+79-->C:\Users\Mario\source\repos\mRent\AIR2013\android\app\src\main\AndroidManifest.xml:42:7-84
+79-->C:\Users\Mario\source\repos\mRent\AIR2013\android\app\src\main\AndroidManifest.xml:42:17-81
+80        <!--
+81             FirebaseMessagingService performs security checks at runtime,
+82             but set to not exported to explicitly avoid allowing another app to call it.
+83        -->
+84        <service
+84-->[com.google.firebase:firebase-messaging:21.0.1] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\5222e71fc623bacf7ca06679ce2db8d8\jetified-firebase-messaging-21.0.1\AndroidManifest.xml:28:9-35:19
+85            android:name="com.google.firebase.messaging.FirebaseMessagingService"
+85-->[com.google.firebase:firebase-messaging:21.0.1] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\5222e71fc623bacf7ca06679ce2db8d8\jetified-firebase-messaging-21.0.1\AndroidManifest.xml:29:13-82
+86            android:directBootAware="true"
+86-->[com.google.firebase:firebase-messaging:21.0.1] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\5222e71fc623bacf7ca06679ce2db8d8\jetified-firebase-messaging-21.0.1\AndroidManifest.xml:30:13-43
+87            android:exported="false" >
+87-->[com.google.firebase:firebase-messaging:21.0.1] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\5222e71fc623bacf7ca06679ce2db8d8\jetified-firebase-messaging-21.0.1\AndroidManifest.xml:31:13-37
+88            <intent-filter android:priority="-500" >
+88-->[com.google.firebase:firebase-messaging:21.0.1] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\5222e71fc623bacf7ca06679ce2db8d8\jetified-firebase-messaging-21.0.1\AndroidManifest.xml:32:13-34:29
+88-->[com.google.firebase:firebase-messaging:21.0.1] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\5222e71fc623bacf7ca06679ce2db8d8\jetified-firebase-messaging-21.0.1\AndroidManifest.xml:32:28-51
+89                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+89-->[com.google.firebase:firebase-messaging:21.0.1] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\5222e71fc623bacf7ca06679ce2db8d8\jetified-firebase-messaging-21.0.1\AndroidManifest.xml:33:17-78
+89-->[com.google.firebase:firebase-messaging:21.0.1] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\5222e71fc623bacf7ca06679ce2db8d8\jetified-firebase-messaging-21.0.1\AndroidManifest.xml:33:25-75
+90            </intent-filter>
+91        </service>
+92        <service
+92-->[com.google.firebase:firebase-messaging:21.0.1] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\5222e71fc623bacf7ca06679ce2db8d8\jetified-firebase-messaging-21.0.1\AndroidManifest.xml:36:9-42:19
+93            android:name="com.google.firebase.components.ComponentDiscoveryService"
+93-->[com.google.firebase:firebase-messaging:21.0.1] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\5222e71fc623bacf7ca06679ce2db8d8\jetified-firebase-messaging-21.0.1\AndroidManifest.xml:37:13-84
+94            android:directBootAware="true"
+94-->[com.google.firebase:firebase-common:19.5.0] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\950ecd8c2f41cc786f17d439890f3334\jetified-firebase-common-19.5.0\AndroidManifest.xml:35:13-43
+95            android:exported="false" >
+95-->[com.google.firebase:firebase-messaging:21.0.1] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\5222e71fc623bacf7ca06679ce2db8d8\jetified-firebase-messaging-21.0.1\AndroidManifest.xml:38:13-37
+96            <meta-data
+96-->[com.google.firebase:firebase-messaging:21.0.1] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\5222e71fc623bacf7ca06679ce2db8d8\jetified-firebase-messaging-21.0.1\AndroidManifest.xml:39:13-41:85
+97                android:name="com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingRegistrar"
+97-->[com.google.firebase:firebase-messaging:21.0.1] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\5222e71fc623bacf7ca06679ce2db8d8\jetified-firebase-messaging-21.0.1\AndroidManifest.xml:40:17-119
+98                android:value="com.google.firebase.components.ComponentRegistrar" />
+98-->[com.google.firebase:firebase-messaging:21.0.1] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\5222e71fc623bacf7ca06679ce2db8d8\jetified-firebase-messaging-21.0.1\AndroidManifest.xml:41:17-82
+99            <meta-data
+99-->[com.google.firebase:firebase-datatransport:17.0.10] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\87f425f84d4e08507cb3eda62d413bae\firebase-datatransport-17.0.10\AndroidManifest.xml:28:13-30:85
+100                android:name="com.google.firebase.components:com.google.firebase.datatransport.TransportRegistrar"
+100-->[com.google.firebase:firebase-datatransport:17.0.10] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\87f425f84d4e08507cb3eda62d413bae\firebase-datatransport-17.0.10\AndroidManifest.xml:29:17-115
+101                android:value="com.google.firebase.components.ComponentRegistrar" />
+101-->[com.google.firebase:firebase-datatransport:17.0.10] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\87f425f84d4e08507cb3eda62d413bae\firebase-datatransport-17.0.10\AndroidManifest.xml:30:17-82
+102            <meta-data
+102-->[com.google.firebase:firebase-auth:20.0.2] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\12942ff85cacfd8e3ab5f0787fc4bfd5\jetified-firebase-auth-20.0.2\AndroidManifest.xml:77:13-79:85
+103                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
+103-->[com.google.firebase:firebase-auth:20.0.2] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\12942ff85cacfd8e3ab5f0787fc4bfd5\jetified-firebase-auth-20.0.2\AndroidManifest.xml:78:17-109
+104                android:value="com.google.firebase.components.ComponentRegistrar" />
+104-->[com.google.firebase:firebase-auth:20.0.2] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\12942ff85cacfd8e3ab5f0787fc4bfd5\jetified-firebase-auth-20.0.2\AndroidManifest.xml:79:17-82
+105            <meta-data
+105-->[com.google.firebase:firebase-iid:21.0.1] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\d411fa0537d75511b34b44977833a35b\firebase-iid-21.0.1\AndroidManifest.xml:32:13-34:85
+106                android:name="com.google.firebase.components:com.google.firebase.iid.Registrar"
+106-->[com.google.firebase:firebase-iid:21.0.1] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\d411fa0537d75511b34b44977833a35b\firebase-iid-21.0.1\AndroidManifest.xml:33:17-96
+107                android:value="com.google.firebase.components.ComponentRegistrar" />
+107-->[com.google.firebase:firebase-iid:21.0.1] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\d411fa0537d75511b34b44977833a35b\firebase-iid-21.0.1\AndroidManifest.xml:34:17-82
+108            <meta-data
+108-->[com.google.firebase:firebase-installations:16.3.5] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\f6c1e7af7473c9ad60b718f136fe620d\firebase-installations-16.3.5\AndroidManifest.xml:18:13-20:85
+109                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
+109-->[com.google.firebase:firebase-installations:16.3.5] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\f6c1e7af7473c9ad60b718f136fe620d\firebase-installations-16.3.5\AndroidManifest.xml:19:17-127
+110                android:value="com.google.firebase.components.ComponentRegistrar" />
+110-->[com.google.firebase:firebase-installations:16.3.5] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\f6c1e7af7473c9ad60b718f136fe620d\firebase-installations-16.3.5\AndroidManifest.xml:20:17-82
+111            <!--
+112                This registrar is not defined in the dynamic-module-support sdk itself to allow non-firebase
+113                clients to use it as well, by defining this registrar in their own core/common library.
+114            -->
+115            <meta-data
+115-->[com.google.firebase:firebase-common:19.5.0] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\950ecd8c2f41cc786f17d439890f3334\jetified-firebase-common-19.5.0\AndroidManifest.xml:43:13-45:85
+116                android:name="com.google.firebase.components:com.google.firebase.dynamicloading.DynamicLoadingRegistrar"
+116-->[com.google.firebase:firebase-common:19.5.0] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\950ecd8c2f41cc786f17d439890f3334\jetified-firebase-common-19.5.0\AndroidManifest.xml:44:17-121
+117                android:value="com.google.firebase.components.ComponentRegistrar" />
+117-->[com.google.firebase:firebase-common:19.5.0] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\950ecd8c2f41cc786f17d439890f3334\jetified-firebase-common-19.5.0\AndroidManifest.xml:45:17-82
+118        </service>
+119        <service
+119-->[com.google.android.datatransport:transport-backend-cct:2.3.3] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\fa8c3e8c762da0d4d987d59665a75b7a\jetified-transport-backend-cct-2.3.3\AndroidManifest.xml:29:9-35:19
+120            android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery"
+120-->[com.google.android.datatransport:transport-backend-cct:2.3.3] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\fa8c3e8c762da0d4d987d59665a75b7a\jetified-transport-backend-cct-2.3.3\AndroidManifest.xml:30:13-103
+121            android:exported="false" >
+121-->[com.google.android.datatransport:transport-backend-cct:2.3.3] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\fa8c3e8c762da0d4d987d59665a75b7a\jetified-transport-backend-cct-2.3.3\AndroidManifest.xml:31:13-37
+122            <meta-data
+122-->[com.google.android.datatransport:transport-backend-cct:2.3.3] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\fa8c3e8c762da0d4d987d59665a75b7a\jetified-transport-backend-cct-2.3.3\AndroidManifest.xml:32:13-34:39
+123                android:name="backend:com.google.android.datatransport.cct.CctBackendFactory"
+123-->[com.google.android.datatransport:transport-backend-cct:2.3.3] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\fa8c3e8c762da0d4d987d59665a75b7a\jetified-transport-backend-cct-2.3.3\AndroidManifest.xml:33:17-94
+124                android:value="cct" />
+124-->[com.google.android.datatransport:transport-backend-cct:2.3.3] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\fa8c3e8c762da0d4d987d59665a75b7a\jetified-transport-backend-cct-2.3.3\AndroidManifest.xml:34:17-36
+125        </service>
+126
+127        <activity
+127-->[com.google.firebase:firebase-auth:20.0.2] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\12942ff85cacfd8e3ab5f0787fc4bfd5\jetified-firebase-auth-20.0.2\AndroidManifest.xml:27:9-44:20
+128            android:name="com.google.firebase.auth.internal.GenericIdpActivity"
+128-->[com.google.firebase:firebase-auth:20.0.2] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\12942ff85cacfd8e3ab5f0787fc4bfd5\jetified-firebase-auth-20.0.2\AndroidManifest.xml:28:13-80
+129            android:excludeFromRecents="true"
+129-->[com.google.firebase:firebase-auth:20.0.2] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\12942ff85cacfd8e3ab5f0787fc4bfd5\jetified-firebase-auth-20.0.2\AndroidManifest.xml:29:13-46
+130            android:exported="true"
+130-->[com.google.firebase:firebase-auth:20.0.2] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\12942ff85cacfd8e3ab5f0787fc4bfd5\jetified-firebase-auth-20.0.2\AndroidManifest.xml:30:13-36
+131            android:launchMode="singleTask"
+131-->[com.google.firebase:firebase-auth:20.0.2] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\12942ff85cacfd8e3ab5f0787fc4bfd5\jetified-firebase-auth-20.0.2\AndroidManifest.xml:31:13-44
+132            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+132-->[com.google.firebase:firebase-auth:20.0.2] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\12942ff85cacfd8e3ab5f0787fc4bfd5\jetified-firebase-auth-20.0.2\AndroidManifest.xml:32:13-72
+133            <intent-filter>
+133-->[com.google.firebase:firebase-auth:20.0.2] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\12942ff85cacfd8e3ab5f0787fc4bfd5\jetified-firebase-auth-20.0.2\AndroidManifest.xml:33:13-43:29
+134                <action android:name="android.intent.action.VIEW" />
+134-->[com.google.firebase:firebase-auth:20.0.2] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\12942ff85cacfd8e3ab5f0787fc4bfd5\jetified-firebase-auth-20.0.2\AndroidManifest.xml:34:17-69
+134-->[com.google.firebase:firebase-auth:20.0.2] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\12942ff85cacfd8e3ab5f0787fc4bfd5\jetified-firebase-auth-20.0.2\AndroidManifest.xml:34:25-66
+135
+136                <category android:name="android.intent.category.DEFAULT" />
+136-->[com.google.firebase:firebase-auth:20.0.2] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\12942ff85cacfd8e3ab5f0787fc4bfd5\jetified-firebase-auth-20.0.2\AndroidManifest.xml:36:17-76
+136-->[com.google.firebase:firebase-auth:20.0.2] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\12942ff85cacfd8e3ab5f0787fc4bfd5\jetified-firebase-auth-20.0.2\AndroidManifest.xml:36:27-73
+137                <category android:name="android.intent.category.BROWSABLE" />
+137-->[com.google.firebase:firebase-auth:20.0.2] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\12942ff85cacfd8e3ab5f0787fc4bfd5\jetified-firebase-auth-20.0.2\AndroidManifest.xml:37:17-78
+137-->[com.google.firebase:firebase-auth:20.0.2] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\12942ff85cacfd8e3ab5f0787fc4bfd5\jetified-firebase-auth-20.0.2\AndroidManifest.xml:37:27-75
+138
+139                <data
+139-->[com.google.firebase:firebase-auth:20.0.2] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\12942ff85cacfd8e3ab5f0787fc4bfd5\jetified-firebase-auth-20.0.2\AndroidManifest.xml:39:17-42:51
+140                    android:host="firebase.auth"
+140-->[com.google.firebase:firebase-auth:20.0.2] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\12942ff85cacfd8e3ab5f0787fc4bfd5\jetified-firebase-auth-20.0.2\AndroidManifest.xml:40:21-49
+141                    android:path="/"
+141-->[com.google.firebase:firebase-auth:20.0.2] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\12942ff85cacfd8e3ab5f0787fc4bfd5\jetified-firebase-auth-20.0.2\AndroidManifest.xml:41:21-37
+142                    android:scheme="genericidp" />
+142-->[com.google.firebase:firebase-auth:20.0.2] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\12942ff85cacfd8e3ab5f0787fc4bfd5\jetified-firebase-auth-20.0.2\AndroidManifest.xml:42:21-48
+143            </intent-filter>
+144        </activity>
+145        <activity
+145-->[com.google.firebase:firebase-auth:20.0.2] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\12942ff85cacfd8e3ab5f0787fc4bfd5\jetified-firebase-auth-20.0.2\AndroidManifest.xml:45:9-62:20
+146            android:name="com.google.firebase.auth.internal.RecaptchaActivity"
+146-->[com.google.firebase:firebase-auth:20.0.2] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\12942ff85cacfd8e3ab5f0787fc4bfd5\jetified-firebase-auth-20.0.2\AndroidManifest.xml:46:13-79
+147            android:excludeFromRecents="true"
+147-->[com.google.firebase:firebase-auth:20.0.2] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\12942ff85cacfd8e3ab5f0787fc4bfd5\jetified-firebase-auth-20.0.2\AndroidManifest.xml:47:13-46
+148            android:exported="true"
+148-->[com.google.firebase:firebase-auth:20.0.2] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\12942ff85cacfd8e3ab5f0787fc4bfd5\jetified-firebase-auth-20.0.2\AndroidManifest.xml:48:13-36
+149            android:launchMode="singleTask"
+149-->[com.google.firebase:firebase-auth:20.0.2] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\12942ff85cacfd8e3ab5f0787fc4bfd5\jetified-firebase-auth-20.0.2\AndroidManifest.xml:49:13-44
+150            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+150-->[com.google.firebase:firebase-auth:20.0.2] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\12942ff85cacfd8e3ab5f0787fc4bfd5\jetified-firebase-auth-20.0.2\AndroidManifest.xml:50:13-72
+151            <intent-filter>
+151-->[com.google.firebase:firebase-auth:20.0.2] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\12942ff85cacfd8e3ab5f0787fc4bfd5\jetified-firebase-auth-20.0.2\AndroidManifest.xml:51:13-61:29
+152                <action android:name="android.intent.action.VIEW" />
+152-->[com.google.firebase:firebase-auth:20.0.2] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\12942ff85cacfd8e3ab5f0787fc4bfd5\jetified-firebase-auth-20.0.2\AndroidManifest.xml:34:17-69
+152-->[com.google.firebase:firebase-auth:20.0.2] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\12942ff85cacfd8e3ab5f0787fc4bfd5\jetified-firebase-auth-20.0.2\AndroidManifest.xml:34:25-66
+153
+154                <category android:name="android.intent.category.DEFAULT" />
+154-->[com.google.firebase:firebase-auth:20.0.2] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\12942ff85cacfd8e3ab5f0787fc4bfd5\jetified-firebase-auth-20.0.2\AndroidManifest.xml:36:17-76
+154-->[com.google.firebase:firebase-auth:20.0.2] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\12942ff85cacfd8e3ab5f0787fc4bfd5\jetified-firebase-auth-20.0.2\AndroidManifest.xml:36:27-73
+155                <category android:name="android.intent.category.BROWSABLE" />
+155-->[com.google.firebase:firebase-auth:20.0.2] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\12942ff85cacfd8e3ab5f0787fc4bfd5\jetified-firebase-auth-20.0.2\AndroidManifest.xml:37:17-78
+155-->[com.google.firebase:firebase-auth:20.0.2] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\12942ff85cacfd8e3ab5f0787fc4bfd5\jetified-firebase-auth-20.0.2\AndroidManifest.xml:37:27-75
+156
+157                <data
+157-->[com.google.firebase:firebase-auth:20.0.2] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\12942ff85cacfd8e3ab5f0787fc4bfd5\jetified-firebase-auth-20.0.2\AndroidManifest.xml:39:17-42:51
+158                    android:host="firebase.auth"
+158-->[com.google.firebase:firebase-auth:20.0.2] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\12942ff85cacfd8e3ab5f0787fc4bfd5\jetified-firebase-auth-20.0.2\AndroidManifest.xml:40:21-49
+159                    android:path="/"
+159-->[com.google.firebase:firebase-auth:20.0.2] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\12942ff85cacfd8e3ab5f0787fc4bfd5\jetified-firebase-auth-20.0.2\AndroidManifest.xml:41:21-37
+160                    android:scheme="recaptcha" />
+160-->[com.google.firebase:firebase-auth:20.0.2] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\12942ff85cacfd8e3ab5f0787fc4bfd5\jetified-firebase-auth-20.0.2\AndroidManifest.xml:42:21-48
+161            </intent-filter>
+162        </activity>
+163
+164        <service
+164-->[com.google.firebase:firebase-auth:20.0.2] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\12942ff85cacfd8e3ab5f0787fc4bfd5\jetified-firebase-auth-20.0.2\AndroidManifest.xml:64:9-73:19
+165            android:name="com.google.firebase.auth.api.fallback.service.FirebaseAuthFallbackService"
+165-->[com.google.firebase:firebase-auth:20.0.2] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\12942ff85cacfd8e3ab5f0787fc4bfd5\jetified-firebase-auth-20.0.2\AndroidManifest.xml:65:13-101
+166            android:enabled="true"
+166-->[com.google.firebase:firebase-auth:20.0.2] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\12942ff85cacfd8e3ab5f0787fc4bfd5\jetified-firebase-auth-20.0.2\AndroidManifest.xml:66:13-35
+167            android:exported="false" >
+167-->[com.google.firebase:firebase-auth:20.0.2] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\12942ff85cacfd8e3ab5f0787fc4bfd5\jetified-firebase-auth-20.0.2\AndroidManifest.xml:67:13-37
+168            <intent-filter>
+168-->[com.google.firebase:firebase-auth:20.0.2] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\12942ff85cacfd8e3ab5f0787fc4bfd5\jetified-firebase-auth-20.0.2\AndroidManifest.xml:68:13-72:29
+169                <action android:name="com.google.firebase.auth.api.gms.service.START" />
+169-->[com.google.firebase:firebase-auth:20.0.2] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\12942ff85cacfd8e3ab5f0787fc4bfd5\jetified-firebase-auth-20.0.2\AndroidManifest.xml:69:17-89
+169-->[com.google.firebase:firebase-auth:20.0.2] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\12942ff85cacfd8e3ab5f0787fc4bfd5\jetified-firebase-auth-20.0.2\AndroidManifest.xml:69:25-86
+170
+171                <category android:name="android.intent.category.DEFAULT" />
+171-->[com.google.firebase:firebase-auth:20.0.2] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\12942ff85cacfd8e3ab5f0787fc4bfd5\jetified-firebase-auth-20.0.2\AndroidManifest.xml:36:17-76
+171-->[com.google.firebase:firebase-auth:20.0.2] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\12942ff85cacfd8e3ab5f0787fc4bfd5\jetified-firebase-auth-20.0.2\AndroidManifest.xml:36:27-73
+172            </intent-filter>
+173        </service>
+174
+175        <receiver
+175-->[com.google.firebase:firebase-iid:21.0.1] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\d411fa0537d75511b34b44977833a35b\firebase-iid-21.0.1\AndroidManifest.xml:37:9-44:20
+176            android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
+176-->[com.google.firebase:firebase-iid:21.0.1] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\d411fa0537d75511b34b44977833a35b\firebase-iid-21.0.1\AndroidManifest.xml:38:13-78
+177            android:exported="true"
+177-->[com.google.firebase:firebase-iid:21.0.1] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\d411fa0537d75511b34b44977833a35b\firebase-iid-21.0.1\AndroidManifest.xml:39:13-36
+178            android:permission="com.google.android.c2dm.permission.SEND" >
+178-->[com.google.firebase:firebase-iid:21.0.1] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\d411fa0537d75511b34b44977833a35b\firebase-iid-21.0.1\AndroidManifest.xml:40:13-73
+179            <intent-filter>
+179-->[com.google.firebase:firebase-iid:21.0.1] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\d411fa0537d75511b34b44977833a35b\firebase-iid-21.0.1\AndroidManifest.xml:41:13-43:29
+180                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+180-->[com.google.firebase:firebase-iid:21.0.1] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\d411fa0537d75511b34b44977833a35b\firebase-iid-21.0.1\AndroidManifest.xml:42:17-81
+180-->[com.google.firebase:firebase-iid:21.0.1] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\d411fa0537d75511b34b44977833a35b\firebase-iid-21.0.1\AndroidManifest.xml:42:25-78
+181            </intent-filter>
+182        </receiver>
+183
+184        <provider
+184-->[com.google.firebase:firebase-common:19.5.0] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\950ecd8c2f41cc786f17d439890f3334\jetified-firebase-common-19.5.0\AndroidManifest.xml:26:9-31:39
+185            android:name="com.google.firebase.provider.FirebaseInitProvider"
+185-->[com.google.firebase:firebase-common:19.5.0] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\950ecd8c2f41cc786f17d439890f3334\jetified-firebase-common-19.5.0\AndroidManifest.xml:27:13-77
+186            android:authorities="com.mrent.firebaseinitprovider"
+186-->[com.google.firebase:firebase-common:19.5.0] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\950ecd8c2f41cc786f17d439890f3334\jetified-firebase-common-19.5.0\AndroidManifest.xml:28:13-72
+187            android:directBootAware="true"
+187-->[com.google.firebase:firebase-common:19.5.0] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\950ecd8c2f41cc786f17d439890f3334\jetified-firebase-common-19.5.0\AndroidManifest.xml:29:13-43
+188            android:exported="false"
+188-->[com.google.firebase:firebase-common:19.5.0] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\950ecd8c2f41cc786f17d439890f3334\jetified-firebase-common-19.5.0\AndroidManifest.xml:30:13-37
+189            android:initOrder="100" />
+189-->[com.google.firebase:firebase-common:19.5.0] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\950ecd8c2f41cc786f17d439890f3334\jetified-firebase-common-19.5.0\AndroidManifest.xml:31:13-36
+190
+191        <service
+191-->[com.google.android.datatransport:transport-runtime:2.2.5] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\fcdf8a25979511a02cc799cec3ff48c0\jetified-transport-runtime-2.2.5\AndroidManifest.xml:26:9-30:19
+192            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService"
+192-->[com.google.android.datatransport:transport-runtime:2.2.5] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\fcdf8a25979511a02cc799cec3ff48c0\jetified-transport-runtime-2.2.5\AndroidManifest.xml:27:13-117
+193            android:exported="false"
+193-->[com.google.android.datatransport:transport-runtime:2.2.5] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\fcdf8a25979511a02cc799cec3ff48c0\jetified-transport-runtime-2.2.5\AndroidManifest.xml:28:13-37
+194            android:permission="android.permission.BIND_JOB_SERVICE" >
+194-->[com.google.android.datatransport:transport-runtime:2.2.5] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\fcdf8a25979511a02cc799cec3ff48c0\jetified-transport-runtime-2.2.5\AndroidManifest.xml:29:13-69
+195        </service>
+196
+197        <receiver
+197-->[com.google.android.datatransport:transport-runtime:2.2.5] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\fcdf8a25979511a02cc799cec3ff48c0\jetified-transport-runtime-2.2.5\AndroidManifest.xml:32:9-34:40
+198            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver"
+198-->[com.google.android.datatransport:transport-runtime:2.2.5] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\fcdf8a25979511a02cc799cec3ff48c0\jetified-transport-runtime-2.2.5\AndroidManifest.xml:33:13-132
+199            android:exported="false" />
+199-->[com.google.android.datatransport:transport-runtime:2.2.5] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\fcdf8a25979511a02cc799cec3ff48c0\jetified-transport-runtime-2.2.5\AndroidManifest.xml:34:13-37
+200
+201        <activity
+201-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\bb8500bae820fda3d47952fdd1edc33b\play-services-auth-19.0.0\AndroidManifest.xml:23:9-27:75
+202            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
+202-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\bb8500bae820fda3d47952fdd1edc33b\play-services-auth-19.0.0\AndroidManifest.xml:24:13-93
+203            android:excludeFromRecents="true"
+203-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\bb8500bae820fda3d47952fdd1edc33b\play-services-auth-19.0.0\AndroidManifest.xml:25:13-46
+204            android:exported="false"
+204-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\bb8500bae820fda3d47952fdd1edc33b\play-services-auth-19.0.0\AndroidManifest.xml:26:13-37
+205            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+205-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\bb8500bae820fda3d47952fdd1edc33b\play-services-auth-19.0.0\AndroidManifest.xml:27:13-72
+206        <!--
+207            Service handling Google Sign-In user revocation. For apps that do not integrate with
+208            Google Sign-In, this service will never be started.
+209        -->
+210        <service
+210-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\bb8500bae820fda3d47952fdd1edc33b\play-services-auth-19.0.0\AndroidManifest.xml:33:9-37:51
+211            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
+211-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\bb8500bae820fda3d47952fdd1edc33b\play-services-auth-19.0.0\AndroidManifest.xml:34:13-89
+212            android:exported="true"
+212-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\bb8500bae820fda3d47952fdd1edc33b\play-services-auth-19.0.0\AndroidManifest.xml:35:13-36
+213            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
+213-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\bb8500bae820fda3d47952fdd1edc33b\play-services-auth-19.0.0\AndroidManifest.xml:36:13-107
+214            android:visibleToInstantApps="true" />
+214-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\bb8500bae820fda3d47952fdd1edc33b\play-services-auth-19.0.0\AndroidManifest.xml:37:13-48
+215
+216        <activity
+216-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\74324298ca0e0089c5bebaaa76f47069\play-services-base-17.1.0\AndroidManifest.xml:23:9-26:75
+217            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+217-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\74324298ca0e0089c5bebaaa76f47069\play-services-base-17.1.0\AndroidManifest.xml:24:13-79
+218            android:exported="false"
+218-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\74324298ca0e0089c5bebaaa76f47069\play-services-base-17.1.0\AndroidManifest.xml:25:13-37
+219            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+219-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\74324298ca0e0089c5bebaaa76f47069\play-services-base-17.1.0\AndroidManifest.xml:26:13-72
+220
+221        <meta-data
+221-->[com.google.android.gms:play-services-basement:17.1.1] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\c153460300be3c2c36d14e7d6e47f639\jetified-play-services-basement-17.1.1\AndroidManifest.xml:23:9-25:69
+222            android:name="com.google.android.gms.version"
+222-->[com.google.android.gms:play-services-basement:17.1.1] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\c153460300be3c2c36d14e7d6e47f639\jetified-play-services-basement-17.1.1\AndroidManifest.xml:24:13-58
+223            android:value="@integer/google_play_services_version" />
+223-->[com.google.android.gms:play-services-basement:17.1.1] C:\Users\Mario\.gradle\caches\transforms-2\files-2.1\c153460300be3c2c36d14e7d6e47f639\jetified-play-services-basement-17.1.1\AndroidManifest.xml:25:13-66
+224    </application>
+225
+226</manifest>

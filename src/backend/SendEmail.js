@@ -1,7 +1,6 @@
 //file contains methods for fetching and posting data to API
 import qs from 'qs';
 import { Linking } from 'react-native';
-import { EditDataOnAPI } from './ApiConnection';
 
 export async function SendEmail(clientEmail, emailSubject, emailBody, options = {}) {
     const { cc, bcc } = options;

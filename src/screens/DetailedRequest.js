@@ -5,19 +5,14 @@ import {
     Image,
     StyleSheet,
     TextInput,
-    TouchableHighlight,
     TouchableOpacity,
-    ActivityIndicator,
 } from 'react-native'
 import { ScrollView } from 'react-native-gesture-handler'
-import Icon from 'react-native-vector-icons/Ionicons'
 import EntypoIcon from 'react-native-vector-icons/Entypo';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import FontAwesomeIcons from 'react-native-vector-icons/FontAwesome';
 import { GoogleSignin, Button, statusCodes } from '@react-native-community/google-signin';
-import FontIcons from 'react-native-vector-icons/Fontisto';
 import { colors } from '../constants/DesignConstants.js';
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import FeatherIcon from 'react-native-vector-icons/Feather';
 import { EditDataOnAPI } from '../backend/ApiConnection';
 import { SendEmail } from '../backend/SendEmail.js';

@@ -4,26 +4,23 @@ import {
   Text,
   Image,
   StyleSheet,
-  TextInput,
-  TouchableHighlight,
   ActivityIndicator,
 } from "react-native";
 import { ScrollView, TouchableOpacity } from "react-native-gesture-handler";
 
 import {
   GoogleSignin,
-  GoogleSigninButton,
-  statusCodes,
 } from "@react-native-community/google-signin";
 
 import Request from "../components/Request";
 import Request2 from "../components/Request2";
 
-import Icon from "react-native-vector-icons/Ionicons";
-
 import { colors } from "../constants/DesignConstants";
 import { FetchDataFromAPI } from "../backend/ApiConnection";
 import { color } from "react-native-reanimated";
+
+import { ConfigurePushNotifications, CreateNotificationChannel } from "../backend/PushNotifications";
+import PushNotification from "react-native-push-notification";
 
 const components = {
   Request: Request,
@@ -70,6 +67,9 @@ export default class App extends React.Component {
       https://github.com/react-native-google-signin/google-signin i pogledati 3. naslov
     */
     this.getCurrentUser();
+
+    ConfigurePushNotifications();
+    CreateNotificationChannel();
   }
 
   urlClients = "https://air2020api.azure-api.net/api/Clients";
@@ -100,6 +100,15 @@ export default class App extends React.Component {
       }
     );
   }
+
+  notification = () => {PushNotification.localNotification({
+    /* Android Only Properties */
+    channelId: "channel-id", // (required) channelId, if the channel doesn't exist, it will be created with options passed above (importance, vibration, sound). Once the channel is created, the channel will not be update. Make sure your channelId is different if you change these options. If you have created a custom channel, it will apply options of the channel.
+    largeIcon: "ic_launcher", // (optional) default: "ic_launcher". Use "" for no large icon.
+    smallIcon: "ic_launcher", // (optional) default: "ic_notification" with fallback for "ic_launcher". Use "" for default small icon.
+    title: "My Notification Title", // (optional)
+    message: "My Notification Message", // (required)
+  });}
 
   componentWillUnmount() {
     this.didFocusSubscription.remove();
@@ -416,7 +425,6 @@ export default class App extends React.Component {
                     requestFilter: "new",
                   });
                 }
-                console.log(this.state.colorBorderChange);
               }}
             >
               <Text style={styles.colorBoxesTextLabel}>novi</Text>

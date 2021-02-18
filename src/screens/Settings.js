@@ -4,7 +4,6 @@ import {
   Text,
   Image,
   StyleSheet,
-  TextInput,
   TouchableOpacity,
   Switch,
   TouchableHighlight,
@@ -13,17 +12,15 @@ import {
 import { ScrollView } from "react-native-gesture-handler";
 import {
   GoogleSignin,
-  Button,
-  statusCodes,
 } from "@react-native-community/google-signin";
 import EntypoIcon from "react-native-vector-icons/Entypo";
 import IonIcon from "react-native-vector-icons/Ionicons";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 import FontAwesomeIcons from "react-native-vector-icons/FontAwesome";
-import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import { colors } from "../constants/DesignConstants";
-import { submit } from "./Home";
-import { color } from "react-native-reanimated";
+import { submit } from "./Home"; 
+
+import PushNotification from "react-native-push-notification";
 
 global.design = "Dizajn1";
 
@@ -32,8 +29,8 @@ export default class App extends React.Component {
     //Konstruktor za switch 1 i 2
     super(props);
     this.state = {
-      toggle: false,
-      toggle2: false,
+      toggleDarkTheme: false,
+      toggleObavijesti: false,
     };
     this.getCurrentUser();
   }
@@ -90,7 +87,7 @@ export default class App extends React.Component {
         </View>
         <View style={styles.marginaSlikeIokvir}>
           <View style={styles.imeISlika}>
-            <Image source={{ uri: imgSrc }} style={styles.imageCenter} />
+            <Image source={{ uri: imgSrc }} style={styles.imageCenter}/>
             <Text style={styles.tekstImena}> {ime} </Text>
           </View>
           <View style={styles.velicinaFonta}>
@@ -111,8 +108,8 @@ export default class App extends React.Component {
                   trackColor={{ false: "gray", true: "teal" }}
                   thumbColor="white"
                   ios_backgroundColor="gray"
-                  onValueChange={(value) => this.setState({ toggle: value })}
-                  value={this.state.toggle}
+                  onValueChange={(value) => this.setState({ toggleDarkTheme: value })}
+                  value={this.state.toggleDarkTheme}
                 />
               </View>
             </View>
@@ -129,8 +126,9 @@ export default class App extends React.Component {
                 trackColor={{ false: "gray", true: "teal" }}
                 thumbColor="white"
                 ios_backgroundColor="gray"
-                onValueChange={(value) => this.setState({ toggle2: value })}
-                value={this.state.toggle2}
+                onValueChange={(value) => this.setState({ toggleObavijesti: value })}
+                value={this.state.toggleObavijesti}
+                
               />
             </View>
           </View>
