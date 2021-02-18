@@ -8,6 +8,7 @@ import {
   TouchableOpacity,
   Switch,
   TouchableHighlight,
+  ToastAndroid
 } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 import {
@@ -21,7 +22,6 @@ import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 import FontAwesomeIcons from "react-native-vector-icons/FontAwesome";
 import { colors } from "../../constants/DesignConstants";
 import { AddDataOnAPI, EditDataOnAPI } from '../../backend/ApiConnection';
-import { Alert } from "react-native";
 
 export default class App extends React.Component {
 
@@ -131,10 +131,10 @@ export default class App extends React.Component {
                 let bodyEdit = JSON.stringify({unitId: unitId, name: this.state.name, capacity: this.state.capacity, price: this.state.price, propertyId: this.state.propertyId})
                 if (unitId === undefined) {
                   await AddDataOnAPI(this.urlRooms, bodyAdd)
-                  Alert.alert("Soba je uspješno dodana!")
+                  ToastAndroid.show("Soba je uspješno dodana!", ToastAndroid.SHORT);
                 } else {
                   await EditDataOnAPI(this.urlRooms + '/' + unitId, bodyEdit)
-                  Alert.alert("Soba je uspješno promijenjena!")
+                  ToastAndroid.show("Soba je uspješno promijenjena!", ToastAndroid.SHORT);
                 }
                 
                 this.props.navigation.navigate("AddEditRooms")

@@ -8,6 +8,7 @@ import {
   TouchableOpacity,
   Switch,
   TouchableHighlight,
+  ToastAndroid
 } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 import {
@@ -207,6 +208,7 @@ export default class App extends React.Component {
                   design = "Dizajn1";
                 }
                 submit("Request");
+                ToastAndroid.show("Dizajn je uspješno promijenjen!", ToastAndroid.SHORT);
                 this.props.navigation.navigate("Home");
               }}
             >
@@ -227,6 +229,7 @@ export default class App extends React.Component {
                   design = "Dizajn2";
                 }
                 submit("Request2");
+                ToastAndroid.show("Dizajn je uspješno promijenjen!", ToastAndroid.SHORT);
                 this.props.navigation.navigate("Home");
               }}
             >

@@ -21,7 +21,6 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import FeatherIcon from 'react-native-vector-icons/Feather';
 import { EditDataOnAPI } from '../backend/ApiConnection';
 import { SendEmail } from '../backend/SendEmail.js';
-import { Alert } from 'react-native';
 
 export default class DetailedRequest extends React.Component {
 

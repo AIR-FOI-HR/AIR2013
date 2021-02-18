@@ -9,7 +9,7 @@ import {
   Switch,
   Button,
   TouchableHighlight,
-  CheckBox,
+  ToastAndroid,
   ActivityIndicator
 } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
@@ -22,7 +22,6 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import { colors } from '../../constants/DesignConstants';
 import { RadioButton } from 'react-native-paper';
 import { DeleteDataFromAPI, FetchDataFromAPI } from '../../backend/ApiConnection'
-import { Alert } from 'react-native';
 
 export default class App extends React.Component {
 
@@ -144,7 +143,7 @@ export default class App extends React.Component {
                 style={styles.btnBorder2}
                 onPress={async () => {
                   await DeleteDataFromAPI(this.urlProperties + "/" + checked)
-                  Alert.alert("Apartman je uspješno obrisan!")
+                  ToastAndroid.show("Apartman je uspješno obrisan!", ToastAndroid.SHORT);
                   this.setState({
                     dataSourceProperties: await FetchDataFromAPI(this.urlProperties)
                   })
