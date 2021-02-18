@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\Sven\\Desktop\\FAKS\\7.semestar\\air\\AIR2013\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-small-v4\\values-small-v4.xml",
+            "outputFile": "C:\\Users\\Mario\\source\\repos\\mRent\\AIR2013\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-small-v4\\values-small-v4.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Sven\\.gradle\\caches\\transforms-2\\files-2.1\\d2d703d0888c9f273ca129b029ce5ac5\\material-1.1.0\\res\\values-small-v4\\values-small-v4.xml",
+                    "source": "C:\\Users\\Mario\\.gradle\\caches\\transforms-2\\files-2.1\\d2d703d0888c9f273ca129b029ce5ac5\\material-1.1.0\\res\\values-small-v4\\values-small-v4.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",
