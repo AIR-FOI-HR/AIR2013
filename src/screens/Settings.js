@@ -1,24 +1,30 @@
-import React from 'react'
+import React from "react";
 import {
-    View,
-    Text,
-    Image,
-    StyleSheet,
-    TextInput,
-    TouchableOpacity,
-    Switch,
-    TouchableHighlight
-} from 'react-native'
-import { ScrollView } from 'react-native-gesture-handler'
-import {GoogleSignin, Button, statusCodes} from '@react-native-community/google-signin';
-import EntypoIcon from 'react-native-vector-icons/Entypo';
-import IonIcon from 'react-native-vector-icons/Ionicons';
-import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
-import FontAwesomeIcons from 'react-native-vector-icons/FontAwesome'; 
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+  View,
+  Text,
+  Image,
+  StyleSheet,
+  TextInput,
+  TouchableOpacity,
+  Switch,
+  TouchableHighlight,
+} from "react-native";
+import { ScrollView } from "react-native-gesture-handler";
+import {
+  GoogleSignin,
+  Button,
+  statusCodes,
+} from "@react-native-community/google-signin";
+import EntypoIcon from "react-native-vector-icons/Entypo";
+import IonIcon from "react-native-vector-icons/Ionicons";
+import MaterialIcons from "react-native-vector-icons/MaterialIcons";
+import FontAwesomeIcons from "react-native-vector-icons/FontAwesome";
+import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import { colors } from "../constants/DesignConstants";
-import {submit} from './Home'
+import { submit } from "./Home";
+import { color } from "react-native-reanimated";
 
+global.design = "Dizajn1";
 
 export default class App extends React.Component {
   constructor(props) {
@@ -48,8 +54,6 @@ export default class App extends React.Component {
     }
   };
   render() {
-
-
     var ime = "";
     var email = "";
     var imgSrc = "slika";
@@ -193,8 +197,14 @@ export default class App extends React.Component {
             <TouchableHighlight
               style={[
                 styles.btnBorder1,
+                {
+                  borderColor: design === "Dizajn1" ? colors.red : colors.black,
+                },
               ]}
               onPress={() => {
+                if (design !== "Dizajn1") {
+                  design = "Dizajn1";
+                }
                 submit("Request");
                 this.props.navigation.navigate("Home");
               }}
@@ -205,8 +215,16 @@ export default class App extends React.Component {
 
           <View style={styles.btn2}>
             <TouchableHighlight
-              style={styles.btnBorder2}
+              style={[
+                styles.btnBorder2,
+                {
+                  borderColor: design === "Dizajn2" ? colors.red : colors.black,
+                },
+              ]}
               onPress={() => {
+                if (design !== "Dizajn2") {
+                  design = "Dizajn2";
+                }
                 submit("Request2");
                 this.props.navigation.navigate("Home");
               }}

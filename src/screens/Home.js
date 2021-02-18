@@ -23,6 +23,7 @@ import Icon from "react-native-vector-icons/Ionicons";
 
 import { colors } from "../constants/DesignConstants";
 import { FetchDataFromAPI } from "../backend/ApiConnection";
+import { color } from "react-native-reanimated";
 
 const components = {
   Request: Request,
@@ -55,17 +56,18 @@ export default class App extends React.Component {
       clientEmail: null,
       requestFilter: undefined,
       propertyFilter: undefined,
-      colorBorderChange:0,
+      colorBorderChange: 0,
+      propertyBorderChange: undefined,
     };
-    
+
     /*
-			this.state.currentUser je googleov zapis korisnika. 
-			Za pristup emailu koristiti this.state.currentUser.user.email
-			Za pristup korisničkom imenu koristiti this.state.currentUser.user.name
-			Za pristup izvoru slike koristiti this.state.currentUser.user.photo
-			Za više informacija unijeti console.log(this.state.currentUser) ili posjetiti
-			https://github.com/react-native-google-signin/google-signin i pogledati 3. naslov
-		*/
+      this.state.currentUser je googleov zapis korisnika. 
+      Za pristup emailu koristiti this.state.currentUser.user.email
+      Za pristup korisničkom imenu koristiti this.state.currentUser.user.name
+      Za pristup izvoru slike koristiti this.state.currentUser.user.photo
+      Za više informacija unijeti console.log(this.state.currentUser) ili posjetiti
+      https://github.com/react-native-google-signin/google-signin i pogledati 3. naslov
+    */
     this.getCurrentUser();
   }
 
@@ -109,10 +111,8 @@ export default class App extends React.Component {
     console.log("Ušao u google");
   };
   render() {
-    
     var imgSrc = "";
     var user = "";
-    
 
     try {
       user = this.state.currentUser.user.name;
@@ -141,8 +141,21 @@ export default class App extends React.Component {
         return (
           <View key={keyProperty}>
             <TouchableOpacity
-              style={styles.btnPropertyFilter}
+              style={[
+                styles.btnPropertyFilter,
+                {
+                  borderColor:
+                    this.state.propertyBorderChange === propertyName
+                      ? color.black
+                      : "#236E9F",
+                },
+              ]}
               onPress={() => {
+                if (this.state.propertyBorderChange !== propertyName) {
+                  this.state.propertyBorderChange = propertyName;
+                } else {
+                  this.state.propertyBorderChange = undefined;
+                }
                 if (this.state.propertyFilter === propertyName) {
                   this.setState({
                     propertyFilter: undefined,
@@ -154,7 +167,7 @@ export default class App extends React.Component {
                 }
               }}
             >
-              <Text style={styles.btnText2}>{propertyName}</Text>
+              <Text style={styles.btnTextProperty}>{propertyName}</Text>
             </TouchableOpacity>
           </View>
         );
@@ -383,8 +396,8 @@ export default class App extends React.Component {
               style={[
                 styles.colorBoxOrange,
                 {
-                  borderColor:
-                    this.state.colorBorderChange== 1 ? colors.yellow30 : colors.black,
+                  borderWidth: this.state.colorBorderChange == 1 ? 3 : 0,
+                  borderColor: color.black,
                 },
               ]}
               onPress={() => {
@@ -412,10 +425,8 @@ export default class App extends React.Component {
               style={[
                 styles.colorBoxGreen,
                 {
-                  borderColor:
-                    this.state.colorBorderChange == 2
-                      ? colors.green30
-                      : colors.black,
+                  borderWidth: this.state.colorBorderChange == 2 ? 3 : 0,
+                  borderColor: color.black,
                 },
               ]}
               onPress={() => {
@@ -442,10 +453,8 @@ export default class App extends React.Component {
               style={[
                 styles.colorBoxRed,
                 {
-                  borderColor:
-                    this.state.colorBorderChange == 3
-                      ? colors.red40
-                      : colors.black,
+                  borderWidth: this.state.colorBorderChange == 3 ? 3 : 0,
+                  borderColor: color.black,
                 },
               ]}
               onPress={() => {
@@ -612,10 +621,16 @@ const styles = StyleSheet.create({
   },
   btnPropertyFilter: {
     borderColor: "#236E9F",
-    backgroundColor: colors.white,
+    color: colors.white,
+    backgroundColor: "#236E9F",
     borderRadius: 8,
-    borderWidth: 2,
+    borderWidth: 3,
     padding: 8,
     width: "100%",
+  },
+  btnTextProperty: {
+    fontWeight: "bold",
+    fontSize: 14,
+    color: colors.white,
   },
 });
