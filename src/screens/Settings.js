@@ -68,10 +68,7 @@ export default class App extends React.Component {
     } catch (error) {}
 
     return (
-      <ScrollView
-        showsVerticalScrollIndicator={false}
-        style={styles.scrollView}
-      >
+      <View showsVerticalScrollIndicator={false} style={styles.scrollView}>
         {/*Zaglavlje s pozdravom i implementacija slike*/}
         <View style={styles.mainView}>
           <View style={styles.postavkeIKonf}>
@@ -92,9 +89,7 @@ export default class App extends React.Component {
             <Image source={{ uri: imgSrc }} style={styles.imageCenter} />
             <Text style={styles.tekstImena}> {ime} </Text>
           </View>
-          <View style={styles.velicinaFonta}>
-            {/*Izbornik sa switchem i ikonicama*/}
-          </View>
+          {/*Izbornik sa switchem i ikonicama*/}
           <View style={styles.margineTeksta}>
             <EntypoIcon
               name="light-up"
@@ -176,69 +171,69 @@ export default class App extends React.Component {
             </View>
           </View>
         </View>
-        <View
-          style={{
-            borderBottomColor: "black",
-            borderBottomWidth: 1,
-            bottom: 340,
-          }}
-        />
-        <View
-          style={{
-            borderBottomColor: "black",
-            borderBottomWidth: 1,
-            bottom: 210,
-          }}
-        />
-        <Text style={styles.dizajnKarticaTekst}>
-          Odaberite dizajn kartica po želji:
-        </Text>
-        <View style={styles.txtButtonIcon}>
-          <View style={styles.btn1}>
-            <TouchableHighlight
-              style={[
-                styles.btnBorder1,
-                {
-                  borderColor: design === "Dizajn1" ? colors.red : colors.black,
-                },
-              ]}
-              onPress={() => {
-                if (design !== "Dizajn1") {
-                  design = "Dizajn1";
-                }
-                submit("Request");
-                this.props.navigation.navigate("Home");
-              }}
-            >
-              <Text style={styles.btnText1}>DIZAJN 1</Text>
-            </TouchableHighlight>
-          </View>
+        <View style={styles.DizajnPoZelji}>
+          <View
+            style={{
+              borderBottomColor: "black",
+              borderBottomWidth: 1,
+              bottom: 340,
+            }}
+          />
+          <View
+            style={{
+              borderBottomColor: "black",
+              borderBottomWidth: 1,
+              bottom: 210,
+            }}
+          />
+          <Text style={styles.dizajnKarticaTekst}>
+            Odaberite dizajn kartica po želji:
+          </Text>
+          <View style={styles.txtButtonIcon}>
+            <View style={styles.btn1}>
+              <TouchableHighlight
+                style={[
+                  styles.btnBorder1,
+                  {
+                    borderColor:
+                      design === "Dizajn1" ? colors.red : colors.black,
+                  },
+                ]}
+                onPress={() => {
+                  if (design !== "Dizajn1") {
+                    design = "Dizajn1";
+                  }
+                  submit("Request");
+                  this.props.navigation.navigate("Home");
+                }}
+              >
+                <Text style={styles.btnText1}>DIZAJN 1</Text>
+              </TouchableHighlight>
+            </View>
 
-          <View style={styles.btn2}>
-            <TouchableHighlight
-              style={[
-                styles.btnBorder2,
-                {
-                  borderColor: design === "Dizajn2" ? colors.red : colors.black,
-                },
-              ]}
-              onPress={() => {
-                if (design !== "Dizajn2") {
-                  design = "Dizajn2";
-                }
-                submit("Request2");
-                this.props.navigation.navigate("Home");
-              }}
-            >
-              <Text style={styles.btnText2}>DIZAJN 2</Text>
-            </TouchableHighlight>
+            <View style={styles.btn2}>
+              <TouchableHighlight
+                style={[
+                  styles.btnBorder2,
+                  {
+                    borderColor:
+                      design === "Dizajn2" ? colors.red : colors.black,
+                  },
+                ]}
+                onPress={() => {
+                  if (design !== "Dizajn2") {
+                    design = "Dizajn2";
+                  }
+                  submit("Request2");
+                  this.props.navigation.navigate("Home");
+                }}
+              >
+                <Text style={styles.btnText2}>DIZAJN 2</Text>
+              </TouchableHighlight>
+            </View>
           </View>
         </View>
-        <View style={styles.foi}>
-          <Text style={styles.foiText}>Made @</Text>
-          <Image source={require("../assets/images/foiLogo.png")}></Image>
-        </View>
-      </ScrollView>
+      </View>
     );
   }
 }
@@ -307,7 +302,7 @@ const styles = StyleSheet.create({
     marginBottom: 0,
     marginTop: 20,
     marginLeft: 20,
-    bottom: 85,
+    bottom: 100,
   },
   marginaSlikeIokvir: {
     marginBottom: 40,
@@ -315,9 +310,9 @@ const styles = StyleSheet.create({
     borderRadius: 22,
     borderWidth: 2,
     borderColor: "grey",
-    height: 680,
     justifyContent: "center",
     bottom: 50,
+    height:600
   },
   tekstImena: {
     marginBottom: 20,
@@ -330,12 +325,6 @@ const styles = StyleSheet.create({
     fontSize: 18,
     left: 28,
     top: -5,
-  },
-  foi: {
-    alignItems: "center",
-    flexDirection: "row",
-    justifyContent: "center",
-    bottom: 350,
   },
   Switch1: {
     left: 80,
@@ -378,7 +367,7 @@ const styles = StyleSheet.create({
     top: 10,
   },
   margineOdjave: {
-    top: 70,
+    top: 68,
     left: 22,
     width: 100,
   },
@@ -401,7 +390,7 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     padding: 8,
     width: "160%",
-    height: "20%",
+    height: "33%",
     left: 2,
   },
   btnBorder2: {
@@ -411,7 +400,7 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     padding: 8,
     width: "160%",
-    height: "20%",
+    height: "33%",
     left: 7,
   },
   btnText1: {
@@ -434,4 +423,7 @@ const styles = StyleSheet.create({
     //fontWeight: "bold",
     fontSize: 17,
   },
+  DizajnPoZelji:{
+    top:38
+  }
 });

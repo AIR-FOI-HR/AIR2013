@@ -7,8 +7,6 @@ GoogleSignin.configure({
 	webClientId: '282691096774-dq1p0dd5f7ni83fne0ugegffnpcpjt5k.apps.googleusercontent.com',
 	offlineAccess: true,
 });
-const windowWidth = Dimensions.get('window').width;
-const windowHeight = Dimensions.get('window').height;
 
 class SignIn extends Component {
 	
