@@ -1,15 +1,20 @@
 const colors = {
-    yellow: "#feca57", // žuta boja
-    green: "#10ac84", // zelena boja 
-    red: "#e74c3c", // crvena boja
-    black: "#323643",
-    white: "#FFFFFF",
-    gray: "#9DA3B4",
-    gray2: "#C5CCD6",
-    accent: "#F3534A",
-    primary: "#0AC4BA",
-    secondary: "#2BDA8E",
-    tertiary: "#FFE358",
+  yellow: "#feca57", // žuta boja
+  green: "#10ac84", // zelena boja
+  red: "#e74c3c", // crvena boja
+  black: "#323643",
+  white: "#FFFFFF",
+  gray: "#9DA3B4",
+  gray2: "#C5CCD6",
+  accent: "#F3534A",
+  primary: "#0AC4BA",
+  secondary: "#2BDA8E",
+  tertiary: "#FFE358",
+  subtleWhite: "#FAFAFA",
+  yellow30: "#986801",
+  yellow80: "#fedf9a",
+  green30: "#a2f6e1",
+  red40: "#f4aca4",
 };
   
   const sizes = {
