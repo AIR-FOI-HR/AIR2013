@@ -2,25 +2,18 @@ import React from 'react';
 import {
   View,
   Text,
-  Image,
   StyleSheet,
-  TextInput,
   TouchableOpacity,
-  Switch,
-  Button,
-  TouchableHighlight,
-  ActivityIndicator
+  ActivityIndicator,
+  ToastAndroid
 } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
-import { GoogleSignin, GoogleSigninButton, statusCodes } from '@react-native-community/google-signin';
 import IonIcon from 'react-native-vector-icons/Ionicons';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
-import FontAwesomeIcons from 'react-native-vector-icons/FontAwesome';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import { colors } from '../../constants/DesignConstants';
 import { RadioButton } from 'react-native-paper';
 import { DeleteDataFromAPI, FetchDataFromAPI } from '../../backend/ApiConnection'
-import { Alert } from 'react-native';
 
 export default class App extends React.Component {
 
@@ -130,7 +123,7 @@ export default class App extends React.Component {
                 style={styles.btnBorder2}
                 onPress={async () => {
                   await DeleteDataFromAPI(this.urlTemplates + '/' + checked)
-                  Alert.alert("Predložak je uspješno obrisan!")
+                  ToastAndroid.show("Predložak je uspješno obrisan!", ToastAndroid.SHORT);
                   this.setState({
                     dataSourceTemplates: await FetchDataFromAPI(this.urlTemplates)
                   })

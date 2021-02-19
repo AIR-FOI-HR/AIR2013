@@ -2,31 +2,18 @@ import React from "react";
 import {
   View,
   Text,
-  Image,
   StyleSheet,
-  TextInput,
   TouchableOpacity,
-  Switch,
-  Button,
-  TouchableHighlight,
-  CheckBox,
-  ActivityIndicator
+  ActivityIndicator,
+  ToastAndroid
 } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
-import {
-  GoogleSignin,
-  GoogleSigninButton,
-  statusCodes,
-} from "@react-native-community/google-signin";
-import EntypoIcon from "react-native-vector-icons/Entypo";
 import IonIcon from "react-native-vector-icons/Ionicons";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
-import FontAwesomeIcons from "react-native-vector-icons/FontAwesome";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import { colors } from "../../constants/DesignConstants";
 import { RadioButton } from "react-native-paper";
 import { DeleteDataFromAPI, FetchDataFromAPI } from '../../backend/ApiConnection'
-import { Alert } from 'react-native';
 
 export default class App extends React.Component {
 
@@ -160,7 +147,7 @@ export default class App extends React.Component {
                 style={styles.btnBorder2}
                 onPress={async () => {
                   await DeleteDataFromAPI(this.urlRooms + '/' + checked)
-                  Alert.alert("Soba je uspješno obrisana!")
+                  ToastAndroid.show("Soba je uspješno obrisana!", ToastAndroid.SHORT);
                   this.setState({
                     dataSourceRooms: await FetchDataFromAPI(this.urlRooms)
                   })

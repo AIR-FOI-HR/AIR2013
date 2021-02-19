@@ -1,14 +1,10 @@
 import React from 'react';
-import { View, Text, Image, StyleSheet, TextInput, TouchableOpacity, Switch, TouchableHighlight } from 'react-native';
-import { ScrollView } from 'react-native-gesture-handler';
-import { GoogleSignin, GoogleSigninButton, statusCodes } from '@react-native-community/google-signin';
+import { View, Text, StyleSheet, TextInput, TouchableOpacity, ToastAndroid } from 'react-native';
 import EntypoIcon from 'react-native-vector-icons/Entypo';
-import IonIcon from 'react-native-vector-icons/Ionicons';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import FontAwesomeIcons from 'react-native-vector-icons/FontAwesome';
 import { colors } from '../../constants/DesignConstants';
 import { AddDataOnAPI, EditDataOnAPI } from '../../backend/ApiConnection';
-import { Alert } from 'react-native';
 
 export default class App extends React.Component {
 
@@ -89,7 +85,7 @@ export default class App extends React.Component {
                 this.props.navigation.navigate('AddEditRooms', { selectedPropertyId: propertyId })
               }
               else{
-                Alert.alert('Nije moguće dodati sobu nepostojećem apartmanu!')
+                ToastAndroid.show("Nije moguće dodati sobu nepostojećem apartmanu!", ToastAndroid.SHORT);
               }
             }}
           >
@@ -117,10 +113,10 @@ export default class App extends React.Component {
                 console.log(bodyEdit)
                 if (propertyId === undefined) {
                   await AddDataOnAPI(this.urlProperties, bodyAdd)
-                  Alert.alert("Apartman je uspješno dodan!")
+                  ToastAndroid.show("Apartman je uspješno dodan!", ToastAndroid.SHORT);
                 } else {
                   await EditDataOnAPI(this.urlProperties + '/' + propertyId, bodyEdit)
-                  Alert.alert("Apartman je uspješno promijenjen!")
+                  ToastAndroid.show("Apartman je uspješno promijenjen!", ToastAndroid.SHORT);
                 }
                 this.props.navigation.navigate("AddEditApartments")
               }}

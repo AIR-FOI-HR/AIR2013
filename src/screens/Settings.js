@@ -4,25 +4,20 @@ import {
   Text,
   Image,
   StyleSheet,
-  TextInput,
   TouchableOpacity,
   Switch,
   TouchableHighlight,
+  ToastAndroid
 } from "react-native";
-import { ScrollView } from "react-native-gesture-handler";
 import {
   GoogleSignin,
-  Button,
-  statusCodes,
 } from "@react-native-community/google-signin";
 import EntypoIcon from "react-native-vector-icons/Entypo";
 import IonIcon from "react-native-vector-icons/Ionicons";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 import FontAwesomeIcons from "react-native-vector-icons/FontAwesome";
-import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import { colors } from "../constants/DesignConstants";
 import { submit } from "./Home";
-import { color } from "react-native-reanimated";
 
 global.design = "Dizajn1";
 
@@ -204,6 +199,7 @@ export default class App extends React.Component {
                     design = "Dizajn1";
                   }
                   submit("Request");
+                  ToastAndroid.show("Dizajn je uspješno promijenjen!", ToastAndroid.SHORT);
                   this.props.navigation.navigate("Home");
                 }}
               >
@@ -225,6 +221,7 @@ export default class App extends React.Component {
                     design = "Dizajn2";
                   }
                   submit("Request2");
+                  ToastAndroid.show("Dizajn je uspješno promijenjen!", ToastAndroid.SHORT);
                   this.props.navigation.navigate("Home");
                 }}
               >
